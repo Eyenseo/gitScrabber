@@ -95,12 +95,10 @@ def __setup_parser():
                         default=None,
                         help='Path where the report will be saved to.')
     parser.add_argument('-p', '--printreport',
-                        # type=bool,
                         action='store_true',
                         default=False,
                         help='If the report should be printed to stdout')
     parser.add_argument('-f', '--force',
-                        # type=bool,
                         action='store_true',
                         default=False,
                         help='Forces the override of a present report')
@@ -118,7 +116,9 @@ def __check_arguments(parser, args):
             'savereport' not in vars(args)):
         parser.error('Force is only needed to overwrite an existing report')
 
-    if args.report == args.savereport and not args.force:
+    if (args.savereport is not None
+            and args.report == args.savereport
+            and not args.force):
         parser.error('{} exists already! '
                      'Secify a new location for the new report or '
                      '--force override'.format(args.savereport))
@@ -133,7 +133,7 @@ def parse_args(args=None):
     :returns: The parsed arguments
     """
     parser = __setup_parser()
-    args = None
+    parsed_args = None
 
     if(args):
         parsed_args = parser.parse_args(args)

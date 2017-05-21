@@ -1,16 +1,16 @@
 tasks:
-  run: 1.0.0
-  run2: 1.0.0
-  rrun: 1.0.0
+  author_contributor_counter: 1.0.0
+  dummy: 1.0.0
+  rdummy: 1.0.0
 projects:
   foo://bar:
-    run:
+    author_contributor_counter:
       author#: 300
       contributor#: 700
-    run2: {}
+    dummy: {}
   https://github.com/Eyenseo/ABI:
-    run:
+    author_contributor_counter:
       author#: 1
       contributor#: 1
-    run2: {}
-from: report_test
+    dummy: {}
+report_exampe: 'from: rdummy'

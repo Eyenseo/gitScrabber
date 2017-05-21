@@ -117,7 +117,7 @@ def main(args=None):
     :returns: The results of the scrab method
     """
     args = ArgHandler.parse_args(args)
-    GitScrabber(
+    return GitScrabber(
         task_file=args.tasks,
         report_file=args.report,
         save_file=args.savereport,
@@ -127,4 +127,4 @@ def main(args=None):
     ).scrab()
 
 if __name__ == "__main__":
-    main(['-t', '../task.yaml'])
+    main(['-t', '../task.yaml', '-p', '-g', '/tmp'])
