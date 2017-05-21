@@ -1,0 +1,16 @@
+tasks:
+  run: 1.0.0
+  run2: 1.0.0
+  rrun: 1.0.0
+projects:
+  foo://bar:
+    run:
+      author#: 3
+      contributor#: 7
+    run2: {}
+  https://github.com/Eyenseo/ABI:
+    run:
+      author#: 1
+      contributor#: 1
+    run2: {}
+from: report_test

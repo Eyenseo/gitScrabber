@@ -1,0 +1,13 @@
+projects:
+- url: https://github.com/Eyenseo/ABI
+- data:
+    author#: 3
+    contributor#: 7
+    stars: 3
+  url: foo://bar
+tasks:
+  repo:
+  - run
+  - run2
+  report:
+  - rrun

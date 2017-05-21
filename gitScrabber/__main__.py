@@ -1,0 +1,3 @@
+import gitScrabber
+
+gitScrabber.main()
