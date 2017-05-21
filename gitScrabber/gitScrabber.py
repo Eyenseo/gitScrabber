@@ -7,63 +7,124 @@ import ruamel.yaml
 
 
 class GitScrabber:
-    """docstring for GitScrabber"""     # TODO
+    """
+    A script to scrab information from git repos
 
-    def __init__(self, args):
-        self.args = args
-        self.scrabTaskManager = ScrabTaskManager()
+    :param  task_file:        yaml file path that holds the task details
+    :param  report_file:      yaml file path that holds the results from a
+                              previous execution
+    :param  save_file:        file path where the results of the execution will
+                              be saved
+    :param  git_dir:          directory path where the repositories will be
+                              cloned to
+    :param  printing:         If the report should be printed to stdout
+    :param  force_overwrite:  If the file that save_file points to should be
+                              overwritten
+    """
 
-        self.yaml = ruamel.yaml.load(
-            open(args.tasks, 'r').read(),
+    def __init__(self,
+                 task_file,
+                 report_file=None,
+                 save_file=None,
+                 git_dir=".",
+                 printing=False,
+                 force_overwrite=False):
+        self.__scrabTaskManager = ScrabTaskManager()
+        self.__save_file = save_file
+        self.__printing = printing
+        self.__git_dir = git_dir
+        self.__tasks = ruamel.yaml.load(
+            open(task_file, 'r').read(),
             ruamel.yaml.RoundTripLoader)
 
-        if(args.report):
-            self.old_report = ruamel.yaml.load(
-                open(args.report, 'r').read(),
+        if(report_file):
+            self.__old_report = ruamel.yaml.load(
+                open(report_file, 'r').read(),
                 ruamel.yaml.RoundTripLoader)
         else:
-            self.old_report = None
+            self.__old_report = None
 
-    def add_scrab_versions(self, report, kind):
-        for task in self.yaml['tasks'][kind]:
-            scrabTask = self.scrabTaskManager.get_task(task)
+    def __add_scrab_versions(self, report, kind):
+        """
+        Adds the ScrabTask versions to the report
+
+        :param  report:  the report to write into
+        :param  kind:    the kind of scrabber to add - either repo or report
+        """
+        for task in self.__tasks['tasks'][kind]:
+            scrabTask = self.__scrabTaskManager.get_task(task)
             report['tasks'][task] = scrabTask['version']
 
-    def repo_tasks(self, report):
+    def __repo_tasks(self, report):
+        """
+        Executes the RepoTaskRunner
+
+        :param  report:  report to write into
+        """
         report['projects'] = RepoTaskRunner(
-            self.yaml,
-            self.old_report,
-            self.scrabTaskManager,
-            self.args.gitdir).run_tasks()
-        self.add_scrab_versions(report, 'repo')
+            self.__tasks,
+            self.__old_report,
+            self.__scrabTaskManager,
+            self.__git_dir).run_tasks()
+        self.__add_scrab_versions(report, 'repo')
 
-    def report_tasks(self, report):
-        ReportTaskRunner(self.yaml, report, self.scrabTaskManager).run_tasks()
-        self.add_scrab_versions(report, 'report')
+    def __report_tasks(self, report):
+        """
+        Executes the ReportTaskRunner
 
-    def handele_results(self, report):
-        if self.args.savereport:
-            with open(self.args.savereport, 'w') as outfile:
+        :param  report:  report to write into
+        """
+        ReportTaskRunner(self.__tasks, report,
+                         self.__scrabTaskManager).run_tasks()
+        self.__add_scrab_versions(report, 'report')
+
+    def __handele_results(self, report):
+        """
+        Writes the results of the scrab tasks to file and or to stdout
+
+        :param  report:  report to write
+        """
+        if self.__save_file:
+            with open(self.__save_file, 'w') as outfile:
                 ruamel.yaml.dump(
                     report, outfile, Dumper=ruamel.yaml.RoundTripDumper)
 
-        if self.args.printreport:
+        if self.__printing:
             print(ruamel.yaml.dump(report, Dumper=ruamel.yaml.RoundTripDumper))
 
     def scrab(self):
+        """
+        Main Function - starts the execution of the scrab tasks
+
+        :returns: the report as python objects
+        """
         report = {'tasks': {}}
 
-        self.repo_tasks(report)
-        self.report_tasks(report)
+        self.__repo_tasks(report)
+        self.__report_tasks(report)
 
-        self.handele_results(report)
+        self.__handele_results(report)
+
+        return report
 
 
 def main(args=None):
-    if args:
-        GitScrabber(ArgHandler.parse_args(args)).scrab()
-    else:
-        GitScrabber(ArgHandler.parse_args()).scrab()
+    """
+    Module main function
+
+    :param    args:  Commandline arguments that will be parsed
+
+    :returns: The results of the scrab method
+    """
+    args = ArgHandler.parse_args(args)
+    GitScrabber(
+        task_file=args.tasks,
+        report_file=args.report,
+        save_file=args.savereport,
+        git_dir=args.gitdir,
+        printing=args.printreport,
+        force_overwrite=args.force
+    ).scrab()
 
 if __name__ == "__main__":
     main(['-t', '../task.yaml'])

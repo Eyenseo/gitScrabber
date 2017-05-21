@@ -2,6 +2,12 @@ import subprocess
 
 
 def __validate_exec_args(program, args):
+    """
+    Validates the types of the program and arguments that will be executed
+
+    :param    program:  The program
+    :param    args:     The arguments
+    """
     if type(program) is not str:
         raise Exception("The program has to given as a string")
     if args is not None:
@@ -18,6 +24,13 @@ def __validate_exec_args(program, args):
 
 
 def __handle_result(process):
+    """
+    handels the results from the executed program
+
+    :param    process:  The process
+
+    :returns: the data from stdout of the program
+    """
     out = process.communicate()
     if process.returncode is not 0:
         raise Exception("When executing "
@@ -28,6 +41,15 @@ def __handle_result(process):
 
 
 def run(program, args=[], cwd=None):
+    """
+    Executes a given program with given arguments in a specific dir
+
+    :param    program:  The program
+    :param    args:     The arguments
+    :param    cwd:      The working directory for the program
+
+    :returns: the data from stdout of the program
+    """
     __validate_exec_args(program, args)
 
     process = None

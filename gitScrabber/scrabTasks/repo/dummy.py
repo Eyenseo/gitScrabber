@@ -1,8 +1,14 @@
-name = "run2"
+name = "dummy"
 version = "1.0.0"
 
 
-def run2(report, project):
+def dummy(report, project):
+    """
+    Dummy example - see authorContributerCounter for a better one
+
+    :param    report:   The report
+    :param    project:  The project
+    """
     if('data' not in project):
         handle_scrab_data(report, project)
     else:
@@ -14,7 +20,4 @@ def handle_scrab_data(report, project):
 
 
 def handle_manual_data(report, project):
-    if 'authors' in project['data']:
-        report['authors'] = project['data']['authors']
-    if 'contributors' in project['data']:
-        report['contributors'] = project['data']['contributors']
+    pass

@@ -5,8 +5,8 @@ tasks:
 projects:
   foo://bar:
     run:
-      author#: 3
-      contributor#: 7
+      author#: 300
+      contributor#: 700
     run2: {}
   https://github.com/Eyenseo/ABI:
     run:

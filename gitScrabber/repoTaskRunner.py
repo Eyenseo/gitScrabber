@@ -6,9 +6,18 @@ import os
 
 
 class RepoTaskRunner:
-    """docstring for RepoTaskRunner"""  # TODO
+
+    """
+    The RepoTaskRunner executes the scrab tasks specified in the task.yaml file
+
+    :param  task_yaml:         The task configuration
+    :param  old_report:        The old report
+    :param  scrabTaskManager:  The scrab task manager
+    :param  git_dir:           The git dir
+    """
 
     def __init__(self, task_yaml, old_report, scrabTaskManager, git_dir):
+
         super(RepoTaskRunner, self).__init__()
         self.max_workers = 10
         self.task_yaml = task_yaml
@@ -18,19 +27,34 @@ class RepoTaskRunner:
         if(not git_dir.endswith('/')):
             self.git_dir += '/'
 
-    def repo_tasks(self, project):
+    def __repo_tasks(self, project):
+        """
+        The repo task wrapper
+
+        This function is responsible to ensure that the repo is present - if it
+        is a repo scrab task. it also decides weather the scrab task has to run
+        again based in its version and the version mentioned in the old report
+        as well as if the repo had file changes
+
+        :param    self:     The object
+        :param    project:  The project
+
+        :returns: The sub-report containing all results of the scrab tasks that
+                  ran for this project
+        """
+
         report = {}
         updated = True
 
         if('data' not in project):
-            updated = self.update_repo(self.git_dir, project['url'])
-            project['location'] = self.get_repo_location(
+            updated = self.__update_repo(self.git_dir, project['url'])
+            project['location'] = self.__get_repo_path(
                 self.git_dir, project['url'])
 
         for task_name in self.task_yaml['tasks']['repo']:
             scrabTask = self.scrabTaskManager.get_task(task_name)
 
-            if(updated or self.changed_task(scrabTask)):
+            if(updated or self.__changed_task(scrabTask)):
                 task_report = {}
                 scrabTask['function'](task_report, project)
                 report[scrabTask['name']] = task_report
@@ -40,10 +64,28 @@ class RepoTaskRunner:
 
         return report
 
-    def get_repo_location(self, cwd, url):
+    def __get_repo_path(self, cwd, url):
+        """
+        Gets the path for the git repos.
+
+        :param    cwd:  The base path / 'working directory'
+        :param    url:  The url to the repo
+
+        :returns: The repo path
+        """
         return cwd + '/' + url.rsplit('/', 1)[-1]
 
-    def check_repo_folder(self, repo):
+    def __check_repo_folder(self, repo):
+        """
+        Checks weather the given repo folder is indeed a repo or a used folder
+
+        :param     repo:       The repo path to check
+
+        :returns:  True if it is a repo folder False if the folder does not
+                   exist
+
+        :exception Exception:  If the folder exists and isn't git repo
+        """
         if os.path.isdir(repo + '/.git'):
             try:
                 utils.run(program='git', args=['status'], cwd=repo)
@@ -59,10 +101,19 @@ class RepoTaskRunner:
             else:
                 return False
 
-    def update_repo(self, cwd, url):
-        repo_location = self.get_repo_location(cwd, url)
+    def __update_repo(self, cwd, url):
+        """
+        Updates the repo - either cloning it for the first time or pulling
+        changes
 
-        if(self.check_repo_folder(repo_location)):
+        :param    cwd:  The 'working directory' for the git command
+        :param    url:  The url to the git repo
+
+        :returns: True if anything changed False if nothing changed
+        """
+        repo_location = self.__get_repo_path(cwd, url)
+
+        if(self.__check_repo_folder(repo_location)):
             result = utils.run(program='git', args=['pull'], cwd=repo_location)
             if 'Already up-to-date' in result:
                 return False
@@ -70,37 +121,77 @@ class RepoTaskRunner:
             utils.run(program='git', args=['clone', url], cwd=cwd)
         return True
 
-    def changed_task(self, scrabTask):
-        return\
-            not self.old_report\
-            or scrabTask['name'] not in self.old_report['tasks']\
-            or version.parse(self.old_report['tasks'][scrabTask['name']])\
+    def __changed_task(self, scrabTask):
+        """
+        Checks weather the scrab task has to be re run based on an old report
+        and the scab task versions
+
+        :param    scrabTask:  The scrab task to check against
+
+        :returns: True if the scrab task has to rerun False otherwise
+        """
+        return(
+            not self.old_report
+            or scrabTask['name'] not in self.old_report['tasks']
+            or version.parse(self.old_report['tasks'][scrabTask['name']])
             != version.parse(scrabTask['version'])
+        )
 
     def run_tasks(self):
+        """
+        Executes the scrab tasks on the projects concurrently - each project
+        will have its own thread were the crab tasks are run
+
+        :returns: The report that contains the results of the scrab tasks
+        """
         with ThreadPoolExecutor(max_workers=self.max_workers) as executor:
             futures = {}
             projects = self.task_yaml['projects']
             reports = {}
 
-            self.queue_repo_tasks(projects, futures, executor)
-            self.collect_repo_tasks(futures, reports)
+            self.__queue_repo_projects(projects, futures, executor)
+            self.__collect_repo_tasks(futures, reports)
 
         return reports
 
-    def queue_repo_tasks(self, projects, futures, executor):
+    def __queue_repo_projects(self, projects, futures, executor):
+        """
+        Queues the projects in the ThreadPoolExecutor
+
+        :param  projects:  The projects
+        :param  futures:   The futures that will return the results of the scrab
+                           tasks
+        :param  executor:  The executor that will execute the projects
+        """
         for project in projects:
             futures[executor.submit(
-                self.repo_tasks, project)] = project
+                self.__repo_tasks, project)] = project
 
-    def collect_repo_tasks(self, futures, reports):
+    def __collect_repo_tasks(self, futures, report):
+        """
+        Collects the results form the scrab tasks on a project basis
+
+        This function is effectively blocking until all results from all futures
+        are obtained
+
+        :param  futures:  The futures to collect the results from
+        :param  report:   The report to write the sub-reports into
+        """
         for future in as_completed(futures):
             project = futures[future]
-            result = self.get_repo_task_result(project, future)
+            result = self.__get_repo_task_result(project, future)
 
-            reports[project['url']] = result
+            report[project['url']] = result
 
-    def get_repo_task_result(self, project, future):
+    def __get_repo_task_result(self, project, future):
+        """
+        Gets the repo task result.
+
+        :param    project:  The project to get the result from the future from
+        :param    future:   The future to get the result from
+
+        :returns: The repo task result.
+        """
         try:
             return future.result()
         except Exception as e:

@@ -7,13 +7,24 @@ import scrabTasks.report
 
 
 class ScrabTaskManager:
-    """docstring for scrabTaskManager"""    # TODO
+    """
+    ScrabTaskManager will load all modules under scrabTasks.repo and
+    scrabTasks.report upon instantiation. These have to follow a specific format
+    to be called automagically later on.
+    """
 
     def __init__(self):
         self.__scrabTasks = {}
         self.load_tasks()
 
-    def obtain_name(self, module):
+    def __obtain_name(self, module):
+        """
+        Obtains the name of the function that represents the scrab task
+
+        :param    module:  The module the function and function name exists in
+
+        :returns: the name of the function
+        """
         name = ''
         try:
             name = getattr(module, 'name')
@@ -28,7 +39,17 @@ class ScrabTaskManager:
                             "for your ScrabTask".format(name))
         return name
 
-    def obtain_version(self, module, name):
+    def __obtain_version(self, module, name):
+        """
+        Obtains the version of the function that represents the scrab task
+
+        :param    module:  The module the function and function version exists
+                           in
+        :param    name:    The name of the function
+
+        :returns: the version of the function
+        """
+
         try:
             return getattr(module, 'version')
         except Exception as e:
@@ -36,7 +57,15 @@ class ScrabTaskManager:
             raise Exception("You have to specify the version of your "
                             "ScrabTask: {}".format(name)).with_traceback(tb)
 
-    def obtain_function(self, module, name,):
+    def __obtain_function(self, module, name,):
+        """
+        Obtains the function that represents the scrab task
+
+        :param    module:  The module the function exists in
+        :param    name:    The name of the function
+
+        :returns: the version of the function
+        """
         try:
             return getattr(module, name)
         except Exception as e:
@@ -46,18 +75,28 @@ class ScrabTaskManager:
                             "ScrabTask: {}".format(name)).with_traceback(tb)
 
     def load_tasks(self):
+        """
+        Loads all scrab tasks
+        """
         modules = {**import_submodules(scrabTasks.repo),
                    **import_submodules(scrabTasks.report)}
 
         for _, module in modules.items():
-            name = self.obtain_name(module)
-            version = self.obtain_version(module, name)
-            function = self.obtain_function(module, name)
+            name = self.__obtain_name(module)
+            version = self.__obtain_version(module, name)
+            function = self.__obtain_function(module, name)
 
             self.__scrabTasks[name] = {
                 'name': name, 'function': function, 'version': version}
 
     def get_task(self, name):
+        """
+        Gets the task.
+
+        :param    name:  The name of the scrab task to return
+
+        :returns: The scrab task
+        """
         try:
             return self.__scrabTasks[name]
         except Exception as e:
@@ -68,13 +107,17 @@ class ScrabTaskManager:
 
 
 def import_submodules(package, recursive=True):
-    """ Import all submodules of a module, recursively, including subpackages
+    """
+    Import all submodules of a module, recursively, including subpackages
 
-    :param package: package (name or actual module)
-    :type package: str | module
-    :rtype: dict[str, types.ModuleType]
+    :param    package:    package (name or actual module)
+    :type     package:    str | module
+    :param    recursive:  if the modules are loaded recursively
+    :rtype:   dict[str, types.ModuleType]
 
     Taken from http://stackoverflow.com/a/25562415/1935553
+
+    :returns: A dict with the modules and module names that were loaded
     """
     if isinstance(package, str):
         package = importlib.import_module(package)

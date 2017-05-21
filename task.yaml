@@ -1,13 +1,21 @@
+# Projects to analyse
 projects:
+# git urls that will be cloned / pulled
 - url: https://github.com/Eyenseo/ABI
+# data for projects that do not provide a git repo but should be analysed by the reportScrabber
 - data:
-    author#: 3
-    contributor#: 7
-    stars: 3
+    # these data construct have to resemble what the ScrabberTasks expect
+    author#: 300
+    contributor#: 700
+    stars: 42
+  # The url is given for identification
   url: foo://bar
+# Tasks that should be run
 tasks:
+  # Tasks that should run for the repos
   repo:
-  - run
-  - run2
+  - author_contributor_counter
+  - dummy
+  # Tasks that should run over the previously generated report
   report:
-  - rrun
+  - rdummy

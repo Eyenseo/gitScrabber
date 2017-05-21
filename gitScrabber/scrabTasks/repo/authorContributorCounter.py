@@ -1,20 +1,32 @@
 import utils
 import re
 
-name = "run"
+name = "author_contributor_counter"
 version = "1.0.0"
 
 
-def run(report, project):
+def author_contributor_counter(report, project):
+    """
+    Counts the authors and contributors of a repo
+
+    :param  report:   The report
+    :param  project:  The project
+    """
     if('data' not in project):
-        handle_scrab_data(report, project)
+        __handle_scrab_data(report, project)
     else:
-        handle_manual_data(report, project)
+        __handle_manual_data(report, project)
 
 
-def get_shrotlog_map(project):
+def __create_shorlog(project):
+    """
+    Creates a dict that represents the shortlog that git outputs
+
+    :param    project:  The project
+
+    :returns: The shrotlog dict
+    """
     shortlog = utils.run('git', ['shortlog', '-s', '-n'], project['location'])
-
     mapped_log = []
 
     for line in shortlog.split('\n'):
@@ -24,7 +36,14 @@ def get_shrotlog_map(project):
     return mapped_log
 
 
-def calc_contributor_authors(mapped_shortlog):
+def __calc_contributor_authors(mapped_shortlog):
+    """
+    Calculates who is considered a contributor  or an author.
+
+    :param    mapped_shortlog:  The mapped shortlog
+
+    :returns: The contributor authors as a dict.
+    """
     top_cont, _ = mapped_shortlog[0]
     cutof = top_cont * 0.75     # FIXME This is just for demonstration purposes
     authors = []
@@ -39,9 +58,15 @@ def calc_contributor_authors(mapped_shortlog):
     return {'authors': authors, 'contributors': contributors, }
 
 
-def handle_scrab_data(report, project):
-    mapped_shortlog = get_shrotlog_map(project)
-    classified = calc_contributor_authors(mapped_shortlog)
+def __handle_scrab_data(report, project):
+    """
+    Writes the scrabbed data in the report
+
+    :param  report:   The report
+    :param  project:  The project
+    """
+    mapped_shortlog = __create_shorlog(project)
+    classified = __calc_contributor_authors(mapped_shortlog)
 
     report['author#'] = len(classified['authors'])
     # report['authors'] = classified['authors']
@@ -50,7 +75,14 @@ def handle_scrab_data(report, project):
     # report['contributors'] = classified['contributors']
 
 
-def handle_manual_data(report, project):
+def __handle_manual_data(report, project):
+    """
+    Writes the manually provided data in the report
+
+    :param    report:   The report
+    :param    project:  The project
+    """
+
     if 'author#' in project['data']:
         report['author#'] = project['data']['author#']
     # if 'authors' in project['data']:

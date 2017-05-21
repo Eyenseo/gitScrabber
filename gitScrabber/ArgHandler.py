@@ -7,14 +7,16 @@ class PathType(object):
     """ Taken from http://stackoverflow.com/a/33181083/1935553"""
 
     def __init__(self, exists=True, type='file', dash_ok=True):
-        '''exists:
-                True: a path that does exist
-                False: a path that does not exist, in a valid parent directory
-                None: don't care
-           type: file, dir, symlink, None, or a function returning True for
-                 valid paths
-                None: don't care
-           dash_ok: whether to allow "-" as stdin/stdout'''
+        """
+        :param  exists:   True: a path that does exist
+                          False: a path that does not exist, in a valid parent
+                          directory
+                          None: don't care
+        :param  type:     file, dir, symlink, None, or a function returning
+                          True for valid paths
+                          None: don't care
+        :param  dash_ok:  whether to allow "-" as stdin/stdout
+        """
 
         assert exists in (True, False, None)
         assert type in ('file', 'dir', 'symlink', None)\
@@ -67,7 +69,12 @@ class PathType(object):
         return string
 
 
-def setup_parser():
+def __setup_parser():
+    """
+    Set up  of the argument parser
+
+    :returns: argument parser
+    """
     parser = argparse.ArgumentParser(
         description='ScrabGitRepos',
         formatter_class=argparse.MetavarTypeHelpFormatter)
@@ -100,7 +107,13 @@ def setup_parser():
     return parser
 
 
-def check_arguments(parser, args):
+def __check_arguments(parser, args):
+    """
+    Check the given arguments for bade combinations
+
+    :param  parser:  The parsed parser
+    :param  args:    The arguments
+    """
     if ('force' in vars(args) and
             'savereport' not in vars(args)):
         parser.error('Force is only needed to overwrite an existing report')
@@ -112,7 +125,14 @@ def check_arguments(parser, args):
 
 
 def parse_args(args=None):
-    parser = setup_parser()
+    """
+    Parses the arguments
+
+    :param    args:  The command line arguments
+
+    :returns: The parsed arguments
+    """
+    parser = __setup_parser()
     args = None
 
     if(args):
@@ -120,6 +140,6 @@ def parse_args(args=None):
     else:
         parsed_args = parser.parse_args()
 
-    check_arguments(parser, parsed_args)
+    __check_arguments(parser, parsed_args)
 
     return parsed_args
