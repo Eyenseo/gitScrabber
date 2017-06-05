@@ -126,5 +126,6 @@ def main(args=None):
         force_overwrite=args.force
     ).scrab()
 
+
 if __name__ == "__main__":
     main(['-t', '../task.yaml', '-p', '-g', '/tmp'])
