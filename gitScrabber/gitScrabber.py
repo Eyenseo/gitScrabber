@@ -1,5 +1,5 @@
 from scrabTaskManager import ScrabTaskManager
-from repoTaskRunner import RepoTaskRunner
+from gitTaskRunner import GitTaskRunner
 from reportTaskRunner import ReportTaskRunner
 import ArgHandler
 
@@ -49,24 +49,24 @@ class GitScrabber:
         Adds the ScrabTask versions to the report
 
         :param  report:  the report to write into
-        :param  kind:    the kind of scrabber to add - either repo or report
+        :param  kind:    the kind of scrabber to add - either git repo or report
         """
         for task in self.__tasks['tasks'][kind]:
             scrabTask = self.__scrabTaskManager.get_task(task)
             report['tasks'][task] = scrabTask['version']
 
-    def __repo_tasks(self, report):
+    def __git_tasks(self, report):
         """
         Executes the RepoTaskRunner
 
         :param  report:  report to write into
         """
-        report['projects'] = RepoTaskRunner(
+        report['projects'] = GitTaskRunner(
             self.__tasks,
             self.__old_report,
             self.__scrabTaskManager,
             self.__git_dir).run_tasks()
-        self.__add_scrab_versions(report, 'repo')
+        self.__add_scrab_versions(report, 'git')
 
     def __report_tasks(self, report):
         """
@@ -100,7 +100,7 @@ class GitScrabber:
         """
         report = {'tasks': {}}
 
-        self.__repo_tasks(report)
+        self.__git_tasks(report)
         self.__report_tasks(report)
 
         self.__handele_results(report)
