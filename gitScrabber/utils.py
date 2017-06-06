@@ -51,7 +51,6 @@ def run(program, args=[], cwd=None):
     :returns: the data from stdout of the program
     """
     __validate_exec_args(program, args)
-
     process = None
     if(args is not None):
         process = subprocess.Popen(
@@ -63,6 +62,37 @@ def run(program, args=[], cwd=None):
             stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 
     return __handle_result(process)
+
+
+def deep_merge(a, b, overwrite=False, path=None):
+    """
+    Deep merges dict b in dict a
+
+    Taken from https://stackoverflow.com/a/7205107/1935553
+
+    :param    a:          dict to merged into
+    :param    b:          dict to merge
+    :param    overwrite:  If true values from a will be overwritten by values
+                          from b that share the same key in the same level
+    :param    path:       The path - needed for error reporting
+
+    :returns: deep merged dict (a)
+    """
+    if path is None:
+        path = []
+    for key in b:
+        if key in a:
+            if isinstance(a[key], dict) and isinstance(b[key], dict):
+                deep_merge(a[key], b[key], overwrite, path + [str(key)])
+            elif not overwrite or a[key] == b[key]:
+                pass  # same leaf value
+            elif overwrite:
+                a[key] = b[key]
+            else:
+                raise Exception('Conflict at %s' % '.'.join(path + [str(key)]))
+        else:
+            a[key] = b[key]
+    return a
 
 
 if __name__ == "__main__":

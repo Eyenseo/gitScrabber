@@ -1,6 +1,5 @@
+from taskExecutionManager import TaskExecutionManager
 from scrabTaskManager import ScrabTaskManager
-from gitTaskRunner import GitTaskRunner
-from reportTaskRunner import ReportTaskRunner
 import ArgHandler
 
 import ruamel.yaml
@@ -44,40 +43,6 @@ class GitScrabber:
         else:
             self.__old_report = None
 
-    def __add_scrab_versions(self, report, kind):
-        """
-        Adds the ScrabTask versions to the report
-
-        :param  report:  the report to write into
-        :param  kind:    the kind of scrabber to add - either git repo or report
-        """
-        for task in self.__tasks['tasks'][kind]:
-            scrabTask = self.__scrabTaskManager.get_task(task)
-            report['tasks'][task] = scrabTask['version']
-
-    def __git_tasks(self, report):
-        """
-        Executes the RepoTaskRunner
-
-        :param  report:  report to write into
-        """
-        report['projects'] = GitTaskRunner(
-            self.__tasks,
-            self.__old_report,
-            self.__scrabTaskManager,
-            self.__git_dir).run_tasks()
-        self.__add_scrab_versions(report, 'git')
-
-    def __report_tasks(self, report):
-        """
-        Executes the ReportTaskRunner
-
-        :param  report:  report to write into
-        """
-        ReportTaskRunner(self.__tasks, report,
-                         self.__scrabTaskManager).run_tasks()
-        self.__add_scrab_versions(report, 'report')
-
     def __handele_results(self, report):
         """
         Writes the results of the scrab tasks to file and or to stdout
@@ -96,12 +61,15 @@ class GitScrabber:
         """
         Main Function - starts the execution of the scrab tasks
 
-        :returns: the report as python objects
+        :returns: the report as python object
         """
-        report = {'tasks': {}}
-
-        self.__git_tasks(report)
-        self.__report_tasks(report)
+        executionManager = TaskExecutionManager(
+            self.__git_dir,
+            self.__tasks['tasks'],
+            self.__tasks['projects'],
+            self.__old_report,
+            self.__scrabTaskManager)
+        report = executionManager.create_report()
 
         self.__handele_results(report)
 
