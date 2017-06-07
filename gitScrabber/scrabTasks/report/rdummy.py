@@ -8,4 +8,4 @@ def rdummy(report):
 
     :param  report:  The report to analyse
     """
-    report["report_exampe"] = "from: rdummy"
+    report["report_exampe"] = "from: report_exampe"

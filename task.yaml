@@ -1,21 +1,34 @@
 # Projects to analyse
 projects:
 # git urls that will be cloned / pulled
-- url: https://github.com/Eyenseo/ABI
-# data for projects that do not provide a git repo but should be analysed by the reportScrabber
-- data:
-    # these data construct have to resemble what the ScrabberTasks expect
-    author#: 300
-    contributor#: 700
-    stars: 42
+- git: https://github.com/Eyenseo/ABI
+  # manual can be specified for git and archive projects
+  # it will be overwritten by the git and archive tasks
+  manual:
+    # these data constructs have to resemble what the reportScrabberTasks expect
+    author_contributor_counter:
+      author#: 20 # will be corrected
+      Foo: Bar # will stay as is
+# archive urls that will be downloaded and analysed
+- archive: ftp://ftp.franken.de/pub/crypt/cryptlib/cl3431.zip
+# manual data for projects that do not provide a git repo but should be analysed by the reportScrabber
+- manual:
+    # these data constructs have to resemble what the reportScrabberTasks expect
+    author_contributor_counter:
+      author#: 300
+      contributor#: 700
+    github_meta:
+      stars: 42
   # The url is given for identification
-  url: foo://bar
+  id: foo://bar
 # Tasks that should be run
 tasks:
-  # Tasks that should run for the repos
-  repo:
+  # Tasks that should run for the git repos
+  git:
   - author_contributor_counter
-  - dummy
+  - gdummy
+  archive:
+  - adummy
   # Tasks that should run over the previously generated report
   report:
   - rdummy

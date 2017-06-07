@@ -2,13 +2,14 @@ import importlib
 import pkgutil
 import sys
 
-import scrabTasks.repo
+import scrabTasks.git
 import scrabTasks.report
+import scrabTasks.archive
 
 
 class ScrabTaskManager:
     """
-    ScrabTaskManager will load all modules under scrabTasks.repo and
+    ScrabTaskManager will load all modules under scrabTasks.git and
     scrabTasks.report upon instantiation. These have to follow a specific format
     to be called automagically later on.
     """
@@ -78,8 +79,9 @@ class ScrabTaskManager:
         """
         Loads all scrab tasks
         """
-        modules = {**import_submodules(scrabTasks.repo),
-                   **import_submodules(scrabTasks.report)}
+        modules = {**import_submodules(scrabTasks.git),
+                   **import_submodules(scrabTasks.report),
+                   **import_submodules(scrabTasks.archive)}
 
         for _, module in modules.items():
             name = self.__obtain_name(module)
