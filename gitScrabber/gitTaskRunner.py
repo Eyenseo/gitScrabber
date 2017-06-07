@@ -66,7 +66,7 @@ class GitTaskRunner:
             if 'Already up-to-date' in result:
                 return False
         else:
-            utils.run(program='git', args=['clone', url, '"'+cache_dir+'"'])
+            utils.run(program='git', args=['clone', url, cache_dir])
         return True
 
     def __changed_task(self, scrabTask):
