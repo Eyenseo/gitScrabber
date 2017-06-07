@@ -5,6 +5,7 @@ from utils import deep_merge
 
 from concurrent.futures import ThreadPoolExecutor, as_completed
 import sys
+import os
 
 
 class TaskExecutionManager:
@@ -118,7 +119,7 @@ class TaskExecutionManager:
 
         :returns: The path to the cache directory for the given project
         """
-        return self.__cache_dir + '/' + self.__project_id(project)
+        return os.path.join(self.__cache_dir, self.__project_id(project))
 
     def __extract_tasks(self):
         """
