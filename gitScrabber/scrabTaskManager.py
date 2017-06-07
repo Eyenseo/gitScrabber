@@ -4,6 +4,7 @@ import sys
 
 import scrabTasks.git
 import scrabTasks.report
+import scrabTasks.archive
 
 
 class ScrabTaskManager:
@@ -79,7 +80,8 @@ class ScrabTaskManager:
         Loads all scrab tasks
         """
         modules = {**import_submodules(scrabTasks.git),
-                   **import_submodules(scrabTasks.report)}
+                   **import_submodules(scrabTasks.report),
+                   **import_submodules(scrabTasks.archive)}
 
         for _, module in modules.items():
             name = self.__obtain_name(module)

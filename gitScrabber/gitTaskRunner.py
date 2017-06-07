@@ -5,7 +5,8 @@ import os
 
 class GitTaskRunner:
     """
-    The GitTaskRunner is responsible for executing tasks that crab at a git repo
+    The GitTaskRunner is responsible for executing tasks that scrab at a git
+    repo
 
     :param  project:           The project the scrab tasks run for
     :param  tasks:             The tasks that will run for the project

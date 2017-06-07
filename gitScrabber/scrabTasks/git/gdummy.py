@@ -1,8 +1,8 @@
-name = "dummy"
+name = "gdummy"
 version = "1.0.0"
 
 
-def dummy(report, project):
+def gdummy(report, project):
     """
     Dummy example - see authorContributerCounter for a better one
 

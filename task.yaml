@@ -26,7 +26,9 @@ tasks:
   # Tasks that should run for the git repos
   git:
   - author_contributor_counter
-  - dummy
+  - gdummy
+  archive:
+  - adummy
   # Tasks that should run over the previously generated report
   report:
   - rdummy

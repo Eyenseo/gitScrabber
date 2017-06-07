@@ -1,4 +1,5 @@
 from gitTaskRunner import GitTaskRunner
+from archiveTaskRunner import ArchiveTaskRunner
 from reportTaskRunner import ReportTaskRunner
 from utils import deep_merge
 
@@ -31,9 +32,14 @@ class TaskExecutionManager:
         self.__max_workers = max_workers if max_workers > 0 else 1
 
         self.__task_wrapper = {
-            # 'archive': self.__archive_task_wrapper,  # TODO
+            'archive': self.__archive_task_wrapper,
             'git': self.__git_task_wrapper,
             'manual': self.__manual_task_wrapper,
+        }
+        self.__kind_mapper = {
+            'archive': ['archive', 'git'],
+            'git': ['git'],
+            'manual': ['archive', 'git', 'manual'],
         }
 
         if(not cache_dir.endswith('/')):
@@ -90,6 +96,8 @@ class TaskExecutionManager:
         :returns: An id for the given project
 
         TODO check weather it is indeed a unique id
+        FIXME Handle Windows bullshit -> no dots no "special" characters aso
+        TODO write the id in the project so that scrab Tasks can use the id
         """
         if('git' in project):
             return project['git'].rsplit('/', 1)[-1]
@@ -154,7 +162,7 @@ class TaskExecutionManager:
         old_tasks = self.__extract_tasks()
 
         for project in self.__projects:
-            if kind in project:
+            if any(x in self.__kind_mapper[kind] for x in project):
                 old_data = self.__extract_data(project)
                 future = executor.submit(task_wrapper, project,
                                          old_tasks, old_data)
@@ -209,8 +217,16 @@ class TaskExecutionManager:
         futures = self.__queue_projects(executor, kind)
         return self.__collect_task_results(futures)
 
-    # def __run_archive_tasks(self):  # TODO
-    #     return self.__multithreaded_tasks('archive')
+    def __archive_task_wrapper(self, project, old_tasks, old_data):
+        runner = ArchiveTaskRunner(project, self.__tasks['archive'],
+                                   old_tasks, old_data,
+                                   self.__scrabTaskManager)
+        return runner.run_tasks()
+
+    def __run_archive_tasks(self):
+        report = self.__multithreaded_tasks('archive')
+        report = {**report, **self.__add_scrab_versions('archive')}
+        return report
 
     def __git_task_wrapper(self, project, old_tasks, old_data):
         """
@@ -298,8 +314,7 @@ class TaskExecutionManager:
         report = {}
         deep_merge(report, self.__run_manual_tasks())
         deep_merge(report, self.__run_git_tasks(), overwrite=True)
-        # deep_merge(report, self.__run_archive_tasks(report), overwrite=True)
-        # # TODO
+        deep_merge(report, self.__run_archive_tasks())
         return self.__run_report_tasks(report)
 
     def create_report(self):
