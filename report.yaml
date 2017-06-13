@@ -1,16 +1,44 @@
-tasks:
-  author_contributor_counter: 1.0.0
-  dummy: 1.0.0
-  rdummy: 1.0.0
 projects:
+  ftp://ftp.franken.de/pub/crypt/cryptlib/cl3431.zip:
+    adummy: {}
   foo://bar:
+    # these data constructs have to resemble what the reportScrabberTasks expect
     author_contributor_counter:
       author#: 300
       contributor#: 700
-    dummy: {}
-  https://github.com/Eyenseo/ABI:
+    metadata_collector:
+      stars: 42
+  https://github.com/ZewoGraveyard/OpenSSL:
     author_contributor_counter:
       author#: 1
+      contributor#: 14
+    metadata_collector:
+      stars: 32
+      languages:
+      - Swift
+      downloads: 0
+      forks: 18
+    gdummy: {}
+    adummy: {}
+  https://github.com/Eyenseo/ABI:
+    # these data constructs have to resemble what the reportScrabberTasks expect
+    author_contributor_counter:
+      author#: 1  # will be corrected
+      Foo: Bar # will stay as is
       contributor#: 1
-    dummy: {}
-report_exampe: 'from: rdummy'
+    metadata_collector:
+      stars: 2
+      languages:
+      - C
+      - CMake
+      downloads: 0
+      forks: 0
+    gdummy: {}
+    adummy: {}
+tasks:
+  author_contributor_counter: 1.0.0
+  metadata_collector: 1.0.0
+  gdummy: 1.0.0
+  adummy: 1.0.0
+  rdummy: 1.0.0
+report_exampe: 'from: report_exampe'
