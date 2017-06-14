@@ -17,53 +17,67 @@ def metadata_collector(report, project):
     projectPath = project['git']
     url = projectPath.replace('https://github.com/', 'https://api.github.com/repos/')    
 
-    report['stars'] = __get(project, '', 'stargazers_count') 
-    report['languages'] = __get_languages(project)
+    report['stars'] =  __get_stars(project)
+    language_data = __get_language_data(project)
+    report['languages'] = language_data['languages']
+    report['main_language'] = language_data['main_language']
     # the downloads api is deprecated - doesn't work anymore
-    report['downloads'] = __get(project, '/downloads', 'download_count')
+    #report['downloads'] = __get(project, '/downloads', 'download_count')
     report['forks'] = __get_forks_count(project)
 
-def __get_languages(project):
-	"""
+def __get_language_data(project):
+    """
     returns either 0 or a list of languages
 
     :param    project:  The project
-	"""
-
-    data = __get(project, '/languages', None)    
-    if isinstance( data, int ):
-        return data
+    """
+    data = __get(project, '/languages')
+    if not data:
+        return 0
     else:
-    	return list(data.keys())
+        maxNumBytes = max(data.values())
+        main_language = None
+        for key in data:
+            if data[key] is maxNumBytes:
+                main_language = key
+
+        return {'languages': list(data.keys()), 'main_language': main_language}
 
 def __get_forks_count(project):
-	"""
-    returns either 0 or a the nr of forks
-
-    :param    project:  The project
-	"""
-	data = __get(project, '/forks', None)
-	if data != 0:	    
-	    return len(data)
-	return data
-
-
-def __get(project, urlExtension, fieldName):
     """
-    returns either 0 if data object is empty, the entire data object, or the value to a given key 
+    returns either 0 or the nr of forks
 
     :param    project:  The project
-	"""
+    """
+    
+    data = __get(project, '/forks')
+    if not data:        
+        return 0
+    else:
+        return len(data)
+
+def __get_stars(project):
+    """
+    returns either 0 or the nr of stars
+
+    :param    project:  The project
+    """
+    data = __get(project, '')
+    if not data:
+        return 0
+    else:
+        return data['stargazers_count']
+
+def __get(project, urlExtension):
+    """
+    returns a json object or list depending on the url
+
+    :param    project:  The project
+    """
     projectPath = project['git']
     url = projectPath.replace('https://github.com/', 'https://api.github.com/repos/')
 
     url = url+urlExtension
-    response = requests.get(url)
-    data = response.json()    
+    response = requests.get(url)    
 
-    if not data:
-    	return 0
-    elif fieldName is None:
-        return data
-    else:    	
-        return data[fieldName] 
+    return response.json()   
