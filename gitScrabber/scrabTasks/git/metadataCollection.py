@@ -10,12 +10,7 @@ def metadata_collector(report, project):
 
     :param    report:   The report
     :param    project:  The project
-    """
-    print(requests.get('https://api.github.com/rate_limit').json())
-    
-
-    projectPath = project['git']
-    url = projectPath.replace('https://github.com/', 'https://api.github.com/repos/')    
+    """    
 
     report['stars'] =  __get_stars(project)
     language_data = __get_language_data(project)
@@ -27,29 +22,19 @@ def metadata_collector(report, project):
 
 def __get_language_data(project):
     """
-    returns either 0 or a list of languages
+    returns either None or a list of languages
 
     :param    project:  The project
     """
     data = __get(project, '/languages')
-    if not data:
-        return 0
-    else:
-        maxNumBytes = max(data.values())
-        main_language = None
-        for key in data:
-            if data[key] is maxNumBytes:
-                main_language = key
-
-        return {'languages': list(data.keys()), 'main_language': main_language}
+    return {'languages': list(data.keys()), 'main_language': max(data, key=data.get)}
 
 def __get_forks_count(project):
     """
     returns either 0 or the nr of forks
 
     :param    project:  The project
-    """
-    
+    """    
     data = __get(project, '/forks')
     if not data:        
         return 0
@@ -71,13 +56,22 @@ def __get_stars(project):
 def __get(project, urlExtension):
     """
     returns a json object or list depending on the url
+    requires a personal access token, these can be created here: https://github.com/settings/tokens 
 
     :param    project:  The project
     """
-    projectPath = project['git']
-    url = projectPath.replace('https://github.com/', 'https://api.github.com/repos/')
+    #datei mit client-id & client_secret vorraussetzten https://developer.github.com/v3/#authentication    
+    projectPath = project['git']    
+    replaceStr = None
+    if 'git@' in projectPath: 
+        replaceStr = 'git@github.com:'        
+    elif 'https' in projectPath:
+        replaceStr = 'https://github.com/'
+    else:
+        replaceStr = 'http://github.com/'
 
-    url = url+urlExtension
-    response = requests.get(url)    
+    myAccessToken = 'personalAccessToken' #TODO replace with own access token like so myAccessToken = '123456789012345'
+    url = projectPath.replace(replaceStr, 'https://api.github.com/repos/')+urlExtension+"?access_token="+myAccessToken    
+    response = requests.get(url)
 
-    return response.json()   
+    return response.json()
