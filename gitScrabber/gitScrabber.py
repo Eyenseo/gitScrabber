@@ -1,6 +1,6 @@
 from taskExecutionManager import TaskExecutionManager
 from scrabTaskManager import ScrabTaskManager
-import ArgHandler
+import argHandler
 
 import ruamel.yaml
 
@@ -83,7 +83,7 @@ def main(args=None):
 
     :returns: The results of the scrab method
     """
-    args = ArgHandler.parse_args(args)
+    args = argHandler.parse_args(args)
     return GitScrabber(
         task_file=args.tasks,
         report_file=args.report,
