@@ -86,4 +86,25 @@ def __get(project, urlExtension):
         urlExtension+"?access_token="+myAccessToken
     response = requests.get(url)
 
+    __check_for_error(response, url)
+
     return response.json()
+
+
+def __check_for_error(response, url):
+    if response.status_code < 200 or response.status_code >= 300:
+        message = None
+        response_json = response.json()
+
+        if 'message' in response_json:
+            message = response_json['message']
+
+        if message:
+            raise Exception(
+                "The error '{}'' occurred with the following message "
+                "'{}' while accessing '{}'".format(
+                    response.status_code, message, url))
+        else:
+            raise Exception(
+                "The error '{}'' occurred while accessing '{}'".format(
+                    response.status_code, url))
