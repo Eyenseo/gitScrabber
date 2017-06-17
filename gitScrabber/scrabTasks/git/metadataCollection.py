@@ -4,112 +4,156 @@ name = "metadata_collector"
 version = "1.0.0"
 
 
+class MetaDataCollector():
+    """
+    Convenience class to querie the github api to obtain the stars, languages
+    and forks of the given repo
+
+    :param    project:      The project
+    :param    global_args:  This class makes use of the github-token to
+                            circumvent the tight rate-limiting for the github
+                            api
+
+                            https://github.com/settings/tokens
+                            https://developer.github.com/v3/#authentication
+    """
+
+    def __init__(self, project, global_args):
+        self.__project = project
+        self.__global_args = global_args
+
+    def __check_for_error(self, response, url):
+        """
+        Checks for errors in the response of the github api
+
+        :param    response:  The response of the api query
+        :param    url:       The query url as error information
+        """
+        if response.status_code < 200 or response.status_code >= 300:
+            message = None
+            response_json = response.json()
+
+            if 'message' in response_json:
+                message = response_json['message']
+
+            if message:
+                raise Exception(
+                    "The error '{}'' occurred with the following message "
+                    "'{}' while accessing '{}'".format(
+                        response.status_code, message, url))
+            else:
+                raise Exception(
+                    "The error '{}'' occurred while accessing '{}'".format(
+                        response.status_code, url))
+
+    def __generate_api_url(self, urlExtension):
+        """
+        Generates the github api query url.
+
+        If a acces token was provided via 'github-token' it will be used here
+
+        :param    urlExtension:  The url extension for the specific api point
+
+        :returns: The url to query the github api
+        """
+        project_url = self.__project['git']
+        replaceStr = None
+
+        if project_url.startswith('git@github.com:'):
+            replaceStr = 'git@github.com:'
+        elif project_url.startswith('https://github.com/'):
+            replaceStr = 'https://github.com/'
+        elif project_url.startswith('http://github.com/'):
+            replaceStr = 'http://github.com/'
+        else:
+            raise Exception(
+                "Unsupported project - it has to be a github project but "
+                "the  url '{}' seems to be not from github.".format(
+                    project_url))
+
+        url = project_url.replace(replaceStr, 'https://api.github.com/repos/')
+        url += urlExtension
+
+        if self.__global_args['github-token']:
+            url += "?access_token="+self.__global_args['github-token']
+
+        return url
+
+    def __access_github_api(self, urlExtension):
+        """
+        Accesses the github api for the provided url extension e.g.:
+            urlExtension='/languages'
+            =>
+            https://api.github.com/repos//languages
+
+        :param    urlExtension:  The url extension
+
+        :returns: a json object or list depending on the url
+        """
+        url = self.__generate_api_url(urlExtension)
+
+        response = requests.get(url)
+        self.__check_for_error(response, url)
+
+        return response.json()
+
+    def get_language_data(self):
+        """
+        Queries the github api to obtain the languages used in the project
+
+        :returns: the a list of languages used in the project
+        """
+        data = self.__access_github_api('/languages')
+        return {
+            'languages': list(data.keys()),
+            'main_language': max(data, key=data.get)
+        }
+
+    def get_forks_count(self):
+        """
+        Queries the github api to obtain the number of forks of the project
+
+        :returns: either 0 or the nr of forks of the project
+        """
+        data = self.__access_github_api('/forks')
+        if not data:
+            return 0
+        else:
+            return len(data)
+
+    def get_stars(self):
+        """
+        Queries the github api to obtain the number of stars of the project
+
+        :returns: either 0 or the nr of stars of the project
+        """
+        data = self.__access_github_api('')
+        if not data:
+            return 0
+        else:
+            return data['stargazers_count']
+
+
 def metadata_collector(report, project, global_args):
     """
-    finds the stars, languages, forks and downlowads of each given repo
+    Queries the github api to obtain the stars, languages and forks of the given
+    repo
 
     :param    report:       The report
     :param    project:      The project
-    :param    global_args:  Arguments that will be passed to all tasks. They
-                            _might_ contain something that is useful for the
-                            task, but the task has to check if it is _there_ as
-                            these are user provided. If they are needed to work
-                            that check should happen in the argHandler.
+    :param    global_args:  This task scrubber makes use of the github-token to
+                            circumvent the tight rate-limiting for the github
+                            api
+
+                            https://github.com/settings/tokens
+                            https://developer.github.com/v3/#authentication
     """
 
-    report['stars'] = __get_stars(project)
-    language_data = __get_language_data(project)
+    meta = MetaDataCollector(project, global_args)
+
+    language_data = meta.get_language_data()
+
+    report['stars'] = meta.get_stars()
     report['languages'] = language_data['languages']
     report['main_language'] = language_data['main_language']
-    # the downloads api is deprecated - doesn't work anymore
-    # report['downloads'] = __get(project, '/downloads', 'download_count')
-    report['forks'] = __get_forks_count(project)
-
-
-def __get_language_data(project):
-    """
-    returns either None or a list of languages
-
-    :param    project:  The project
-    """
-    data = __get(project, '/languages')
-    return {
-        'languages': list(data.keys()),
-        'main_language': max(data, key=data.get)
-    }
-
-
-def __get_forks_count(project):
-    """
-    returns either 0 or the nr of forks
-
-    :param    project:  The project
-    """
-    data = __get(project, '/forks')
-    if not data:
-        return 0
-    else:
-        return len(data)
-
-
-def __get_stars(project):
-    """
-    returns either 0 or the nr of stars
-
-    :param    project:  The project
-    """
-    data = __get(project, '')
-    if not data:
-        return 0
-    else:
-        return data['stargazers_count']
-
-
-def __get(project, urlExtension):
-    """
-    returns a json object or list depending on the url
-    requires a personal access token, these can be created here:
-        https://github.com/settings/tokens
-
-    :param    project:  The project
-    """
-    # datei mit client-id & client_secret vorraussetzten
-    # https://developer.github.com/v3/#authentication
-    projectPath = project['git']
-    replaceStr = None
-    if 'git@' in projectPath:
-        replaceStr = 'git@github.com:'
-    elif 'https' in projectPath:
-        replaceStr = 'https://github.com/'
-    else:
-        replaceStr = 'http://github.com/'
-
-    # TODO replace with own access token like so myAccessToken =
-    # '123456789012345'
-    myAccessToken = 'personalAccessToken'
-    url = projectPath.replace(replaceStr, 'https://api.github.com/repos/') + \
-        urlExtension+"?access_token="+myAccessToken
-    response = requests.get(url)
-
-    __check_for_error(response, url)
-
-    return response.json()
-
-
-def __check_for_error(response, url):
-    if response.status_code < 200 or response.status_code >= 300:
-        message = None
-        response_json = response.json()
-
-        if 'message' in response_json:
-            message = response_json['message']
-
-        if message:
-            raise Exception(
-                "The error '{}'' occurred with the following message "
-                "'{}' while accessing '{}'".format(
-                    response.status_code, message, url))
-        else:
-            raise Exception(
-                "The error '{}'' occurred while accessing '{}'".format(
-                    response.status_code, url))
+    report['forks'] = meta.get_forks_count()
