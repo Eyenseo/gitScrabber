@@ -79,41 +79,55 @@ def __setup_parser():
     """
     parser = argparse.ArgumentParser(
         description='ScrabGitRepos',
-        formatter_class=argparse.MetavarTypeHelpFormatter)
-    parser.add_argument('-t', '--tasks',
-                        type=PathType(exists=True, type='file'),
-                        default=None,
-                        help='Path to the tasks.yaml file')
-    parser.add_argument('-r', '--report',
-                        type=PathType(exists=True, type='file'),
-                        default=None,
-                        help='Path to an old report as base.')
-    parser.add_argument('-o', '--output',
-                        type=PathType(exists=None, type='file'),
-                        default=None,
-                        help='Path where the report will be saved to.')
-    parser.add_argument('-c', '--config',
-                        type=PathType(exists=True, type='file'),
-                        default=None,
-                        help='Path to the configuration file')
-    parser.add_argument('--github-token',
-                        type=str,
-                        default=None,
-                        help='Access token for github to work with a higher '
-                        'query limit against their api')
-    parser.add_argument('-d', '--data',
-                        type=PathType(exists=True, type='dir'),
-                        default='.',
-                        help='Directory where the repositories and archives'
-                        ' are stored')
-    parser.add_argument('-p', '--print',
-                        action='store_true',
-                        default=False,
-                        help='If the report should be printed to stdout')
-    parser.add_argument('-f', '--force',
-                        action='store_true',
-                        default=False,
-                        help='Forces the override of a present report')
+        formatter_class=argparse.MetavarTypeHelpFormatter,
+        add_help=False)
+
+    required_args = parser.add_argument_group('Required arguments')
+    required_args.add_argument('-t', '--tasks',
+                               type=PathType(exists=True, type='file'),
+                               default=None,
+                               help="Path to the tasks.yaml file - can be "
+                               "provided via configuration file")
+
+    program_args = parser.add_argument_group('Program arguments')
+    program_args.add_argument('-r', '--report',
+                              type=PathType(exists=True, type='file'),
+                              default=None,
+                              help="Path to an old report as base")
+    program_args.add_argument('-o', '--output',
+                              type=PathType(exists=None, type='file'),
+                              default=None,
+                              help="Path where the report will be saved to")
+    program_args.add_argument('-c', '--config',
+                              type=PathType(exists=True, type='file'),
+                              default=None,
+                              help="Path to the configuration file - defaults "
+                              "to './gitScrabber.conf'")
+    program_args.add_argument('-d', '--data',
+                              type=PathType(exists=True, type='dir'),
+                              default='.',
+                              help="Directory where the repositories and "
+                              "archives are stored")
+    program_args.add_argument('-p', '--print',
+                              action='store_true',
+                              default=False,
+                              help="If the report should be printed to stdout "
+                              "- defaults to false")
+    program_args.add_argument('-f', '--force',
+                              action='store_true',
+                              default=False,
+                              help="Forces the override of a present report "
+                              "- defaults to false")
+    program_args.add_argument('-h', '--help',
+                              action='help',
+                              help="Show this help message and exit")
+
+    global_args = parser.add_argument_group('Global arguments')
+    global_args.add_argument('--github-token',
+                             type=str,
+                             default=None,
+                             help="Access token for github to work with a "
+                             "higher query limit against their api")
     return parser
 
 
