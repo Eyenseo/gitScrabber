@@ -233,9 +233,9 @@ def parse_args(args=None):
 
     if ('--config' not in args
             and '-c' not in args
-            and os.path.isfile('gitScrabber.config')):
+            and os.path.isfile(os.getcwd()+'/gitScrabber.conf')):
         args.insert(0, '--config')
-        args.insert(1, 'gitScrabber.config')
+        args.insert(1, os.getcwd()+'/gitScrabber.conf')
 
     args = __replace_config_file(args)
 
