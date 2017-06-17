@@ -15,7 +15,10 @@ Program arguments:
                         Path where the report will be saved to
   -c file, --config file
                         Path to the configuration file - defaults to
-                        './gitScrabber.conf'
+                        './gitScrabber.conf'. Write the command line arguments
+                        without leading dashes e.g.:
+                        print
+                        data=/tmp
   -d dir, --data dir    Directory where the repositories and archives are
                         stored
   -p, --print           If the report should be printed to stdout - defaults

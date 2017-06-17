@@ -71,6 +71,19 @@ class PathType(object):
         return string
 
 
+class SmartFormatter(argparse.MetavarTypeHelpFormatter):
+    """
+    Formatter class that handles line breaks in a non idiotic way
+    """
+
+    def _split_lines(self, text, width):
+        out = []
+        for line in text.splitlines():
+            out.extend(argparse.MetavarTypeHelpFormatter._split_lines(
+                self, line, width))
+        return out
+
+
 def __setup_parser():
     """
     Set up  of the argument parser
@@ -79,7 +92,7 @@ def __setup_parser():
     """
     parser = argparse.ArgumentParser(
         description='ScrabGitRepos',
-        formatter_class=argparse.MetavarTypeHelpFormatter,
+        formatter_class=SmartFormatter,
         add_help=False)
 
     required_args = parser.add_argument_group('Required arguments')
@@ -102,7 +115,10 @@ def __setup_parser():
                               type=PathType(exists=True, type='file'),
                               default=None,
                               help="Path to the configuration file - defaults "
-                              "to './gitScrabber.conf'")
+                              "to './gitScrabber.conf'. Write the command "
+                              "line arguments without leading dashes e.g.:\n"
+                              "print\n"
+                              "\tdata=/tmp")
     program_args.add_argument('-d', '--data',
                               type=PathType(exists=True, type='dir'),
                               default='.',
