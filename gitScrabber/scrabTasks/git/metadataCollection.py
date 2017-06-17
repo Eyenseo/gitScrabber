@@ -4,12 +4,17 @@ name = "metadata_collector"
 version = "1.0.0"
 
 
-def metadata_collector(report, project):
+def metadata_collector(report, project, global_args):
     """
     finds the stars, languages, forks and downlowads of each given repo
 
-    :param    report:   The report
-    :param    project:  The project
+    :param    report:       The report
+    :param    project:      The project
+    :param    global_args:  Arguments that will be passed to all tasks. They
+                            _might_ contain something that is useful for the
+                            task, but the task has to check if it is _there_ as
+                            these are user provided. If they are needed to work
+                            that check should happen in the argHandler.
     """
 
     report['stars'] = __get_stars(project)

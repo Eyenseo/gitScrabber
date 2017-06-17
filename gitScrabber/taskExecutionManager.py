@@ -18,17 +18,24 @@ class TaskExecutionManager:
                                  projects
     :param    projects:          The projects the tasks will be executed for
     :param    previous_report:   The previous report
+    :param    global_args:       Arguments that will be passed to all tasks.
+                                 They _might_ contain something that is useful
+                                 for the task, but the task has to check if it
+                                 is _there_ as these are user provided. If they
+                                 are needed to work that check should happen in
+                                 the argHandler.
     :param    scrabTaskManager:  The ScrabTaskManager
     :param    max_workers:       The maximum workers to be used by the
                                  ThreadPool
     """
 
     def __init__(self, cache_dir, tasks, projects, previous_report,
-                 scrabTaskManager, max_workers=10):
+                 global_args, scrabTaskManager, max_workers=10):
         self.__cache_dir = cache_dir
         self.__tasks = tasks
         self.__projects = projects
         self.__previous_report = previous_report
+        self.__global_args = global_args
         self.__scrabTaskManager = scrabTaskManager
         self.__max_workers = max_workers if max_workers > 0 else 1
 
@@ -221,6 +228,7 @@ class TaskExecutionManager:
     def __archive_task_wrapper(self, project, old_tasks, old_data):
         runner = ArchiveTaskRunner(project, self.__tasks['archive'],
                                    old_tasks, old_data,
+                                   self.__global_args,
                                    self.__scrabTaskManager)
         return runner.run_tasks()
 
@@ -245,7 +253,7 @@ class TaskExecutionManager:
                   scrab tasks for the given project
         """
         runner = GitTaskRunner(project, self.__tasks['git'],
-                               old_tasks, old_data,
+                               old_tasks, old_data, self.__global_args,
                                self.__scrabTaskManager)
         return runner.run_tasks()
 
@@ -301,7 +309,8 @@ class TaskExecutionManager:
         :returns: The modified report
         """
         runner = ReportTaskRunner(
-            self.__tasks['report'], report, self.__scrabTaskManager)
+            self.__tasks['report'], report, self.__global_args,
+            self.__scrabTaskManager)
         runner.run_tasks()
         return deep_merge(report, self.__add_scrab_versions('report'))
 

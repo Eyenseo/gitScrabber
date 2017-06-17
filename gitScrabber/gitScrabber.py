@@ -9,15 +9,19 @@ class GitScrabber:
     """
     A script to scrab information from git repos
 
-    :param  task_file:        yaml file path that holds the task details
-    :param  report_file:      yaml file path that holds the results from a
-                              previous execution
-    :param  output_file:      file path where the results of the execution will
-                              be saved
-    :param  data_dir:         directory path where the repositories will be
-                              cloned to
-    :param  print:            If the report should be printed to stdout
-    :param  force_overwrite:  If the file that output_file points to should be
+    :param  task_file:    yaml file path that holds the task details
+    :param  report_file:  yaml file path that holds the results from a previous
+                          execution
+    :param  output_file:  file path where the results of the execution will be
+                          saved
+    :param  data_dir:     directory path where the repositories will be cloned
+                          to
+    :param  print:        If the report should be printed to stdout
+    :param  global_args:  Arguments that will be passed to all tasks. They
+                          _might_ contain something that is useful for the task,
+                          but the task has to check if it is _there_ as these
+                          are user provided. If they are needed to work that
+                          check should happen in the argHandler.
     """
 
     def __init__(self,
@@ -26,11 +30,12 @@ class GitScrabber:
                  output_file=None,
                  data_dir=".",
                  print=False,
-                 force_overwrite=False):
+                 global_args={}):
         self.__scrabTaskManager = ScrabTaskManager()
         self.__output_file = output_file
-        self.__print = print
         self.__data_dir = data_dir
+        self.__print = print
+        self.__global_args = global_args
         self.__tasks = ruamel.yaml.load(
             open(task_file, 'r').read(),
             ruamel.yaml.RoundTripLoader)
@@ -67,6 +72,7 @@ class GitScrabber:
             self.__tasks['tasks'],
             self.__tasks['projects'],
             self.__old_report,
+            self.__global_args,
             self.__scrabTaskManager)
         report = executionManager.create_report()
 
@@ -90,7 +96,7 @@ def main(args=None):
         output_file=args.output,
         data_dir=args.data,
         print=args.print,
-        force_overwrite=args.force
+        global_args={'github-token': args.github_token}
     ).scrab()
 
 
