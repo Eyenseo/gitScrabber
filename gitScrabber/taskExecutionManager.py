@@ -201,7 +201,7 @@ class TaskExecutionManager:
         except Exception as e:
             tb = sys.exc_info()[2]
             raise Exception("While working on the git "
-                            "ScrabTasks for {} something happened".format(
+                            "ScrabTasks for '{}' something happened".format(
                                 self.__project_id(project))).with_traceback(tb)
 
     def __multithreaded_tasks(self, kind):

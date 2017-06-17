@@ -34,7 +34,7 @@ def __handle_result(process):
     out = process.communicate()
     if process.returncode is not 0:
         raise Exception("When executing "
-                        "'{}' exited with return code: {} "
+                        "'{}' exited with return code: '{}' "
                         " and message:\n{}".format(
                             process.args, process.returncode, out[1].decode()))
     return out[0].decode()
@@ -89,7 +89,7 @@ def deep_merge(a, b, overwrite=False, path=None):
             elif overwrite:
                 a[key] = b[key]
             else:
-                raise Exception('Conflict at %s' % '.'.join(path + [str(key)]))
+                raise Exception("Conflict at '{}'.".format(path + [str(key)]))
         else:
             a[key] = b[key]
     return a
