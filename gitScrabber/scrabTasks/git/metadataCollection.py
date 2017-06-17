@@ -21,6 +21,7 @@ class MetaDataCollector():
     def __init__(self, project, global_args):
         self.__project = project
         self.__global_args = global_args
+        self.__queries = {}
 
     def __check_for_error(self, response, url):
         """
@@ -103,10 +104,15 @@ class MetaDataCollector():
 
         :returns: the a list of languages used in the project
         """
-        data = self.__access_github_api('/languages')
+        if 'languages' not in self.__queries:
+            self.__queries[
+                'languages'] = self.__access_github_api('/languages')
+
         return {
-            'languages': list(data.keys()),
-            'main_language': max(data, key=data.get)
+            'languages': list(self.__queries['languages'].keys()),
+            'main_language': max(
+                self.__queries['languages'],
+                key=self.__queries['languages'].get)
         }
 
     def get_forks_count(self):
@@ -115,11 +121,13 @@ class MetaDataCollector():
 
         :returns: either 0 or the nr of forks of the project
         """
-        data = self.__access_github_api('/forks')
-        if not data:
+        if '' not in self.__queries:
+            self.__queries[''] = self.__access_github_api('')
+
+        if 'forks' not in self.__queries['']:
             return 0
         else:
-            return len(data)
+            return self.__queries['']['forks']
 
     def get_stars(self):
         """
@@ -127,11 +135,13 @@ class MetaDataCollector():
 
         :returns: either 0 or the nr of stars of the project
         """
-        data = self.__access_github_api('')
-        if not data:
+        if '' not in self.__queries:
+            self.__queries[''] = self.__access_github_api('')
+
+        if 'stargazers_count' not in self.__queries['']:
             return 0
         else:
-            return data['stargazers_count']
+            return self.__queries['']['stargazers_count']
 
 
 def metadata_collector(report, project, global_args):
