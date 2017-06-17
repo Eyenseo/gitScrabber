@@ -40,7 +40,8 @@ class PathType(object):
             elif not self._dash_ok:
                 raise err('standard input/output (-) not allowed')
         else:
-            e = os.path.exists(string)
+            path = os.path.expandvars(os.path.expanduser(string))
+            e = os.path.exists(path)
             if self._exists:
                 if not e:
                     raise err("path does not exist: '%s'" % string)
@@ -48,21 +49,21 @@ class PathType(object):
                 if self._type is None:
                     pass
                 elif self._type == 'file':
-                    if not os.path.isfile(string):
+                    if not os.path.isfile(path):
                         raise err("path is not a file: '%s'" % string)
                 elif self._type == 'symlink':
-                    if not os.path.symlink(string):
+                    if not os.path.symlink(path):
                         raise err("path is not a symlink: '%s'" % string)
                 elif self._type == 'dir':
-                    if not os.path.isdir(string):
+                    if not os.path.isdir(path):
                         raise err("path is not a directory: '%s'" % string)
-                elif not self._type(string):
+                elif not self._type(path):
                     raise err("path not valid: '%s'" % string)
             else:
                 if not self._exists and self._exists is not None and e:
                     raise err("path exists: '%s'" % string)
 
-                p = os.path.dirname(os.path.normpath(string)) or '.'
+                p = os.path.dirname(os.path.normpath(path)) or '.'
                 if not os.path.isdir(p):
                     raise err("parent path is not a directory: '%s'" % p)
                 elif not os.path.exists(p):
