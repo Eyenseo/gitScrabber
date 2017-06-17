@@ -12,26 +12,25 @@ class GitScrabber:
     :param  task_file:        yaml file path that holds the task details
     :param  report_file:      yaml file path that holds the results from a
                               previous execution
-    :param  save_file:        file path where the results of the execution will
+    :param  output_file:      file path where the results of the execution will
                               be saved
-    :param  git_dir:          directory path where the repositories will be
+    :param  data_dir:         directory path where the repositories will be
                               cloned to
-    :param  printing:         If the report should be printed to stdout
-    :param  force_overwrite:  If the file that save_file points to should be
-                              overwritten
+    :param  print:            If the report should be printed to stdout
+    :param  force_overwrite:  If the file that output_file points to should be
     """
 
     def __init__(self,
                  task_file,
                  report_file=None,
-                 save_file=None,
-                 git_dir=".",
-                 printing=False,
+                 output_file=None,
+                 data_dir=".",
+                 print=False,
                  force_overwrite=False):
         self.__scrabTaskManager = ScrabTaskManager()
-        self.__save_file = save_file
-        self.__printing = printing
-        self.__git_dir = git_dir
+        self.__output_file = output_file
+        self.__print = print
+        self.__data_dir = data_dir
         self.__tasks = ruamel.yaml.load(
             open(task_file, 'r').read(),
             ruamel.yaml.RoundTripLoader)
@@ -49,12 +48,12 @@ class GitScrabber:
 
         :param  report:  report to write
         """
-        if self.__save_file:
-            with open(self.__save_file, 'w') as outfile:
+        if self.__output_file:
+            with open(self.__output_file, 'w') as outfile:
                 ruamel.yaml.dump(
                     report, outfile, Dumper=ruamel.yaml.RoundTripDumper)
 
-        if self.__printing:
+        if self.__print:
             print(ruamel.yaml.dump(report, Dumper=ruamel.yaml.RoundTripDumper))
 
     def scrab(self):
@@ -64,7 +63,7 @@ class GitScrabber:
         :returns: the report as python object
         """
         executionManager = TaskExecutionManager(
-            self.__git_dir,
+            self.__data_dir,
             self.__tasks['tasks'],
             self.__tasks['projects'],
             self.__old_report,
@@ -88,12 +87,12 @@ def main(args=None):
     return GitScrabber(
         task_file=args.tasks,
         report_file=args.report,
-        save_file=args.savereport,
-        git_dir=args.gitdir,
-        printing=args.printreport,
+        output_file=args.output,
+        data_dir=args.data,
+        print=args.print,
         force_overwrite=args.force
     ).scrab()
 
 
 if __name__ == "__main__":
-    main(['-t', '../task.yaml', '-p', '-g', '/tmp'])
+    main(['-t', '../task.yaml', '-p', '-d', '/tmp'])

@@ -1,5 +1,6 @@
 from argparse import ArgumentTypeError as err
 import argparse
+import sys
 import os
 
 
@@ -80,21 +81,31 @@ def __setup_parser():
         formatter_class=argparse.MetavarTypeHelpFormatter)
     parser.add_argument('-t', '--tasks',
                         type=PathType(exists=True, type='file'),
-                        required=True,
+                        default=None,
                         help='Path to the tasks.yaml file')
-    parser.add_argument('-g', '--gitdir',
-                        type=PathType(exists=True, type='dir'),
-                        default='.',
-                        help='Directory where the repositories are cloned to')
     parser.add_argument('-r', '--report',
                         type=PathType(exists=True, type='file'),
                         default=None,
                         help='Path to an old report as base.')
-    parser.add_argument('-s', '--savereport',
+    parser.add_argument('-o', '--output',
                         type=PathType(exists=None, type='file'),
                         default=None,
                         help='Path where the report will be saved to.')
-    parser.add_argument('-p', '--printreport',
+    parser.add_argument('-c', '--config',
+                        type=PathType(exists=True, type='file'),
+                        default=None,
+                        help='Path to the configuration file')
+    parser.add_argument('--github-token',
+                        type=str,
+                        default=None,
+                        help='Access token for github to work with a higher '
+                        'query limit against their api')
+    parser.add_argument('-d', '--data',
+                        type=PathType(exists=True, type='dir'),
+                        default='.',
+                        help='Directory where the repositories and archives'
+                        ' are stored')
+    parser.add_argument('-p', '--print',
                         action='store_true',
                         default=False,
                         help='If the report should be printed to stdout')
@@ -105,6 +116,35 @@ def __setup_parser():
     return parser
 
 
+def __check_overwrite(parser, args):
+    """
+    Checks weather the --force flag was set without need or is missing to force
+    an overwrite
+
+    :param    parser:  The parser used to raise an error message
+    :param    args:    The arguments that were passed to the program
+    """
+    if (args.force and (not args.output
+                        or args.output != args.report)):
+        parser.error('Force is only needed to overwrite an existing report')
+    elif args.output and args.output == args.report:
+        parser.error('{} exists already! '
+                     'Specify a new location for the new report or '
+                     '--force override'.format(args.output))
+
+
+def __check_tasks(parser, args):
+    """
+    Checks weather a --tasks file was provided
+
+    :param    parser:  The parser used to raise an error message
+    :param    args:    The arguments that were passed to the program
+    """
+    if not args.tasks:
+        raise Exception("There was no tasks file provided - "
+                        "you have to provide one.")
+
+
 def __check_arguments(parser, args):
     """
     Check the given arguments for bade combinations
@@ -112,16 +152,55 @@ def __check_arguments(parser, args):
     :param  parser:  The parsed parser
     :param  args:    The arguments
     """
-    if ('force' in vars(args) and
-            'savereport' not in vars(args)):
-        parser.error('Force is only needed to overwrite an existing report')
+    __check_overwrite(parser, args)
+    __check_tasks(parser, args)
 
-    if (args.savereport is not None
-            and args.report == args.savereport
-            and not args.force):
-        parser.error('{} exists already! '
-                     'Secify a new location for the new report or '
-                     '--force override'.format(args.savereport))
+
+def __load_config(config_path):
+    """
+    Loads the configuration options from file and extends the argument list that
+    will be passed to the parser
+
+    :param    config_path:  The path to the configuration file
+
+    :returns: The argument list that will be parsed extended by the arguments in
+              the configuration file
+    """
+    options = []
+    with open(config_path) as f:
+        config = f.readlines()
+        for line in config:
+            arg = line.strip().split(sep='=', maxsplit=1)
+            if len(arg[0]) > 1:
+                arg[0] = '--' + arg[0]
+            else:
+                arg[0] = '-' + arg[0]
+            options.extend(arg)
+    return options
+
+
+def __replace_config_file(args):
+    """
+    Replaces the -c/--config argument with the arguments specified in the
+    configuration file
+
+    :param    args:  The arguments that will be parsed
+
+    :returns: The argument list that will be parsed extended by the arguments in
+              the configuration file
+    """
+    load_config = False
+    out = []
+    for option in args:
+        if (option.startswith('-c')
+                or option.startswith('--config')):
+            load_config = True
+        elif load_config:
+            load_config = False
+            out.extend(__load_config(option))
+        else:
+            out.append(option)
+    return out
 
 
 def parse_args(args=None):
@@ -132,13 +211,21 @@ def parse_args(args=None):
 
     :returns: The parsed arguments
     """
-    parser = __setup_parser()
-    parsed_args = None
-
-    if(args):
-        parsed_args = parser.parse_args(args)
+    if args is None:
+        args = sys.argv[1:]  # args default to the system args
     else:
-        parsed_args = parser.parse_args()
+        args = list(args)  # make sure that args are mutable
+
+    if ('--config' not in args
+            and '-c' not in args
+            and os.path.isfile('gitScrabber.config')):
+        args.insert(0, '--config')
+        args.insert(1, 'gitScrabber.config')
+
+    args = __replace_config_file(args)
+
+    parser = __setup_parser()
+    parsed_args = parser.parse_args(args)
 
     __check_arguments(parser, parsed_args)
 
