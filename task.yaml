@@ -36,6 +36,7 @@ tasks:
   - gdummy
   archive:
   - adummy
+  - languageDetector
   # Tasks that should run over the previously generated report
   report:
   - rdummy
