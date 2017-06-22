@@ -3,6 +3,39 @@ import os
 name = "languageDetector"
 version = "1.0.0"
 
+def get_language_extensions():
+    return {
+        'C++':  ['.cpp', '.c++', '.cc', '.C', '.cxx'],
+        'C':    ['.c'],
+        'Rust': ['.rs', '.rlib'],
+        'Ruby': ['.rb'],
+        'Java': ['.java', '.class', '.jar'],
+        'Go':   ['.go'],
+        'PHP':  ['.php', '.phtml', '.php3', '.php4', '.php5', '.php7', '.phps'],
+        'JavaScript':   ['.js'],
+        'Objective-C':  ['.m', '.mm', '.C'],
+        'Swift':    ['.swift'],
+        'C#':   ['.cs'],
+        'Python':   ['.py', '.pyc', '.pyd', '.pyo', '.pyw', '.pyz']
+    }
+
+
+def get_files_per_language():
+    return {
+        'C++':  0,
+        'C':    0,
+        'Rust': 0,
+        'Ruby': 0,
+        'Java': 0,
+        'Go':   0,
+        'PHP':  0,
+        'JavaScript':   0,
+        'Objective-C':  0,
+        'Swift':    0,
+        'C#':   0,
+        'Python':   0,
+    }
+
 
 def languageDetector(report, project, global_args):
     """
@@ -22,36 +55,10 @@ def languageDetector(report, project, global_args):
 
     # dictionary containing the common file extensions 
     # for each of the languages
-    language_extensions = {
-        'C++':  ['.cpp', '.c++', '.cc', '.C', '.cxx'],
-        'C':    ['.c'],
-        'Rust': ['.rs', '.rlib'],
-        'Ruby': ['.rb'],
-        'Java': ['.java', '.class', '.jar'],
-        'Go':   ['.go'],
-        'PHP':  ['.php', '.phtml', '.php3', '.php4', '.php5', '.php7', '.phps'],
-        'JavaScript':   ['.js'],
-        'Objective-C':  ['.m', '.mm', '.C'],
-        'Swift':    ['.swift'],
-        'C#':   ['.cs'],
-        'Python':   ['.py', '.pyc', '.pyd', '.pyo', '.pyw', '.pyz']
-    }
+    language_extensions = get_language_extensions()
 
     # count the files that have an extension of one of the languages
-    files_per_language = {
-        'C++':  0,
-        'C':    0,
-        'Rust': 0,
-        'Ruby': 0,
-        'Java': 0,
-        'Go':   0,
-        'PHP':  0,
-        'JavaScript':   0,
-        'Objective-C':  0,
-        'Swift':    0,
-        'C#':   0,
-        'Python':   0,
-    }
+    files_per_language = get_files_per_language()
 
     # walk through all files in the project and count extensions
     for dirpath, dirnames, filenames in os.walk(dir_):
