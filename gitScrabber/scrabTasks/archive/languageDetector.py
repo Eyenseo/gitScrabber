@@ -71,29 +71,51 @@ def __count_language_files(project):
                 if file_extension in language_extensions[language]:
                     files_per_language[language][file_extension] += 1
 
+    __decide_h_extension(files_per_language)
+
     return files_per_language
+
+
+def __decide_h_extension(files_per_language):
+    """
+    Decides which language 'owns' how many .h files
+
+    :param    files_per_language:  Dict containing the files per extension per
+                                   language
+    """
+    h_files = files_per_language['C']['.h']
+    if h_files > 0:
+        c_files = (sum(files_per_language['C'].values())
+                   - files_per_language['C']['.h'])
+        cpp_files = (sum(files_per_language['C++'].values())
+                     - files_per_language['C++']['.h'])
+        oc_files = (sum(files_per_language['Objective-C'].values())
+                    - files_per_language['Objective-C']['.h'])
+        lang_fiels = c_files + cpp_files + oc_files
+
+        # Header only libraries are 'common' in C and C++
+        # the benefit of doubt goes to C
+        if lang_fiels == 0:
+            files_per_language['C']['.h'] = 1
+            files_per_language['C++']['.h'] = 0
+            files_per_language['Objective-C']['.h'] = 0
+        else:
+            files_per_language['C']['.h'] = h_files * c_files / lang_fiels
+            files_per_language['C++']['.h'] = h_files * cpp_files / lang_fiels
+            files_per_language['Objective-C']['.h'] = h_files * \
+                oc_files / lang_fiels
 
 
 def __calculate_main_language(files_per_language):
     # find the language with the maximal amount of files
     max_files = 0
     max_lang = 'Not detected'
+
     for language in files_per_language:
         lang_fiels = sum(files_per_language[language].values())
         if max_files < lang_fiels:
             max_lang = language
             max_files = lang_fiels
-
-    # as C and C++ share the same extension .c we assume to have a C++
-    # project only if at least 2/3 of the files have a C++ extension
-    if 'C++' == max_lang:
-        cpp_c_files = files_per_language['C++']['.c']
-        cpp_h_files = files_per_language['C++']['.h']
-
-        cpp_extensions_ratio = 1 - (cpp_c_files + cpp_h_files) / \
-            sum(files_per_language['C++'].values())
-        if cpp_extensions_ratio < 2./3.:
-            max_lang = 'C'
 
     return max_lang
 
