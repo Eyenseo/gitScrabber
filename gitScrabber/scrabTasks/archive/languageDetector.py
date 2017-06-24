@@ -69,7 +69,7 @@ def languageDetector(report, project, global_args):
     """
     dir_ = project['location']
 
-    # dictionary containing the common file extensions 
+    # dictionary containing the common file extensions
     # for each of the languages
     language_extensions = get_language_extensions()
 
@@ -83,22 +83,26 @@ def languageDetector(report, project, global_args):
             for language in language_extensions:
                 if file_extension in language_extensions[language]:
                     files_per_language[language][file_extension] += 1
-    
+
     # find the language with the maximal amount of files
     max_files = 0
     max_lang = 'Not detected'
     for language in files_per_language:
-        if max_files < sum(files_per_language[language].values()):
-           max_lang = language
-           max_files = sum(files_per_language[language].values())
-   
+        lang_fiels = sum(files_per_language[language].values())
+        if max_files < lang_fiels:
+            max_lang = language
+            max_files = lang_fiels
+
     # as C and C++ share the same extension .c we assume to have a C++
-    # project only if at least 2/3 of the files have a C++ extension 
+    # project only if at least 2/3 of the files have a C++ extension
     if 'C++' is max_lang:
-        cpp_extensions_ratio = 1 - (files_per_language['C++']['.c'] + files_per_language['C++']['.h']) / \
-            sum(files_per_language[language].values())
+        cpp_c_files = files_per_language['C++']['.c']
+        cpp_h_files = files_per_language['C++']['.h']
+
+        cpp_extensions_ratio = 1 - (cpp_c_files + cpp_h_files) / \
+            sum(files_per_language['C++'].values())
         if not cpp_extensions_ratio > 2./3.:
-             max_lang = 'C'
+            max_lang = 'C'
 
     # write the result to the report
     report['language'] = max_lang
