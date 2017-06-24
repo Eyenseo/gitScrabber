@@ -1,4 +1,5 @@
 import subprocess
+import hashlib
 
 
 def __validate_exec_args(program, args):
@@ -93,6 +94,17 @@ def deep_merge(a, b, overwrite=False, path=None):
         else:
             a[key] = b[key]
     return a
+
+
+def md5(string):
+    """
+     Calculates a MD% sum of the provided string
+
+     :param    string:  The string to calculate teh MD% sum
+
+     :returns: MD% sum of the provided string
+     """
+    return hashlib.md5(string.encode('utf-8')).hexdigest()
 
 
 if __name__ == "__main__":

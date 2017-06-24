@@ -1,7 +1,7 @@
 from gitTaskRunner import GitTaskRunner
 from archiveTaskRunner import ArchiveTaskRunner
 from reportTaskRunner import ReportTaskRunner
-from utils import deep_merge
+from utils import deep_merge, md5
 
 from concurrent.futures import ThreadPoolExecutor, as_completed
 import sys
@@ -72,23 +72,21 @@ class TaskExecutionManager:
             report['tasks'][task] = scrabTask['version']
         return report
 
-    def __project_full_id(self, project):
+    def __project_name(self, project):
         """
-        Generates the 'full' id for the project - either a url or a manually
-        given id
+        Looks up the name of the project - either the last part of the url or a
+        manually given id
 
-        :param    project:  The project to generate the id for
+        :param    project:  The project to look up the name for
 
-        :returns: An id for the given project
-
-        TODO check weather it is indeed a unique id
+        :returns: The name of the given project
         """
-        if('git' in project):
-            return project['git']
-        elif('archive' in project):
-            return project['archive']
-        elif('id' in project):
+        if('id' in project):
             return project['id']
+        elif('git' in project):
+            return project['git'].rstrip('\\').rsplit('/', 1)[-1]
+        elif('archive' in project):
+            return project['archive'].rstrip('\\').rsplit('/', 1)[-1]
         else:
             raise Exception("The following project is neither an archive or "
                             "git and doesn't provide an id:\n"
@@ -96,27 +94,28 @@ class TaskExecutionManager:
 
     def __project_id(self, project):
         """
-        Generates the id for the project - either the last part of the url or a
-        manually given id
+        Generates an unique id for the project. The id will be made up of the
+        name of the project and the md5sum of the url or given id of the project
 
         :param    project:  The project to generate the id for
 
         :returns: An id for the given project
-
-        TODO check weather it is indeed a unique id
-        FIXME Handle Windows bullshit -> no dots no "special" characters aso
-        TODO write the id in the project so that scrab Tasks can use the id
         """
+        base_id = self.__project_name(project)
+
+        hash_id = None
         if('git' in project):
-            return project['git'].rsplit('/', 1)[-1]
+            hash_id = md5(project['git'])
         elif('archive' in project):
-            return project['archive'].rsplit('/', 1)[-1]
+            hash_id = md5(project['archive'])
         elif('id' in project):
-            return project['id']
+            hash_id = md5(project['id'])
         else:
             raise Exception("The following project is neither an archive or "
                             "git and doesn't provide an id:\n"
                             "'{}'".format(project))
+
+        return "{}_{}".format(base_id, hash_id)
 
     def __project_cache_dir(self, project):
         """
@@ -147,10 +146,10 @@ class TaskExecutionManager:
         :returns: The data that was generated in a previous execution for the
                   given project
         """
-        full_id = self.__project_full_id(project)
+        uid = self.__project_id(project)
 
-        if self.__previous_report and full_id in self.__previous_report:
-            return self.__previous_report[full_id]
+        if self.__previous_report and uid in self.__previous_report:
+            return self.__previous_report[uid]
         return None
 
     def __queue_projects(self, executor, kind):
@@ -189,9 +188,9 @@ class TaskExecutionManager:
         report = {}
         for future in as_completed(futures):
             project = futures[future]
-            full_id = self.__project_full_id(project)
+            uid = self.__project_id(project)
             result = self.__get_task_result(project, future)
-            report = deep_merge(report, {'projects': {full_id: result}})
+            report = deep_merge(report, {'projects': {uid: result}})
         return report
 
     def __get_task_result(self, project, future):
@@ -209,7 +208,8 @@ class TaskExecutionManager:
             tb = sys.exc_info()[2]
             raise Exception("While working on the git "
                             "ScrabTasks for '{}' something happened".format(
-                                self.__project_id(project))).with_traceback(tb)
+                                self.__project_name(project))
+                            ).with_traceback(tb)
 
     def __multithreaded_tasks(self, kind):
         """
