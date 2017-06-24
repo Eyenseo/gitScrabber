@@ -13,7 +13,7 @@ def __create_shortlog(project):
 
     :returns: The shortlog dict
     """
-    shortlog = utils.run('git', ['shortlog', '-s', '-n'], project['location'])
+    shortlog = utils.run('git', ['shortlog', '-s', '-n', '--no-merges'], project['location'])
     mapped_log = []
 
     for line in shortlog.split('\n'):
@@ -24,21 +24,52 @@ def __create_shortlog(project):
     return mapped_log
 
 
+def __calc_cutof(mapped_shortlog):
+    """
+    Calculates where the hard cut of for authors should be.
+
+    This is needed for linear decreasing commit graphs per author, where the
+    difference between the amount of commits between the authors is too small to
+    result in a rejection
+
+    :param    mapped_shortlog:  The mapped shortlog
+
+    :returns: Hard cut of value for the author contributor classification.
+    """
+    top_cont, _ = mapped_shortlog[0]
+    mean_cut = top_cont * 0.05
+
+    summ = 0
+    numm = 0
+    for count, _ in mapped_shortlog:
+        if count >= mean_cut:
+            summ += count
+            numm += 1
+        else:
+            break
+    return summ / numm
+
+
 def __calc_contributor_authors(mapped_shortlog):
     """
     Calculates who is considered a contributor or an author.
+
+    The calculation is done by the difference in commits between authors and a
+    hard cut of.
 
     :param    mapped_shortlog:  The mapped shortlog
 
     :returns: The contributor authors as a dict.
     """
-    top_cont, _ = mapped_shortlog[0]
-    cutof = top_cont * 0.75     # FIXME This is just for demonstration purposes
     authors = []
     contributors = []
 
+    cutof = __calc_cutof(mapped_shortlog)
+    prev_count, _ = mapped_shortlog[0]
+
     for count, cont in mapped_shortlog:
-        if count >= cutof:
+        if count >= cutof and count >= prev_count*0.4:
+            prev_count = count
             authors.append((count, cont))
         else:
             contributors.append((count, cont))
