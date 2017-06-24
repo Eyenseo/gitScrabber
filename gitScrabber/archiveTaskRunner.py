@@ -16,14 +16,22 @@ class ArchiveTaskRunner:
     :param  old_tasks:         The old tasks that were used to generate old_data
     :param  old_data:          The old data that was produced in a previous run
                                with old_tasks
+    :param  global_args:       Arguments that will be passed to all tasks. They
+                               _might_ contain something that is useful for the
+                               task, but the task has to check if it is _there_
+                               as these are user provided. If they are needed
+                               to work that check should happen in the
+                               argHandler.
     :param  scrabTaskManager:  The ScrabTaskManager
     """
 
-    def __init__(self, project, tasks, old_tasks, old_data, scrabTaskManager):
+    def __init__(self, project, tasks, old_tasks, old_data,
+                 global_args, scrabTaskManager):
         self.__project = project
         self.__tasks = tasks
         self.__old_tasks = old_tasks
         self.__old_data = old_data
+        self.__global_args = global_args
         self.__scrabTaskManager = scrabTaskManager
 
     def __project_cache_exists(self):
@@ -126,7 +134,9 @@ class ArchiveTaskRunner:
             os.makedirs(cache_dir, exist_ok=True)
             try:
                 tmp_archive = self.__download_archive()
-                with open(os.path.join(cache_dir, 'ArchiveSize.Scrab'), 'w') as f:
+                size_file = open(os.path.join(
+                    cache_dir, 'ArchiveSize.Scrab'), 'w')
+                with size_file as f:
                     f.write(str(os.path.getsize(tmp_archive)))
                 self.__extract_archive(tmp_archive)
             finally:
@@ -169,7 +179,8 @@ class ArchiveTaskRunner:
 
             if(updated or self.__changed_task(scrabTask)):
                 task_report = {}
-                scrabTask['function'](task_report, self.__project)
+                scrabTask['function'](task_report, self.__project,
+                                      self.__global_args)
                 report[task_name] = task_report
             elif task_name in self.__old_data:
                 report[task_name] = self.__old_data[task_name]

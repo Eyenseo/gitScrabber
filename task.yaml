@@ -9,6 +9,12 @@ projects:
     author_contributor_counter:
       author#: 20 # will be corrected
       Foo: Bar # will stay as is
+    metadata_collector:
+      stars: 10
+      languages:
+        - C 
+        - Java
+- git: https://github.com/ZewoGraveyard/OpenSSL
 # archive urls that will be downloaded and analysed
 - archive: ftp://ftp.franken.de/pub/crypt/cryptlib/cl3431.zip
 # manual data for projects that do not provide a git repo but should be analysed by the reportScrabber
@@ -17,7 +23,7 @@ projects:
     author_contributor_counter:
       author#: 300
       contributor#: 700
-    github_meta:
+    metadata_collector:
       stars: 42
   # The url is given for identification
   id: foo://bar
@@ -26,6 +32,7 @@ tasks:
   # Tasks that should run for the git repos
   git:
   - author_contributor_counter
+  - metadata_collector
   - gdummy
   archive:
   - adummy

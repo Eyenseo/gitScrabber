@@ -56,7 +56,7 @@ class ScrabTaskManager:
         except Exception as e:
             tb = sys.exc_info()[2]
             raise Exception("You have to specify the version of your "
-                            "ScrabTask: {}".format(name)).with_traceback(tb)
+                            "ScrabTask: '{}'".format(name)).with_traceback(tb)
 
     def __obtain_function(self, module, name,):
         """
@@ -73,7 +73,7 @@ class ScrabTaskManager:
             tb = sys.exc_info()[2]
             raise Exception("You have to specify a function with the "
                             "very same name as the name attribute of your "
-                            "ScrabTask: {}".format(name)).with_traceback(tb)
+                            "ScrabTask: '{}'".format(name)).with_traceback(tb)
 
     def load_tasks(self):
         """
@@ -103,9 +103,8 @@ class ScrabTaskManager:
             return self.__scrabTasks[name]
         except Exception as e:
             tb = sys.exc_info()[2]
-            raise Exception(
-                "There is no ScrabTask with the name "
-                "'{}' registered".format(name)).with_traceback(tb)
+            raise Exception("There is no ScrabTask with the name "
+                            "'{}' registered".format(name)).with_traceback(tb)
 
 
 def import_submodules(package, recursive=True):
