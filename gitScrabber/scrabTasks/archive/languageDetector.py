@@ -53,9 +53,7 @@ def __get_files_per_language():
     }
 
 
-def __count_language_files(project):
-    dir_ = project['location']
-
+def __count_language_files(project_dir):
     # dictionary containing the common file extensions
     # for each of the languages
     language_extensions = __get_language_extensions()
@@ -64,7 +62,7 @@ def __count_language_files(project):
     files_per_language = __get_files_per_language()
 
     # walk through all files in the project and count extensions
-    for dirpath, dirnames, filenames in os.walk(dir_):
+    for dirpath, dirnames, filenames in os.walk(project_dir):
         for file in filenames:
             filename, file_extension = os.path.splitext(file)
             for language in language_extensions:
@@ -120,6 +118,18 @@ def __calculate_main_language(files_per_language):
     return max_lang
 
 
+def __calculate_used_languages(files_per_language, main_language):
+    languages = {}
+
+    for language, _ in files_per_language.items():
+        total_files = sum(files_per_language[language].values())
+
+        if total_files > 0:
+            languages[language] = total_files
+
+    return sorted(languages, key=languages.get, reverse=True)
+
+
 def languageDetector(report, project, global_args):
     """
     Tries to detect the programming language of a library 
@@ -134,7 +144,10 @@ def languageDetector(report, project, global_args):
                           https://github.com/settings/tokens
                           https://developer.github.com/v3/#authentication
     """
-    files_per_language = __count_language_files(project)
+    files_per_language = __count_language_files(project['location'])
+    main_language = __calculate_main_language(files_per_language)
 
     # write the result to the report
-    report['main_language'] = __calculate_main_language(files_per_language)
+    report['main_language'] = main_language
+    report['languages'] = __calculate_used_languages(
+        files_per_language, main_language)
