@@ -86,13 +86,13 @@ def __calculate_main_language(files_per_language):
 
     # as C and C++ share the same extension .c we assume to have a C++
     # project only if at least 2/3 of the files have a C++ extension
-    if 'C++' is max_lang:
+    if 'C++' == max_lang:
         cpp_c_files = files_per_language['C++']['.c']
         cpp_h_files = files_per_language['C++']['.h']
 
         cpp_extensions_ratio = 1 - (cpp_c_files + cpp_h_files) / \
             sum(files_per_language['C++'].values())
-        if not cpp_extensions_ratio > 2./3.:
+        if cpp_extensions_ratio < 2./3.:
             max_lang = 'C'
 
     return max_lang
