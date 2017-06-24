@@ -19,7 +19,7 @@ c_sharp_extensions = ['.cs']
 python_extensions = ['.py']
 
 
-def get_language_extensions():
+def __get_language_extensions():
     return {
         'C++':  cpp_extensions,
         'C':    c_extensions,
@@ -36,7 +36,7 @@ def get_language_extensions():
     }
 
 
-def get_files_per_language():
+def __get_files_per_language():
     return {
         'C++':  {extension: 0 for extension in cpp_extensions},
         'C':    {extension: 0 for extension in c_extensions},
@@ -53,28 +53,15 @@ def get_files_per_language():
     }
 
 
-def languageDetector(report, project, global_args):
-    """
-    Tries to detect the programming language of a library 
-    based on the file extension
-
-    :param  report:       The report
-    :param  project:      The project
-    :param  global_args:  This task scrubber makes use of the github-token to
-                          circumvent the tight rate-limiting for the github
-                          api
-
-                          https://github.com/settings/tokens
-                          https://developer.github.com/v3/#authentication
-    """
+def __count_language_files(project):
     dir_ = project['location']
 
     # dictionary containing the common file extensions
     # for each of the languages
-    language_extensions = get_language_extensions()
+    language_extensions = __get_language_extensions()
 
     # count the files that have an extension of one of the languages
-    files_per_language = get_files_per_language()
+    files_per_language = __get_files_per_language()
 
     # walk through all files in the project and count extensions
     for dirpath, dirnames, filenames in os.walk(dir_):
@@ -84,6 +71,10 @@ def languageDetector(report, project, global_args):
                 if file_extension in language_extensions[language]:
                     files_per_language[language][file_extension] += 1
 
+    return files_per_language
+
+
+def __calculate_main_language(files_per_language):
     # find the language with the maximal amount of files
     max_files = 0
     max_lang = 'Not detected'
@@ -104,5 +95,24 @@ def languageDetector(report, project, global_args):
         if not cpp_extensions_ratio > 2./3.:
             max_lang = 'C'
 
+    return max_lang
+
+
+def languageDetector(report, project, global_args):
+    """
+    Tries to detect the programming language of a library 
+    based on the file extension
+
+    :param  report:       The report
+    :param  project:      The project
+    :param  global_args:  This task scrubber makes use of the github-token to
+                          circumvent the tight rate-limiting for the github
+                          api
+
+                          https://github.com/settings/tokens
+                          https://developer.github.com/v3/#authentication
+    """
+    files_per_language = __count_language_files(project)
+
     # write the result to the report
-    report['language'] = max_lang
+    report['main_language'] = __calculate_main_language(files_per_language)
