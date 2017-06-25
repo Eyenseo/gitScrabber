@@ -144,19 +144,21 @@ class MetaDataCollector():
             return self.__queries['']['stargazers_count']
 
 
-def metadata_collector(report, project, global_args):
+def metadata_collector(report, project, task_params, global_args):
     """
     Queries the github api to obtain the stars, languages and forks of the given
     repo
 
+    https://github.com/settings/tokens
+    https://developer.github.com/v3/#authentication
+
     :param    report:       The report
     :param    project:      The project
+    :param    task_params:  Parameter given explicitly for this task, for all
+                            projects, defined in the task.yaml
     :param    global_args:  This task scrubber makes use of the github-token to
                             circumvent the tight rate-limiting for the github
                             api
-
-                            https://github.com/settings/tokens
-                            https://developer.github.com/v3/#authentication
     """
 
     meta = MetaDataCollector(project, global_args)

@@ -13,7 +13,8 @@ def __create_shortlog(project):
 
     :returns: The shortlog dict
     """
-    shortlog = utils.run('git', ['shortlog', '-s', '-n', '--no-merges'], project['location'])
+    shortlog = utils.run(
+        'git', ['shortlog', '-s', '-n', '--no-merges'], project['location'])
     mapped_log = []
 
     for line in shortlog.split('\n'):
@@ -77,12 +78,14 @@ def __calc_contributor_authors(mapped_shortlog):
     return {'authors': authors, 'contributors': contributors, }
 
 
-def author_contributor_counter(report, project, global_args):
+def author_contributor_counter(report, project, task_params,  global_args):
     """
     Counts the authors and contributors of a repo
 
     :param    report:       The report
     :param    project:      The project
+    :param    task_params:  Parameter given explicitly for this task, for all
+                            projects, defined in the task.yaml
     :param    global_args:  Arguments that will be passed to all tasks. They
                             _might_ contain something that is useful for the
                             task, but the task has to check if it is _there_ as

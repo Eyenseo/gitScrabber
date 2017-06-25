@@ -105,15 +105,15 @@ class GitTaskRunner:
         report = {}
         updated = self.__update_repo()
 
-        for task_name in self.__tasks:
-            scrabTask = self.__scrabTaskManager.get_task(task_name)
+        for task in self.__tasks:
+            scrabTask = self.__scrabTaskManager.get_task(task['name'])
 
             if(updated or self.__changed_task(scrabTask)):
                 task_report = {}
                 scrabTask['function'](task_report, self.__project,
-                                      self.__global_args)
-                report[task_name] = task_report
-            elif task_name in self.__old_data:
-                report[task_name] = self.__old_data[task_name]
+                                      task['parameter'], self.__global_args)
+                report[task['name']] = task_report
+            elif task['name'] in self.__old_data:
+                report[task['name']] = self.__old_data[task['name']]
 
         return report

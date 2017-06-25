@@ -50,12 +50,7 @@ class TaskExecutionManager:
             'manual': ['archive', 'git', 'manual'],
         }
 
-        try:
-            for task_group in tasks:
-                if tasks[task_group] is None:
-                    tasks[task_group] = []
-        except TypeError:
-            self.__tasks = []
+        self.__setup_tasks()
 
         if(not cache_dir.endswith('/')):
             self.__cache_dir += '/'
@@ -63,6 +58,54 @@ class TaskExecutionManager:
         for project in self.__projects:
             if 'location' not in project:
                 project['location'] = self.__project_cache_dir(project)
+
+    def __unpack_CommentedMap(self, yaml_dict):
+        """
+        Unpacks a CommentedMap from ruamel.yaml in a list
+
+        :param    yaml_dict:  The yaml dictionary
+
+        :returns: Array of the directory
+        """
+        l = []
+        for x in yaml_dict.items():
+            for y in x:
+                l.append(y)
+        return l
+
+    def __setup_tasks(self):
+        """
+        Sets up the tasks configuration give from the user.
+
+        Basically the configuration is streamlined and made more verbose to be
+        used by the program without errors and checking at every use as the data
+        structure 'defaults' are set here
+        """
+        try:
+            for task_group in self.__tasks:
+                if self.__tasks[task_group] is None:
+                    self.__tasks[task_group] = []
+        except TypeError:
+            self.__tasks = []
+
+        for task_group in self.__tasks:
+            for i, task in enumerate(self.__tasks[task_group]):
+                if str is type(task):
+                    self.__tasks[task_group][i] = {'name': task,
+                                                   'parameter': {}}
+                else:
+                    unpacked = self.__unpack_CommentedMap(task)
+
+                    if len(unpacked) != 2 or not isinstance(unpacked[1], dict):
+                        raise Exception("The parameter for tasks have to be "
+                                        "given in a map, but they weren't for "
+                                        "the task '{}'".format(unpacked[0]))
+
+                    self.__tasks[task_group][i] = {'name': unpacked[0]}
+                    self.__tasks[task_group][i]['parameter'] = {}
+
+                    if unpacked[1] is not None:
+                        self.__tasks[task_group][i]['parameter'] = unpacked[1]
 
     def __add_scrab_versions(self, kind):
         """
@@ -75,8 +118,8 @@ class TaskExecutionManager:
         """
         report = {'tasks': {}}
         for task in self.__tasks[kind]:
-            scrabTask = self.__scrabTaskManager.get_task(task)
-            report['tasks'][task] = scrabTask['version']
+            scrabTask = self.__scrabTaskManager.get_task(task['name'])
+            report['tasks'][task['name']] = scrabTask['version']
         return report
 
     def __project_name(self, project):
