@@ -1,3 +1,5 @@
+# Usage
+
 ```
 usage: gitScrabber [-t file] [-r file] [-o file] [-c file] [-d dir] [-p] [-f]
                    [-h] [--github-token str]
@@ -33,7 +35,7 @@ Global arguments:
                         limit against their api
 ```
 
-Dependencies:
+# Dependencies
 
 - If not already installed:
     - `python3-pip`
