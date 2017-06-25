@@ -1,3 +1,4 @@
+```
 usage: gitScrabber [-t file] [-r file] [-o file] [-c file] [-d dir] [-p] [-f]
                    [-h] [--github-token str]
 
@@ -30,3 +31,14 @@ Program arguments:
 Global arguments:
   --github-token str    Access token for github to work with a higher query
                         limit against their api
+```
+
+Dependencies:
+
+- If not already installed:
+    - `python3-pip`
+    - `python3-setuptools`
+- `packaging`
+- `pyunpack`
+- `ruamel.yaml`
+
