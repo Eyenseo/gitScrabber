@@ -1,0 +1,29 @@
+block ciphers:
+  AES:
+    - AES
+    - Rijndael
+  Blowfish:
+  DES:
+    - DES
+    - Triple DES
+  Serpent: 
+  Twofish: 
+  Camellia:
+  CAST-128/CAST-256:
+  IDEA:
+  RC2/RC5/RC6:
+  SEED:
+  ARIA:
+  Skipjack:
+  TEA:
+  XTEA:
+stream ciphers:
+  RC:
+    - RC
+    - RC4
+  ChaCha:
+    - ChaCha 
+    - ChaCha20
+  Salsa:
+    - Salsa
+    - Salsa20  

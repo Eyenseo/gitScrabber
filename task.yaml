@@ -35,6 +35,7 @@ project_tasks:
   - metadata_collector
   - languageDetector
   - project_dates
+  - featureDetector
 # Tasks that should run over the previously generated report,
 # sequentially after the project tasks
 report_tasks:
