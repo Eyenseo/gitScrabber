@@ -1,22 +1,38 @@
 block ciphers:
   AES:
     - AES
-    - Rijndael
+    - AES-128
+    - AES-256    
   Blowfish:
+    - Blowfish
   DES:
     - DES
     - Triple DES
-  Serpent: 
-  Twofish: 
+  Serpent:
+    - Serpent 
+  Twofish:
+    - Twofish 
   Camellia:
-  CAST-128/CAST-256:
+    - Camellia
+  CAST:
+    - CAST-128
+    - CAST-256
   IDEA:
-  RC2/RC5/RC6:
+    - IDEA
+  RC:
+    - RC2
+    - RC5
+    - RC6
   SEED:
+    - SEED    
   ARIA:
+    - ARIA
   Skipjack:
+    - Skipjack
   TEA:
+    - TEA
   XTEA:
+    - XTEA
 stream ciphers:
   RC:
     - RC
@@ -26,4 +42,49 @@ stream ciphers:
     - ChaCha20
   Salsa:
     - Salsa
-    - Salsa20  
+    - Salsa20
+hashes:
+  SHA:
+    - SHA-3 
+    - Keccak
+    - SHA-2
+    - SHA-1
+  BLAKE2:
+    - BLAKE2
+  PBKDF2:
+    - PBKDF2  
+  RIPEMD:
+    - RIPEMD-160
+  Whirlpool:
+    - Whirlpool
+  scrypt:
+    - scrypt
+  brcypt:
+    - brcypt
+encryption modes:
+  modes:
+    - CCM
+    - CWC
+    - EAX
+    - GCM
+    - IAPM
+    - OCB
+    - ECB
+    - CBC
+    - CFB
+    - OFB
+    - CTR
+message authentication codes:
+  MAC:
+    - CBC-MAC
+    - HMAC
+    - Poly1305
+public key cryptography:
+  other:
+    - RSA
+    - DH
+    - DSA
+    - ECDH
+    - ECDSA
+    - ElGamal
+
