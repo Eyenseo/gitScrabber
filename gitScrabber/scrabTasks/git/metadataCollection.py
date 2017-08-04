@@ -144,7 +144,7 @@ class MetaDataCollector():
             return self.__queries['']['stargazers_count']
 
 
-def metadata_collector(report, project, task_params, global_args):
+def metadata_collector(project_report, project, task_params, global_args):
     """
     Queries the github api to obtain the stars, languages and forks of the given
     repo
@@ -152,15 +152,17 @@ def metadata_collector(report, project, task_params, global_args):
     https://github.com/settings/tokens
     https://developer.github.com/v3/#authentication
 
-    :param    report:       The report
-    :param    project:      The project
-    :param    task_params:  Parameter given explicitly for this task, for all
-                            projects, defined in the task.yaml
-    :param    global_args:  This task scrubber makes use of the github-token to
-                            circumvent the tight rate-limiting for the github
-                            api
-    """
+    :param    project_report:  The project report so far - __DO NOT MODIFY__
+    :param    project:         The project
+    :param    task_params:     Parameter given explicitly for this task, for all
+                               projects, defined in the task.yaml
+    :param    global_args:     This task scrubber makes use of the github-token
+                               to circumvent the tight rate-limiting for the
+                               github api
 
+    :returns: The report of this task as a dictionary
+    """
+    report = {}
     meta = MetaDataCollector(project, global_args)
 
     language_data = meta.get_language_data()
@@ -169,3 +171,5 @@ def metadata_collector(report, project, task_params, global_args):
     report['languages'] = language_data['languages']
     report['main_language'] = language_data['main_language']
     report['forks'] = meta.get_forks_count()
+
+    return report

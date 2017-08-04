@@ -178,9 +178,10 @@ class ArchiveTaskRunner:
             scrabTask = self.__scrabTaskManager.get_task(task['name'])
 
             if(updated or self.__changed_task(scrabTask)):
-                task_report = {}
-                scrabTask['function'](task_report, self.__project,
-                                      task['parameter'], self.__global_args)
+                task_report = scrabTask['function'](report,
+                                                    self.__project,
+                                                    task['parameter'],
+                                                    self.__global_args)
                 report[task['name']] = task_report
             elif task['name'] in self.__old_data:
                 report[task['name']] = self.__old_data[task['name']]
