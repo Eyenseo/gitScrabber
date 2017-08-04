@@ -83,12 +83,11 @@ def __decide_h_extension(files_per_language):
     """
     h_files = files_per_language['C']['.h']
     if h_files > 0:
-        c_files = (sum(files_per_language['C'].values())
-                   - files_per_language['C']['.h'])
+        c_files = (sum(files_per_language['C'].values()) - h_files)
         cpp_files = (sum(files_per_language['C++'].values())
-                     - files_per_language['C++']['.h'])
-        oc_files = (sum(files_per_language['Objective-C'].values())
-                    - files_per_language['Objective-C']['.h'])
+                     - h_files
+                     - files_per_language['C++']['.c'])
+        oc_files = (sum(files_per_language['Objective-C'].values()) - h_files)
         lang_fiels = c_files + cpp_files + oc_files
 
         # Header only libraries are 'common' in C and C++
@@ -98,10 +97,12 @@ def __decide_h_extension(files_per_language):
             files_per_language['C++']['.h'] = 0
             files_per_language['Objective-C']['.h'] = 0
         else:
-            files_per_language['C']['.h'] = h_files * c_files / lang_fiels
-            files_per_language['C++']['.h'] = h_files * cpp_files / lang_fiels
-            files_per_language['Objective-C']['.h'] = h_files * \
-                oc_files / lang_fiels
+            files_per_language['C']['.h'] = (h_files *
+                                             c_files / lang_fiels)
+            files_per_language['C++']['.h'] = (h_files *
+                                               cpp_files / lang_fiels)
+            files_per_language['Objective-C']['.h'] = (h_files *
+                                                       oc_files / lang_fiels)
 
 
 def __calculate_main_language(files_per_language):
