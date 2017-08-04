@@ -281,11 +281,16 @@ class TaskExecutionManager:
         :returns: The report for a collection of functions that where run for
                   projects
         """
+        i = 0
         for future in as_completed(futures):
             project = futures[future]
             uid = self.__project_id(project)
             result = self.__get_task_result(project, future)
             report = deep_merge(report, {'projects': {uid: result}})
+            # TODO replace by logger or process indication
+            i += 1
+            print("~~ [{}/{}] Done with '{}' project tasks ~~".format(
+                i, len(futures), self.__project_name(project)))
             # TODO write to report.part.yaml temporarily
         return report
 
@@ -346,8 +351,14 @@ class TaskExecutionManager:
         :returns: The complete report with all information that was requested
         """
         report = {}
+        # TODO replace by logger or process indication
+        print("~~ Starting manual task ~~")
         deep_merge(report, self.__run_manual_task())
+        # TODO replace by logger or process indication
+        print("~~ Starting project tasks ~~")
         deep_merge(report, self.__run_project_tasks(), overwrite=True)
+        # TODO replace by logger or process indication
+        print("~~ Starting report tasks ~~")
         return self.__run_report_tasks(report)
 
     def create_report(self):
