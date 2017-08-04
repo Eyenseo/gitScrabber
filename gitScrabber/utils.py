@@ -38,7 +38,7 @@ def __handle_result(process):
                         "'{}' exited with return code: '{}' "
                         " and message:\n{}".format(
                             process.args, process.returncode, out[1].decode()))
-    return out[0].decode()
+    return out[0].decode(errors='ignore')
 
 
 def run(program, args=[], cwd=None):
