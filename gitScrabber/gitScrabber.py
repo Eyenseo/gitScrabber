@@ -69,7 +69,8 @@ class GitScrabber:
         """
         executionManager = TaskExecutionManager(
             self.__data_dir,
-            self.__tasks['tasks'],
+            self.__tasks['project_tasks'],
+            self.__tasks['report_tasks'],
             self.__tasks['projects'],
             self.__old_report,
             self.__global_args,
@@ -101,4 +102,4 @@ def main(args=None):
 
 
 if __name__ == "__main__":
-    main(['-t', '../task.yaml', '-p', '-d', '/tmp'])
+    main()

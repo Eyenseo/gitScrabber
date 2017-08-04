@@ -9,14 +9,14 @@ import scrabTasks.archive
 
 class ScrabTaskManager:
     """
-    ScrabTaskManager will load all modules under scrabTasks.git and
-    scrabTasks.report upon instantiation. These have to follow a specific format
-    to be called automagically later on.
+    ScrabTaskManager will load all modules under scrabTasks.archive,
+    scrabTasks.git and scrabTasks.report upon instantiation. These have to
+    follow a specific format to be called automagically later on.
     """
 
     def __init__(self):
         self.__scrabTasks = {}
-        self.load_tasks()
+        self.__load_all_tasks()
 
     def __obtain_name(self, module):
         """
@@ -75,13 +75,15 @@ class ScrabTaskManager:
                             "very same name as the name attribute of your "
                             "ScrabTask: '{}'".format(name)).with_traceback(tb)
 
-    def load_tasks(self):
+    def __load_tasks(self, task_type, location):
         """
-        Loads all scrab tasks
+        Loads scrab tasks from a specific location
+
+        :param    task_type:  The type of the loaded tasks, either 'archive',
+                              'git' or 'report'
+        :param    location:   The location to load the tasks from
         """
-        modules = {**import_submodules(scrabTasks.git),
-                   **import_submodules(scrabTasks.report),
-                   **import_submodules(scrabTasks.archive)}
+        modules = {**import_submodules(location)}
 
         for _, module in modules.items():
             name = self.__obtain_name(module)
@@ -89,7 +91,19 @@ class ScrabTaskManager:
             function = self.__obtain_function(module, name)
 
             self.__scrabTasks[name] = {
-                'name': name, 'function': function, 'version': version}
+                'name': name,
+                'type': task_type,
+                'function': function,
+                'version': version
+            }
+
+    def __load_all_tasks(self):
+        """
+        Loads all scrab tasks
+        """
+        self.__load_tasks('git', scrabTasks.git)
+        self.__load_tasks('report', scrabTasks.report)
+        self.__load_tasks('archive', scrabTasks.archive)
 
     def get_task(self, name):
         """

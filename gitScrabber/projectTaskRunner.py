@@ -1,4 +1,5 @@
 from packaging import version
+import utils
 import os
 import shutil
 import tempfile
@@ -6,10 +7,15 @@ from urllib.request import urlopen, Request
 from pyunpack import Archive
 
 
-class ArchiveTaskRunner:
+class ProjectTaskRunner:
     """
-    The ArchiveTaskRunner is responsible for executing tasks that scrab at a
-    code that comes from an archive or a git repo
+    The ProjectTaskRunner is responsible for executing tasks that scrab at the
+    git repos and archives. These tasks are meant to gather data, not
+    necessarily interpret it. The interpretation is better left to the report
+    scrab task.
+    Each ProjectTaskRunner is responsible for a single project and will create
+    the portion of the final report that contains the information of this
+    project
 
     :param  project:           The project the scrab tasks run for
     :param  tasks:             The tasks that will run for the project
@@ -19,9 +25,8 @@ class ArchiveTaskRunner:
     :param  global_args:       Arguments that will be passed to all tasks. They
                                _might_ contain something that is useful for the
                                task, but the task has to check if it is _there_
-                               as these are user provided. If they are needed
-                               to work that check should happen in the
-                               argHandler.
+                               as these are user provided. If they are needed to
+                               work that check should happen in the argHandler.
     :param  scrabTaskManager:  The ScrabTaskManager
     """
 
@@ -33,6 +38,56 @@ class ArchiveTaskRunner:
         self.__old_data = old_data
         self.__global_args = global_args
         self.__scrabTaskManager = scrabTaskManager
+
+        self.__project_to_task_mapping = {
+            'archive': ['archive'],
+            'git': ['git', 'archive']
+        }
+
+    def __check_repo_folder(self):
+        """
+        Checks weather the repo folder of the project is indeed a git repo or a
+        used folder
+
+        :returns: True if it is a git repo folder False if the folder does not
+                  exist
+
+        :exception Exception:  If the folder exists and isn't a git repo
+        """
+        cache_dir = self.__project['location']
+
+        if os.path.isdir(cache_dir + '/.git'):
+            try:
+                utils.run(program='git', args=['status'], cwd=cache_dir)
+            except Exception as e:
+                raise Exception(
+                    "The git repo '{}' seems to be corrupt "
+                    "- please delete it.".format(cache_dir))
+            return True
+        else:
+            if os.path.isdir(cache_dir):
+                raise Exception("The directory '{}' is used and would be "
+                                "overwritten when cloning.".format(cache_dir))
+            else:
+                return False
+
+    def __update_repo(self):
+        """
+        Updates the git repo - either cloning it for the first time or pulling
+        changes
+
+        :returns: True if anything changed False if nothing changed
+        """
+        cache_dir = self.__project['location']
+        url = self.__project['git']
+
+        if(self.__check_repo_folder()):
+            result = utils.run(program='git', args=['pull', ], cwd=cache_dir)
+            if 'Already up-to-date' in result:
+                return False
+        else:
+            utils.run(program='git', args=['clone', url, cache_dir])
+        return True
 
     def __project_cache_exists(self):
         """
@@ -108,9 +163,6 @@ class ArchiveTaskRunner:
         :returns: True it the archive should be downloaded and replace the
                   current code
         """
-        if 'git' in self.__project:
-            return False
-
         cache_dir = self.__project['location']
 
         if(not self.__project_cache_exists()):
@@ -144,6 +196,22 @@ class ArchiveTaskRunner:
             return True
         return False
 
+    def __update_project(self):
+        """
+        Updates the project - either cloning / pulling or re-/downloading it
+
+        :returns: True if anything changed False if nothing changed
+        """
+        if 'git' in self.__project:
+            return self.__update_repo()
+        elif 'archive' in self.__project:
+            return self.__update_archive()
+        else:
+            # TODO handle manually downloaded archives
+            pass
+
+        return False
+
     def __changed_task(self, scrabTask):
         """
         Checks weather the scrab task has to be rerun based on an old report
@@ -162,27 +230,29 @@ class ArchiveTaskRunner:
 
     def run_tasks(self):
         """
-        This function is responsible to ensure that the archive is present -- if
-        a git repo is the projects base it is expected to exist. It also decides
-        weather the scrab task has to run again based in its version and the
-        version mentioned in the old report as well as if a different sized
-        archive has been downloaded
+        This function is responsible to ensure that the source files are
+        present. It also decides weather the scrab tasks have to run again based
+        in their version and the version mentioned in the old report as well as
+        if the source files have changed
 
-        :returns: The sub-report containing all results of the scrab tasks that
-                  ran for this project
+        :returns: The sub-report containing all project information of this
+                  project
         """
         report = {}
-        updated = self.__update_archive()
+        updated = self.__update_project()
+        tasks_to_do = self.__project_to_task_mapping[self.__project['kind']]
 
         for task in self.__tasks:
             scrabTask = self.__scrabTaskManager.get_task(task['name'])
 
-            if(updated or self.__changed_task(scrabTask)):
+            if (scrabTask['type'] in tasks_to_do
+                    and (updated or self.__changed_task(scrabTask))):
                 task_report = scrabTask['function'](report,
                                                     self.__project,
                                                     task['parameter'],
                                                     self.__global_args)
                 report[task['name']] = task_report
-            elif task['name'] in self.__old_data:
+            elif self.__old_data and task['name'] in self.__old_data:
                 report[task['name']] = self.__old_data[task['name']]
+
         return report
