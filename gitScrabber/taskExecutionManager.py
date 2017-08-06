@@ -37,7 +37,7 @@ class TaskExecutionManager:
         self.__scrabTaskManager = scrabTaskManager
         self.__max_workers = max_workers
 
-        if self.__max_workers > 0:
+        if self.__max_workers < 0:
             self.__max_workers = 1
         if self.__project_tasks is None:
             self.__project_tasks = []
