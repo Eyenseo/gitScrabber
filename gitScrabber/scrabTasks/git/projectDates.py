@@ -16,7 +16,7 @@ def __first_commit_date(project):
     return utils.run('git',
                      ['log', '--all', '--format=%cI', '--first-parent',
                          '--reverse', '--max-parents=0'],
-                     project['location']).rstrip()
+                     project.location).rstrip()
 
 
 def __last_commit_date(project):
@@ -29,7 +29,7 @@ def __last_commit_date(project):
               (2017-08-03T15:25:14-07:00)
     """
     return utils.run('git', ['log', '--all', '-1', '--format=%cI'],
-                     project['location']).rstrip()
+                     project.location).rstrip()
 
 
 def project_dates(project_report, project, task_params,  global_args):

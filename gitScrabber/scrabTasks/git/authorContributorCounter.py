@@ -14,7 +14,7 @@ def __create_shortlog(project):
     :returns: The shortlog dict
     """
     shortlog = utils.run(
-        'git', ['shortlog', '-s', '-n', '--no-merges'], project['location'])
+        'git', ['shortlog', '-s', '-n', '--no-merges'], project.location)
     mapped_log = []
 
     for line in shortlog.split('\n'):
@@ -78,7 +78,8 @@ def __calc_contributor_authors(mapped_shortlog):
     return {'authors': authors, 'contributors': contributors, }
 
 
-def author_contributor_counter(project_report, project, task_params,  global_args):
+def author_contributor_counter(project_report, project, task_params,
+                               global_args):
     """
     Counts the authors and contributors of a repo
 

@@ -54,7 +54,7 @@ class ProjectTaskRunner:
 
         :exception Exception:  If the folder exists and isn't a git repo
         """
-        cache_dir = self.__project['location']
+        cache_dir = self.__project.location
 
         if os.path.isdir(cache_dir + '/.git'):
             try:
@@ -78,8 +78,8 @@ class ProjectTaskRunner:
 
         :returns: True if anything changed False if nothing changed
         """
-        cache_dir = self.__project['location']
-        url = self.__project['git']
+        cache_dir = self.__project.location
+        url = self.__project.url
 
         if(self.__check_repo_folder()):
             result = utils.run(program='git', args=['pull', ], cwd=cache_dir)
@@ -96,7 +96,7 @@ class ProjectTaskRunner:
         :returns: True if the cache folder for the project exists other wise
                   false
         """
-        cache_dir = self.__project['location']
+        cache_dir = self.__project.location
         return os.path.isdir(cache_dir)
 
     def __download_archive(self):
@@ -105,7 +105,7 @@ class ProjectTaskRunner:
 
         :returns: The file name of the temporary file
         """
-        url = self.__project['archive']
+        url = self.__project.url
         tmp_archive, tmp_archive_name = tempfile.mkstemp(
             suffix=url.rsplit('/', 1)[-1])
 
@@ -119,7 +119,7 @@ class ProjectTaskRunner:
 
         :param    archive:  The archive to extract
         """
-        cache_dir = self.__project['location']
+        cache_dir = self.__project.location
         Archive(archive).extractall(cache_dir)
 
     def __get_server_header(self):
@@ -128,7 +128,7 @@ class ProjectTaskRunner:
 
         :returns: The server header for the archive with meta information
         """
-        req = Request(self.__project['archive'], method='HEAD')
+        req = Request(self.__project.url, method='HEAD')
         with urlopen(req) as response:
             return {k.lower(): v for k, v in dict(response.info()).items()}
 
@@ -149,7 +149,7 @@ class ProjectTaskRunner:
             return True
 
         server_size = header['content-length']
-        cache_dir = self.__project['location']
+        cache_dir = self.__project.location
 
         with open(os.path.join(cache_dir, 'ArchiveSize.Scrab'), 'r') as f:
             if int(f.read()) != int(server_size):
@@ -163,12 +163,12 @@ class ProjectTaskRunner:
         :returns: True it the archive should be downloaded and replace the
                   current code
         """
-        cache_dir = self.__project['location']
+        cache_dir = self.__project.location
 
         if(not self.__project_cache_exists()):
             return True
         elif not os.path.isfile(os.path.join(cache_dir, 'ArchiveSize.Scrab')):
-            cache_dir = self.__project['location']
+            cache_dir = self.__project.location
             shutil.rmtree(cache_dir)
             return True
         else:
@@ -180,7 +180,7 @@ class ProjectTaskRunner:
 
         :returns: True if the archive was updated, else false
         """
-        cache_dir = self.__project['location']
+        cache_dir = self.__project.location
 
         if self.__check_for_update():
             os.makedirs(cache_dir, exist_ok=True)
@@ -202,9 +202,9 @@ class ProjectTaskRunner:
 
         :returns: True if anything changed False if nothing changed
         """
-        if 'git' in self.__project:
+        if self.__project.kind == 'git':
             return self.__update_repo()
-        elif 'archive' in self.__project:
+        elif self.__project.kind == 'archive':
             return self.__update_archive()
         else:
             # TODO handle manually downloaded archives
@@ -223,9 +223,9 @@ class ProjectTaskRunner:
         """
         return(
             not self.__old_tasks
-            or scrabTask['name'] not in self.__old_tasks
-            or version.parse(self.__old_tasks[scrabTask['name']])
-            != version.parse(scrabTask['version'])
+            or scrabTask.name not in self.__old_tasks
+            or version.parse(self.__old_tasks[scrabTask.name])
+            != version.parse(scrabTask.version)
         )
 
     def run_tasks(self):
@@ -240,19 +240,19 @@ class ProjectTaskRunner:
         """
         report = {}
         updated = self.__update_project()
-        tasks_to_do = self.__project_to_task_mapping[self.__project['kind']]
+        tasks_to_do = self.__project_to_task_mapping[self.__project.kind]
 
         for task in self.__tasks:
-            scrabTask = self.__scrabTaskManager.get_task(task['name'])
+            scrabTask = self.__scrabTaskManager.get_task(task.name)
 
-            if (scrabTask['type'] in tasks_to_do
+            if (scrabTask.kind in tasks_to_do
                     and (updated or self.__changed_task(scrabTask))):
-                task_report = scrabTask['function'](report,
-                                                    self.__project,
-                                                    task['parameter'],
-                                                    self.__global_args)
-                report[task['name']] = task_report
-            elif self.__old_data and task['name'] in self.__old_data:
-                report[task['name']] = self.__old_data[task['name']]
+                task_report = scrabTask.function(report,
+                                                 self.__project,
+                                                 task.parameter,
+                                                 self.__global_args)
+                report[task.name] = task_report
+            elif self.__old_data and task.name in self.__old_data:
+                report[task.name] = self.__old_data[task.name]
 
         return report

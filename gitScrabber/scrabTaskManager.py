@@ -7,16 +7,22 @@ import scrabTasks.report
 import scrabTasks.archive
 
 
-class ScrabTaskManager:
+class ScrabTask():
+
     """
-    ScrabTaskManager will load all modules under scrabTasks.archive,
-    scrabTasks.git and scrabTasks.report upon instantiation. These have to
-    follow a specific format to be called automagically later on.
+    Helper class that stores all information about the scrab tasks
+
+    :param    module:  The module that the scrab task is defined in
+    :param    kind:    The kind of the scrab task, either 'archive', 'git' or
+                       'report'
     """
 
-    def __init__(self):
-        self.__scrabTasks = {}
-        self.__load_all_tasks()
+    def __init__(self, module, kind):
+
+        self.name = self.__obtain_name(module)
+        self.version = self.__obtain_version(module, self.name)
+        self.function = self.__obtain_function(module, self.name)
+        self.kind = kind
 
     def __obtain_name(self, module):
         """
@@ -33,11 +39,6 @@ class ScrabTaskManager:
             tb = sys.exc_info()[2]
             raise Exception("You have to specify the name "
                             "of your ScrabTask").with_traceback(tb)
-
-        if(name in self.__scrabTasks):
-            raise Exception("The name '{}' is already used for a "
-                            "ScrabTask, please use a different one"
-                            "for your ScrabTask".format(name))
         return name
 
     def __obtain_version(self, module, name):
@@ -75,27 +76,37 @@ class ScrabTaskManager:
                             "very same name as the name attribute of your "
                             "ScrabTask: '{}'".format(name)).with_traceback(tb)
 
-    def __load_tasks(self, task_type, location):
+
+class ScrabTaskManager:
+    """
+    ScrabTaskManager will load all modules under scrabTasks.archive,
+    scrabTasks.git and scrabTasks.report upon instantiation. These have to
+    follow a specific format to be called automagically later on.
+    """
+
+    def __init__(self):
+        self.__scrabTasks = {}
+        self.__load_all_tasks()
+
+    def __load_tasks(self, kind, location):
         """
         Loads scrab tasks from a specific location
 
-        :param    task_type:  The type of the loaded tasks, either 'archive',
+        :param    kind:  The type of the loaded tasks, either 'archive',
                               'git' or 'report'
         :param    location:   The location to load the tasks from
         """
         modules = {**import_submodules(location)}
 
         for _, module in modules.items():
-            name = self.__obtain_name(module)
-            version = self.__obtain_version(module, name)
-            function = self.__obtain_function(module, name)
+            scrab_task = ScrabTask(module=module, kind=kind)
 
-            self.__scrabTasks[name] = {
-                'name': name,
-                'type': task_type,
-                'function': function,
-                'version': version
-            }
+            if(scrab_task.name in self.__scrabTasks):
+                raise Exception("The name '{}' is already used for a "
+                                "ScrabTask, please use a different one"
+                                "for your ScrabTask".format(scrab_task.name))
+
+            self.__scrabTasks[scrab_task.name] = scrab_task
 
     def __load_all_tasks(self):
         """

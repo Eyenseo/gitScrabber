@@ -57,26 +57,26 @@ class MetaDataCollector():
 
         :returns: The url to query the github api
         """
-        project_url = self.__project['git']
         replaceStr = None
 
-        if project_url.startswith('git@github.com:'):
+        if self.__project.url.startswith('git@github.com:'):
             replaceStr = 'git@github.com:'
-        elif project_url.startswith('https://github.com/'):
+        elif self.__project.url.startswith('https://github.com/'):
             replaceStr = 'https://github.com/'
-        elif project_url.startswith('http://github.com/'):
+        elif self.__project.url.startswith('http://github.com/'):
             replaceStr = 'http://github.com/'
         else:
             raise Exception(
                 "Unsupported project - it has to be a github project but "
                 "the  url '{}' seems to be not from github.".format(
-                    project_url))
+                    self.__project.url))
 
-        url = project_url.replace(replaceStr, 'https://api.github.com/repos/')
+        url = self.__project.url.replace(
+            replaceStr, 'https://api.github.com/repos/')
         url += urlExtension
 
-        if self.__global_args['github-token']:
-            url += "?access_token="+self.__global_args['github-token']
+        if self.__global_args.github_token:
+            url += "?access_token="+self.__global_args.github_token
 
         return url
 
@@ -112,7 +112,8 @@ class MetaDataCollector():
             'languages': list(self.__queries['languages'].keys()),
             'main_language': max(
                 self.__queries['languages'],
-                key=self.__queries['languages'].get)
+                key=self.__queries['languages'].get
+            )
         }
 
     def get_forks_count(self):

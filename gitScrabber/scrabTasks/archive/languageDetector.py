@@ -149,7 +149,7 @@ def languageDetector(project_report, project, task_params,  global_args):
     :returns: The report of this task as a dictionary
     """
     report = {}
-    files_per_language = __count_language_files(project['location'])
+    files_per_language = __count_language_files(project.location)
     main_language = __calculate_main_language(files_per_language)
 
     # write the result to the report

@@ -7,6 +7,111 @@ import sys
 import os
 
 
+class MetaProject():
+
+    """
+    Helper class that stores all information about the project
+
+    :param    config:     The configuration from the tasks.yaml file
+    :param    cache_dir:  The cache dir used by GitScrabber}
+    """
+
+    def __init__(self, config, cache_dir):
+
+        self.name = self.__project_name(config)
+
+        self.kind = None
+        self.manual_data = None
+        self.url = None
+
+        if 'git' in config:
+            self.kind = 'git'
+            self.url = config['git']
+        elif 'archive' in config:
+            self.kind = 'archive'
+            self.url = config['archive']
+        elif 'manual' in config:
+            self.kind = 'manual'
+            self.manual_data = config['manual']
+        else:
+            raise Exception("The following project is neither an archive "
+                            "or git and doesn't provide manual data:\n"
+                            "'{}'".format(config))
+
+        if self.url is None:
+            self.id = "{}_{}".format(self.name, md5(self.name))
+        else:
+            self.id = "{}_{}".format(self.name, md5(self.url))
+
+        if 'location' not in config:
+            self.location = os.path.join(cache_dir, self.id)
+        else:
+            self.location = config['location']
+
+    def __project_name(self, project):
+        """
+        Looks up the name of the project - either the last part of the url or a
+        manually given id
+
+        :param    project:  The project to look up the name for
+
+        :returns: The name of the given project
+        """
+        if('id' in project):
+            return project['id']
+        elif('git' in project):
+            return project['git'].rstrip('\\').rsplit('/', 1)[-1]
+        elif('archive' in project):
+            return project['archive'].rstrip('\\').rsplit('/', 1)[-1]
+        else:
+            raise Exception("The following project is neither an archive or "
+                            "git and doesn't provide an id:\n"
+                            "'{}'".format(project))
+
+
+class MetaTask():
+
+    """
+    Helper class that stores all information that is needed to run the scrab
+    tasks on the projects
+
+    :param    config:  The configuration from the tasks.yaml file
+    """
+
+    def __init__(self, config):
+
+        if str is type(config):
+            self.name = config
+            self.parameter = {}
+        else:
+            unpacked = self.__unpack_CommentedMap(config)
+
+            if len(unpacked) != 2 or not isinstance(unpacked[1], dict):
+                raise Exception("The parameter for tasks have to be "
+                                "given in a map, but they weren't for "
+                                "the task '{}'".format(unpacked[0]))
+
+            self.name = unpacked[0]
+            if unpacked[1] is None:
+                self.parameter = {}
+            else:
+                self.parameter = unpacked[1]
+
+    def __unpack_CommentedMap(self, yaml_dict):
+        """
+        Unpacks a CommentedMap from ruamel.yaml in a list
+
+        :param    yaml_dict:  The yaml dictionary
+
+        :returns: Array of the directory
+        """
+        l = []
+        for x in yaml_dict.items():
+            for y in x:
+                l.append(y)
+        return l
+
+
 class TaskExecutionManager:
     """
     This class provides the means to execute the scrab tasks on projects and
@@ -29,9 +134,9 @@ class TaskExecutionManager:
     def __init__(self, cache_dir, project_tasks, report_tasks, projects,
                  old_report, global_args, scrabTaskManager, max_workers=10):
         self.__cache_dir = cache_dir
-        self.__project_tasks = project_tasks
-        self.__report_tasks = report_tasks
-        self.__projects = projects
+        self.__project_tasks = self.__setup_tasks_configuration(project_tasks)
+        self.__report_tasks = self.__setup_tasks_configuration(report_tasks)
+        self.__projects = self.__setup_project_data(projects)
         self.__old_report = old_report
         self.__global_args = global_args
         self.__scrabTaskManager = scrabTaskManager
@@ -39,30 +144,8 @@ class TaskExecutionManager:
 
         if self.__max_workers < 0:
             self.__max_workers = 1
-        if self.__project_tasks is None:
-            self.__project_tasks = []
-        if self.__report_tasks is None:
-            self.__report_tasks = []
         if not cache_dir.endswith('/'):
             self.__cache_dir += '/'
-
-        self.__setup_tasks_configuration(self.__project_tasks)
-        self.__setup_tasks_configuration(self.__report_tasks)
-        self.__setup_project_data()
-
-    def __unpack_CommentedMap(self, yaml_dict):
-        """
-        Unpacks a CommentedMap from ruamel.yaml in a list
-
-        :param    yaml_dict:  The yaml dictionary
-
-        :returns: Array of the directory
-        """
-        l = []
-        for x in yaml_dict.items():
-            for y in x:
-                l.append(y)
-        return l
 
     def __setup_tasks_configuration(self, tasks):
         """
@@ -74,37 +157,26 @@ class TaskExecutionManager:
 
         :param    tasks:  The tasks to set up the configuration for
         """
-        for i, task in enumerate(tasks):
-            if str is type(task):
-                tasks[i] = {'name': task, 'parameter': {}}
-            else:
-                unpacked = self.__unpack_CommentedMap(task)
+        if tasks is None:
+            pass
 
-                if len(unpacked) != 2 or not isinstance(unpacked[1], dict):
-                    raise Exception("The parameter for tasks have to be "
-                                    "given in a map, but they weren't for "
-                                    "the task '{}'".format(unpacked[0]))
+        meta_tasks = []
 
-                tasks[i] = {'name': unpacked[0]}
-                tasks[i]['parameter'] = {}
+        for task in tasks:
+            meta_tasks.append(MetaTask(task))
 
-                if unpacked[1] is not None:
-                    tasks[i]['parameter'] = unpacked[1]
+        return meta_tasks
 
-    def __setup_project_data(self):
+    def __setup_project_data(self, projects):
         """
         Sets up the project specific data
         """
-        for project in self.__projects:
-            if 'location' not in project:
-                project['location'] = self.__project_cache_dir(project)
+        meta_projects = []
 
-            if 'git' in project:
-                project['kind'] = 'git'
-            elif 'archive' in project:
-                project['kind'] = 'archive'
-            else:
-                project['kind'] = 'manual'
+        for project in projects:
+            meta_projects.append(MetaProject(project, self.__cache_dir))
+
+        return meta_projects
 
     def __add_scrab_versions(self, task_type, tasks):
         """
@@ -118,65 +190,12 @@ class TaskExecutionManager:
                   their versions
         """
         report = {task_type: {}}
+
         for task in tasks:
-            scrabTask = self.__scrabTaskManager.get_task(task['name'])
-            report[task_type][task['name']] = scrabTask['version']
+            scrabTask = self.__scrabTaskManager.get_task(task.name)
+            report[task_type][task.name] = scrabTask.version
+
         return report
-
-    def __project_name(self, project):
-        """
-        Looks up the name of the project - either the last part of the url or a
-        manually given id
-
-        :param    project:  The project to look up the name for
-
-        :returns: The name of the given project
-        """
-        if('id' in project):
-            return project['id']
-        elif('git' in project):
-            return project['git'].rstrip('\\').rsplit('/', 1)[-1]
-        elif('archive' in project):
-            return project['archive'].rstrip('\\').rsplit('/', 1)[-1]
-        else:
-            raise Exception("The following project is neither an archive or "
-                            "git and doesn't provide an id:\n"
-                            "'{}'".format(project))
-
-    def __project_id(self, project):
-        """
-        Generates an unique id for the project. The id will be made up of the
-        name of the project and the md5sum of the url or given id of the project
-
-        :param    project:  The project to generate the id for
-
-        :returns: An id for the given project
-        """
-        base_id = self.__project_name(project)
-
-        hash_id = None
-        if('git' in project):
-            hash_id = md5(project['git'])
-        elif('archive' in project):
-            hash_id = md5(project['archive'])
-        elif('id' in project):
-            hash_id = md5(project['id'])
-        else:
-            raise Exception("The following project is neither an archive or "
-                            "git and doesn't provide an id:\n"
-                            "'{}'".format(project))
-
-        return "{}_{}".format(base_id, hash_id)
-
-    def __project_cache_dir(self, project):
-        """
-        Generates the path to the cache directory for the given project
-
-        :param    project:  The project to generate the cache path for
-
-        :returns: The path to the cache directory for the given project
-        """
-        return os.path.join(self.__cache_dir, self.__project_id(project))
 
     def __extract_old_project_tasks(self):
         """
@@ -207,10 +226,8 @@ class TaskExecutionManager:
         :returns: The data that was generated in a previous execution for the
                   given project
         """
-        uid = self.__project_id(project)
-
-        if self.__old_report and uid in self.__old_report:
-            return self.__old_report[uid]
+        if self.__old_report and project.id in self.__old_report:
+            return self.__old_report[project.id]
         return None
 
     def __get_task_result(self, project, future):
@@ -227,8 +244,7 @@ class TaskExecutionManager:
         except Exception as e:
             tb = sys.exc_info()[2]
             raise Exception("While collecting the ScrabTask results for '{}'"
-                            " something happened".format(
-                                self.__project_name(project))
+                            " something happened".format(project.name)
                             ).with_traceback(tb)
 
     def __project_task_wrapper(self, project, old_tasks, old_data):
@@ -268,7 +284,7 @@ class TaskExecutionManager:
         old_tasks = self.__extract_old_project_tasks()
 
         for project in self.__projects:
-            if project['kind'] is not 'manual':
+            if project.kind is not 'manual':
                 old_data = self.__extract_old_data(project)
                 future = executor.submit(self.__project_task_wrapper, project,
                                          old_tasks, old_data)
@@ -288,13 +304,12 @@ class TaskExecutionManager:
         i = 0
         for future in as_completed(futures):
             project = futures[future]
-            uid = self.__project_id(project)
             result = self.__get_task_result(project, future)
-            report = deep_merge(report, {'projects': {uid: result}})
+            report = deep_merge(report, {'projects': {project.id: result}})
             # TODO replace by logger or process indication
             i += 1
             print("~~ [{}/{}] Done with '{}' project tasks ~~".format(
-                i, len(futures), self.__project_name(project)))
+                i, len(futures), project.name))
             # TODO write to report.part.yaml temporarily
         return report
 
@@ -308,9 +323,9 @@ class TaskExecutionManager:
         """
         report = {}
         for project in self.__projects:
-            if 'manual' in project:
-                uid = self.__project_id(project)
-                deep_merge(report, {'projects': {uid: project['manual']}})
+            if project.manual_data is not None:
+                deep_merge(report, {
+                    'projects': {project.id: project.manual_data}})
         return report
 
     def __run_project_tasks(self):
