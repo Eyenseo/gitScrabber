@@ -43,9 +43,11 @@ def __gather_project_dates(pro_report):
             and 'first_change' in pro_report['project_dates']
             and 'last_change' in pro_report['project_dates']):
         data = {}
-        data['first_change'] = pro_report['project_dates']['first_change']
-        data['last_change'] = pro_report['project_dates']['last_change']
-        data['now'] = datetime.now(timezone.utc).isoformat()
+        data['first_change'] = dateutil.parser.parse(
+            pro_report['project_dates']['first_change'])
+        data['last_change'] = dateutil.parser.parse(
+            pro_report['project_dates']['last_change'])
+        data['now'] = datetime.now(timezone.utc)
         return data
     else:
         return None
@@ -100,17 +102,6 @@ def __gather_needed_information(pro_report):
         return None
 
 
-def to_date(date):
-    """
-    Helper function to safe line space - converts a string to date
-
-    :param    date:  The date as string type
-
-    :returns: Date as datetime type
-    """
-    return dateutil.parser.parse(date)
-
-
 def __calculate_impact(data):
     """
     Calculates the impact.
@@ -121,14 +112,17 @@ def __calculate_impact(data):
     :returns: The impact of the project
     """
     language_weight = 1  # FIXME generate?
+
     contributor = data['contributor#']
     contributor_weight = 1/30  # TODO grab from task file
+
     author = data['author#']
     author_weight = 1/3  # TODO grab from task file
-    last_change_age = (to_date(data['now']) -
-                       to_date(data['last_change'])).days
+
+    last_change_age = (data['now'] - data['last_change']).days
     last_change_age_weight = 1  # TODO grab from task file
-    project_age = (to_date(data['now']) - to_date(data['first_change'])).days
+
+    project_age = (data['now'] - data['first_change']).days
     project_age_weight = 3  # TODO grab from task file
 
     return language_weight * (
