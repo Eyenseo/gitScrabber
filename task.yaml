@@ -5,21 +5,22 @@ projects:
   # manual can be specified for git and archive projects
   # it will be overwritten by the git and archive tasks
   manual:
-    # these data constructs have to resemble what the reportScrabberTasks expect
+    # these data constructs have to resemble what the scrab tasks expect
     author_contributor_counter:
       author#: 20 # will be corrected
       Foo: Bar # will stay as is
     metadata_collector:
       stars: 10
       languages:
-        - C 
+        - C
         - Java
 - git: https://github.com/ZewoGraveyard/OpenSSL
 # archive urls that will be downloaded and analysed
 - archive: ftp://ftp.franken.de/pub/crypt/cryptlib/cl3431.zip
-# manual data for projects that do not provide a git repo but should be analysed by the reportScrabber
+# manual data for projects that do not provide a git repo or archive
+# but should be analysed by the reportScrabber
 - manual:
-    # these data constructs have to resemble what the reportScrabberTasks expect
+    # these data constructs have to resemble what the scrab tasks expect
     author_contributor_counter:
       author#: 300
       contributor#: 700
@@ -27,16 +28,14 @@ projects:
       stars: 42
   # The url is given for identification
   id: foo://bar
-# Tasks that should be run
-tasks:
-  # Tasks that should run for the git repos
-  git:
+# Tasks that should be run for the projects in parallel
+# (sequentially for each project - the order matters!)
+project_tasks:
   - author_contributor_counter
   - metadata_collector
-  - gdummy
-  archive:
-  - adummy
   - languageDetector
-  # Tasks that should run over the previously generated report
-  report:
-  - rdummy
+  - project_dates
+# Tasks that should run over the previously generated report,
+# sequentially after the project tasks
+report_tasks:
+  - impact

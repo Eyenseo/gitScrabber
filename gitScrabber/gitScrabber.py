@@ -5,6 +5,15 @@ import argHandler
 import ruamel.yaml
 
 
+class GlobalArgs():
+    """
+    Helper class that holds the global arguments.
+    """
+
+    def __init__(self, github_token):
+        self.github_token = github_token
+
+
 class GitScrabber:
     """
     A script to scrab information from git repos
@@ -69,7 +78,8 @@ class GitScrabber:
         """
         executionManager = TaskExecutionManager(
             self.__data_dir,
-            self.__tasks['tasks'],
+            self.__tasks['project_tasks'],
+            self.__tasks['report_tasks'],
             self.__tasks['projects'],
             self.__old_report,
             self.__global_args,
@@ -96,9 +106,9 @@ def main(args=None):
         output_file=args.output,
         data_dir=args.data,
         print=args.print,
-        global_args={'github-token': args.github_token}
+        global_args=GlobalArgs(args.github_token)
     ).scrab()
 
 
 if __name__ == "__main__":
-    main(['-t', '../task.yaml', '-p', '-d', '/tmp'])
+    main()
