@@ -43,23 +43,12 @@ class TaskExecutionManager:
             self.__project_tasks = []
         if self.__report_tasks is None:
             self.__report_tasks = []
+        if not cache_dir.endswith('/'):
+            self.__cache_dir += '/'
 
         self.__setup_tasks_configuration(self.__project_tasks)
         self.__setup_tasks_configuration(self.__report_tasks)
-
-        if(not cache_dir.endswith('/')):
-            self.__cache_dir += '/'
-
-        for project in self.__projects:
-            if 'location' not in project:
-                project['location'] = self.__project_cache_dir(project)
-
-            if 'git' in project:
-                project['kind'] = 'git'
-            elif 'archive' in project:
-                project['kind'] = 'archive'
-            else:
-                project['kind'] = 'manual'
+        self.__setup_project_data()
 
     def __unpack_CommentedMap(self, yaml_dict):
         """
@@ -101,6 +90,21 @@ class TaskExecutionManager:
 
                 if unpacked[1] is not None:
                     tasks[i]['parameter'] = unpacked[1]
+
+    def __setup_project_data(self):
+        """
+        Sets up the project specific data
+        """
+        for project in self.__projects:
+            if 'location' not in project:
+                project['location'] = self.__project_cache_dir(project)
+
+            if 'git' in project:
+                project['kind'] = 'git'
+            elif 'archive' in project:
+                project['kind'] = 'archive'
+            else:
+                project['kind'] = 'manual'
 
     def __add_scrab_versions(self, task_type, tasks):
         """
