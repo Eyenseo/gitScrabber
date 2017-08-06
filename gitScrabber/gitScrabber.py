@@ -77,13 +77,13 @@ class GitScrabber:
         :returns: the report as python object
         """
         executionManager = TaskExecutionManager(
-            self.__data_dir,
-            self.__tasks['project_tasks'],
-            self.__tasks['report_tasks'],
-            self.__tasks['projects'],
-            self.__old_report,
-            self.__global_args,
-            self.__scrabTaskManager)
+            cache_dir=self.__data_dir,
+            project_tasks=self.__tasks['project_tasks'],
+            report_tasks=self.__tasks['report_tasks'],
+            projects=self.__tasks['projects'],
+            old_report=self.__old_report,
+            global_args=self.__global_args,
+            scrabTaskManager=self.__scrabTaskManager)
         report = executionManager.create_report()
 
         self.__handele_results(report)

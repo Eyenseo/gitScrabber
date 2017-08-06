@@ -3,6 +3,8 @@ from reportTaskRunner import ReportTaskRunner
 from utils import deep_merge, md5
 
 from concurrent.futures import ThreadPoolExecutor, as_completed
+from multiprocessing import cpu_count
+
 import sys
 import os
 
@@ -128,11 +130,10 @@ class TaskExecutionManager:
                                as these are user provided. If they are needed to
                                work that check should happen in the argHandler.
     :param  scrabTaskManager:  The ScrabTaskManager
-    :param  max_workers:       The maximum workers to be used by the ThreadPool
     """
 
     def __init__(self, cache_dir, project_tasks, report_tasks, projects,
-                 old_report, global_args, scrabTaskManager, max_workers=10):
+                 old_report, global_args, scrabTaskManager):
         self.__cache_dir = cache_dir
         self.__project_tasks = self.__setup_tasks_configuration(project_tasks)
         self.__report_tasks = self.__setup_tasks_configuration(report_tasks)
@@ -140,10 +141,8 @@ class TaskExecutionManager:
         self.__old_report = old_report
         self.__global_args = global_args
         self.__scrabTaskManager = scrabTaskManager
-        self.__max_workers = max_workers
+        self.__max_workers = cpu_count()
 
-        if self.__max_workers < 0:
-            self.__max_workers = 1
         if not cache_dir.endswith('/'):
             self.__cache_dir += '/'
 
