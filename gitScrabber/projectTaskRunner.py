@@ -86,7 +86,15 @@ class ProjectTaskRunner:
             if 'Already up-to-date' in result:
                 return False
         else:
-            utils.run(program='git', args=['clone', url, cache_dir])
+            utils.run(
+                program='git',
+                args=[
+                    'clone',
+                    '--recurse-submodules',
+                    '--shallow-submodules',
+                    url,
+                    cache_dir
+                ])
         return True
 
     def __project_cache_exists(self):
