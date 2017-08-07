@@ -71,6 +71,9 @@ project_tasks:
           - Data Encryption Standard
         Triple DES:
           - Triple DES
+          - TDES
+          - 3DES
+          - DESede
         Serpent:
           - Serpent
         Twofish:
