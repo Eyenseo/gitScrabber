@@ -192,6 +192,7 @@ class FeatureDetector():
         old_path = ""
         for dirpath, dirs, filenames in os.walk(self.__project.location,
                                                 topdown=True):
+            # ignore hidden / git directories
             if old_path is not dirpath:
                 old_path = dirpath
                 for d in dirs:
