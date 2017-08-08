@@ -2,6 +2,7 @@ from argparse import ArgumentTypeError as err
 import argparse
 import sys
 import os
+import re
 
 
 class PathType(object):
@@ -201,6 +202,9 @@ def __load_config(config_path):
     with open(config_path) as f:
         config = f.readlines()
         for line in config:
+            if re.match(r'^#', line):
+                continue
+
             arg = line.strip().split(sep='=', maxsplit=1)
             if len(arg[0]) > 1:
                 arg[0] = '--' + arg[0]
