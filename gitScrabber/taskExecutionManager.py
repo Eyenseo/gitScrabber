@@ -158,7 +158,7 @@ class TaskExecutionManager:
         :param    tasks:  The tasks to set up the configuration for
         """
         if tasks is None:
-            pass
+            return []
 
         meta_tasks = []
 
