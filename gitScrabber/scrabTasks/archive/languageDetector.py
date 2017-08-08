@@ -63,7 +63,15 @@ def __count_language_files(project_dir):
 
     # walk through all files in the project and count extensions
     for dirpath, dirnames, filenames in os.walk(project_dir):
+        for d in dirnames:  # ignore hidden / git directories
+            dirnames[:] = [d for d in dirnames if not d.startswith('.')]
+            continue
+
         for file in filenames:
+            if file[0] is '.':
+                # ignore hidden / git files
+                continue
+
             filename, file_extension = os.path.splitext(file)
             for language in language_extensions:
                 if file_extension in language_extensions[language]:
