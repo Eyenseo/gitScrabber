@@ -178,7 +178,6 @@ class ArchiveProjectManager:
         header = self.__get_server_header()
 
         if 'content-length' not in header:
-            print("4")
             return True
 
         server_size = header['content-length']
