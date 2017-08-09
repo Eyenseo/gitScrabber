@@ -41,7 +41,7 @@ class Feature():
         regex_queries = []
 
         for query in queries:
-            if len(query) > 3:
+            if len(query) > 5:
                 simple_queries.append(query.lower())
             else:
                 regex_queries.append(
