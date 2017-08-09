@@ -83,7 +83,7 @@ class FileTaskRunner():
         if not header:
             return True  # Empty is considered a binary file
         # Count 'human' text characters
-        text = regex.findall(b"[\w\t \(\)\.=!'\+\-\*\\\\]", header)
+        text = regex.findall(rb"[\w\t \(\)\.=!'\+\-\*\\]", header)
 
         if float(len(text)) / float(len(header)) < 0.80:
             return True
