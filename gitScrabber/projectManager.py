@@ -63,8 +63,6 @@ class GitProjectManager:
             program='git',
             args=[
                 'clone',
-                '--recurse-submodules',
-                '--shallow-submodules',
                 self.__project.url,
                 self.__project.location
             ])
@@ -86,27 +84,10 @@ class GitProjectManager:
 
         result = utils.run(
             program='git',
-            args=['pull', '--recurse-submodules'],
+            args=['pull'],
             cwd=self.__project.location
         )
         return True
-
-    def __handle_bad_submodules(self):
-        """
-        Updates the git repo - either cloning it for the first time or pulling
-        changes
-
-        :returns: True if anything changed False if nothing changed
-        """
-        utils.run(
-            program='git',
-            args=[
-                'submodule',
-                'foreach',
-                '"git checkout master || (exit 0)"',
-            ],
-            cwd=self.__project.location
-        )
 
     def update(self):
         """
@@ -118,20 +99,11 @@ class GitProjectManager:
         :returns: The sub-report containing all project information of this
                   project
         """
-
-        try:
-            if self.__check_repo_folder():
-                return self.__update_repo()
-            else:
-                self.__init_repo()
-                return True
-        except Exception as e:
-            if ("Fetched in submodule path " in str(e)
-                    and "Direct fetching of that commit failed." in str(e)):
-                self.__handle_bad_submodules()
-                return True
-            else:
-                raise e
+        if self.__check_repo_folder():
+            return self.__update_repo()
+        else:
+            self.__init_repo()
+            return True
 
 
 class ArchiveProjectManager:
