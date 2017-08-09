@@ -16,7 +16,7 @@ def __first_commit_date(project):
     return utils.run('git',
                      ['log', '--all', '--format=%cI', '--first-parent',
                          '--reverse', '--max-parents=0'],
-                     project.location).rstrip()
+                     project.location).splitlines()[0].rstrip()
 
 
 def __last_commit_date(project):

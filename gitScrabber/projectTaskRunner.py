@@ -81,12 +81,39 @@ class ProjectTaskRunner:
         cache_dir = self.__project.location
         url = self.__project.url
 
-        if(self.__check_repo_folder()):
-            result = utils.run(program='git', args=['pull', ], cwd=cache_dir)
-            if 'Already up-to-date' in result:
-                return False
-        else:
-            utils.run(program='git', args=['clone', url, cache_dir])
+        try:
+            if(self.__check_repo_folder()):
+                result = utils.run(
+                    program='git',
+                    args=['pull', '--recurse-submodules'],
+                    cwd=cache_dir
+                )
+                if 'Already up-to-date' in result:
+                    return False
+            else:
+                utils.run(
+                    program='git',
+                    args=[
+                        'clone',
+                        '--recurse-submodules',
+                        '--shallow-submodules',
+                        url,
+                        cache_dir
+                    ])
+        except Exception as e:
+            if ("Fetched in submodule path " in str(e)
+                    and "Direct fetching of that commit failed." in str(e)):
+                utils.run(
+                    program='git',
+                    args=[
+                        'submodule',
+                        'foreach',
+                        '"git checkout master || (exit 0)"',
+                        url,
+                        cache_dir
+                    ])
+            else:
+                raise e
         return True
 
     def __project_cache_exists(self):
