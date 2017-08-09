@@ -43,4 +43,6 @@ Global arguments:
 - `packaging`
 - `pyunpack`
 - `ruamel.yaml`
+- `regex`
+- `dateutil`
 
