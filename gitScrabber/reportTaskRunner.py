@@ -25,6 +25,7 @@ class ReportTaskRunner:
         Executes the report scrab tasks sequentially
         """
         for task in self.__tasks:
-            scrabTask = self.__scrabTaskManager.get_task(task.name)
-            scrabTask.function(self.__report, task.parameter,
-                               self.__global_args)
+            meta_task = self.__scrabTaskManager.get_task(task.name)
+            scrab_task = meta_task.construct(task.parameter,
+                                             self.__global_args)
+            self.__report = scrab_task.scrab(self.__report)

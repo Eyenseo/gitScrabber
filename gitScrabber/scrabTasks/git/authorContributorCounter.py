@@ -1,108 +1,122 @@
+from ..scrabTask import GitTask
+
 import utils
 import re
 
-name = "author_contributor_counter"
-version = "1.0.0"
+name = "AuthorContributorCounter"
+version = "1.1.0"
 
 
-def __create_shortlog(project):
-    """
-    Creates a dict that represents the shortlog that git outputs
-
-    :param    project:  The project
-
-    :returns: The shortlog dict
-    """
-    shortlog = utils.run(
-        'git', ['shortlog', '-s', '-n', '--no-merges'], project.location)
-    mapped_log = []
-
-    for line in shortlog.split('\n'):
-        if line:
-            match = re.search('\s*(\d*)\s*(.*)', line)
-            #                  (number of commits, author name)
-            mapped_log.append((int(match.group(1)), match.group(2)))
-    return mapped_log
-
-
-def __calc_cutof(mapped_shortlog):
-    """
-    Calculates where the hard cut of for authors should be.
-
-    This is needed for linear decreasing commit graphs per author, where the
-    difference between the amount of commits between the authors is too small to
-    result in a rejection
-
-    :param    mapped_shortlog:  The mapped shortlog
-
-    :returns: Hard cut of value for the author contributor classification.
-    """
-    top_cont, _ = mapped_shortlog[0]
-    mean_cut = top_cont * 0.05
-
-    summ = 0
-    numm = 0
-    for count, _ in mapped_shortlog:
-        if count >= mean_cut:
-            summ += count
-            numm += 1
-        else:
-            break
-    return summ / numm
-
-
-def __calc_contributor_authors(mapped_shortlog):
-    """
-    Calculates who is considered a contributor or an author.
-
-    The calculation is done by the difference in commits between authors and a
-    hard cut of.
-
-    :param    mapped_shortlog:  The mapped shortlog
-
-    :returns: The contributor authors as a dict.
-    """
-    authors = []
-    contributors = []
-
-    cutof = __calc_cutof(mapped_shortlog)
-    prev_count, _ = mapped_shortlog[0]
-
-    for count, cont in mapped_shortlog:
-        if count >= cutof and count >= prev_count*0.4:
-            prev_count = count
-            authors.append((count, cont))
-        else:
-            contributors.append((count, cont))
-
-    return {'authors': authors, 'contributors': contributors, }
-
-
-def author_contributor_counter(project_report, project, task_params,
-                               global_args):
+class AuthorContributorCounter(GitTask):
     """
     Counts the authors and contributors of a repo
 
-    :param    project_report:  The project report so far - __DO NOT MODIFY__
-    :param    project:         The project
-    :param    task_params:     Parameter given explicitly for this task, for all
-                               projects, defined in the task.yaml
-    :param    global_args:     Arguments that will be passed to all tasks. They
-                               _might_ contain something that is useful for the
-                               task, but the task has to check if it is _there_
-                               as these are user provided. If they are needed to
-                               work that check should happen in the argHandler.
+    Example:
+        AuthorContributorCounter:
+          author#: 4
+          contributor#: 369
 
-    :returns: The report of this task as a dictionary
+    :param  parameter:    Parameter given explicitly for this task, for all
+                          projects, defined in the task.yaml
+    :param  global_args:  Arguments that will be passed to all tasks. They
+                          _might_ contain something that is useful for the task,
+                          but the task has to check if it is _there_ as these
+                          are user provided. If they are needed to work that
+                          check should happen in the argHandler.
     """
-    report = {}
-    mapped_shortlog = __create_shortlog(project)
-    classified = __calc_contributor_authors(mapped_shortlog)
 
-    report['author#'] = len(classified['authors'])
-    # report['authors'] = classified['authors']
+    def __init__(self, parameter, global_args):
+        super(AuthorContributorCounter, self).__init__(name, version,
+                                                       parameter, global_args)
+        self.__project = None
+        self.__mapped_shortlog = None
 
-    report['contributor#'] = len(classified['contributors'])
-    # report['contributors'] = classified['contributors']
+    def __create_shortlog(self):
+        """
+        Creates a dict that represents the shortlog that git outputs
 
-    return report
+        :returns: The shortlog dict
+        """
+        shortlog = utils.run(
+            'git', ['shortlog', '-s', '-n', '--no-merges'],
+            self.__project.location)
+        mapped_log = []
+
+        for line in shortlog.split('\n'):
+            if line:
+                match = re.search('\s*(\d*)\s*(.*)', line)
+                #                  (number of commits, author name)
+                mapped_log.append((int(match.group(1)), match.group(2)))
+        return mapped_log
+
+    def __calc_cutof(self):
+        """
+        Calculates where the hard cut of for authors should be.
+
+        This is needed for linear decreasing commit graphs per author, where the
+        difference between the amount of commits between the authors is too
+        small to result in a rejection
+
+        :returns: Hard cut of value for the author contributor classification.
+        """
+        top_cont, _ = self.__mapped_shortlog[0]
+        mean_cut = top_cont * 0.05
+
+        summ = 0
+        numm = 0
+        for count, _ in self.__mapped_shortlog:
+            if count >= mean_cut:
+                summ += count
+                numm += 1
+            else:
+                break
+        return summ / numm
+
+    def __calc_contributor_authors(self):
+        """
+        Calculates who is considered a contributor or an author.
+
+        The calculation is done by the difference in commits between authors and
+        a hard cut of.
+
+        :returns: The contributor authors as a dict.
+        """
+        authors = []
+        contributors = []
+
+        cutof = self.__calc_cutof()
+        prev_count, _ = self.__mapped_shortlog[0]
+
+        for count, cont in self.__mapped_shortlog:
+            if count >= cutof and count >= prev_count*0.4:
+                prev_count = count
+                authors.append((count, cont))
+            else:
+                contributors.append((count, cont))
+
+        return {'authors': authors, 'contributors': contributors, }
+
+    def scrab(self, project):
+        """
+        Counts the authors and contributors of a repo
+
+        :param    project:         The project
+
+        :returns: The report of this task as a dictionary
+                  Example:
+                      AuthorContributorCounter:
+                        author#: 4
+                        contributor#: 369
+        """
+        self.__project = project
+        self.__mapped_shortlog = self.__create_shortlog()
+        classified = self.__calc_contributor_authors()
+
+        report = {}
+        report['author#'] = len(classified['authors'])
+        # report['authors'] = classified['authors']
+
+        report['contributor#'] = len(classified['contributors'])
+        # report['contributors'] = classified['contributors']
+
+        return report

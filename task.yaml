@@ -33,11 +33,11 @@ projects:
 # Tasks that should be run for the projects in parallel
 # (sequentially for each project - the order matters!)
 project_tasks:
-  - author_contributor_counter
-  - metadata_collector
-  - languageDetector
-  - project_dates
-  - feature_detector:
+  - AuthorContributorCounter
+  - MetaDataCollector
+  - LanguageDetector
+  - ProjectDates
+  - FeatureDetector:
       block ciphers:
         AES:
           - AES
@@ -406,4 +406,4 @@ project_tasks:
 # Tasks that should run over the previously generated report,
 # sequentially after the project tasks
 report_tasks:
-  - impact
+  - ImpactCalculator
