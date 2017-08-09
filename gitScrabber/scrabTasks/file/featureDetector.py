@@ -1,5 +1,5 @@
 from ..scrabTask import FileTask
-import re
+import regex
 
 name = "FeatureDetector"
 version = "2.0.0"
@@ -46,7 +46,7 @@ class Feature():
             else:
                 regex_queries.append(
                     #         not before    search        not after
-                    re.compile(r"[^a-z0-9]"+query.lower()+r"[^a-z0-9]"))
+                    regex.compile(r"[^a-z0-9]"+query.lower()+r"[^a-z0-9]"))
         return (simple_queries, regex_queries)
 
 
@@ -141,7 +141,7 @@ class FeatureDetector(FileTask):
             for query in feature.simple_queries:
                 feature_count += file.count(query)
             for query in feature.regex_queries:
-                feature_count += len(query.findall(file))
+                feature_count += len(query.findall(file, concurrent=True))
             feature_counts[feature.category][feature.name] += feature_count
 
         return feature_counts
