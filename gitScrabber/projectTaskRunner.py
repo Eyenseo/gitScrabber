@@ -3,6 +3,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 
 import sys
 import os
+import regex
 
 
 class FileTaskRunner():
@@ -70,6 +71,24 @@ class FileTaskRunner():
 
         return tasks_
 
+    def __is_binary(self, filename):
+        """
+        { function_description }
+
+        :param    filename:  The filename
+
+        :returns: { description_of_the_return_value }
+        """
+        header = open(filename, 'rb').read(512)  # read 512 bytes
+        if not header:
+            return True  # Empty is considered a binary file
+        # Count 'human' text characters
+        text = regex.findall(b"[\w\t \(\)\.=!'\+\-\*\\\\]", header)
+
+        if float(len(text)) / float(len(header)) < 0.80:
+            return True
+        return False
+
     def __read_file(self, filepath):
         """
         Reads a file by trying multiple encoding if necessary
@@ -79,7 +98,7 @@ class FileTaskRunner():
         :returns: String containing the file contents
         """
         try:
-            with open(filepath, 'r') as fd:
+            with open(filepath, mode='r') as fd:
                 return fd.read()
         except Exception as e:
             pass
@@ -88,8 +107,13 @@ class FileTaskRunner():
                 return fd.read()
         except Exception as e:
             pass
-        raise Exception("Can't open file - tried encoding 'UTF-8' and "
-                        "'iso-8859-15' on file {}".format(filepath))
+
+        if self.__is_binary(filepath):
+            with open(filepath, mode='rb') as fd:
+                return fd.read().decode(encoding='ascii', errors='ignore')
+        else:
+            raise Exception("Can't open file - tried encoding 'UTF-8' and "
+                            "'iso-8859-15' on file {}".format(filepath))
 
     def __get_feature_result(self, path, future):
         """

@@ -15,6 +15,7 @@ projects:
       languages:
         - C
         - Java
+- git: https://github.com/pyca/cryptography
 - git: https://github.com/openssl/openssl
 - git: https://github.com/ZewoGraveyard/OpenSSL
 # archive urls that will be downloaded and analysed
