@@ -1,26 +1,38 @@
+from ..scrabTask import GitTask
+
 import requests
 
-name = "metadata_collector"
-version = "1.0.0"
+name = "MetaDataCollector"
+version = "1.1.0"
 
 
-class MetaDataCollector():
+class MetaDataCollector(GitTask):
     """
-    Convenience class to querie the github api to obtain the stars, languages
-    and forks of the given repo
+    Class to query the github api to obtain the stars, languages and forks of
+    the given repo
 
-    :param    project:      The project
-    :param    global_args:  This class makes use of the github-token to
-                            circumvent the tight rate-limiting for the github
-                            api
+    Example:
+        MetaDataCollector:
+          stars: 5161
+          languages:
+          - C
+          - Perl
+          main_language: C
+          forks: 2661
 
-                            https://github.com/settings/tokens
-                            https://developer.github.com/v3/#authentication
+    :param  parameter:    Parameter given explicitly for this task, for all
+                          projects, defined in the task.yaml
+    :param  global_args:  This class makes use of the github-token to circumvent
+                          the tight rate-limiting for the github api
+
+                          https://github.com/settings/tokens
+                          https://developer.github.com/v3/#authentication
     """
 
-    def __init__(self, project, global_args):
-        self.__project = project
-        self.__global_args = global_args
+    def __init__(self,  parameter, global_args):
+        super(MetaDataCollector, self).__init__(name, version, parameter,
+                                                global_args)
+        self.__project = None
         self.__queries = {}
 
     def __check_for_error(self, response, url):
@@ -75,8 +87,8 @@ class MetaDataCollector():
             replaceStr, 'https://api.github.com/repos/')
         url += urlExtension
 
-        if self.__global_args.github_token:
-            url += "?access_token="+self.__global_args.github_token
+        if self._global_args.github_token:
+            url += "?access_token="+self._global_args.github_token
 
         return url
 
@@ -98,7 +110,7 @@ class MetaDataCollector():
 
         return response.json()
 
-    def get_language_data(self):
+    def __get_language_data(self):
         """
         Queries the github api to obtain the languages used in the project
 
@@ -116,7 +128,7 @@ class MetaDataCollector():
             )
         }
 
-    def get_forks_count(self):
+    def __get_forks_count(self):
         """
         Queries the github api to obtain the number of forks of the project
 
@@ -130,7 +142,7 @@ class MetaDataCollector():
         else:
             return self.__queries['']['forks']
 
-    def get_stars(self):
+    def __get_stars(self):
         """
         Queries the github api to obtain the number of stars of the project
 
@@ -144,33 +156,30 @@ class MetaDataCollector():
         else:
             return self.__queries['']['stargazers_count']
 
+    def scrab(self, project):
+        """
+        Queries the github api to obtain the stars, languages and forks of the
+        given repo
 
-def metadata_collector(project_report, project, task_params, global_args):
-    """
-    Queries the github api to obtain the stars, languages and forks of the given
-    repo
+        :param    project:  The project
 
-    https://github.com/settings/tokens
-    https://developer.github.com/v3/#authentication
+        :returns: The report of this task as a dictionary
+                  Example:
+                      MetaDataCollector:
+                        stars: 5161
+                        languages:
+                        - C
+                        - Perl
+                        main_language: C
+                        forks: 2661
+        """
+        self.__project = project
+        language_data = self.__get_language_data()
 
-    :param    project_report:  The project report so far - __DO NOT MODIFY__
-    :param    project:         The project
-    :param    task_params:     Parameter given explicitly for this task, for all
-                               projects, defined in the task.yaml
-    :param    global_args:     This task scrubber makes use of the github-token
-                               to circumvent the tight rate-limiting for the
-                               github api
+        report = {}
+        report['stars'] = self.__get_stars()
+        report['languages'] = language_data['languages']
+        report['main_language'] = language_data['main_language']
+        report['forks'] = self.__get_forks_count()
 
-    :returns: The report of this task as a dictionary
-    """
-    report = {}
-    meta = MetaDataCollector(project, global_args)
-
-    language_data = meta.get_language_data()
-
-    report['stars'] = meta.get_stars()
-    report['languages'] = language_data['languages']
-    report['main_language'] = language_data['main_language']
-    report['forks'] = meta.get_forks_count()
-
-    return report
+        return report

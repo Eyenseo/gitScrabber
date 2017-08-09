@@ -4,7 +4,7 @@ import sys
 
 import scrabTasks.git
 import scrabTasks.report
-import scrabTasks.archive
+import scrabTasks.file
 
 
 class ScrabTask():
@@ -13,15 +13,14 @@ class ScrabTask():
     Helper class that stores all information about the scrab tasks
 
     :param    module:  The module that the scrab task is defined in
-    :param    kind:    The kind of the scrab task, either 'archive', 'git' or
+    :param    kind:    The kind of the scrab task, either 'file', 'git' or
                        'report'
     """
 
     def __init__(self, module, kind):
-
         self.name = self.__obtain_name(module)
         self.version = self.__obtain_version(module, self.name)
-        self.function = self.__obtain_function(module, self.name)
+        self.construct = self.__obtain_function(module, self.name)
         self.kind = kind
 
     def __obtain_name(self, module):
@@ -79,7 +78,7 @@ class ScrabTask():
 
 class ScrabTaskManager:
     """
-    ScrabTaskManager will load all modules under scrabTasks.archive,
+    ScrabTaskManager will load all modules under scrabTasks.file,
     scrabTasks.git and scrabTasks.report upon instantiation. These have to
     follow a specific format to be called automagically later on.
     """
@@ -92,9 +91,11 @@ class ScrabTaskManager:
         """
         Loads scrab tasks from a specific location
 
-        :param    kind:  The type of the loaded tasks, either 'archive',
-                              'git' or 'report'
-        :param    location:   The location to load the tasks from
+        :param    kind:      The type of the loaded tasks, either 'file', 'git'
+                             or 'report'
+        :param    location:  The location to load the tasks from
+
+        :returns: { description_of_the_return_value }
         """
         modules = {**import_submodules(location)}
 
@@ -114,7 +115,7 @@ class ScrabTaskManager:
         """
         self.__load_tasks('git', scrabTasks.git)
         self.__load_tasks('report', scrabTasks.report)
-        self.__load_tasks('archive', scrabTasks.archive)
+        self.__load_tasks('file', scrabTasks.file)
 
     def get_task(self, name):
         """
