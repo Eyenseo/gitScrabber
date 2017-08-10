@@ -8,8 +8,8 @@ version = "1.1.0"
 
 class MetaDataCollector(GitTask):
     """
-    Class to query the github api to obtain the stars, languages and forks of
-    the given repo
+    Class to query the github api to obtain the forks, languages, licence and
+    stars of the given repo
 
     Example:
         MetaDataCollector:
@@ -19,6 +19,9 @@ class MetaDataCollector(GitTask):
           - Perl
           main_language: C
           forks: 2661
+          licence:
+            name: Academic Free License v3.0
+            abb: AFL-3.0
 
     :param  parameter:    Parameter given explicitly for this task, for all
                           projects, defined in the task.yaml
@@ -156,10 +159,35 @@ class MetaDataCollector(GitTask):
         else:
             return self.__queries['']['stargazers_count']
 
+    def __get_licence(self):
+        """
+        Queries the github api to obtain the number of stars of the project
+
+        :returns: either 0 or the nr of stars of the project
+        """
+        if 'licence' not in self.__queries:
+            self.__queries['licence'] = self.__access_github_api('/license')
+
+        query = self.__queries['licence']
+        name = None
+        abb = None
+
+        if ('license' in query and 'name' in query['license']
+                and 'Other' != query['license']['name']):
+            name = query['license']['name']
+
+            if 'spdx_id' in query['license']:
+                abb = query['license']['spdx_id']
+
+        return {
+            'name': name,
+            "abb": abb
+        }
+
     def scrab(self, project):
         """
-        Queries the github api to obtain the stars, languages and forks of the
-        given repo
+        Queries the github api to obtain the forks, languages, licence and
+        stars of the given repo
 
         :param    project:  The project
 
@@ -172,6 +200,9 @@ class MetaDataCollector(GitTask):
                         - Perl
                         main_language: C
                         forks: 2661
+                        licence:
+                          name: Academic Free License v3.0
+                          abb: AFL-3.0
         """
         self.__project = project
         language_data = self.__get_language_data()
@@ -181,5 +212,6 @@ class MetaDataCollector(GitTask):
         report['languages'] = language_data['languages']
         report['main_language'] = language_data['main_language']
         report['forks'] = self.__get_forks_count()
+        report['licence'] = self.__get_licence()
 
         return report
