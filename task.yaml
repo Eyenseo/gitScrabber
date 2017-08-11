@@ -38,6 +38,7 @@ project_tasks:
   - MetaDataCollector
   - LanguageDetector
   - ProjectDates
+  - ProjectMetrics
   - FeatureDetector:
       block ciphers:
         AES:
