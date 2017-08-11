@@ -156,9 +156,16 @@ class FileTaskRunner():
         file = self.__read_file(filepath)
 
         for task in self.__tasks:
-            task.merge(self.__tasks[task], task.scrab(self.__project,
-                                                      filepath,
-                                                      file))
+            if len(self.__tasks[task]) is 0:
+                self.__tasks[task] = task.scrab(self.__project,
+                                                filepath,
+                                                file)
+            else:
+                self.__tasks[task] = task.merge(
+                    self.__tasks[task],
+                    task.scrab(self.__project,
+                               filepath,
+                               file))
 
     def __queue_files(self):
         """
