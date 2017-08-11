@@ -40,8 +40,8 @@ class FileTaskRunner():
         # we are IO-bound so five times CPU-cores processes is not too much
         self.__executor = ThreadPoolExecutor(max_workers=5)
         self.__tasks = self.__make_meta_tasks(tasks)
+        self.__report = self.__init_reports()
         self.__futures = {}
-        self.__report = {}
 
     def __make_meta_tasks(self, tasks):
         """
@@ -65,11 +65,17 @@ class FileTaskRunner():
                     parameter=task.parameter,
                     global_args=self.__global_args
                 )
-                tasks_[scrab_task] = {}
+                tasks_[scrab_task.name] = scrab_task
             elif self.__old_data and task.name in self.__old_data:
                 self.__report[task.name] = self.__old_data[task.name]
 
         return tasks_
+
+    def __init_reports(self):
+        reports = {}
+        for task_name in self.__tasks:
+            reports[task_name] = None
+        return reports
 
     def __is_binary(self, filename):
         """
@@ -154,18 +160,12 @@ class FileTaskRunner():
         :param    filepath:  The filepath of the file that shall be analysed
         """
         file = self.__read_file(filepath)
+        reports = {}
 
-        for task in self.__tasks:
-            if len(self.__tasks[task]) is 0:
-                self.__tasks[task] = task.scrab(self.__project,
-                                                filepath,
-                                                file)
-            else:
-                self.__tasks[task] = task.merge(
-                    self.__tasks[task],
-                    task.scrab(self.__project,
-                               filepath,
-                               file))
+        for task_name in self.__tasks:
+            reports[task_name] = self.__tasks[task_name].scrab(
+                self.__project, filepath, file)
+        return reports
 
     def __queue_files(self):
         """
@@ -187,16 +187,25 @@ class FileTaskRunner():
                     self.__task_function_wrapper, path)
                 self.__futures[feature] = path
 
-    def __wait_on_features(self):
+    def __collect_feature_results(self):
         """
         Collects the feature results
         """
         for future in as_completed(self.__futures):
             project = self.__futures[future]
-            self.__get_feature_result(project, future)
+            reports = self.__get_feature_result(project, future)
 
-        for task in self.__tasks:
-            self.__tasks[task] = task.finish(self.__tasks[task])
+            for task_name in reports:
+                if not self.__report[task_name]:
+                    self.__report[task_name] = reports[task_name]
+                else:
+                    self.__report[task_name] = self.__tasks[task_name].merge(
+                        self.__report[task_name],
+                        reports[task_name])
+
+        for task_name in self.__tasks:
+            self.__report[task_name] = self.__tasks[
+                task_name].finish(self.__report[task_name])
 
     def run_tasks(self):
         """
@@ -206,10 +215,7 @@ class FileTaskRunner():
                   information that were scrabbed together
         """
         self.__queue_files()
-        self.__wait_on_features()
-
-        for task in self.__tasks:
-            self.__report[task.name] = self.__tasks[task]
+        self.__collect_feature_results()
 
         return self.__report
 
