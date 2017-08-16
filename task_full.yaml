@@ -7,6 +7,59 @@ projects:
 ## C++
 ##########################################
 
+
+##########################################
+## C#
+##########################################
+- git: https://github.com/bitbeans/StreamCryptor
+- git: https://github.com/AArnott/PCLCrypto
+- git: https://github.com/sdrapkin/SecurityDriven.Inferno
+- git: https://github.com/sshnet/Cryptography
+- git: https://github.com/galmeida/crypto
+- git: https://github.com/AlexMAS/GostCryptography
+- git: https://github.com/ektrah/nsec
+- git: https://github.com/stanac/EasyCrypto
+- git: https://github.com/kmaragon/Konscious.Security.Cryptography
+- git: https://github.com/tamimsalem/CryptoN
+- git: https://github.com/odalet/Delta.Cryptography
+- git: https://github.com/aliencube/CryptoService
+- git: https://github.com/aligoren/CryptoNet
+- git: https://github.com/Chainers/Cryptography.ECDSA
+- git: https://github.com/KalixHealth/Kalix.ApiCrypto
+- git: https://github.com/WolfeReiter/iTextSharp
+- git: https://github.com/aduwillie/cryptography
+- git: https://github.com/WolfeReiter/BouncyCastleCrypto
+- git: https://github.com/anilhakanyarici/next-generation-crypto-.NET
+- git: https://github.com/PanagiotisDrakatos/Lightweight_IoT_Crypto_Library
+- git: https://github.com/VirgilSecurity/virgil-crypto-net
+- git: https://github.com/libp2p/cs-libp2p-crypto
+- git: https://github.com/Peter-Juhasz/Science.Cryptography.Ciphers
+- git: https://github.com/AronParker/CryptographyNextGeneration
+- git: https://github.com/smoy/Xamarin.Droid.AesCrypto
+- git: https://github.com/acschmit/cryptography.Net
+- git: https://github.com/jtenos/NoEdgeSoftware.Cryptography
+- git: https://github.com/oznetmaster/SSMonoCryptographyLibrary
+- git: https://github.com/shintadono/Free.Crypto
+- git: https://github.com/mheyman/Isopoh.Cryptography.Argon2
+- git: https://github.com/henkmollema/CryptoHelper
+- git: https://github.com/Thashiznets/PWDTK.NET
+- git: https://github.com/verd710/CryptoLibrary
+- git: https://github.com/bartduisters/CryptoProgram
+- git: https://github.com/onovotny/bc-csharp
+- git: https://github.com/Capgemini/Cauldron
+- git: https://github.com/BcryptNet/bcrypt.net
+
+- archive: bccrypto-csharp-1.8.1-src.zip
+- archive: https://www.codeproject.com/KB/security/DotNetCryptog/Article_src.zip
+
+- manual: 
+	id: https://msdn.microsoft.com/de-de/library/system.security.cryptography(v=vs.110).aspx
+- manual: 
+	id: https://msdn.microsoft.com/en-us/library/system.web.helpers(v=vs.111).aspx
+- manual: 
+	id: https://netcologne.dl.sourceforge.net/project/pkif/PKIF%202.1.13/PKIF%20OCSP%20Plugin/PkifOcspPlugin2_1_13.msi
+	
+	
 ##########################################
 ## Python
 ##########################################
