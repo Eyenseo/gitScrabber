@@ -6,6 +6,49 @@ projects:
 ##########################################
 ## C++
 ##########################################
+
+##########################################
+## Python
+##########################################
+- git: https://github.com/Legrandin/pycryptodome
+- git: https://github.com/pyca/pynacl
+- git: https://github.com/ricmoo/pyaes
+- git: https://github.com/pyca/cryptography
+- git: https://github.com/chrissimpkins/crypto
+- git: https://github.com/hasherezade/crypto_utils
+- git: https://github.com/doegox/python-cryptoplus
+- git: https://github.com/thomdixon/pysha2
+- git: https://github.com/eventbrite/m2crypto
+- git: https://github.com/stef/pysodium
+- git: https://github.com/georgemarshall/django-cryptography
+- git: https://github.com/wbond/oscrypto
+- git: https://github.com/python-tls/tls
+- git: https://github.com/bdcht/crysp
+- git: https://github.com/Antidote1911/cryptoshop
+- git: https://github.com/zacharyvoase/python-csiphash
+- git: https://github.com/iCHAIT/Elliptical-Curve-Cryptography
+- git: https://github.com/marcsantiago/CryptographyKit
+- git: https://github.com/berlincode/sjcl
+- git: https://github.com/edevil/M2Crypto
+- git: https://github.com/RylanSchaeffer/adver-neural-crypto
+- git: https://github.com/wamacdonald89/mcrypt
+- git: https://github.com/Serafim-End/cryptosystem-RSA
+- git: https://github.com/manologab/python-ifalg
+- git: https://github.com/NoxTools/noxcrypt
+- git: https://github.com/flipchan/otw
+- git: https://github.com/openwisp/django-x50
+- git: https://github.com/getsenic/senic.cryptoyaml
+- git: https://github.com/tchar/cryptodev-python
+- git: https://github.com/Tobegiantgod/Rabin_cryptogram
+- git: https://github.com/davidcarboni/Cryptopie
+- git: https://github.com/anarcoder/cypher
+- git: https://github.com/dlitz/pycrypto
+- git: https://github.com/pyca/pyopenssl
+
+- archive: https://master.dl.sourceforge.net/project/pyaes/OldFiles/pyAES-1.0-win32.zip
+
+
+
 # Tasks that should be run for the projects in parallel
 project_tasks:
   - AuthorContributorCounter
