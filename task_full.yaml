@@ -147,6 +147,47 @@ projects:
     id: https://developer.apple.com/security/ # Common Crypto based on corecrypto
 
 
+##########################################
+## Swift
+##########################################
+- git: https://github.com/soffes/Crypto
+- git: https://github.com/vapor/crypto
+- git: https://github.com/krzyzanowskim/CryptoSwift
+- git: https://github.com/verbeeckkristof/crypto
+- git: https://github.com/iosdevzone/IDZSwiftCommonCrypto
+- git: https://github.com/DigitalLeaves/AsymmetricCrypto
+- git: https://github.com/IBM-Swift/BlueCryptor
+- git: https://github.com/SwiftP2P/SwiftSSL
+- git: https://github.com/mlachmish/Cryptography
+- git: https://github.com/etienne-martin/CryptoJS.swift
+- git: https://github.com/CryptoKitten/CryptoEssentials
+- git: https://github.com/ccsteam/Crypto
+- git: https://github.com/skylarsch/Crypto
+- git: https://github.com/tattn/Crypto
+- git: https://github.com/noppoMan/Crypto
+- git: https://github.com/PerfectlySoft/Perfect-Crypto
+- git: https://github.com/venj/CommonCrypto
+- git: https://github.com/chrisamanse/CryptoKit
+- git: https://github.com/yinhaofrancis/Crypto
+- git: https://github.com/OpenKitten/CryptoKitten
+- git: https://github.com/pentateu/SwiftCrypt
+- git: https://github.com/etienne-martin/WebCrypto.swift
+- git: https://github.com/rhodgkins/RDHCommonCrypto
+- git: https://github.com/zhengrf225/CryptoSwift
+- git: https://github.com/alexaubry/CommonCrypto
+- git: https://github.com/hanamichi07/CryptoSwift
+- git: https://github.com/ankitthakur/SwiftCrypto
+- git: https://github.com/xhhuango/TomatoCrypto
+- git: https://github.com/CryptoKitten/CryptoKitten
+- git: https://github.com/chrisamanse/CommonCryptoSwift
+- git: https://github.com/saiyuujob/CryptoWithSwift
+- git: https://github.com/banxi1988/SwiftCrypto
+- git: https://github.com/ungacy/UTSwiftCrypto
+- git: https://github.com/ttkien/TextCrypto
+- git: https://github.com/etienne-martin/CryptoJS.swift
+- git: https://github.com/IBM-Swift/BlueSSLService
+
+
 # Tasks that should be run for the projects in parallel
 project_tasks:
   - AuthorContributorCounter
