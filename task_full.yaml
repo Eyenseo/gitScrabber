@@ -3,6 +3,150 @@ projects:
 ##########################################
 ## C
 ##########################################
+- git: https://github.com/openluopworld/aes_128
+- git: https://github.com/WickrInc/wickr-crypto-c
+- git: https://github.com/stamparm/cryptospecs
+- git: https://github.com/sainthsu/crypto
+- git: https://github.com/jedisct1/libhydrogen
+- git: https://github.com/apache/incubator-milagro-crypto
+- git: https://github.com/iadgov/simon-speck-supercop
+- git: https://github.com/abderraouf-adjal/ArduinoSpritzCipher
+- git: https://github.com/AtmelCSO/cryptoauth-openssl-engine
+- git: https://github.com/cossacklabs/themis
+- git: https://github.com/catwell/lua-chacha
+- git: https://github.com/theori-io/kr-crypto
+- git: https://github.com/thiseldo/cryptoauth-arduino
+- git: https://github.com/miracl/milagro-crypto-c
+- git: https://github.com/noloader/SHA-Intrinsics
+- git: https://github.com/gost-engine/engine
+- git: https://github.com/fgsch/libvmod-crypto
+- git: https://github.com/adrienmo/crypto_ext
+- git: https://github.com/eduardsui/tlse
+- git: https://github.com/Silur/openzkp
+- git: https://github.com/benlaurie/openssl
+- git: https://github.com/input-output-hk/cardano-crypto
+- git: https://github.com/majestrate/cryptonight
+- git: https://github.com/sathibault/cryptoauthlib
+- git: https://github.com/miyako/4d-plugin-common-crypto
+- git: https://github.com/gpg/libgcrypt
+- git: https://github.com/bahusvel/CryptoMalloc
+- git: https://github.com/thebrankoo/CryptoLab
+- git: https://github.com/mcxiaoke/scrypto
+- git: https://github.com/wireapp/cryptobox-c
+- git: https://github.com/mwarning/mbedtls_ecp_compression
+- git: https://github.com/CryptoThings/AtCryptoAuthLib
+- git: https://github.com/b/LatticeCrypto
+- git: https://github.com/Oryx-Embedded/CycloneCrypto
+- git: https://github.com/sheumann/65816-crypto
+- git: https://github.com/cryptotronix/yacl
+- git: https://github.com/mcornejo/libpaillier
+- git: https://github.com/emreberber/Cryptology
+- git: https://github.com/odzhan/cryptoapi
+- git: https://github.com/avisharma/cryptomiser
+- git: https://github.com/PPC64/sha2-le
+- git: https://github.com/LoupVaillant/Monocypher
+- git: https://github.com/lgyhitler/node-weixin-crypto
+- git: https://github.com/Cyberunner23/libsodium-CMake
+- git: https://github.com/cipherboy/crypto-collection
+- git: https://github.com/waynemystir/crypto_wrapper
+- git: https://github.com/gregoiresage/pebble-crypto
+- git: https://github.com/mjfh/nim-crypto
+- git: https://github.com/dfaranha/openssl
+- git: https://github.com/thomwiggers/proest-arm11 #? only algorithm. lib?
+- git: https://github.com/xyzz/vita-openssl
+- git: https://github.com/polysome/vane
+- git: https://github.com/wireapp/libsodium
+- git: https://github.com/revler1082/trezor-crypto # lib?
+- git: https://github.com/noizbuster/itsp-crypto-practice
+- git: https://github.com/hosseinsh/Crypto-Engine-Contiki # special hardware/no lib?
+- git: https://github.com/zhulianhai/CryptoWrapperForCCode
+- git: https://github.com/26597925/cse539_crypto_prj
+- git: https://github.com/jpochyla/trezor-crypto
+- git: https://github.com/colin-zhang/trezor-crypto
+- git: https://github.com/jpochyla/trezor-crypto
+- git: https://github.com/fcelda/nsec5-crypto
+- git: https://github.com/TomMD/cipher-aes128
+- git: https://github.com/tancred/tweetnacl-objc
+- git: https://github.com/bukka/php-rsa
+- git: https://github.com/MicrochipTech/cryptoauth-openssl-engine
+- git: https://github.com/bernd-edlinger/openssl
+- git: https://github.com/ramriot/php-ext-sqrl
+- git: https://github.com/LTD-Beget/openssl
+- git: https://github.com/stellar/libsodium
+- git: https://github.com/gabriel/NACrypto
+- git: https://github.com/sujaydinakar/CryptoAuth-explorations
+- git: https://github.com/iceman1001/crypto1_bs
+- git: https://github.com/philanc/luanacha
+- git: https://github.com/AlexDFischer/Quadratic-Sieve
+- git: https://github.com/bukka/php-lcrypto
+- git: https://github.com/axelelettronica/cryptoauth-arduino
+- git: https://github.com/osmanager/openssl
+- git: https://github.com/lifeNrun/openssl
+- git: https://github.com/Kahlenberger/openssl
+- git: https://github.com/lin-tucci/openssl
+- git: https://github.com/LRFLEW/openssl
+- git: https://github.com/tresorit/openssl
+- git: https://github.com/siemens/openssl
+- git: https://github.com/BohemianCoding/openssl
+- git: https://github.com/lin-tucci/openssl
+- git: https://github.com/LRFLEW/openssl
+- git: https://github.com/siemens/openssl
+- git: https://github.com/tresorit/openssl
+- git: https://github.com/atsuyim/openssl
+- git: https://github.com/JonghoWon/openssl
+- git: https://github.com/trailofbits/openssl
+- git: https://github.com/kingpotato/openssl
+- git: https://github.com/panwar001/openssl
+- git: https://github.com/chmodawk/openssl
+- git: https://github.com/mtrojnar/openssl
+- git: https://github.com/dot-asm/openssl
+- git: https://github.com/God-Staff/openssl
+- git: https://github.com/tuskitumizhou/openssl
+- git: https://github.com/joydo/openssl
+- git: https://github.com/gusixgit/openssl
+- git: https://github.com/togtalk/openssl
+- git: https://github.com/glkhobragade/openssl
+- git: https://github.com/robinaz/openssl
+- git: https://github.com/CNMagicVan/openssl
+- git: https://github.com/fliplink/openssl
+- git: https://github.com/ahmadwaskita/openssl
+- git: https://github.com/WOLFENHEIMER/openssl
+- git: https://github.com/patrick444/openssl
+- git: https://github.com/zwkno1/openssl
+- git: https://github.com/Samsung/ckm
+- git: https://github.com/ryankurte/cryptlib
+- git: https://github.com/mcanthony/libsodium
+- git: https://github.com/bford/libsodium
+- git: https://github.com/NSGod/libsodium
+- git: https://github.com/alex-chan/swift-sodium
+- git: https://github.com/supercoeus/libsodium
+- git: https://github.com/Intelligent-Machine-Learning/openssl
+- git: https://github.com/autodesk-forks/libsodium
+- git: https://github.com/hunter-packages/libsodium
+- git: https://github.com/jabwd/libsodium
+- git: https://github.com/fergul/TinyECC
+- git: https://github.com/waterway/libsodium
+- git: https://github.com/servalproject/libsodium
+- git: https://github.com/netroby/libsodium
+- git: https://github.com/nodesource/libsodium
+- git: https://github.com/RandomAccesss/libsodium
+- git: https://github.com/rrozestw/libsodium
+- git: https://github.com/sanathks/libsodium
+- git: https://github.com/dexterserver/AESLib
+- git: https://github.com/miracl/milagro-crypto-c
+- git: https://boringssl.googlesource.com/boringssl/  # not intended for general use
+- git: https://github.com/libtom/libtomcrypt
+- git: https://github.com/wolfssl/wolfssl
+- git: http://git.eclipse.org/gitroot/tinydtls/org.eclipse.tinydtls.git
+
+- manual: 
+    id: https://www.wolfssl.com/wolfSSL/ssl-library.html
+- manual: 
+    id: https://sourceforge.net/projects/lightcrypto/?source=directory
+- manual: 
+    id: https://sourceforge.net/projects/pyaes/  # is python but was listed as C
+    
+    
 ##########################################
 ## C++
 ##########################################
@@ -186,6 +330,10 @@ projects:
 - git: https://github.com/ttkien/TextCrypto
 - git: https://github.com/etienne-martin/CryptoJS.swift
 - git: https://github.com/IBM-Swift/BlueSSLService
+
+##########################################
+## Ruby
+##########################################
 
 
 # Tasks that should be run for the projects in parallel
