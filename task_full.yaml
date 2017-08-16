@@ -150,7 +150,71 @@ projects:
 ##########################################
 ## C++
 ##########################################
+- git: https://github.com/weidai11/cryptopp
+- git: https://github.com/maciejczyzewski/libchaos
+- git: https://github.com/randombit/botan
+- git: https://github.com/msoos/cryptominisat
+- git: https://github.com/TrustedPlus/crypto
+- git: https://github.com/ph4r05/Whitebox-crypto-AES
+- git: https://github.com/SandeepAggarwal/CryptoppECC
+- git: https://github.com/spaniakos/Cryptosuite
+- git: https://github.com/jkosoy/ofxCrypto
+- git: https://github.com/intrbiz/arduino-crypto
+- git: https://github.com/tahoe-lafs/pycryptopp
+- git: https://github.com/MXWXZ/CryptoLib
+- git: https://github.com/thiagoh/crypto
+- git: https://github.com/Codehhh/Crypto
+- git: https://github.com/azadkuh/mbedcrypto
+- git: https://github.com/CSSHL/ESP8266-Arduino-cryptolibs
+- git: https://github.com/benhj/CryptoStreamPP
+- git: https://github.com/romangol/cryptoBoost
+- git: https://github.com/ladnir/cryptoTools
+- git: https://github.com/dark-panda/ruby-cryptopp
+- git: https://github.com/JamisHoo/Cryptographic-Algorithms
+- git: https://github.com/KDE/qca
+- git: https://github.com/bbarenblat/urweb-crypto-random-openssl
+- git: https://github.com/VirgilSecurity/virgil-sdk-cpp
+- git: https://github.com/JonWBedard/CryptoGateway
+- git: https://github.com/madera/cryptox
+- git: https://github.com/duy0503/Cryptography
+- git: https://github.com/DevJPM/CryptoJPM
+- git: https://github.com/Alex-Kuz/cryptosha
+- git: https://github.com/Airbitz/react-native-fast-crypto
+- git: https://github.com/hieifn/CryptoCaesar
+- git: https://github.com/VirgilSecurity/virgil-foundation-x
+- git: https://github.com/danielking/react-native-rncrypto
+- git: https://github.com/txomin-jimenez/newton-des-crypto
+- git: https://github.com/PeculiarVentures/pkcs11js
+- git: https://github.com/hvge/cc7
+- git: https://github.com/anthok/Cryptography
+- git: https://github.com/giovani-milanez/cryptowrapper
+- git: https://github.com/cawka/cryptopp  # Fork of Crypto++ library (svn://svn.code.sf.net/p/cryptopp/code
+- git: https://github.com/vpmedia/cryptopp-ane
+- git: https://github.com/jonaskirkemyr/cryptology
+- git: https://github.com/art-drobanov/FBICRY
+- git: https://github.com/RiddleAndCode/RnCAtmelCrypto
+- git: https://github.com/vpmedia/botan-crypto-ane
+- git: https://github.com/glapointe7/CryptoGL
+- git: https://github.com/tresorit/ZeroKit-Client-Native-Crypto
+- git: https://github.com/kotl/esp8266-cryptosign
+- git: https://github.com/budnail/Cryptosuite
+- git: https://github.com/Ecoblockchain/cryptonite
+- git: https://github.com/KDE/libkleo
+- git: https://github.com/hilder-vitor/ope-from-cryptodb
+- git: https://github.com/noprops/RRGCodingAndCrypto
+- git: https://github.com/musiko/ofxCrypto
+- git: https://github.com/rikyoz/QtCryptoHash
+- git: https://github.com/botezatumihaicatalin/ChaoticImageCrypto
+- git: https://github.com/samleybrize/php-cryptopp
+- git: https://github.com/mk9440/Data_Encryption_using_RSA_cryptography
+- git: https://github.com/GLADICOS/AES128
+- git: https://github.com/c-mysec/Curve25519_ESP8266  # This is a fork of https://github.com/rweather/arduinolibs/tree/master/libraries/Crypto for ESP8266
+- git: https://github.com/lime-company/cc7
+- git: https://github.com/glueckkanja-pki/NSSWrapper
+- git: https://github.com/evilJazz/tinycrypto  # R/O mirror of TinyCrypto
+- git: https://git.code.sf.net/p/qt-cryptoengine/CryptoEngine
 
+- archive: https://pocoproject.org/releases/poco-1.7.8/poco-1.7.8p3-all.zip
 
 ##########################################
 ## C#
