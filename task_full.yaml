@@ -482,6 +482,87 @@ projects:
 ## Ruby
 ##########################################
 
+##########################################
+## Rust
+##########################################
+
+##########################################
+## Go
+##########################################
+- git: https://github.com/golang/crypto  # Standard
+- git: https://github.com/jacobsa/crypto
+- git: https://github.com/enceve/crypto
+- git: https://github.com/ProtonMail/crypto
+- git: https://github.com/ScriptRock/crypto
+- git: https://github.com/square/go-jose
+- git: https://github.com/xigang/crypto
+- git: https://github.com/andreburgaud/crypt2go
+- git: https://github.com/GoKillers/libsodium-go
+- git: https://github.com/dedis/kyber
+- git: https://github.com/tendermint/go-crypto
+- git: https://github.com/keybase/go-crypto
+- git: https://github.com/jzelinskie/whirlpool
+- git: https://github.com/jlhawn/go-crypto
+- git: https://github.com/vgorin/cryptogo
+- git: https://github.com/pagarme/cryptokit
+- git: https://github.com/andmarios/crypto
+- git: https://github.com/opennota/crypto
+- git: https://github.com/dsnet/crypto
+- git: https://github.com/st3fan/gocrypto
+- git: https://github.com/golang-plus/crypto
+- git: https://github.com/gowww/crypto
+- git: https://github.com/aead/ecdh
+- git: https://github.com/nsjph/cryptoauth
+- git: https://github.com/libp2p/go-libp2p-crypto
+- git: https://github.com/ereyes01/cryptohelper
+- git: https://github.com/emersion/go-dkim
+- git: https://github.com/qingche123/sm_crypto_golang
+- git: https://github.com/andviro/go-cryptoapi
+- git: https://github.com/phylake/go-crypto
+- git: https://github.com/letsencrypt/pkcs11key
+- git: https://github.com/NebulousLabs/fastrand
+- git: https://github.com/scottkiss/gosshtool
+- git: https://github.com/jtremback/crypto-conditions
+- git: https://github.com/davidlazar/go-crypto
+- git: https://github.com/AGWA-forks/golang-crypto
+- git: https://github.com/cloudflare/cf-tls
+- git: https://github.com/qeek-dev/cryhel
+- git: https://github.com/ThalesIgnite/crypto11
+- git: https://github.com/leonklingele/randomstring
+- git: https://github.com/pivotal-cf-experimental/bletchley
+- git: https://github.com/mordyovits/golang-crypto-tls
+- git: https://github.com/aead/hydrogen
+- git: https://github.com/teambition/gear-auth
+- git: https://github.com/ArtemKulyabin/cryptostack
+- git: https://github.com/nogoegst/token
+- git: https://github.com/gravieinc/aws-crypto-tools-go
+- git: https://github.com/Luzifer/go-openssl
+- git: https://github.com/teambition/crypto-go
+- git: https://github.com/benburkert/openpgp  # golang.org/x/crypto/openpgp
+- git: https://github.com/mdp/sodiumbox
+- git: https://github.com/alokmenghrajani/gpgeez  # Small wrapper around golang.org/x/crypto/openpgp
+- git: https://github.com/stevenroose/cryptoconditions
+- git: https://github.com/lgierth/cryptoauth
+- git: https://github.com/jochasinga/hog
+- git: https://github.com/VirgilSecurity/virgil-crypto-go/tree/v4  # master is outdated.....
+- git: https://github.com/neptulon/shortid
+- git: https://github.com/zaker/EcDSA--EcDH-in-Go
+- git: https://github.com/dchest/cmac
+- git: https://github.com/kennylevinsen/gocrypto
+- git: https://github.com/getlantern/tlsdialer
+- git: https://github.com/gabu/go-cryptopia
+- git: https://github.com/frasys-cloud/cryptohelpers-go
+- git: https://github.com/coruus/go-sha3
+- git: https://github.com/mervinkid/godjan
+- git: https://github.com/elorimer/gotls
+- git: https://github.com/Bren2010/bn448
+- git: https://github.com/Gibheer/pki
+- git: https://github.com/nikkolasg/tlsrp
+- git: https://github.com/ScriptRock/sftp
+- git: https://github.com/kardianos/sftp
+- git: https://github.com/oscarhealth/sftp
+- git: https://github.com/neptulon/ca
+
 
 # Tasks that should be run for the projects in parallel
 project_tasks:
