@@ -1,0 +1,385 @@
+# Projects to analyse
+projects:
+##########################################
+## C
+##########################################
+##########################################
+## C++
+##########################################
+# Tasks that should be run for the projects in parallel
+project_tasks:
+  - AuthorContributorCounter
+  - MetaDataCollector
+  - LanguageDetector
+  - ProjectDates
+  - ProjectMetrics
+  - FeatureDetector:
+      block ciphers:
+        AES:
+          - AES
+          - Rijndael
+          - Advanced Encryption Standard
+          - AES-128
+          - AES-192
+          - AES-256
+          - AES_128
+          - AES_192
+          - AES_256
+          - AES128
+          - AES192
+          - AES256
+        AES-128:
+          - AES-128
+          - AES_128
+          - AES128
+        AES-192:
+          - AES-192
+          - AES_192
+          - AES192
+        AES-256:
+          - AES-256
+          - AES_256
+          - AES256
+        Blowfish:
+          - Blowfish
+        DES:
+          - DES
+          - Data Encryption Standard
+        Triple DES:
+          - Triple DES
+          - TDES
+          - 3DES
+          - DESede
+        Serpent:
+          - Serpent
+        Twofish:
+          - Twofish
+        Camellia:
+          - Camellia
+        CAST:
+          - CAST
+          - Carlisle Adams and Stafford Tavares
+          - CAST-128
+          - CAST-256
+          - CAST_128
+          - CAST_256
+          - CAST128
+          - CAST256
+        CAST-128:
+          - CAST-128
+          - CAST_128
+          - CAST128
+        CAST-256:
+          - CAST-256
+          - CAST_256
+          - CAST256
+        IDEA:
+          - International Data Encryption Algorithm
+          - IDEA
+          - Improved Proposed Encryption Standard
+          - IPES
+        RC: # RC is too small and ambiguous
+          - Ron's Code
+          - Rons Code
+          - Rivest Cipher
+          - Rivest
+          - RC-2
+          - RC-5
+          - RC-6
+          - RC_2
+          - RC_5
+          - RC_6
+          - RC2
+          - RC5
+          - RC6
+        SEED:
+          - SEED
+          - Korea Information Security Agency
+          - KISA
+        ARIA:
+          - ARIA
+          - ARIA-128
+          - ARIA-192
+          - ARIA-256
+          - ARIA_128
+          - ARIA_192
+          - ARIA_256
+          - ARIA128
+          - ARIA192
+          - ARIA256
+          - Korean Agency for Technology and Standards
+          - KATS
+        ARIA-128:
+          - ARIA-128
+          - ARIA_128
+          - ARIA128
+        ARIA-192:
+          - ARIA-192
+          - ARIA_192
+          - ARIA192
+        ARIA-256:
+          - ARIA-256
+          - ARIA_256
+          - ARIA256
+        Skipjack:
+          - Skipjack
+        TEA:
+          - Tiny Encryption Algorithm
+          - TEA
+        XTEA:
+          - XTEA
+          - eXtended TEA
+          - eXtended Tiny Encryption Algorithm
+      stream ciphers:
+        RC: # RC is too small and ambiguous
+          - Ron's Code
+          - Rons Code
+          - Rivest Cipher
+          - Rivest
+          - RC-4
+          - RC_4
+          - RC4
+        ChaCha:
+          - ChaCha
+          - ChaCha-20
+          - ChaCha_20
+          - ChaCha20
+        Salsa:
+          - Salsa
+          - Salsa-20
+          - Salsa_20
+          - Salsa20
+      hashes:
+        MD5:
+          - MD5
+          - MD-5
+          - MD_5
+        SHA:
+          - Keccak
+          - SHA-0
+          - SHA-1
+          - SHA-2
+          - SHA-224
+          - SHA-256
+          - SHA-3
+          - SHA-384
+          - SHA-512
+          - SHA0
+          - SHA1
+          - SHA2
+          - SHA224
+          - SHA256
+          - SHA3
+          - SHA3-224
+          - SHA3-256
+          - SHA3-384
+          - SHA3-512
+          - SHA3224
+          - SHA3256
+          - SHA3384
+          - SHA3512
+          - SHA384
+          - SHA3_224
+          - SHA3_256
+          - SHA3_384
+          - SHA3_512
+          - SHA512
+          - SHA_0
+          - SHA_1
+          - SHA_2
+          - SHA_224
+          - SHA_256
+          - SHA_3
+          - SHA_384
+          - SHA_512
+          - SHAKE128
+          - SHAKE256
+        SHA-1:
+          - SHA-0
+          - SHA-1
+          - SHA-160
+          - SHA0
+          - SHA1
+          - SHA160
+          - SHA_0
+          - SHA_1
+          - SHA_160
+        SHA-2:
+          - SHA-2
+          - SHA-224
+          - SHA-256
+          - SHA-384
+          - SHA-512
+          - SHA2
+          - SHA224
+          - SHA256
+          - SHA384
+          - SHA512
+          - SHA_2
+          - SHA_224
+          - SHA_256
+          - SHA_384
+          - SHA_512
+        SHA-3:
+          - Keccak
+          - SHA-224
+          - SHA-256
+          - SHA-3
+          - SHA-384
+          - SHA-512
+          - SHA224
+          - SHA256
+          - SHA3
+          - SHA3-224
+          - SHA3-256
+          - SHA3-384
+          - SHA3-512
+          - SHA3224
+          - SHA3256
+          - SHA3384
+          - SHA3512
+          - SHA384
+          - SHA3_224
+          - SHA3_256
+          - SHA3_384
+          - SHA3_512
+          - SHA512
+          - SHA_224
+          - SHA_256
+          - SHA_3
+          - SHA_384
+          - SHA_512
+          - SHAKE128
+          - SHAKE256
+        SHA-256:
+          - SHA-256
+          - SHA256
+          - SHA3-256
+          - SHA3256
+          - SHA3_256
+          - SHA_256
+        SHA-512:
+          - SHA-512
+          - SHA3-512
+          - SHA3512
+          - SHA3_512
+          - SHA512
+          - SHA_512
+        SHAKE:
+          - SHAKE128
+          - SHAKE256
+        BLAKE2:
+          - BLAKE2
+          - BLAKE2b
+          - BLAKE2s
+          - BLAKE2bp
+          - BLAKE2sp
+        PBKDF2:
+          - PBKDF2
+          - PBKDF1
+          - Password-Based Key Derivation Function
+        RIPEMD:
+          - RIPEMD
+          - RIPEMD-160
+          - RIPEMD-128
+          - RIPEMD-256
+          - RIPEMD-320
+          - RIPEMD_160
+          - RIPEMD_128
+          - RIPEMD_256
+          - RIPEMD_320
+          - RIPEMD160
+          - RIPEMD128
+          - RIPEMD256
+          - RIPEMD320
+          - RACE Integrity Primitives Evaluation Message Digest
+          - Integrity Primitives Evaluation Message Digest
+        Whirlpool:
+          - Whirlpool
+        scrypt:
+          - scrypt
+          - Colin Percival
+        brcypt:
+          - brcypt
+      encryption modes:
+        CCM:
+          - Counter with CBC-MAC
+          - CCM
+        CWC:
+          - Carter–Wegman + CTR
+          - Carter–Wegman and CTR
+          - Carter–Wegman CTR
+          - Carter Wegman + CTR
+          - Carter Wegman and CTR
+          - Carter Wegman CTR
+          - CWC
+        EAX:
+          - encrypt then authenticiate then translate
+          - EAX
+        GCM:
+          - Galois/Counter Mode
+          - Galois and Counter Mode
+          - Galois, Counter Mode
+          - Galois Counter Mode
+          - GCM
+        IAPM:
+          - Integrity Aware Parallelizable Mode
+          - IAPM
+        OCB:
+          - Offset Codebook Mode
+          - OCB
+        ECB:
+          - Electronic Codebook
+          - ECB
+        CBC:
+          - Cipher Block Chaining
+          - CBC
+        CFB:
+          - Cipher Feedback
+          - CFB
+        OFB:
+          - Output Feedback
+          - OFB
+        CTR: # Counter is too ambiguous
+          - Counter Mode
+          - CTR
+          - CM
+          - ICM
+          - integer counter mode
+      message authentication codes:
+        CBC-MAC:
+          - cipher block chaining message authentication code
+          - CBC-MAC
+        HMAC:
+          - keyed-hash message authentication code
+          - hash message authentication code
+          - HMAC
+        Poly1305:
+          - Poly1305
+      public key cryptography:
+          RSA:
+            - Ron Rivest, Adi Shamir and Leonard Adleman
+            - Ron Rivest, Adi Shamir, and Leonard Adleman
+            - Ron Rivest, Adi Shamir, Leonard Adleman
+            - RSA
+          DH:
+            - Diffie–Hellman
+            - Diffie Hellman
+            - D-H
+            - DH
+          DSA:
+            - Digital Signature Algorithm
+            - DSA
+          ECDH:
+            - Elliptic curve Diffie–Hellman
+            - Elliptic curve Diffie Hellman
+            - ECDH
+          ECDSA:
+            - Elliptic Curve Digital Signature Algorithm
+            - ECDSA
+          ElGamal:
+            - ElGamal
+# Tasks that should run over the previously generated report,
+# sequentially after the project tasks
+report_tasks:
+  - ImpactCalculator
