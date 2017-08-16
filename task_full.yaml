@@ -101,6 +101,51 @@ projects:
 - archive: https://master.dl.sourceforge.net/project/pyaes/OldFiles/pyAES-1.0-win32.zip
 
 
+##########################################
+## Objective-C
+##########################################
+- git: https://github.com/thinkclay/crypto
+- git: https://github.com/tectiv3/react-native-aes
+- git: https://github.com/RenanDiaz/Cryptos
+- git: https://github.com/edward1985/RSA_crypto
+- git: https://github.com/nulang/nu-crypto
+- git: https://github.com/DoubleREW/EasyCrypto
+- git: https://github.com/FardadCo/LaraCryptObjC
+- git: https://github.com/cantinac/CommonCrypto-module-clang
+- git: https://github.com/originalix/iOS-and-Java-AES-Cryptor
+- git: https://github.com/desmondmcnamee/SwiftCommonCrypto
+- git: https://github.com/kompozer/cryptobox-ios
+- git: https://github.com/ivRodriguezCA/IRCrypto
+- git: https://github.com/AlexanderBirks/Encryption-Key
+- git: https://github.com/tradle/react-native-ecc
+- git: https://github.com/remobile/react-native-des
+- git: https://github.com/willbetter/LFCommonCrypto
+- git: https://github.com/Daniate/INBSecurityCrypto
+- git: https://github.com/nicklockwood/CryptoCoding
+- git: https://github.com/ricmoo/GMEllipticCurveCrypto
+- git: https://github.com/aerogear/aerogear-crypto-ios
+- git: https://github.com/timburks/NuCrypto
+- git: https://github.com/tparry/NSData-Crypto
+- git: https://github.com/cstaylor/iOS-Crypto-API
+- git: https://github.com/st3fan/cocoa-crypto
+- git: https://github.com/timburks/RadCrypto
+- git: https://github.com/TakahikoKawasaki/nv-ios-digest
+- git: https://github.com/matehat/CommonCrypto
+- git: https://github.com/alexlehn/ObjC-PyCrypto
+- git: https://github.com/aerogear/aerogear-cordova-crypto
+- git: https://github.com/nixplay/crypto
+- git: https://github.com/ameingast/cryptokit
+- git: https://github.com/ndouglas/ReactiveCryptor
+- git: https://github.com/ideawu/Objective-C-RSA
+- git: https://github.com/hohl/MIHCrypto
+
+- archive: https://chilkatdownload.com/9.5.0.68/chilkat-9.5.0-ios.zip
+- archive: https://netcologne.dl.sourceforge.net/project/objc-crypto-lib/objc-crypto-lib/0.5Alpha/objc-crypto-lib.tgz
+- archive: https://ayera.dl.sourceforge.net/project/bdangerous/bdangerous-crypto/bdangerous-crypto-0.1a/crypto-0.1a.tar.gz
+
+- manual: 
+    id: https://developer.apple.com/security/ # Common Crypto based on corecrypto
+
 
 # Tasks that should be run for the projects in parallel
 project_tasks:
