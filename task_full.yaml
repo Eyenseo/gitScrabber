@@ -216,6 +216,89 @@ projects:
 
 - archive: https://pocoproject.org/releases/poco-1.7.8/poco-1.7.8p3-all.zip
 
+
+##########################################
+## Java
+##########################################
+- git: https://github.com/jcryptool/crypto
+- git: https://github.com/Cathedrow/Cryptosuite
+- git: https://github.com/i2p/i2p.i2p  #lib?
+- git: https://github.com/tozny/java-aes-crypto
+- git: https://github.com/mcaserta/spring-crypto-utils
+- git: https://github.com/ph4r05/Whitebox-crypto-AES-java
+- git: https://github.com/neilalexander/jnacl  # port?!
+- git: https://github.com/aerogear/aerogear-crypto-java  # wrapper?!
+- git: https://github.com/meltmedia/jackson-crypto
+- git: https://github.com/davidcarboni/Cryptolite  # wrapper
+- git: https://github.com/InstantWebP2P/tweetnacl-java
+- git: https://github.com/google/tink
+- git: https://github.com/vt-middleware/cryptacular
+- git: https://github.com/apache/commons-crypto
+- git: https://github.com/liuweiran900217/CloudCrypto
+- git: https://github.com/cryptomator/cryptolib
+- git: https://github.com/palantir/hadoop-crypto
+- git: https://github.com/cryptomator/cryptofs  # provides cryptography itself?
+- git: https://github.com/oversecio/oversec_crypto
+- git: https://github.com/Slashmsu/Crypto
+- git: https://github.com/interledger/java-crypto-conditions
+- git: https://github.com/INJAE/Cryptonite
+- git: https://github.com/universum-studios/android_crypto
+- git: https://github.com/kjhulin/CryptokCodeCracker
+- git: https://github.com/scottyab/java-aes-crypto
+- git: https://github.com/wireapp/cryptobox-jni  # jni bindings - eventually based on libsodium
+- git: https://github.com/Trestor/trestor-crypto-java
+- git: https://github.com/zfreyr/crypto-utils
+- git: https://github.com/SebastianDeiss/Java-PBKDF2
+- git: https://github.com/Financial-Times/crypto-signatures
+- git: https://github.com/mooreds/gwt-crypto
+- git: https://github.com/rajeshkumarkhadka/CryptoManager
+- git: https://github.com/GlobalTester/org.globaltester.cryptoprovider
+- git: https://github.com/VirgilSecurity/virgil-sdk-java-android
+- git: https://github.com/shepherdviolet/smcrypto
+- git: https://github.com/Bobulous/Cryptography
+- git: https://github.com/jsumners/crypto-util
+- git: https://github.com/ahome-it/ahome-crypto
+- git: https://github.com/aramzl/crypto-service
+- git: https://github.com/gravieinc/aws-crypto-tools-java
+- git: https://github.com/NeilMadden/java-crypto-utils
+- git: https://github.com/simonmittag/cryptoutils
+- git: https://github.com/ttt43ttt/gwt-crypto
+- git: https://github.com/sbimochan/dna-crypto
+- git: https://github.com/amor87/CryptoLibrary
+- git: https://github.com/Abarrowman/AbarrowCrypto
+- git: https://github.com/sunilkanjar/crypto-function
+- git: https://github.com/Rayman2200/pdfbox-crypto
+- git: https://github.com/p-acs/commons-crypto
+- git: https://github.com/adnanakgun/cryptoGriffin
+- git: https://github.com/azaky/EllipticCurveCryptography
+- git: https://github.com/PersoSim/org.globaltester.cryptoprovider
+- git: https://github.com/mbrossard/cryptonit-applet  # basically no readme, but ~500commits!
+- git: https://github.com/RichMerlin/CryptoMarketsAPI
+- git: https://github.com/uuunic/CloudCrypto
+- git: https://github.com/AttackVectorLinux/ntru-crypto
+- git: https://github.com/claudius108/crypto-exist-java-lib
+- git: https://github.com/cgivre/drill-crypto-functions
+- git: https://github.com/CNXTEoE/hadoop-crypto
+- git: https://github.com/amvnetworks/amv-highmobility-cryptotool-wrapper
+- git: https://github.com/francisco-polaco/sec-crypto-utils-2017-ist
+- git: https://github.com/aibax/cryptography-samples
+- git: https://github.com/vstakhov/java-cryptobox
+- git: https://github.com/liujianqun/Whitebox-crypto-AES-java
+- git: https://github.com/mervinkid/djanpto
+- git: https://github.com/buttermilk-crypto/tweetPepper
+- git: https://github.com/martinpaljak/idcrypt
+- git: https://github.com/cliixtech/memlo
+- git: https://github.com/jtdowney/chloride
+- git: https://github.com/erikcostlow/Java-Crypt
+- git: https://github.com/Eyremba/jnacl
+- git: https://github.com/MuharremOkutan/tink
+- git: https://github.com/haikuowuya/tink
+
+- archive: https://bouncycastle.org/download/crypto-157.zip
+
+- svn: http://svn.code.sf.net/p/jasypt/code/trunk/  # http://www.jasypt.org/
+
+
 ##########################################
 ## C#
 ##########################################
