@@ -393,6 +393,49 @@ projects:
 
 
 ##########################################
+## PHP
+##########################################
+- git: https://github.com/IcyApril/CryptoLib
+- git: https://github.com/YABhq/Crypto
+- git: https://github.com/Amegatron/CryptoApi
+- git: https://github.com/rafrsr/crypto
+- git: https://github.com/g4code/crypto
+- git: https://github.com/rob-watts2/crypto
+- git: https://github.com/ioncube/php-openssl-cryptor
+- git: https://github.com/loostro/cryptomute
+- git: https://github.com/ventoviro/windwalker-crypt
+- git: https://github.com/VirgilSecurity/virgil-sdk-crypto-php
+- git: https://github.com/io-digital/php-crypto
+- git: https://github.com/blocktrail/cryptojs-aes-php
+- git: https://github.com/fpoirotte/cryptal
+- git: https://github.com/amilabs/CryptoKit
+- git: https://github.com/sop/crypto-util
+- git: https://github.com/alexsasharegan/crypto_lib
+- git: https://github.com/testinaweb/dynamic-crypto
+- git: https://github.com/da411d/Crypto228
+- git: https://github.com/crazy-max/CwsCrypto
+- git: https://github.com/Carteni/crypto-bundle
+- git: https://github.com/elcodedocle/cryptosecureprng
+- git: https://github.com/FiveLab/Cryptography
+- git: https://github.com/vinpel/php-Crypto
+- git: https://github.com/sop/crypto-encoding
+- git: https://github.com/sop/crypto-bridge
+- git: https://github.com/davidterranova/dterranovaCryptoBundle
+- git: https://github.com/jic5760/JsCrypto_for_PHP
+- git: https://github.com/msfidelis/crypto-utils-php
+- git: https://github.com/lovenunu/yacl
+- git: https://github.com/xp-framework/security
+- git: https://github.com/CrackerjackDigital/silverstripe-cryptofier
+- git: https://github.com/QBonaventure/Inner-Cryptography
+- git: https://github.com/php/php-src  # PHP itself
+- git: https://github.com/bukka/php-crypto
+- git: https://github.com/defuse/php-encryption
+- git: https://github.com/paragonie/halite
+- git: https://github.com/jedisct1/libsodium-php
+- git: https://github.com/phpseclib/phpseclib
+
+
+##########################################
 ## Objective-C
 ##########################################
 - git: https://github.com/thinkclay/crypto
