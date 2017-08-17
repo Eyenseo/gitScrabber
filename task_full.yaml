@@ -684,6 +684,23 @@ projects:
 ##########################################
 ## Ruby
 ##########################################
+- git: https://github.com/joshwetzel/cryptosystem
+- git: https://github.com/mitaku/reversible_cryptography
+- git: https://github.com/grempe/sirp
+- git: https://github.com/LupineDev/lupine_crypto # not ready for first release?
+- git: https://github.com/VirgilSecurity/virgil-crypto-ruby
+- git: https://github.com/Maxwell-Alexius/Ruby-Cryptography
+- git: https://github.com/grempe/session-keys-rb
+- git: https://github.com/koyupi/ossl_cryptor
+- git: https://github.com/cryptosphere/rbnacl
+- git: https://github.com/cryptosphere/cryptor
+- git: https://github.com/mdp/gibberish
+- git: https://github.com/krypt/krypt
+- git: https://github.com/kingpong/ruby-mcrypt
+- git: https://github.com/pelle/ezcrypto
+- git: https://github.com/kixorz/crypt
+- git: https://github.com/codahale/bcrypt-ruby
+- git: https://github.com/pbhogan/scrypt
 
 ##########################################
 ## Rust
