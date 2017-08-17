@@ -183,9 +183,10 @@ class FileTaskRunner():
                     # ignore hidden / git files
                     continue
                 path = os.path.join(dirpath, file)
-                feature = self.__executor.submit(
-                    self.__task_function_wrapper, path)
-                self.__futures[feature] = path
+                if os.path.isfile(path):
+                    feature = self.__executor.submit(
+                        self.__task_function_wrapper, path)
+                    self.__futures[feature] = path
 
     def __collect_feature_results(self):
         """
