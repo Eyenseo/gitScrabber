@@ -702,9 +702,100 @@ projects:
 - git: https://github.com/codahale/bcrypt-ruby
 - git: https://github.com/pbhogan/scrypt
 
+
 ##########################################
 ## Rust
 ##########################################
+- git: https://github.com/DaGenix/rust-crypto # Nr.1
+- git: https://github.com/libOctavo/octavo
+- git: https://github.com/johnschug/rust-gcrypt
+- git: https://github.com/CodingAnarchy/crypto
+- git: https://github.com/cmalekpour/minimal-tls
+- git: https://github.com/jedisct1/rust-siphash
+- git: https://github.com/jedisct1/rust-sparx
+- git: https://github.com/sopium/noise-rust
+- git: https://github.com/Yawning/rust-crypto-nacl
+- git: https://github.com/DSRCorporation/milagro-crypto-rust
+- git: https://github.com/yberreby/steam-crypto-rs
+- git: https://github.com/malept/crypto-hash
+- git: https://github.com/hmac/rust-crypto # keine doku
+- git: https://github.com/DaGenix/rust-crypto-working
+- git: https://github.com/cantora/rust-cryptopp
+- git: https://github.com/xcodevn/rust-paillier
+- git: https://github.com/kcchu/rust-tweetnacl
+- git: https://github.com/ruma/ruma-signatures
+- git: https://github.com/zmbush/crypto_vault
+- git: https://github.com/krl/cryptohash
+- git: https://github.com/rust-fcp/rust-fcp-cryptoauth
+- git: https://github.com/jmquigs/rs-encryptfile
+- git: https://github.com/psychonautwiki/heimdal
+- git: https://github.com/quininer/blissb
+- git: https://github.com/dono-app/dono-crate
+- git: https://github.com/mikeycgto/message_verifier
+- git: https://github.com/stouset/noises
+- git: https://github.com/snipsco/rust-paillier
+- git: https://github.com/snipsco/rust-threshold-secret-sharing
+- git: https://github.com/SpinResearch/RustySecrets
+- git: https://github.com/tomprogrammer/scram
+- git: https://github.com/tiffany352/susurrus
+- git: https://github.com/quininer/aes
+- git: https://github.com/bryant/argon2rs
+- git: https://github.com/danielreisinger/blake2b
+- git: https://github.com/cesarb/blake2-rfc
+- git: https://github.com/PeterReid/chacha
+- git: https://github.com/cesarb/chacha20-poly1305-aead
+- git: https://github.com/isislovecruft/curve25519-dalek
+- git: https://github.com/isislovecruft/ed25519-dalek
+- git: https://github.com/asukharev/hash-rs
+- git: https://github.com/Tyzzer/hashsign
+- git: https://github.com/Tyzzer/hc128
+- git: https://github.com/Tyzzer/hc256
+- git: https://github.com/badboy/jhash-rs
+- git: https://github.com/burdges/lioness-rs
+- git: https://github.com/stainless-steel/md5
+- git: https://github.com/badboy/murmurhash64-rs
+- git: https://github.com/quininer/newhope
+- git: https://github.com/zcdziura/pumpkin
+- git: https://github.com/inejge/pwhash
+- git: https://github.com/cryptosphere/ring-pwhash
+- git: https://github.com/Tyzzer/rlwekex
+- git: https://github.com/Keats/rust-bcrypt
+- git: https://github.com/ebfe/rust-blake2
+- git: https://github.com/seiflotfy/rust-farmhash
+- git: https://github.com/ctz/rust-fastpbkdf2
+- git: https://github.com/johnschug/rust-gpgme
+- git: https://github.com/vladikoff/rust-hkdf
+- git: https://github.com/blackbeam/rust-rabbit
+- git: https://github.com/mitsuhiko/rust-sha1
+- git: https://github.com/debris/tiny-keccak
+- git: https://github.com/shepmaster/twox-hash
+- git: https://github.com/RustCrypto/block-ciphers
+- git: https://github.com/RustCrypto/hashes
+- git: https://github.com/briansmith/ring #Nr.2
+- git: https://github.com/maidsafe/rust_sodium
+- git: https://github.com/malept/rust-commoncrypto
+- git: https://github.com/quininer/sarkara
+- git: https://github.com/jmesmon/sodalite
+- git: https://github.com/dnaq/sodiumoxide
+- git: https://github.com/sfackler/rust-openssl
+- git: https://github.com/zombiemuffin/edcert
+- git: https://github.com/badboy/nobsign
+- git: https://github.com/racum/rust-djangohashers
+- git: https://github.com/lemonrock/alt-tls
+- git: https://github.com/manuels/libtls.rs
+- git: https://github.com/ctz/rustls
+- git: https://github.com/jethrogb/rust-mbedtls
+- git: https://github.com/sfackler/rust-native-tls
+- git: https://github.com/sfackler/rust-security-framework
+- git: https://github.com/steffengy/schannel-rs
+- git: https://github.com/briansmith/webpki
+- git: https://github.com/cesarb/clear_on_drop
+- git: https://github.com/quininer/seckey
+- git: https://github.com/stouset/secrets
+- git: https://github.com/briansmith/untrusted
+- git: https://github.com/ctz/webpki-roots
+- git: https://github.com/burdges/zerodrop-rs
+
 
 ##########################################
 ## Go
