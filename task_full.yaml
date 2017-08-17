@@ -61,7 +61,6 @@ projects:
 - git: https://github.com/hosseinsh/Crypto-Engine-Contiki # special hardware/no lib?
 - git: https://github.com/zhulianhai/CryptoWrapperForCCode
 - git: https://github.com/26597925/cse539_crypto_prj
-- git: https://github.com/jpochyla/trezor-crypto
 - git: https://github.com/colin-zhang/trezor-crypto
 - git: https://github.com/jpochyla/trezor-crypto
 - git: https://github.com/fcelda/nsec5-crypto
@@ -140,11 +139,9 @@ projects:
 - git: http://git.eclipse.org/gitroot/tinydtls/org.eclipse.tinydtls.git
 
 - manual: 
-    id: https://www.wolfssl.com/wolfSSL/ssl-library.html
+  id: https://sourceforge.net/projects/lightcrypto/?source=directory
 - manual: 
-    id: https://sourceforge.net/projects/lightcrypto/?source=directory
-- manual: 
-    id: https://sourceforge.net/projects/pyaes/  # is python but was listed as C
+  id: https://sourceforge.net/projects/pyaes/  # is python but was listed as C
     
     
 ##########################################
@@ -278,7 +275,6 @@ projects:
 - git: https://github.com/AttackVectorLinux/ntru-crypto
 - git: https://github.com/claudius108/crypto-exist-java-lib
 - git: https://github.com/cgivre/drill-crypto-functions
-- git: https://github.com/CNXTEoE/hadoop-crypto
 - git: https://github.com/amvnetworks/amv-highmobility-cryptotool-wrapper
 - git: https://github.com/francisco-polaco/sec-crypto-utils-2017-ist
 - git: https://github.com/aibax/cryptography-samples
@@ -296,7 +292,7 @@ projects:
 
 - archive: https://bouncycastle.org/download/crypto-157.zip
 
-- svn: http://svn.code.sf.net/p/jasypt/code/trunk/  # http://www.jasypt.org/
+# FIXME svn: http://svn.code.sf.net/p/jasypt/code/trunk/  # http://www.jasypt.org/
 
 
 ##########################################
@@ -320,12 +316,11 @@ projects:
 - git: https://github.com/WolfeReiter/iTextSharp
 - git: https://github.com/aduwillie/cryptography
 - git: https://github.com/WolfeReiter/BouncyCastleCrypto
-- git: https://github.com/anilhakanyarici/next-generation-crypto-.NET
+- git: git@github.com:anilhakanyarici/next-generation-crypto-.NET.git
 - git: https://github.com/PanagiotisDrakatos/Lightweight_IoT_Crypto_Library
 - git: https://github.com/VirgilSecurity/virgil-crypto-net
 - git: https://github.com/libp2p/cs-libp2p-crypto
 - git: https://github.com/Peter-Juhasz/Science.Cryptography.Ciphers
-- git: https://github.com/AronParker/CryptographyNextGeneration
 - git: https://github.com/smoy/Xamarin.Droid.AesCrypto
 - git: https://github.com/acschmit/cryptography.Net
 - git: https://github.com/jtenos/NoEdgeSoftware.Cryptography
@@ -337,20 +332,17 @@ projects:
 - git: https://github.com/verd710/CryptoLibrary
 - git: https://github.com/bartduisters/CryptoProgram
 - git: https://github.com/onovotny/bc-csharp
+- git: https://github.com/bcgit/bc-csharp
 - git: https://github.com/Capgemini/Cauldron
 - git: https://github.com/BcryptNet/bcrypt.net
 
-- archive: bccrypto-csharp-1.8.1-src.zip
-- archive: https://www.codeproject.com/KB/security/DotNetCryptog/Article_src.zip
+- manual: 
+  id: https://msdn.microsoft.com/de-de/library/system.security.cryptography(v=vs.110).aspx
+- manual: 
+  id: https://msdn.microsoft.com/en-us/library/system.web.helpers(v=vs.111).aspx
+- manual: 
+  id: https://netcologne.dl.sourceforge.net/project/pkif/PKIF%202.1.13/PKIF%20OCSP%20Plugin/PkifOcspPlugin2_1_13.msi
 
-- manual: 
-	id: https://msdn.microsoft.com/de-de/library/system.security.cryptography(v=vs.110).aspx
-- manual: 
-	id: https://msdn.microsoft.com/en-us/library/system.web.helpers(v=vs.111).aspx
-- manual: 
-	id: https://netcologne.dl.sourceforge.net/project/pkif/PKIF%202.1.13/PKIF%20OCSP%20Plugin/PkifOcspPlugin2_1_13.msi
-	
-	
 ##########################################
 ## Python
 ##########################################
@@ -380,7 +372,7 @@ projects:
 - git: https://github.com/manologab/python-ifalg
 - git: https://github.com/NoxTools/noxcrypt
 - git: https://github.com/flipchan/otw
-- git: https://github.com/openwisp/django-x50
+- git: https://github.com/openwisp/django-x509
 - git: https://github.com/getsenic/senic.cryptoyaml
 - git: https://github.com/tchar/cryptodev-python
 - git: https://github.com/Tobegiantgod/Rabin_cryptogram
@@ -638,7 +630,7 @@ projects:
 - archive: https://ayera.dl.sourceforge.net/project/bdangerous/bdangerous-crypto/bdangerous-crypto-0.1a/crypto-0.1a.tar.gz
 
 - manual: 
-    id: https://developer.apple.com/security/ # Common Crypto based on corecrypto
+  id: https://developer.apple.com/security/ # Common Crypto based on corecrypto
 
 
 ##########################################
@@ -855,7 +847,7 @@ projects:
 - git: https://github.com/stevenroose/cryptoconditions
 - git: https://github.com/lgierth/cryptoauth
 - git: https://github.com/jochasinga/hog
-- git: https://github.com/VirgilSecurity/virgil-crypto-go/tree/v4  # master is outdated.....
+- git: https://github.com/VirgilSecurity/virgil-crypto-go  # master is outdated.....
 - git: https://github.com/neptulon/shortid
 - git: https://github.com/zaker/EcDSA--EcDH-in-Go
 - git: https://github.com/dchest/cmac
