@@ -85,7 +85,8 @@ class ImpactData():
         else:
             return
 
-        if 'main_language' in report:
+        if ('main_language' in report and report[
+            'main_language'] in self.__language_weights):
             self.language_weight = self.__language_weights[
                 report['main_language']]
 
