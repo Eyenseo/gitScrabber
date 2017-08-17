@@ -73,9 +73,10 @@ class MetaDataCollector(GitTask):
         :returns: The url to query the github api
         """
         replaceStr = None
-
+        trailing = False
         if self.__project.url.startswith('git@github.com:'):
             replaceStr = 'git@github.com:'
+            trailing = True
         elif self.__project.url.startswith('https://github.com/'):
             replaceStr = 'https://github.com/'
         elif self.__project.url.startswith('http://github.com/'):
@@ -83,13 +84,16 @@ class MetaDataCollector(GitTask):
         else:
             raise Exception(
                 "Unsupported project - it has to be a github project but "
-                "the  url '{}' seems to be not from github.".format(
+                "the url '{}' seems to be not from github.".format(
                     self.__project.url))
 
         url = self.__project.url.replace(
             replaceStr, 'https://api.github.com/repos/')
-        url += urlExtension
 
+        if trailing and url.endswith('.git'):
+            url = url[:-4]
+
+        url += urlExtension
         if self._global_args.github_token:
             url += "?access_token="+self._global_args.github_token
 
