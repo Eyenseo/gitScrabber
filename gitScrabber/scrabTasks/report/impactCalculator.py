@@ -85,7 +85,8 @@ class ImpactData():
         else:
             return
 
-        if 'main_language' in report:
+        if ('main_language' in report and report[
+            'main_language'] in self.__language_weights):
             self.language_weight = self.__language_weights[
                 report['main_language']]
 
@@ -124,8 +125,8 @@ class ImpactCalculator(ReportTask):
     def __init__(self, parameter, global_args):
         super(ImpactCalculator, self).__init__(name, version, parameter,
                                                global_args)
-        self.__authors_weight = 1/3
-        self.__contributors_weight = 1/30
+        self.__authors_weight = 1
+        self.__contributors_weight = 1
         self.__last_change_age_weight = 1
         self.__project_age_weight = 3
 
@@ -178,8 +179,10 @@ class ImpactCalculator(ReportTask):
             return 'NaN'
 
         return data.language_weight * (
-            self.__contributors_weight * data.contributors
-            + self.__authors_weight * data.authors
+            self.__contributors_weight * (
+                10 - pow(2, 3.321928 - 0.1 * data.contributors))
+            + self.__authors_weight * (
+                10 - pow(2, 3.321928 - data.authors))
             + self.__last_change_age_weight * (
                 10 / pow(2, ((data.last_change_age / 90) - 1))
             )
