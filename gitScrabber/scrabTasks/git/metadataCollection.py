@@ -117,22 +117,24 @@ class MetaDataCollector(GitTask):
 
         return response.json()
 
+    def __query(self, query):
+        if query not in self.__queries:
+            self.__queries[query] = self.__access_github_api(query)
+        return self.__queries[
+            query]
+
     def __get_language_data(self):
         """
         Queries the github api to obtain the languages used in the project
 
         :returns: the a list of languages used in the project
         """
-        if 'languages' not in self.__queries:
-            self.__queries[
-                'languages'] = self.__access_github_api('/languages')
+        query = self.__query('/languages')
 
         return {
-            'languages': list(self.__queries['languages'].keys()),
-            'main_language': max(
-                self.__queries['languages'],
-                key=self.__queries['languages'].get
-            )
+            'languages': list(query.keys()),
+            'main_language': max(query, key=query.get
+                                 )
         }
 
     def __get_forks_count(self):
@@ -141,13 +143,12 @@ class MetaDataCollector(GitTask):
 
         :returns: either 0 or the nr of forks of the project
         """
-        if '' not in self.__queries:
-            self.__queries[''] = self.__access_github_api('')
+        query = self.__query('')
 
-        if 'forks' not in self.__queries['']:
+        if 'forks' not in query:
             return 0
         else:
-            return self.__queries['']['forks']
+            return query['forks']
 
     def __get_stars(self):
         """
@@ -155,13 +156,12 @@ class MetaDataCollector(GitTask):
 
         :returns: either 0 or the nr of stars of the project
         """
-        if '' not in self.__queries:
-            self.__queries[''] = self.__access_github_api('')
+        query = self.__query('')
 
-        if 'stargazers_count' not in self.__queries['']:
+        if 'stargazers_count' not in query:
             return 0
         else:
-            return self.__queries['']['stargazers_count']
+            return query['stargazers_count']
 
     def __get_licence(self):
         """
@@ -169,23 +169,23 @@ class MetaDataCollector(GitTask):
 
         :returns: either 0 or the nr of stars of the project
         """
-        if 'licence' not in self.__queries:
-            self.__queries['licence'] = self.__access_github_api('/license')
-
-        query = self.__queries['licence']
         name = None
         abb = None
 
-        if ('license' in query and 'name' in query['license']
-                and 'Other' != query['license']['name']):
-            name = query['license']['name']
+        query = self.__query('')
+        if 'licence' in query:
+            query = self.__query('/license')
 
-            if 'spdx_id' in query['license']:
-                abb = query['license']['spdx_id']
+            if ('license' in query and 'name' in query['license']
+                    and 'Other' != query['license']['name']):
+                name = query['license']['name']
+
+                if 'spdx_id' in query['license']:
+                    abb = query['license']['spdx_id']
 
         return {
             'name': name,
-            "abb": abb
+            'abb': abb
         }
 
     def scrab(self, project):
