@@ -6,6 +6,10 @@ name = "MetaDataCollector"
 version = "1.1.0"
 
 
+class ProjectNotFromGithubException(Exception):
+    pass
+
+
 class MetaDataCollector(GitTask):
     """
     Class to query the github api to obtain the forks, languages, licence and
@@ -82,7 +86,7 @@ class MetaDataCollector(GitTask):
         elif self.__project.url.startswith('http://github.com/'):
             replaceStr = 'http://github.com/'
         else:
-            raise Exception(
+            raise ProjectNotFromGithubException(
                 "Unsupported project - it has to be a github project but "
                 "the url '{}' seems to be not from github.".format(
                     self.__project.url))
@@ -133,8 +137,7 @@ class MetaDataCollector(GitTask):
 
         return {
             'languages': list(query.keys()),
-            'main_language': max(query, key=query.get
-                                 )
+            'main_language': max(query, key=query.get)
         }
 
     def __get_forks_count(self):
@@ -208,14 +211,18 @@ class MetaDataCollector(GitTask):
                           name: Academic Free License v3.0
                           abb: AFL-3.0
         """
-        self.__project = project
-        language_data = self.__get_language_data()
-
         report = {}
-        report['stars'] = self.__get_stars()
-        report['languages'] = language_data['languages']
-        report['main_language'] = language_data['main_language']
-        report['forks'] = self.__get_forks_count()
-        report['licence'] = self.__get_licence()
+
+        try:
+            self.__project = project
+            language_data = self.__get_language_data()
+
+            report['stars'] = self.__get_stars()
+            report['languages'] = language_data['languages']
+            report['main_language'] = language_data['main_language']
+            report['forks'] = self.__get_forks_count()
+            report['licence'] = self.__get_licence()
+        except ProjectNotFromGithubException as e:
+            pass
 
         return report
