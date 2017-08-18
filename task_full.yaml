@@ -401,7 +401,6 @@ projects:
 - git: https://github.com/blocktrail/cryptojs-aes-php
 - git: https://github.com/fpoirotte/cryptal
 - git: https://github.com/amilabs/CryptoKit
-- git: https://github.com/sop/crypto-util
 - git: https://github.com/alexsasharegan/crypto_lib
 - git: https://github.com/testinaweb/dynamic-crypto
 - git: https://github.com/da411d/Crypto228
@@ -425,6 +424,10 @@ projects:
 - git: https://github.com/paragonie/halite
 - git: https://github.com/jedisct1/libsodium-php
 - git: https://github.com/phpseclib/phpseclib
+- git: https://github.com/sop/crypto-types
+- git: https://github.com/sop/crypto-bridge
+- git: https://github.com/sop/pkcs5
+- git: https://github.com/sop/pkcs8
 
 
 ##########################################
