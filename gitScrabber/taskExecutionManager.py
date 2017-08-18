@@ -41,6 +41,9 @@ class MetaProject():
                             "or git and doesn't provide manual data:\n"
                             "'{}'".format(config))
 
+        if self.url and self.url.endswith('/'):
+            self.url = self.url[:-1]
+
         if self.url is None:
             self.id = "{}_{}".format(self.name, md5(self.name))
         else:
