@@ -176,7 +176,7 @@ class ImpactCalculator(ReportTask):
                   information is available in the given project report
         """
         if not data.usable():
-            return 'NaN'
+            return None
 
         if data.last_change_age < 90:
             data.last_change_age = 90
@@ -221,7 +221,14 @@ class ImpactCalculator(ReportTask):
         for project in report['projects']:
             impact_data = ImpactData(report['projects'][project],
                                      self.__language_weights)
-            report['projects'][project]['impact'] = {
-                'impact': self.calculate_impact(impact_data)
-            }
+
+            impact = self.calculate_impact(impact_data)
+            if impact:
+                report['projects'][project]['impact'] = {
+                    'impact': float("{0:.2f}".format(impact))
+                }
+            else:
+                report['projects'][project]['impact'] = {
+                    'impact': None
+                }
         return report
