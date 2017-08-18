@@ -343,6 +343,8 @@ class TaskExecutionManager:
             if project.manual_data is not None:
                 deep_merge(report, {
                     'projects': {project.id: project.manual_data}})
+            deep_merge(report, {
+                'projects': {project.id: {"URL": project.url}}})
         return report
 
     def __run_project_tasks(self):
