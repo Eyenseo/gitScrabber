@@ -157,7 +157,7 @@ class LanguageDetector(FileTask):
         :returns: The main language.
         """
         max_files = 0
-        max_lang = 'Not detected'
+        max_lang = None
 
         for language in report:
             lang_fiels = sum(report[language].values())

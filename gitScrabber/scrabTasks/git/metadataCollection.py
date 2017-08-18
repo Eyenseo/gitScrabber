@@ -135,9 +135,16 @@ class MetaDataCollector(GitTask):
         """
         query = self.__query('/languages')
 
+        languages = None
+        main_language = None
+
+        if len(query) > 0:
+            languages = list(query.keys())
+            main_language = max(query, key=query.get)
+
         return {
-            'languages': list(query.keys()),
-            'main_language': max(query, key=query.get)
+            'languages': languages,
+            'main_language': main_language
         }
 
     def __get_forks_count(self):

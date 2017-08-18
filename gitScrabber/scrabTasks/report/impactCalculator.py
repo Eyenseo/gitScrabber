@@ -78,11 +78,13 @@ class ImpactData():
         """
         report = None
 
-        if 'MetaDataCollector' in self.__project_report:
-            report = self.__project_report['MetaDataCollector']
-        elif 'LanguageDetector' in self.__project_report:
+        if 'LanguageDetector' in self.__project_report:
             report = self.__project_report['LanguageDetector']
-        else:
+        if 'MetaDataCollector' in self.__project_report:
+            if 'main_language' in self.__project_report['MetaDataCollector']:
+                report = self.__project_report['MetaDataCollector']
+
+        if not report:
             return
 
         if ('main_language' in report and report[
