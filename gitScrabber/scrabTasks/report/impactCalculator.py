@@ -1,7 +1,7 @@
 from ..scrabTask import ReportTask
 
 from datetime import datetime, timezone
-from math import log10, pow
+from math import log10, log2, pow
 from dateutil import parser
 
 name = "ImpactCalculator"
@@ -86,7 +86,7 @@ class ImpactData():
             return
 
         if ('main_language' in report and report[
-            'main_language'] in self.__language_weights):
+                'main_language'] in self.__language_weights):
             self.language_weight = self.__language_weights[
                 report['main_language']]
 
@@ -126,9 +126,9 @@ class ImpactCalculator(ReportTask):
         super(ImpactCalculator, self).__init__(name, version, parameter,
                                                global_args)
         self.__authors_weight = 1
-        self.__contributors_weight = 1
+        self.__contributors_weight = .1
         self.__last_change_age_weight = 1
-        self.__project_age_weight = 3
+        self.__project_age_weight = 1
 
         # FIXME think of real weights or generate them
         self.__language_weights = {
@@ -178,15 +178,19 @@ class ImpactCalculator(ReportTask):
         if not data.usable():
             return 'NaN'
 
+        if data.last_change_age < 90:
+            data.last_change_age = 90
+
         return data.language_weight * (
-            self.__contributors_weight * (
-                10 - pow(2, 3.321928 - 0.1 * data.contributors))
-            + self.__authors_weight * (
-                10 - pow(2, 3.321928 - data.authors))
+            (10 - pow(2, log2(10)
+                      - self.__contributors_weight * data.contributors))
+            + (10 - pow(2, log2(10)
+                        - self.__authors_weight * data.authors))
             + self.__last_change_age_weight * (
-                10 / pow(2, ((data.last_change_age / 90) - 1))
-            )
-            + self.__project_age_weight * log10(data.project_age)
+                10 / pow(2, ((data.last_change_age / 90) - 1)))
+            + (10 - pow(2, log2(10)
+                        - self.__project_age_weight * data.project_age
+                        / 365))
         )
 
     def scrab(self, report):
