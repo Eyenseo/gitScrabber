@@ -48,61 +48,64 @@ class ProjectMetrics(FileTask):
                   comment
         """
         pattern = r"""
-                            # ---- SOLITARY MULTI LINE COMMENT ----
-           ^[\t\f\v ]*      ##  Start with only spaces on line
-           /\*              ##  Start of /* ... */ comment
-           [^*]*\*+         ##  Non-* followed by 1-or-more *'s
-           (?:              ##
-             [^/*][^*]*\*+  ##
-           )*               ##  0-or-more things which don't start with /
-                            # but do end with '*'
-           /                ##  End of /* ... */ comment
-           \n               ##  match trailing new line as this line was only
-                            # used for a comment
-         |                  ##  ---------------- OR ----------------
-                            # ---- MULTI LINE COMMENT ----
-           /\*              ##  Start of /* ... */ comment
-           [^*]*\*+         ##  Non-* followed by 1-or-more *'s
-           (?:              ##
-             [^/*][^*]*\*+  ##
-           )*               ##  0-or-more things which don't start with /
-                            # but do end with '*'
-           /                ##  End of /* ... */ comment
-         |                  ##  ---------------- OR ----------------
-                            # ---- SOLITARY SINGLE LINE COMMENT ----
-            ^[\t\f\v ]*     ##  Start with only spaces on line
-            //              ##  Single line comment
-            [^\n]*          ##  match anything but new line
-            \n              ##  match trailing new line as this line was only
-                            # used for a comment
-         |                  ##  ---------------- OR ----------------
-                            # ---- SINGLE LINE COMMENT ----
-            //              ##  Single line comment
-            [^\n]*          ##  match anything but new line
-         |                  ##  ---------------- OR ----------------
-           (                ##
-                            # ---- " ... " STRING ----
-             "              ##  Start of " ... " string
-             (?:            ##
-               \\.          ##  Escaped char
-             |              ##  -OR-
-               [^"\\]       ##  Non "\ characters
-             )*             ##
-             "              ##  End of " ... " string
-           |                ##  -OR-
-                            # ---- ' ... ' STRING ----
-             '              ##  Start of ' ... ' string
-             (?:            ##
-               \\.          ##  Escaped char
-             |              ##  -OR-
-               [^'\\]       ##  Non '\ characters
-             )*             ##
-             '              ##  End of ' ... ' string
-           |                ##  -OR-
-                            # ---- ANYTHING ELSE ----
-             .              ##  Anything other char
-             [^/"'\\]*      ##  Chars which doesn't start a comment, string
-           )                ##    or escape
+                             ## ---- SOLITARY MULTI LINE COMMENT ----
+            ^[\t\f\v ]*      ##  Start with only spaces on line
+            /\*              ##  Start of /* ... */ comment
+            [^*]*\*+         ##  Non-* followed by 1-or-more *'s
+            (?:              ##
+              [^/*][^*]*\*+  ##
+            )*               ##  0-or-more things which don't start with /
+                             ##     but do end with '*'
+            /                ##  End of /* ... */ comment
+            \n               ##  match trailing new line as this line was only
+                             ##     used for a comment
+          |                  ## ---------------- OR ----------------
+                             ## ---- MULTI LINE COMMENT ----
+            /\*              ##  Start of /* ... */ comment
+            [^*]*\*+         ##  Non-* followed by 1-or-more *'s
+            (?:              ##
+              [^/*][^*]*\*+  ##
+            )*               ##  0-or-more things which don't start with /
+                             ##     but do end with '*'
+            /                ##  End of /* ... */ comment
+          |                  ## ---------------- OR ----------------
+                             ## ---- SOLITARY SINGLE LINE COMMENT ----
+             ^[\t\f\v ]*     ##  Start with only spaces on line
+             //              ##  Single line comment
+             [^\n]*          ##  match anything but new line
+             \n              ##  match trailing new line as this line was only
+                             ##     used for a comment
+          |                  ## ---------------- OR ----------------
+                             ## ---- SINGLE LINE COMMENT ----
+             //              ##  Single line comment
+             [^\n]*          ##  match anything but new line
+          |                  ## ---------------- OR ----------------
+            (                ## ---- " ... " STRING ----
+              "              ##  Start of " ... " string
+              (?:            ##
+                (?:          ##
+                  \\.        ##  Escaped char
+                )*           ##
+              |              ## ---------------- OR ----------------
+                [^"\\]*      ##  Non "\ characters
+              )*             ##
+              "              ##  End of " ... " string
+            |                ## ---------------- OR ----------------
+                             ## ---- ' ... ' STRING ----
+              '              ##  Start of ' ... ' string
+              (?:            ##
+                (?:          ##
+                  \\.        ##  Escaped char
+                )*           ##
+              |              ## ---------------- OR ----------------
+                [^'\\]*      ##  Non '\ characters
+              )*             ##
+              '              ##  End of ' ... ' string
+            |                ## ---------------- OR ----------------
+                             ## ---- ANYTHING ELSE ----
+              .              ##  Anything other char
+              [^/"'\\]*      ##  Chars which doesn't start a comment, string
+            )                ##    or escape
         """
         flags = regex.VERBOSE | regex.MULTILINE | regex.DOTALL
         return regex.compile(pattern, flags)
@@ -119,72 +122,75 @@ class ProjectMetrics(FileTask):
                   comment
         """
         pattern = r"""
-                            # ---- SOLITARY MULTI LINE COMMENT ----
-           ^[\t\f\v ]*      ##  Start with only spaces on line
-           /\*              ##  Start of /* ... */ comment
-           [^*]*\*+         ##  Non-* followed by 1-or-more *'s
-           (?:              ##
-             [^/*][^*]*\*+  ##
-           )*               ##  0-or-more things which don't start with /
-                            # but do end with '*'
-           /                ##  End of /* ... */ comment
-           \n               ##  match trailing new line as this line was only
-                            # used for a comment
-         |                  ##  ---------------- OR ----------------
-                            # ---- MULTI LINE COMMENT ----
-           /\*              ##  Start of /* ... */ comment
-           [^*]*\*+         ##  Non-* followed by 1-or-more *'s
-           (?:              ##
-             [^/*][^*]*\*+  ##
-           )*               ##  0-or-more things which don't start with /
-                            # but do end with '*'
-           /                ##  End of /* ... */ comment
-         |                  ##  ---------------- OR ----------------
-                            # ---- SOLITARY SINGLE LINE COMMENT ----
-            ^[\t\f\v ]*     ##  Start with only spaces on line
-            //              ##  Single line comment
-            [^\n]*          ##  match anything but new line
-            \n              ##  match trailing new line as this line was only
-                            # used for a comment
-         |                  ##  ---------------- OR ----------------
-                            # ---- SINGLE LINE COMMENT ----
-            //              ##  Single line comment
-            [^\n]*          ##  match anything but new line
-         |                  ##  ---------------- OR ----------------
-                            # ---- SOLITARY SINGLE LINE COMMENT ----
-            ^[\t\f\v ]*     ##  Start with only spaces on line
-            \#              ##  Single line comment
-            [^\n]*          ##  match anything but new line
-            \n              ##  match trailing new line as this line was only
-                            # used for a comment
-         |                  ##  ---------------- OR ----------------
-                            # ---- SINGLE LINE COMMENT ----
-            \#              ##  Single line comment
-            [^\n]*          ##  match anything but new line
-         |                  ##  ---------------- OR ----------------
-           (                ##
-                            # ---- " ... " STRING ----
-             "              ##  Start of " ... " string
-             (?:            ##
-               \\.          ##  Escaped char
-             |              ##  -OR-
-               [^"\\]       ##  Non "\ characters
-             )*             ##
-             "              ##  End of " ... " string
-           |                ##  -OR-
-                            # ---- ' ... ' STRING ----
-             '              ##  Start of ' ... ' string
-             (?:            ##
-               \\.          ##  Escaped char
-             |              ##  -OR-
-               [^'\\]       ##  Non '\ characters
-             )*             ##
-             '              ##  End of ' ... ' string
-           |                ##  -OR-
-                            # ---- ANYTHING ELSE ----
-             .              ##  Anything other char
-             [^/"'\\]*      ##  Chars which doesn't start a comment, string
-           )                ##    or escape
+                             ## ---- SOLITARY MULTI LINE COMMENT ----
+            ^[\t\f\v ]*      ##  Start with only spaces on line
+            /\*              ##  Start of /* ... */ comment
+            [^*]*\*+         ##  Non-* followed by 1-or-more *'s
+            (?:              ##
+              [^/*][^*]*\*+  ##
+            )*               ##  0-or-more things which don't start with /
+                             ##     but do end with '*'
+            /                ##  End of /* ... */ comment
+            \n               ##  match trailing new line as this line was only
+                             ##     used for a comment
+          |                  ## ---------------- OR ----------------
+                             ## ---- MULTI LINE COMMENT ----
+            /\*              ##  Start of /* ... */ comment
+            [^*]*\*+         ##  Non-* followed by 1-or-more *'s
+            (?:              ##
+              [^/*][^*]*\*+  ##
+            )*               ##  0-or-more things which don't start with /
+                             ##     but do end with '*'
+            /                ##  End of /* ... */ comment
+          |                  ## ---------------- OR ----------------
+                             ## ---- SOLITARY SINGLE LINE COMMENT ----
+             ^[\t\f\v ]*     ##  Start with only spaces on line
+             //              ##  Single line comment
+             [^\n]*          ##  match anything but new line
+             \n              ##  match trailing new line as this line was only
+                             ##     used for a comment
+          |                  ## ---------------- OR ----------------
+                             ## ---- SINGLE LINE COMMENT ----
+             //              ##  Single line comment
+             [^\n]*          ##  match anything but new line
+          |                  ## ---------------- OR ----------------
+                             ## ---- SOLITARY SINGLE LINE COMMENT ----
+             ^[\t\f\v ]*     ##  Start with only spaces on line
+             \#              ##  Single line comment
+             [^\n]*          ##  match anything but new line
+             \n              ##  match trailing new line as this line was only
+                             ##     used for a comment
+          |                  ## ---------------- OR ----------------
+                             ## ---- SINGLE LINE COMMENT ----
+             \#              ##  Single line comment
+             [^\n]*          ##  match anything but new line
+          |                  ## ---------------- OR ----------------
+            (                ## ---- " ... " STRING ----
+              "              ##  Start of " ... " string
+              (?:            ##
+                 (?:         ##
+                   \\.       ##  Escaped char
+                 )*          ##
+              |              ## ---------------- OR ----------------
+                [^"\\]*      ##  Non "\ characters
+              )*             ##
+              "              ##  End of " ... " string
+            |                ## ---------------- OR ----------------
+                             ## ---- ' ... ' STRING ----
+              '              ##  Start of ' ... ' string
+              (?:            ##
+                 (?:         ##
+                   \\.       ##  Escaped char
+                 )*          ##
+              |              ## ---------------- OR ----------------
+                [^'\\]*      ##  Non '\ characters
+              )*             ##
+              '              ##  End of ' ... ' string
+            |                ## ---------------- OR ----------------
+                             ## ---- ANYTHING ELSE ----
+              .              ##  Anything other char
+              [^/"'\\]*      ##  Chars which doesn't start a comment, string
+            )                ##    or escape
         """
         flags = regex.VERBOSE | regex.MULTILINE | regex.DOTALL
         return regex.compile(pattern, flags)
@@ -201,63 +207,66 @@ class ProjectMetrics(FileTask):
                   comment
         """
         pattern = r"""
-                            # ---- ""DocString"" ----
-            ^[\t\f\v ]*     ##  Start with only spaces on line
-            \"\"\"          ##  Start of DocString comment
-            .*?             ##  Anything
-            \"\"\"          ##  End of DocString comment
-            \n              ##  match trailing new line as this line was
-                            # only used for a comment
-          |                 ##  ---------------- OR ----------------
-                            # ---- ''DocString'' ----
-            ^[\t\f\v ]*     ##  Start with only spaces on line
-            \'\'\'          ##  Start of DocString comment
-            .*?             ##  Anything
-            \'\'\'          ##  End of DocString comment
-            \n              ##  match trailing new line as this line was
-                            # only used for a comment
-          |                 ##  ---------------- OR ----------------
-                            # ---- SOLITARY SINGLE LINE COMMENT ----
-             ^[\t\f\v ]*    ##  Start with only spaces on line
-             \#             ##  Single line comment
-             [^\n]*         ##  match anything but new line
-             \n             ##  match trailing new line as this line was
-                            # only used for a comment
-          |                 ##  ---------------- OR ----------------
-                            # ---- SINGLE LINE COMMENT ----
-             \#             ##  Single line comment
-             [^\n]*         ##  match anything but new line
-          |                 ##  ---------------- OR ----------------
-            (               ##
-                            # ---- ""Multiline String"" ----
-                \"\"\"      ##  Start of Multiline String comment
-                .*?         ##  Anything
-                \"\"\"      ##  End of /* ... */ comment
-              |             ##  ---------------- OR ----------------
-                            # ---- ''Multiline String'' ----
-                \'\'\'      ##  Start of Multiline String comment
-                .*?         ##  Anything
-                \'\'\'      ##  End of /* ... */ comment
-              |             ##  ---------------- OR ----------------
-                \"          ##  ---- " ... " STRING ----
-                  (?:       ##
-                    \\.     ##  Escaped char
-                  |         ##  -OR-
-                    [^"\\]  ##  Non "\ characters
-                  )*        ##
-                \"          ##  End of " ... " string
-              |             ##  ---------------- OR ----------------
-                \'          ##  ---- ' ... ' STRING ----
-                  (?:       ##
-                    \\.     ##  Escaped char
-                  |         ##  -OR-
-                    [^"\\]  ##  Non "\ characters
-                  )*        ##
-                \'          ##  End of ' ... ' string
-              |             ##  ---------------- OR ----------------
-                            # ---- ANYTHING ELSE ----
-                .           ##  Anything other char
-            )               ##
+                              ## ---- ""DocString"" ----
+            ^[\t\f\v ]*       ##  Start with only spaces on line
+            \"\"\"            ##  Start of DocString comment
+            .*?               ##  Anything
+            \"\"\"            ##  End of DocString comment
+            \n                ##  match trailing new line as this line was
+                              ##    only used for a comment
+          |                   ## ---------------- OR ----------------
+                              ## ---- ''DocString'' ----
+            ^[\t\f\v ]*       ##  Start with only spaces on line
+            \'\'\'            ##  Start of DocString comment
+            .*?               ##  Anything
+            \'\'\'            ##  End of DocString comment
+            \n                ##  match trailing new line as this line was
+                              ##    only used for a comment
+          |                   ## ---------------- OR ----------------
+                              ## ---- SOLITARY SINGLE LINE COMMENT ----
+             ^[\t\f\v ]*      ##  Start with only spaces on line
+             \#               ##  Single line comment
+             [^\n]*           ##  match anything but new line
+             \n               ##  match trailing new line as this line was
+                              ##    only used for a comment
+          |                   ## ---------------- OR ----------------
+                              ## ---- SINGLE LINE COMMENT ----
+             \#               ##  Single line comment
+             [^\n]*           ##  match anything but new line
+          |                   ## ---------------- OR ----------------
+            (                 ## ---- ""Multiline String"" ----
+                \"\"\"        ##  Start of Multiline String comment
+                .*?           ##  Anything
+                \"\"\"        ##  End of /* ... */ comment
+              |               ## ---------------- OR ----------------
+                              ## ---- ''Multiline String'' ----
+                \'\'\'        ##  Start of Multiline String comment
+                .*?           ##  Anything
+                \'\'\'        ##  End of /* ... */ comment
+              |               ## ---------------- OR ----------------
+                \"            ## ---- " ... " STRING ----
+                  (?:         ##
+                    (?:       ##
+                      \\.     ##  Escaped char
+                    )*        ##
+                  |           ## ---------------- OR ----------------
+                    [^"\\]*   ##  Non "\ characters
+                  )*          ##
+                \"            ##  End of " ... " string
+              |               ## ---------------- OR ----------------
+                \'            ## ---- ' ... ' STRING ----
+                  (?:         ##
+                    (?:       ##
+                      \\.     ##  Escaped char
+                    )*        ##
+                  |           ## ---------------- OR ----------------
+                    [^'\\]*   ##  Non "\ characters
+                  )*          ##
+                \'            ##  End of ' ... ' string
+              |               ## ---------------- OR ----------------
+                              ## ---- ANYTHING ELSE ----
+                .             ##  Anything other char
+            )                 ##
         """
         return regex.compile(pattern, regex.VERBOSE | regex.MULTILINE
                              | regex.DOTALL)
@@ -279,69 +288,73 @@ class ProjectMetrics(FileTask):
                   comment
         """
         pattern = r"""
-                              # ---- ""DocString"" ----
+                              ## ---- ""DocString"" ----
             ^[\t\f\v ]*       ##  Start with only spaces on line
             =begin            ##  Start of DocString comment
             .*?               ##  Anything
             =end              ##  End of DocString comment
             \n                ##  match trailing new line as this line was only
-                              # used for a comment
-          |                   ##  ---------------- OR ----------------
-                              # ---- SOLITARY SINGLE LINE COMMENT ----
+                              ##      used for a comment
+          |                   ## ---------------- OR ----------------
+                              ## ---- SOLITARY SINGLE LINE COMMENT ----
              ^[\t\f\v ]*      ##  Start with only spaces on line
              \#               ##  Single line comment
              [^\n]*           ##  match anything but new line
              \n               ##  match trailing new line as this line was only
-                              # used for a comment
-          |                   ##  ---------------- OR ----------------
-                              # ---- SINGLE LINE COMMENT ----
+                              ##      used for a comment
+          |                   ## ---------------- OR ----------------
+                              ## ---- SINGLE LINE COMMENT ----
              \#               ##  Single line comment
              [^\n]*           ##  match anything but new line
-          |                   ##  ---------------- OR ----------------
+          |                   ## ---------------- OR ----------------
             (                 ##
-                              # ---- ""Multiline String"" ----
-                \"            ##  ---- " ... " STRING ----
+                              ## ---- ""Multiline String"" ----
+                \"            ## ---- " ... " STRING ----
                   (?:         ##
-                    \\.       ##  Escaped char
-                  |           ##  -OR-
-                    [^"\\]    ##  Non "\ characters
+                    (?:       ##
+                      \\.     ##  Escaped char
+                    )*        ##
+                  |           ## ---------------- OR ----------------
+                    [^"\\]*    ##  Non "\ characters
                   )*          ##
                 \"            ##  End of " ... " string
-              |               ##  ---------------- OR ----------------
-                \'            ##  ---- ' ... ' STRING ----
+              |               ## ---------------- OR ----------------
+                \'            ## ---- ' ... ' STRING ----
                   (?:         ##
-                    \\.       ##  Escaped char
-                  |           ##  -OR-
-                    [^"\\]    ##  Non "\ characters
+                    (?:       ##
+                      \\.     ##  Escaped char
+                    )*        ##r
+                  |           ## ---------------- OR ----------------
+                    [^"\\]*   ##  Non "\ characters
                   )*          ##
                 \'            ##  End of ' ... ' string
-              |               ##  ---------------- OR ----------------
-                \%[qQ]?       ##  ---- Special Ruby String ----
+              |               ## ---------------- OR ----------------
+                \%[qQ]?       ## ---- Special Ruby String ----
                 ([^\(\{\<\[]) ##  String start character
                 .*?           ##  Anything
                 \2            ##  End start character
-              |               ##  ---------------- OR ----------------
-                \%[qQ]?       ##  ---- Special Ruby String ----
+              |               ## ---------------- OR ----------------
+                \%[qQ]?       ## ---- Special Ruby String ----
                 \(            ##  String start character
                 .*?           ##  Anything
                 \)            ##  End start character
-              |               ##  ---------------- OR ----------------
-                \%[qQ]?       ##  ---- Special Ruby String ----
+              |               ## ---------------- OR ----------------
+                \%[qQ]?       ## ---- Special Ruby String ----
                 \{            ##  String start character
                 .*?           ##  Anything
                 \}            ##  End start character
-              |               ##  ---------------- OR ----------------
-                \%[qQ]?       ##  ---- Special Ruby String ----
+              |               ## ---------------- OR ----------------
+                \%[qQ]?       ## ---- Special Ruby String ----
                 \[            ##  String start character
                 .*?           ##  Anything
                 \]            ##  End start character
-              |               ##  ---------------- OR ----------------
-                \%[qQ]?       ##  ---- Special Ruby String ----
+              |               ## ---------------- OR ----------------
+                \%[qQ]?       ## ---- Special Ruby String ----
                 \<            ##  String start character
                 .*?           ##  Anything
                 \>            ##  End start character
-              |               ##  ---------------- OR ----------------
-                              # ---- ANYTHING ELSE ----
+              |               ## ---------------- OR ----------------
+                              ## ---- ANYTHING ELSE ----
                 .             ##  Anything other char
             )                 ##
         """
