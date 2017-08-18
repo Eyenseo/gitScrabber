@@ -134,12 +134,13 @@ class TaskExecutionManager:
     """
 
     def __init__(self, cache_dir, project_tasks, report_tasks, projects,
-                 old_report, global_args, scrabTaskManager):
+                 old_report, update, global_args, scrabTaskManager):
         self.__cache_dir = cache_dir
         self.__project_tasks = self.__setup_tasks_configuration(project_tasks)
         self.__report_tasks = self.__setup_tasks_configuration(report_tasks)
         self.__projects = self.__setup_project_data(projects)
         self.__old_report = old_report
+        self.__update = update
         self.__global_args = global_args
         self.__scrabTaskManager = scrabTaskManager
         self.__max_workers = cpu_count()
@@ -253,15 +254,19 @@ class TaskExecutionManager:
 
         :returns: True if anything changed False if nothing changed
         """
+        manager = None
         if project.kind == 'git':
-            return GitProjectManager(project).update()
+            manager = GitProjectManager(project)
         elif project.kind == 'archive':
-            return ArchiveProjectManager(project).update()
+            manager = ArchiveProjectManager(project)
         else:
             # TODO handle manually downloaded archives
             pass
 
-        return False
+        if self.__update:
+            return manager.update()
+        else:
+            return manager.init()
 
     def __project_task_wrapper(self, project, old_tasks, old_data):
         """

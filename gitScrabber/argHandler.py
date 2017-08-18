@@ -125,6 +125,10 @@ def __setup_parser():
                               default='.',
                               help="Directory where the repositories and "
                               "archives are stored")
+    program_args.add_argument('-u', '--update',
+                              action='store_true',
+                              help="Before scrabbing the tool will try to "
+                              "update the sources")
     program_args.add_argument('-p', '--print',
                               action='store_true',
                               default=False,

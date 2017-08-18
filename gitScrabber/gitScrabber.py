@@ -39,11 +39,13 @@ class GitScrabber:
                  output_file=None,
                  data_dir=".",
                  print=False,
+                 update=False,
                  global_args={}):
         self.__scrabTaskManager = ScrabTaskManager()
         self.__output_file = output_file
         self.__data_dir = data_dir
         self.__print = print
+        self.__update = update
         self.__global_args = global_args
         self.__tasks = ruamel.yaml.load(
             open(task_file, 'r').read(),
@@ -82,6 +84,7 @@ class GitScrabber:
             report_tasks=self.__tasks['report_tasks'],
             projects=self.__tasks['projects'],
             old_report=self.__old_report,
+            update=self.__update,
             global_args=self.__global_args,
             scrabTaskManager=self.__scrabTaskManager)
         report = executionManager.create_report()
@@ -106,6 +109,7 @@ def main(args=None):
         output_file=args.output,
         data_dir=args.data,
         print=args.print,
+        update=args.update,
         global_args=GlobalArgs(args.github_token)
     ).scrab()
 

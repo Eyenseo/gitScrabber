@@ -7,7 +7,33 @@ import tempfile
 import utils
 
 
-class GitProjectManager:
+class ProjectManager:
+    """
+    Interface class for Project manager
+    """
+
+    def init(self):
+        """
+        Initializes a project
+
+        :returns: True if the sources were initialized,
+                  otherwise False
+        """
+        assert False, "You have to implement this function"
+        return True
+
+    def update(self):
+        """
+        Updates or initializes a project
+
+        :returns: True if the sources were updated or initialized,
+                  otherwise False
+        """
+        assert False, "You have to implement this function"
+        return True
+
+
+class GitProjectManager(ProjectManager):
     """
     The GitProjectManager is responsible for executing tasks that scrab at the
     git repos and archives. These tasks are meant to gather data, not
@@ -21,6 +47,7 @@ class GitProjectManager:
     """
 
     def __init__(self, project):
+        super(GitProjectManager, self).__init__()
         self.__project = project
 
     def __check_repo_folder(self):
@@ -92,12 +119,10 @@ class GitProjectManager:
     def update(self):
         """
         This function is responsible to ensure that the source files are
-        present. It also decides weather the scrab tasks have to run again based
-        in their version and the version mentioned in the old report as well as
-        if the source files have changed
+        present and up to date
 
-        :returns: The sub-report containing all project information of this
-                  project
+        :returns: True if the sources were updated or initialized,
+                  otherwise False
         """
         if self.__check_repo_folder():
             return self.__update_repo()
@@ -105,8 +130,20 @@ class GitProjectManager:
             self.__init_repo()
             return True
 
+    def init(self):
+        """
+        Initializes a project
 
-class ArchiveProjectManager:
+        :returns: True if the sources were initialized,
+                  otherwise False
+        """
+        if not self.__check_repo_folder():
+            self.__init_repo()
+            return True
+        return False
+
+
+class ArchiveProjectManager(ProjectManager):
     """
     The ArchiveProjectManager is responsible for executing tasks that scrab at the
     git repos and archives. These tasks are meant to gather data, not
@@ -120,6 +157,7 @@ class ArchiveProjectManager:
     """
 
     def __init__(self, project):
+        super(ArchiveProjectManager, self).__init__()
         self.__project = project
 
     def __project_cache_exists(self):
@@ -206,24 +244,36 @@ class ArchiveProjectManager:
         else:
             return self.__changed_server_file()
 
+    def __download_extract(self):
+        cache_dir = self.__project.location
+
+        os.makedirs(cache_dir, exist_ok=True)
+        try:
+            tmp_archive = self.__download_archive()
+            size_file = open(os.path.join(
+                cache_dir, 'ArchiveSize.Scrab'), 'w')
+            with size_file as f:
+                f.write(str(os.path.getsize(tmp_archive)))
+            self.__extract_archive(tmp_archive)
+        finally:
+            os.remove(tmp_archive)
+
     def update(self):
         """
         Updates / creates the archive if needed
 
-        :returns: True if the archive was updated, else false
+        :returns: True if the sources were updated or initialized,
+                  otherwise False
         """
-        cache_dir = self.__project.location
-
         if self.__check_for_update():
-            os.makedirs(cache_dir, exist_ok=True)
-            try:
-                tmp_archive = self.__download_archive()
-                size_file = open(os.path.join(
-                    cache_dir, 'ArchiveSize.Scrab'), 'w')
-                with size_file as f:
-                    f.write(str(os.path.getsize(tmp_archive)))
-                self.__extract_archive(tmp_archive)
-            finally:
-                os.remove(tmp_archive)
+            self.__download_extract()
+            return True
+        return False
+
+    def init(self):
+        meta_file = os.path.join(self.__project.location, 'ArchiveSize.Scrab')
+
+        if(not self.__project_cache_exists() or not os.path.isfile(meta_file)):
+            self.__download_extract()
             return True
         return False
