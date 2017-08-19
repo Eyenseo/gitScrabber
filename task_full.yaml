@@ -1624,7 +1624,7 @@ projects:
         Interface-language: # TODO
             - C # TODO
 
-- manual: 
+- meta: 
   id: https://sourceforge.net/projects/lightcrypto/?source=directory
   manual:
     generalData:
@@ -1645,7 +1645,7 @@ projects:
             low: True # TODO
         Interface-language: # TODO
             - C # TODO
-- manual: 
+- meta: 
   id: https://sourceforge.net/projects/pyaes/  # is python but was listed as C
   manual:
     generalData:
@@ -5166,7 +5166,7 @@ projects:
         Interface-language: # TODO
             - C# # TODO
 
-- manual: 
+- meta:
   id: https://msdn.microsoft.com/de-de/library/system.security.cryptography(v=vs.110).aspx
   manual:
     generalData:
@@ -5187,7 +5187,7 @@ projects:
             low: True # TODO
         Interface-language: # TODO
             - C# # TODO
-- manual: 
+- meta:
   id: https://msdn.microsoft.com/en-us/library/system.web.helpers(v=vs.111).aspx
   manual:
     generalData:
@@ -5208,7 +5208,7 @@ projects:
             low: True # TODO
         Interface-language: # TODO
             - C# # TODO
-- manual: 
+- meta:
   id: https://netcologne.dl.sourceforge.net/project/pkif/PKIF%202.1.13/PKIF%20OCSP%20Plugin/PkifOcspPlugin2_1_13.msi
   manual:
     generalData:
@@ -10592,7 +10592,7 @@ projects:
         Interface-language: # TODO
             - Objective-C # TODO
 
-- manual: 
+- meta:
   id: https://developer.apple.com/security/ # Common Crypto based on corecrypto
   manual:
     generalData:
