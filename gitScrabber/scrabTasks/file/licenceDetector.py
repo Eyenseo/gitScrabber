@@ -1,4 +1,5 @@
 from ..scrabTask import FileTask
+import utils
 
 from pkg_resources import resource_filename
 
@@ -62,7 +63,6 @@ class LicenceDetector(FileTask):
                                 licence['standardLicenseTemplate'])))
 
             if 'standardLicenseHeader' in licence:
-
                 licences.append(
                     Licence(name+' Header',
                             len(licence['standardLicenseHeader']),
@@ -101,23 +101,23 @@ class LicenceDetector(FileTask):
         return Counter(words)
 
     def scrab(self, project, filepath, file):
-        report = {'licence': []}
+        report = {'licence': {}}
 
         filename, file_extension = os.path.splitext(filepath)
         filename = os.path.basename(filename)
 
-        file_vec_med = self.__text_to_vector(
-            file[:int(self.__med_length * 1.3)])
-        file_vec_max = self.__text_to_vector(
-            file[:int(self.__max_length * 1.3)])
-
         if (file_extension in self.__files
-            or filename.lower() == 'copying'
+                or filename.lower() == 'copying'
                 or filename.lower() == 'licence'
                 or filename.lower() == 'license'
                 or filename.lower() == 'acknowledgements'
                 or filename.lower() == 'acknowledgement'
                 or filename.lower() == 'readme'):
+
+            file_vec_med = self.__text_to_vector(
+                file[:int(self.__med_length * 1.3)])
+            file_vec_max = self.__text_to_vector(
+                file[:int(self.__max_length * 1.3)])
 
             for licence in self.__licences:
                 cosine = 0
@@ -128,17 +128,22 @@ class LicenceDetector(FileTask):
                     cosine = self.__get_cosine(file_vec_max, licence.vector)
 
                 if cosine > .98:
-                    report['licence'].append(
-                        {'confidence': cosine,
-                         'licence': licence.name,
-                         'file': filepath
-                         }
-                    )
+                    if filepath not in report['licence']:
+                        report['licence'][filepath] = []
+
+                    report['licence'][filepath].append({
+                        'licence': licence.name,
+                        'confidence': float("{0:.2f}".format(cosine*100))})
+
+            if filepath in report['licence']:
+                report['licence'][filepath] = sorted(
+                    report['licence'][filepath],
+                    key=lambda k: k['confidence'], reverse=True)
+
         return report
 
     def merge(self, first, second):
-        first['licence'].extend(second['licence'])
-        return first
+        return utils.deep_merge(first, second)
 
     def finish(self, report):
         return report
