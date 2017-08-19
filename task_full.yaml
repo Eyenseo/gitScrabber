@@ -2683,7 +2683,6 @@ projects:
             low: True # TODO
         Interface-language: # TODO
             - C # TODO
-
 - manual: 
   id: https://sourceforge.net/projects/lightcrypto/?source=directory
   manual:
@@ -11638,6 +11637,26 @@ projects:
 ##########################################
 ## Swift
 ##########################################
+- git: https://github.com/vapor/tls
+  manual:
+    generalData:
+        Type: Wrapper # TODO
+        Related:
+        # - TODO
+        Docu:
+            Exists:
+                Readme: False # TODO
+                Website: False # TODO
+                Download: False # TODO
+            Completeness:
+                API-listed: False # TODO
+                example: False # TODO
+                explanations: False # TODO
+        Interface-level:
+            High: True # TODO
+            low: True # TODO
+        Interface-language: # TODO
+            - Swift # TODO
 - git: https://github.com/alex-chan/swift-sodium
   manual:
     generalData:
