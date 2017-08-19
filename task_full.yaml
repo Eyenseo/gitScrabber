@@ -2283,26 +2283,6 @@ projects:
             low: True # TODO
         Interface-language: # TODO
             - C # TODO
-- git: https://github.com/alex-chan/swift-sodium
-  manual:
-    generalData:
-        Type: Wrapper # TODO
-        Related:
-        # - TODO
-        Docu:
-            Exists:
-                Readme: False # TODO
-                Website: False # TODO
-                Download: False # TODO
-            Completeness:
-                API-listed: False # TODO
-                example: False # TODO
-                explanations: False # TODO
-        Interface-level:
-            High: True # TODO
-            low: True # TODO
-        Interface-language: # TODO
-            - C # TODO
 - git: https://github.com/supercoeus/libsodium
   manual:
     generalData:
@@ -2705,27 +2685,6 @@ projects:
             low: True # TODO
         Interface-language: # TODO
             - C # TODO
-- manual: 
-  id: https://sourceforge.net/projects/pyaes/  # is python but was listed as C
-  manual:
-    generalData:
-        Type: Wrapper # TODO
-        Related:
-        # - TODO
-        Docu:
-            Exists:
-                Readme: False # TODO
-                Website: False # TODO
-                Download: False # TODO
-            Completeness:
-                API-listed: False # TODO
-                example: False # TODO
-                explanations: False # TODO
-        Interface-level:
-            High: True # TODO
-            low: True # TODO
-        Interface-language: # TODO
-            - C # TODO
     
     
 ##########################################
@@ -3092,26 +3051,6 @@ projects:
         Interface-language: # TODO
             - C++ # TODO
 - git: https://github.com/ladnir/cryptoTools
-  manual:
-    generalData:
-        Type: Wrapper # TODO
-        Related:
-        # - TODO
-        Docu:
-            Exists:
-                Readme: False # TODO
-                Website: False # TODO
-                Download: False # TODO
-            Completeness:
-                API-listed: False # TODO
-                example: False # TODO
-                explanations: False # TODO
-        Interface-level:
-            High: True # TODO
-            low: True # TODO
-        Interface-language: # TODO
-            - C++ # TODO
-- git: https://github.com/dark-panda/ruby-cryptopp
   manual:
     generalData:
         Type: Wrapper # TODO
@@ -6975,6 +6914,27 @@ projects:
             - Python # TODO
 
 - archive: https://master.dl.sourceforge.net/project/pyaes/OldFiles/pyAES-1.0-win32.zip
+  manual:
+    generalData:
+        Type: Wrapper # TODO
+        Related:
+        # - TODO
+        Docu:
+            Exists:
+                Readme: False # TODO
+                Website: False # TODO
+                Download: False # TODO
+            Completeness:
+                API-listed: False # TODO
+                example: False # TODO
+                explanations: False # TODO
+        Interface-level:
+            High: True # TODO
+            low: True # TODO
+        Interface-language: # TODO
+            - Python # TODO
+- manual: 
+  id: https://sourceforge.net/projects/pyaes/  # is python but was listed as C
   manual:
     generalData:
         Type: Wrapper # TODO
@@ -11090,26 +11050,6 @@ projects:
             low: True # TODO
         Interface-language: # TODO
             - Objective-C # TODO
-- git: https://github.com/desmondmcnamee/SwiftCommonCrypto
-  manual:
-    generalData:
-        Type: Wrapper # TODO
-        Related:
-        # - TODO
-        Docu:
-            Exists:
-                Readme: False # TODO
-                Website: False # TODO
-                Download: False # TODO
-            Completeness:
-                API-listed: False # TODO
-                example: False # TODO
-                explanations: False # TODO
-        Interface-level:
-            High: True # TODO
-            low: True # TODO
-        Interface-language: # TODO
-            - Objective-C # TODO
 - git: https://github.com/kompozer/cryptobox-ios
   manual:
     generalData:
@@ -11678,6 +11618,46 @@ projects:
 ##########################################
 ## Swift
 ##########################################
+- git: https://github.com/alex-chan/swift-sodium
+  manual:
+    generalData:
+        Type: Wrapper # TODO
+        Related:
+        # - TODO
+        Docu:
+            Exists:
+                Readme: False # TODO
+                Website: False # TODO
+                Download: False # TODO
+            Completeness:
+                API-listed: False # TODO
+                example: False # TODO
+                explanations: False # TODO
+        Interface-level:
+            High: True # TODO
+            low: True # TODO
+        Interface-language: # TODO
+            - Swift # TODO
+- git: https://github.com/desmondmcnamee/SwiftCommonCrypto
+  manual:
+    generalData:
+        Type: Wrapper # TODO
+        Related:
+        # - TODO
+        Docu:
+            Exists:
+                Readme: False # TODO
+                Website: False # TODO
+                Download: False # TODO
+            Completeness:
+                API-listed: False # TODO
+                example: False # TODO
+                explanations: False # TODO
+        Interface-level:
+            High: True # TODO
+            low: True # TODO
+        Interface-language: # TODO
+            - Swift # TODO
 - git: https://github.com/soffes/Crypto
   manual:
     generalData:
@@ -12723,6 +12703,26 @@ projects:
         Interface-language: # TODO
             - Ruby # TODO
 - git: https://github.com/pbhogan/scrypt
+  manual:
+    generalData:
+        Type: Wrapper # TODO
+        Related:
+        # - TODO
+        Docu:
+            Exists:
+                Readme: False # TODO
+                Website: False # TODO
+                Download: False # TODO
+            Completeness:
+                API-listed: False # TODO
+                example: False # TODO
+                explanations: False # TODO
+        Interface-level:
+            High: True # TODO
+            low: True # TODO
+        Interface-language: # TODO
+            - Ruby # TODO
+- git: https://github.com/dark-panda/ruby-cryptopp
   manual:
     generalData:
         Type: Wrapper # TODO
