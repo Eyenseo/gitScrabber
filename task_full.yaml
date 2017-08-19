@@ -6251,6 +6251,26 @@ projects:
 ##########################################
 ## Python
 ##########################################
+- git: https://github.com/trevp/tlslite
+  manual:
+    generalData:
+        Type: Wrapper # TODO
+        Related:
+        # - TODO
+        Docu:
+            Exists:
+                Readme: False # TODO
+                Website: False # TODO
+                Download: False # TODO
+            Completeness:
+                API-listed: False # TODO
+                example: False # TODO
+                explanations: False # TODO
+        Interface-level:
+            High: True # TODO
+            low: True # TODO
+        Interface-language: # TODO
+            - Python # TODO
 - git: https://github.com/Legrandin/pycryptodome
   manual:
     generalData:
