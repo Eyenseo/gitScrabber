@@ -2685,27 +2685,6 @@ projects:
             low: True # TODO
         Interface-language: # TODO
             - C # TODO
-- manual: 
-  id: https://sourceforge.net/projects/pyaes/  # is python but was listed as C
-  manual:
-    generalData:
-        Type: Wrapper # TODO
-        Related:
-        # - TODO
-        Docu:
-            Exists:
-                Readme: False # TODO
-                Website: False # TODO
-                Download: False # TODO
-            Completeness:
-                API-listed: False # TODO
-                example: False # TODO
-                explanations: False # TODO
-        Interface-level:
-            High: True # TODO
-            low: True # TODO
-        Interface-language: # TODO
-            - C # TODO
     
     
 ##########################################
@@ -6955,6 +6934,27 @@ projects:
             - Python # TODO
 
 - archive: https://master.dl.sourceforge.net/project/pyaes/OldFiles/pyAES-1.0-win32.zip
+  manual:
+    generalData:
+        Type: Wrapper # TODO
+        Related:
+        # - TODO
+        Docu:
+            Exists:
+                Readme: False # TODO
+                Website: False # TODO
+                Download: False # TODO
+            Completeness:
+                API-listed: False # TODO
+                example: False # TODO
+                explanations: False # TODO
+        Interface-level:
+            High: True # TODO
+            low: True # TODO
+        Interface-language: # TODO
+            - Python # TODO
+- manual: 
+  id: https://sourceforge.net/projects/pyaes/  # is python but was listed as C
   manual:
     generalData:
         Type: Wrapper # TODO
