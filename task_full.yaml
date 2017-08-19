@@ -403,26 +403,6 @@ projects:
             low: True # TODO
         Interface-language: # TODO
             - C # TODO
-- git: https://github.com/benlaurie/openssl
-  manual:
-    generalData:
-        Type: Wrapper # TODO
-        Related:
-        # - TODO
-        Docu:
-            Exists:
-                Readme: False # TODO
-                Website: False # TODO
-                Download: False # TODO
-            Completeness:
-                API-listed: False # TODO
-                example: False # TODO
-                explanations: False # TODO
-        Interface-level:
-            High: True # TODO
-            low: True # TODO
-        Interface-language: # TODO
-            - C # TODO
 - git: https://github.com/input-output-hk/cardano-crypto
   manual:
     generalData:
@@ -963,26 +943,6 @@ projects:
             low: True # TODO
         Interface-language: # TODO
             - C # TODO
-- git: https://github.com/dfaranha/openssl
-  manual:
-    generalData:
-        Type: Wrapper # TODO
-        Related:
-        # - TODO
-        Docu:
-            Exists:
-                Readme: False # TODO
-                Website: False # TODO
-                Download: False # TODO
-            Completeness:
-                API-listed: False # TODO
-                example: False # TODO
-                explanations: False # TODO
-        Interface-level:
-            High: True # TODO
-            low: True # TODO
-        Interface-language: # TODO
-            - C # TODO
 - git: https://github.com/thomwiggers/proest-arm11 #? only algorithm. lib?
   manual:
     generalData:
@@ -1063,26 +1023,6 @@ projects:
             low: True # TODO
         Interface-language: # TODO
             - C # TODO
-- git: https://github.com/revler1082/trezor-crypto # lib?
-  manual:
-    generalData:
-        Type: Wrapper # TODO
-        Related:
-        # - TODO
-        Docu:
-            Exists:
-                Readme: False # TODO
-                Website: False # TODO
-                Download: False # TODO
-            Completeness:
-                API-listed: False # TODO
-                example: False # TODO
-                explanations: False # TODO
-        Interface-level:
-            High: True # TODO
-            low: True # TODO
-        Interface-language: # TODO
-            - C # TODO
 - git: https://github.com/noizbuster/itsp-crypto-practice
   manual:
     generalData:
@@ -1144,46 +1084,6 @@ projects:
         Interface-language: # TODO
             - C # TODO
 - git: https://github.com/26597925/cse539_crypto_prj
-  manual:
-    generalData:
-        Type: Wrapper # TODO
-        Related:
-        # - TODO
-        Docu:
-            Exists:
-                Readme: False # TODO
-                Website: False # TODO
-                Download: False # TODO
-            Completeness:
-                API-listed: False # TODO
-                example: False # TODO
-                explanations: False # TODO
-        Interface-level:
-            High: True # TODO
-            low: True # TODO
-        Interface-language: # TODO
-            - C # TODO
-- git: https://github.com/colin-zhang/trezor-crypto
-  manual:
-    generalData:
-        Type: Wrapper # TODO
-        Related:
-        # - TODO
-        Docu:
-            Exists:
-                Readme: False # TODO
-                Website: False # TODO
-                Download: False # TODO
-            Completeness:
-                API-listed: False # TODO
-                example: False # TODO
-                explanations: False # TODO
-        Interface-level:
-            High: True # TODO
-            low: True # TODO
-        Interface-language: # TODO
-            - C # TODO
-- git: https://github.com/jpochyla/trezor-crypto
   manual:
     generalData:
         Type: Wrapper # TODO
@@ -1303,67 +1203,7 @@ projects:
             low: True # TODO
         Interface-language: # TODO
             - C # TODO
-- git: https://github.com/bernd-edlinger/openssl
-  manual:
-    generalData:
-        Type: Wrapper # TODO
-        Related:
-        # - TODO
-        Docu:
-            Exists:
-                Readme: False # TODO
-                Website: False # TODO
-                Download: False # TODO
-            Completeness:
-                API-listed: False # TODO
-                example: False # TODO
-                explanations: False # TODO
-        Interface-level:
-            High: True # TODO
-            low: True # TODO
-        Interface-language: # TODO
-            - C # TODO
 - git: https://github.com/ramriot/php-ext-sqrl
-  manual:
-    generalData:
-        Type: Wrapper # TODO
-        Related:
-        # - TODO
-        Docu:
-            Exists:
-                Readme: False # TODO
-                Website: False # TODO
-                Download: False # TODO
-            Completeness:
-                API-listed: False # TODO
-                example: False # TODO
-                explanations: False # TODO
-        Interface-level:
-            High: True # TODO
-            low: True # TODO
-        Interface-language: # TODO
-            - C # TODO
-- git: https://github.com/LTD-Beget/openssl
-  manual:
-    generalData:
-        Type: Wrapper # TODO
-        Related:
-        # - TODO
-        Docu:
-            Exists:
-                Readme: False # TODO
-                Website: False # TODO
-                Download: False # TODO
-            Completeness:
-                API-listed: False # TODO
-                example: False # TODO
-                explanations: False # TODO
-        Interface-level:
-            High: True # TODO
-            low: True # TODO
-        Interface-language: # TODO
-            - C # TODO
-- git: https://github.com/stellar/libsodium
   manual:
     generalData:
         Type: Wrapper # TODO
@@ -1523,666 +1363,6 @@ projects:
             low: True # TODO
         Interface-language: # TODO
             - C # TODO
-- git: https://github.com/osmanager/openssl
-  manual:
-    generalData:
-        Type: Wrapper # TODO
-        Related:
-        # - TODO
-        Docu:
-            Exists:
-                Readme: False # TODO
-                Website: False # TODO
-                Download: False # TODO
-            Completeness:
-                API-listed: False # TODO
-                example: False # TODO
-                explanations: False # TODO
-        Interface-level:
-            High: True # TODO
-            low: True # TODO
-        Interface-language: # TODO
-            - C # TODO
-- git: https://github.com/lifeNrun/openssl
-  manual:
-    generalData:
-        Type: Wrapper # TODO
-        Related:
-        # - TODO
-        Docu:
-            Exists:
-                Readme: False # TODO
-                Website: False # TODO
-                Download: False # TODO
-            Completeness:
-                API-listed: False # TODO
-                example: False # TODO
-                explanations: False # TODO
-        Interface-level:
-            High: True # TODO
-            low: True # TODO
-        Interface-language: # TODO
-            - C # TODO
-- git: https://github.com/Kahlenberger/openssl
-  manual:
-    generalData:
-        Type: Wrapper # TODO
-        Related:
-        # - TODO
-        Docu:
-            Exists:
-                Readme: False # TODO
-                Website: False # TODO
-                Download: False # TODO
-            Completeness:
-                API-listed: False # TODO
-                example: False # TODO
-                explanations: False # TODO
-        Interface-level:
-            High: True # TODO
-            low: True # TODO
-        Interface-language: # TODO
-            - C # TODO
-- git: https://github.com/lin-tucci/openssl
-  manual:
-    generalData:
-        Type: Wrapper # TODO
-        Related:
-        # - TODO
-        Docu:
-            Exists:
-                Readme: False # TODO
-                Website: False # TODO
-                Download: False # TODO
-            Completeness:
-                API-listed: False # TODO
-                example: False # TODO
-                explanations: False # TODO
-        Interface-level:
-            High: True # TODO
-            low: True # TODO
-        Interface-language: # TODO
-            - C # TODO
-- git: https://github.com/LRFLEW/openssl
-  manual:
-    generalData:
-        Type: Wrapper # TODO
-        Related:
-        # - TODO
-        Docu:
-            Exists:
-                Readme: False # TODO
-                Website: False # TODO
-                Download: False # TODO
-            Completeness:
-                API-listed: False # TODO
-                example: False # TODO
-                explanations: False # TODO
-        Interface-level:
-            High: True # TODO
-            low: True # TODO
-        Interface-language: # TODO
-            - C # TODO
-- git: https://github.com/tresorit/openssl
-  manual:
-    generalData:
-        Type: Wrapper # TODO
-        Related:
-        # - TODO
-        Docu:
-            Exists:
-                Readme: False # TODO
-                Website: False # TODO
-                Download: False # TODO
-            Completeness:
-                API-listed: False # TODO
-                example: False # TODO
-                explanations: False # TODO
-        Interface-level:
-            High: True # TODO
-            low: True # TODO
-        Interface-language: # TODO
-            - C # TODO
-- git: https://github.com/siemens/openssl
-  manual:
-    generalData:
-        Type: Wrapper # TODO
-        Related:
-        # - TODO
-        Docu:
-            Exists:
-                Readme: False # TODO
-                Website: False # TODO
-                Download: False # TODO
-            Completeness:
-                API-listed: False # TODO
-                example: False # TODO
-                explanations: False # TODO
-        Interface-level:
-            High: True # TODO
-            low: True # TODO
-        Interface-language: # TODO
-            - C # TODO
-- git: https://github.com/BohemianCoding/openssl
-  manual:
-    generalData:
-        Type: Wrapper # TODO
-        Related:
-        # - TODO
-        Docu:
-            Exists:
-                Readme: False # TODO
-                Website: False # TODO
-                Download: False # TODO
-            Completeness:
-                API-listed: False # TODO
-                example: False # TODO
-                explanations: False # TODO
-        Interface-level:
-            High: True # TODO
-            low: True # TODO
-        Interface-language: # TODO
-            - C # TODO
-- git: https://github.com/lin-tucci/openssl
-  manual:
-    generalData:
-        Type: Wrapper # TODO
-        Related:
-        # - TODO
-        Docu:
-            Exists:
-                Readme: False # TODO
-                Website: False # TODO
-                Download: False # TODO
-            Completeness:
-                API-listed: False # TODO
-                example: False # TODO
-                explanations: False # TODO
-        Interface-level:
-            High: True # TODO
-            low: True # TODO
-        Interface-language: # TODO
-            - C # TODO
-- git: https://github.com/LRFLEW/openssl
-  manual:
-    generalData:
-        Type: Wrapper # TODO
-        Related:
-        # - TODO
-        Docu:
-            Exists:
-                Readme: False # TODO
-                Website: False # TODO
-                Download: False # TODO
-            Completeness:
-                API-listed: False # TODO
-                example: False # TODO
-                explanations: False # TODO
-        Interface-level:
-            High: True # TODO
-            low: True # TODO
-        Interface-language: # TODO
-            - C # TODO
-- git: https://github.com/siemens/openssl
-  manual:
-    generalData:
-        Type: Wrapper # TODO
-        Related:
-        # - TODO
-        Docu:
-            Exists:
-                Readme: False # TODO
-                Website: False # TODO
-                Download: False # TODO
-            Completeness:
-                API-listed: False # TODO
-                example: False # TODO
-                explanations: False # TODO
-        Interface-level:
-            High: True # TODO
-            low: True # TODO
-        Interface-language: # TODO
-            - C # TODO
-- git: https://github.com/tresorit/openssl
-  manual:
-    generalData:
-        Type: Wrapper # TODO
-        Related:
-        # - TODO
-        Docu:
-            Exists:
-                Readme: False # TODO
-                Website: False # TODO
-                Download: False # TODO
-            Completeness:
-                API-listed: False # TODO
-                example: False # TODO
-                explanations: False # TODO
-        Interface-level:
-            High: True # TODO
-            low: True # TODO
-        Interface-language: # TODO
-            - C # TODO
-- git: https://github.com/atsuyim/openssl
-  manual:
-    generalData:
-        Type: Wrapper # TODO
-        Related:
-        # - TODO
-        Docu:
-            Exists:
-                Readme: False # TODO
-                Website: False # TODO
-                Download: False # TODO
-            Completeness:
-                API-listed: False # TODO
-                example: False # TODO
-                explanations: False # TODO
-        Interface-level:
-            High: True # TODO
-            low: True # TODO
-        Interface-language: # TODO
-            - C # TODO
-- git: https://github.com/JonghoWon/openssl
-  manual:
-    generalData:
-        Type: Wrapper # TODO
-        Related:
-        # - TODO
-        Docu:
-            Exists:
-                Readme: False # TODO
-                Website: False # TODO
-                Download: False # TODO
-            Completeness:
-                API-listed: False # TODO
-                example: False # TODO
-                explanations: False # TODO
-        Interface-level:
-            High: True # TODO
-            low: True # TODO
-        Interface-language: # TODO
-            - C # TODO
-- git: https://github.com/trailofbits/openssl
-  manual:
-    generalData:
-        Type: Wrapper # TODO
-        Related:
-        # - TODO
-        Docu:
-            Exists:
-                Readme: False # TODO
-                Website: False # TODO
-                Download: False # TODO
-            Completeness:
-                API-listed: False # TODO
-                example: False # TODO
-                explanations: False # TODO
-        Interface-level:
-            High: True # TODO
-            low: True # TODO
-        Interface-language: # TODO
-            - C # TODO
-- git: https://github.com/kingpotato/openssl
-  manual:
-    generalData:
-        Type: Wrapper # TODO
-        Related:
-        # - TODO
-        Docu:
-            Exists:
-                Readme: False # TODO
-                Website: False # TODO
-                Download: False # TODO
-            Completeness:
-                API-listed: False # TODO
-                example: False # TODO
-                explanations: False # TODO
-        Interface-level:
-            High: True # TODO
-            low: True # TODO
-        Interface-language: # TODO
-            - C # TODO
-- git: https://github.com/panwar001/openssl
-  manual:
-    generalData:
-        Type: Wrapper # TODO
-        Related:
-        # - TODO
-        Docu:
-            Exists:
-                Readme: False # TODO
-                Website: False # TODO
-                Download: False # TODO
-            Completeness:
-                API-listed: False # TODO
-                example: False # TODO
-                explanations: False # TODO
-        Interface-level:
-            High: True # TODO
-            low: True # TODO
-        Interface-language: # TODO
-            - C # TODO
-- git: https://github.com/chmodawk/openssl
-  manual:
-    generalData:
-        Type: Wrapper # TODO
-        Related:
-        # - TODO
-        Docu:
-            Exists:
-                Readme: False # TODO
-                Website: False # TODO
-                Download: False # TODO
-            Completeness:
-                API-listed: False # TODO
-                example: False # TODO
-                explanations: False # TODO
-        Interface-level:
-            High: True # TODO
-            low: True # TODO
-        Interface-language: # TODO
-            - C # TODO
-- git: https://github.com/mtrojnar/openssl
-  manual:
-    generalData:
-        Type: Wrapper # TODO
-        Related:
-        # - TODO
-        Docu:
-            Exists:
-                Readme: False # TODO
-                Website: False # TODO
-                Download: False # TODO
-            Completeness:
-                API-listed: False # TODO
-                example: False # TODO
-                explanations: False # TODO
-        Interface-level:
-            High: True # TODO
-            low: True # TODO
-        Interface-language: # TODO
-            - C # TODO
-- git: https://github.com/dot-asm/openssl
-  manual:
-    generalData:
-        Type: Wrapper # TODO
-        Related:
-        # - TODO
-        Docu:
-            Exists:
-                Readme: False # TODO
-                Website: False # TODO
-                Download: False # TODO
-            Completeness:
-                API-listed: False # TODO
-                example: False # TODO
-                explanations: False # TODO
-        Interface-level:
-            High: True # TODO
-            low: True # TODO
-        Interface-language: # TODO
-            - C # TODO
-- git: https://github.com/God-Staff/openssl
-  manual:
-    generalData:
-        Type: Wrapper # TODO
-        Related:
-        # - TODO
-        Docu:
-            Exists:
-                Readme: False # TODO
-                Website: False # TODO
-                Download: False # TODO
-            Completeness:
-                API-listed: False # TODO
-                example: False # TODO
-                explanations: False # TODO
-        Interface-level:
-            High: True # TODO
-            low: True # TODO
-        Interface-language: # TODO
-            - C # TODO
-- git: https://github.com/tuskitumizhou/openssl
-  manual:
-    generalData:
-        Type: Wrapper # TODO
-        Related:
-        # - TODO
-        Docu:
-            Exists:
-                Readme: False # TODO
-                Website: False # TODO
-                Download: False # TODO
-            Completeness:
-                API-listed: False # TODO
-                example: False # TODO
-                explanations: False # TODO
-        Interface-level:
-            High: True # TODO
-            low: True # TODO
-        Interface-language: # TODO
-            - C # TODO
-- git: https://github.com/joydo/openssl
-  manual:
-    generalData:
-        Type: Wrapper # TODO
-        Related:
-        # - TODO
-        Docu:
-            Exists:
-                Readme: False # TODO
-                Website: False # TODO
-                Download: False # TODO
-            Completeness:
-                API-listed: False # TODO
-                example: False # TODO
-                explanations: False # TODO
-        Interface-level:
-            High: True # TODO
-            low: True # TODO
-        Interface-language: # TODO
-            - C # TODO
-- git: https://github.com/gusixgit/openssl
-  manual:
-    generalData:
-        Type: Wrapper # TODO
-        Related:
-        # - TODO
-        Docu:
-            Exists:
-                Readme: False # TODO
-                Website: False # TODO
-                Download: False # TODO
-            Completeness:
-                API-listed: False # TODO
-                example: False # TODO
-                explanations: False # TODO
-        Interface-level:
-            High: True # TODO
-            low: True # TODO
-        Interface-language: # TODO
-            - C # TODO
-- git: https://github.com/togtalk/openssl
-  manual:
-    generalData:
-        Type: Wrapper # TODO
-        Related:
-        # - TODO
-        Docu:
-            Exists:
-                Readme: False # TODO
-                Website: False # TODO
-                Download: False # TODO
-            Completeness:
-                API-listed: False # TODO
-                example: False # TODO
-                explanations: False # TODO
-        Interface-level:
-            High: True # TODO
-            low: True # TODO
-        Interface-language: # TODO
-            - C # TODO
-- git: https://github.com/glkhobragade/openssl
-  manual:
-    generalData:
-        Type: Wrapper # TODO
-        Related:
-        # - TODO
-        Docu:
-            Exists:
-                Readme: False # TODO
-                Website: False # TODO
-                Download: False # TODO
-            Completeness:
-                API-listed: False # TODO
-                example: False # TODO
-                explanations: False # TODO
-        Interface-level:
-            High: True # TODO
-            low: True # TODO
-        Interface-language: # TODO
-            - C # TODO
-- git: https://github.com/robinaz/openssl
-  manual:
-    generalData:
-        Type: Wrapper # TODO
-        Related:
-        # - TODO
-        Docu:
-            Exists:
-                Readme: False # TODO
-                Website: False # TODO
-                Download: False # TODO
-            Completeness:
-                API-listed: False # TODO
-                example: False # TODO
-                explanations: False # TODO
-        Interface-level:
-            High: True # TODO
-            low: True # TODO
-        Interface-language: # TODO
-            - C # TODO
-- git: https://github.com/CNMagicVan/openssl
-  manual:
-    generalData:
-        Type: Wrapper # TODO
-        Related:
-        # - TODO
-        Docu:
-            Exists:
-                Readme: False # TODO
-                Website: False # TODO
-                Download: False # TODO
-            Completeness:
-                API-listed: False # TODO
-                example: False # TODO
-                explanations: False # TODO
-        Interface-level:
-            High: True # TODO
-            low: True # TODO
-        Interface-language: # TODO
-            - C # TODO
-- git: https://github.com/fliplink/openssl
-  manual:
-    generalData:
-        Type: Wrapper # TODO
-        Related:
-        # - TODO
-        Docu:
-            Exists:
-                Readme: False # TODO
-                Website: False # TODO
-                Download: False # TODO
-            Completeness:
-                API-listed: False # TODO
-                example: False # TODO
-                explanations: False # TODO
-        Interface-level:
-            High: True # TODO
-            low: True # TODO
-        Interface-language: # TODO
-            - C # TODO
-- git: https://github.com/ahmadwaskita/openssl
-  manual:
-    generalData:
-        Type: Wrapper # TODO
-        Related:
-        # - TODO
-        Docu:
-            Exists:
-                Readme: False # TODO
-                Website: False # TODO
-                Download: False # TODO
-            Completeness:
-                API-listed: False # TODO
-                example: False # TODO
-                explanations: False # TODO
-        Interface-level:
-            High: True # TODO
-            low: True # TODO
-        Interface-language: # TODO
-            - C # TODO
-- git: https://github.com/WOLFENHEIMER/openssl
-  manual:
-    generalData:
-        Type: Wrapper # TODO
-        Related:
-        # - TODO
-        Docu:
-            Exists:
-                Readme: False # TODO
-                Website: False # TODO
-                Download: False # TODO
-            Completeness:
-                API-listed: False # TODO
-                example: False # TODO
-                explanations: False # TODO
-        Interface-level:
-            High: True # TODO
-            low: True # TODO
-        Interface-language: # TODO
-            - C # TODO
-- git: https://github.com/patrick444/openssl
-  manual:
-    generalData:
-        Type: Wrapper # TODO
-        Related:
-        # - TODO
-        Docu:
-            Exists:
-                Readme: False # TODO
-                Website: False # TODO
-                Download: False # TODO
-            Completeness:
-                API-listed: False # TODO
-                example: False # TODO
-                explanations: False # TODO
-        Interface-level:
-            High: True # TODO
-            low: True # TODO
-        Interface-language: # TODO
-            - C # TODO
-- git: https://github.com/zwkno1/openssl
-  manual:
-    generalData:
-        Type: Wrapper # TODO
-        Related:
-        # - TODO
-        Docu:
-            Exists:
-                Readme: False # TODO
-                Website: False # TODO
-                Download: False # TODO
-            Completeness:
-                API-listed: False # TODO
-                example: False # TODO
-                explanations: False # TODO
-        Interface-level:
-            High: True # TODO
-            low: True # TODO
-        Interface-language: # TODO
-            - C # TODO
 - git: https://github.com/Samsung/ckm
   manual:
     generalData:
@@ -2223,147 +1403,7 @@ projects:
             low: True # TODO
         Interface-language: # TODO
             - C # TODO
-- git: https://github.com/mcanthony/libsodium
-  manual:
-    generalData:
-        Type: Wrapper # TODO
-        Related:
-        # - TODO
-        Docu:
-            Exists:
-                Readme: False # TODO
-                Website: False # TODO
-                Download: False # TODO
-            Completeness:
-                API-listed: False # TODO
-                example: False # TODO
-                explanations: False # TODO
-        Interface-level:
-            High: True # TODO
-            low: True # TODO
-        Interface-language: # TODO
-            - C # TODO
-- git: https://github.com/bford/libsodium
-  manual:
-    generalData:
-        Type: Wrapper # TODO
-        Related:
-        # - TODO
-        Docu:
-            Exists:
-                Readme: False # TODO
-                Website: False # TODO
-                Download: False # TODO
-            Completeness:
-                API-listed: False # TODO
-                example: False # TODO
-                explanations: False # TODO
-        Interface-level:
-            High: True # TODO
-            low: True # TODO
-        Interface-language: # TODO
-            - C # TODO
-- git: https://github.com/NSGod/libsodium
-  manual:
-    generalData:
-        Type: Wrapper # TODO
-        Related:
-        # - TODO
-        Docu:
-            Exists:
-                Readme: False # TODO
-                Website: False # TODO
-                Download: False # TODO
-            Completeness:
-                API-listed: False # TODO
-                example: False # TODO
-                explanations: False # TODO
-        Interface-level:
-            High: True # TODO
-            low: True # TODO
-        Interface-language: # TODO
-            - C # TODO
-- git: https://github.com/supercoeus/libsodium
-  manual:
-    generalData:
-        Type: Wrapper # TODO
-        Related:
-        # - TODO
-        Docu:
-            Exists:
-                Readme: False # TODO
-                Website: False # TODO
-                Download: False # TODO
-            Completeness:
-                API-listed: False # TODO
-                example: False # TODO
-                explanations: False # TODO
-        Interface-level:
-            High: True # TODO
-            low: True # TODO
-        Interface-language: # TODO
-            - C # TODO
-- git: https://github.com/Intelligent-Machine-Learning/openssl
-  manual:
-    generalData:
-        Type: Wrapper # TODO
-        Related:
-        # - TODO
-        Docu:
-            Exists:
-                Readme: False # TODO
-                Website: False # TODO
-                Download: False # TODO
-            Completeness:
-                API-listed: False # TODO
-                example: False # TODO
-                explanations: False # TODO
-        Interface-level:
-            High: True # TODO
-            low: True # TODO
-        Interface-language: # TODO
-            - C # TODO
-- git: https://github.com/autodesk-forks/libsodium
-  manual:
-    generalData:
-        Type: Wrapper # TODO
-        Related:
-        # - TODO
-        Docu:
-            Exists:
-                Readme: False # TODO
-                Website: False # TODO
-                Download: False # TODO
-            Completeness:
-                API-listed: False # TODO
-                example: False # TODO
-                explanations: False # TODO
-        Interface-level:
-            High: True # TODO
-            low: True # TODO
-        Interface-language: # TODO
-            - C # TODO
-- git: https://github.com/hunter-packages/libsodium
-  manual:
-    generalData:
-        Type: Wrapper # TODO
-        Related:
-        # - TODO
-        Docu:
-            Exists:
-                Readme: False # TODO
-                Website: False # TODO
-                Download: False # TODO
-            Completeness:
-                API-listed: False # TODO
-                example: False # TODO
-                explanations: False # TODO
-        Interface-level:
-            High: True # TODO
-            low: True # TODO
-        Interface-language: # TODO
-            - C # TODO
-- git: https://github.com/jabwd/libsodium
+- git: https://github.com/alex-chan/swift-sodium
   manual:
     generalData:
         Type: Wrapper # TODO
@@ -2403,146 +1443,6 @@ projects:
             low: True # TODO
         Interface-language: # TODO
             - C # TODO
-- git: https://github.com/waterway/libsodium
-  manual:
-    generalData:
-        Type: Wrapper # TODO
-        Related:
-        # - TODO
-        Docu:
-            Exists:
-                Readme: False # TODO
-                Website: False # TODO
-                Download: False # TODO
-            Completeness:
-                API-listed: False # TODO
-                example: False # TODO
-                explanations: False # TODO
-        Interface-level:
-            High: True # TODO
-            low: True # TODO
-        Interface-language: # TODO
-            - C # TODO
-- git: https://github.com/servalproject/libsodium
-  manual:
-    generalData:
-        Type: Wrapper # TODO
-        Related:
-        # - TODO
-        Docu:
-            Exists:
-                Readme: False # TODO
-                Website: False # TODO
-                Download: False # TODO
-            Completeness:
-                API-listed: False # TODO
-                example: False # TODO
-                explanations: False # TODO
-        Interface-level:
-            High: True # TODO
-            low: True # TODO
-        Interface-language: # TODO
-            - C # TODO
-- git: https://github.com/netroby/libsodium
-  manual:
-    generalData:
-        Type: Wrapper # TODO
-        Related:
-        # - TODO
-        Docu:
-            Exists:
-                Readme: False # TODO
-                Website: False # TODO
-                Download: False # TODO
-            Completeness:
-                API-listed: False # TODO
-                example: False # TODO
-                explanations: False # TODO
-        Interface-level:
-            High: True # TODO
-            low: True # TODO
-        Interface-language: # TODO
-            - C # TODO
-- git: https://github.com/nodesource/libsodium
-  manual:
-    generalData:
-        Type: Wrapper # TODO
-        Related:
-        # - TODO
-        Docu:
-            Exists:
-                Readme: False # TODO
-                Website: False # TODO
-                Download: False # TODO
-            Completeness:
-                API-listed: False # TODO
-                example: False # TODO
-                explanations: False # TODO
-        Interface-level:
-            High: True # TODO
-            low: True # TODO
-        Interface-language: # TODO
-            - C # TODO
-- git: https://github.com/RandomAccesss/libsodium
-  manual:
-    generalData:
-        Type: Wrapper # TODO
-        Related:
-        # - TODO
-        Docu:
-            Exists:
-                Readme: False # TODO
-                Website: False # TODO
-                Download: False # TODO
-            Completeness:
-                API-listed: False # TODO
-                example: False # TODO
-                explanations: False # TODO
-        Interface-level:
-            High: True # TODO
-            low: True # TODO
-        Interface-language: # TODO
-            - C # TODO
-- git: https://github.com/rrozestw/libsodium
-  manual:
-    generalData:
-        Type: Wrapper # TODO
-        Related:
-        # - TODO
-        Docu:
-            Exists:
-                Readme: False # TODO
-                Website: False # TODO
-                Download: False # TODO
-            Completeness:
-                API-listed: False # TODO
-                example: False # TODO
-                explanations: False # TODO
-        Interface-level:
-            High: True # TODO
-            low: True # TODO
-        Interface-language: # TODO
-            - C # TODO
-- git: https://github.com/sanathks/libsodium
-  manual:
-    generalData:
-        Type: Wrapper # TODO
-        Related:
-        # - TODO
-        Docu:
-            Exists:
-                Readme: False # TODO
-                Website: False # TODO
-                Download: False # TODO
-            Completeness:
-                API-listed: False # TODO
-                example: False # TODO
-                explanations: False # TODO
-        Interface-level:
-            High: True # TODO
-            low: True # TODO
-        Interface-language: # TODO
-            - C # TODO
 - git: https://github.com/dexterserver/AESLib
   manual:
     generalData:
@@ -2563,7 +1463,27 @@ projects:
             low: True # TODO
         Interface-language: # TODO
             - C # TODO
-- git: https://github.com/openssl/openssl
+- git: https://github.com/jedisct1/libsodium
+  manual:
+    generalData:
+        Type: Wrapper # TODO
+        Related:
+        # - TODO
+        Docu:
+            Exists:
+                Readme: False # TODO
+                Website: False # TODO
+                Download: False # TODO
+            Completeness:
+                API-listed: False # TODO
+                example: False # TODO
+                explanations: False # TODO
+        Interface-level:
+            High: True # TODO
+            low: True # TODO
+        Interface-language: # TODO
+            - C # TODO
+- git: https://github.com/trezor/trezor-crypto
   manual:
     generalData:
         Type: Wrapper # TODO
@@ -2683,8 +1603,30 @@ projects:
             low: True # TODO
         Interface-language: # TODO
             - C # TODO
+
 - manual: 
   id: https://sourceforge.net/projects/lightcrypto/?source=directory
+  manual:
+    generalData:
+        Type: Wrapper # TODO
+        Related:
+        # - TODO
+        Docu:
+            Exists:
+                Readme: False # TODO
+                Website: False # TODO
+                Download: False # TODO
+            Completeness:
+                API-listed: False # TODO
+                example: False # TODO
+                explanations: False # TODO
+        Interface-level:
+            High: True # TODO
+            low: True # TODO
+        Interface-language: # TODO
+            - C # TODO
+- manual: 
+  id: https://sourceforge.net/projects/pyaes/  # is python but was listed as C
   manual:
     generalData:
         Type: Wrapper # TODO
@@ -3070,6 +2012,26 @@ projects:
         Interface-language: # TODO
             - C++ # TODO
 - git: https://github.com/ladnir/cryptoTools
+  manual:
+    generalData:
+        Type: Wrapper # TODO
+        Related:
+        # - TODO
+        Docu:
+            Exists:
+                Readme: False # TODO
+                Website: False # TODO
+                Download: False # TODO
+            Completeness:
+                API-listed: False # TODO
+                example: False # TODO
+                explanations: False # TODO
+        Interface-level:
+            High: True # TODO
+            low: True # TODO
+        Interface-language: # TODO
+            - C++ # TODO
+- git: https://github.com/dark-panda/ruby-cryptopp
   manual:
     generalData:
         Type: Wrapper # TODO
@@ -5035,6 +3997,26 @@ projects:
             low: True # TODO
         Interface-language: # TODO
             - Java # TODO
+- git: https://github.com/RichMerlin/CryptoMarketsAPI
+  manual:
+    generalData:
+        Type: Wrapper # TODO
+        Related:
+        # - TODO
+        Docu:
+            Exists:
+                Readme: False # TODO
+                Website: False # TODO
+                Download: False # TODO
+            Completeness:
+                API-listed: False # TODO
+                example: False # TODO
+                explanations: False # TODO
+        Interface-level:
+            High: True # TODO
+            low: True # TODO
+        Interface-language: # TODO
+            - Java # TODO
 - git: https://github.com/uuunic/CloudCrypto
   manual:
     generalData:
@@ -5136,6 +4118,26 @@ projects:
         Interface-language: # TODO
             - Java # TODO
 - git: https://github.com/francisco-polaco/sec-crypto-utils-2017-ist
+  manual:
+    generalData:
+        Type: Wrapper # TODO
+        Related:
+        # - TODO
+        Docu:
+            Exists:
+                Readme: False # TODO
+                Website: False # TODO
+                Download: False # TODO
+            Completeness:
+                API-listed: False # TODO
+                example: False # TODO
+                explanations: False # TODO
+        Interface-level:
+            High: True # TODO
+            low: True # TODO
+        Interface-language: # TODO
+            - Java # TODO
+- git: https://github.com/aibax/cryptography-samples
   manual:
     generalData:
         Type: Wrapper # TODO
@@ -5356,26 +4358,6 @@ projects:
         Interface-language: # TODO
             - Java # TODO
 - git: https://github.com/haikuowuya/tink
-  manual:
-    generalData:
-        Type: Wrapper # TODO
-        Related:
-        # - TODO
-        Docu:
-            Exists:
-                Readme: False # TODO
-                Website: False # TODO
-                Download: False # TODO
-            Completeness:
-                API-listed: False # TODO
-                example: False # TODO
-                explanations: False # TODO
-        Interface-level:
-            High: True # TODO
-            low: True # TODO
-        Interface-language: # TODO
-            - Java # TODO
-- git: https://github.com/dmlloyd/openjdk
   manual:
     generalData:
         Type: Wrapper # TODO
@@ -6231,26 +5213,6 @@ projects:
 ##########################################
 ## Python
 ##########################################
-- git: https://github.com/trevp/tlslite
-  manual:
-    generalData:
-        Type: Wrapper # TODO
-        Related:
-        # - TODO
-        Docu:
-            Exists:
-                Readme: False # TODO
-                Website: False # TODO
-                Download: False # TODO
-            Completeness:
-                API-listed: False # TODO
-                example: False # TODO
-                explanations: False # TODO
-        Interface-level:
-            High: True # TODO
-            low: True # TODO
-        Interface-language: # TODO
-            - Python # TODO
 - git: https://github.com/Legrandin/pycryptodome
   manual:
     generalData:
@@ -6933,27 +5895,6 @@ projects:
             - Python # TODO
 
 - archive: https://master.dl.sourceforge.net/project/pyaes/OldFiles/pyAES-1.0-win32.zip
-  manual:
-    generalData:
-        Type: Wrapper # TODO
-        Related:
-        # - TODO
-        Docu:
-            Exists:
-                Readme: False # TODO
-                Website: False # TODO
-                Download: False # TODO
-            Completeness:
-                API-listed: False # TODO
-                example: False # TODO
-                explanations: False # TODO
-        Interface-level:
-            High: True # TODO
-            low: True # TODO
-        Interface-language: # TODO
-            - Python # TODO
-- manual: 
-  id: https://sourceforge.net/projects/pyaes/  # is python but was listed as C
   manual:
     generalData:
         Type: Wrapper # TODO
@@ -11069,6 +10010,26 @@ projects:
             low: True # TODO
         Interface-language: # TODO
             - Objective-C # TODO
+- git: https://github.com/desmondmcnamee/SwiftCommonCrypto
+  manual:
+    generalData:
+        Type: Wrapper # TODO
+        Related:
+        # - TODO
+        Docu:
+            Exists:
+                Readme: False # TODO
+                Website: False # TODO
+                Download: False # TODO
+            Completeness:
+                API-listed: False # TODO
+                example: False # TODO
+                explanations: False # TODO
+        Interface-level:
+            High: True # TODO
+            low: True # TODO
+        Interface-language: # TODO
+            - Objective-C # TODO
 - git: https://github.com/kompozer/cryptobox-ios
   manual:
     generalData:
@@ -11637,66 +10598,6 @@ projects:
 ##########################################
 ## Swift
 ##########################################
-- git: https://github.com/vapor/tls
-  manual:
-    generalData:
-        Type: Wrapper # TODO
-        Related:
-        # - TODO
-        Docu:
-            Exists:
-                Readme: False # TODO
-                Website: False # TODO
-                Download: False # TODO
-            Completeness:
-                API-listed: False # TODO
-                example: False # TODO
-                explanations: False # TODO
-        Interface-level:
-            High: True # TODO
-            low: True # TODO
-        Interface-language: # TODO
-            - Swift # TODO
-- git: https://github.com/alex-chan/swift-sodium
-  manual:
-    generalData:
-        Type: Wrapper # TODO
-        Related:
-        # - TODO
-        Docu:
-            Exists:
-                Readme: False # TODO
-                Website: False # TODO
-                Download: False # TODO
-            Completeness:
-                API-listed: False # TODO
-                example: False # TODO
-                explanations: False # TODO
-        Interface-level:
-            High: True # TODO
-            low: True # TODO
-        Interface-language: # TODO
-            - Swift # TODO
-- git: https://github.com/desmondmcnamee/SwiftCommonCrypto
-  manual:
-    generalData:
-        Type: Wrapper # TODO
-        Related:
-        # - TODO
-        Docu:
-            Exists:
-                Readme: False # TODO
-                Website: False # TODO
-                Download: False # TODO
-            Completeness:
-                API-listed: False # TODO
-                example: False # TODO
-                explanations: False # TODO
-        Interface-level:
-            High: True # TODO
-            low: True # TODO
-        Interface-language: # TODO
-            - Swift # TODO
 - git: https://github.com/soffes/Crypto
   manual:
     generalData:
@@ -12742,26 +11643,6 @@ projects:
         Interface-language: # TODO
             - Ruby # TODO
 - git: https://github.com/pbhogan/scrypt
-  manual:
-    generalData:
-        Type: Wrapper # TODO
-        Related:
-        # - TODO
-        Docu:
-            Exists:
-                Readme: False # TODO
-                Website: False # TODO
-                Download: False # TODO
-            Completeness:
-                API-listed: False # TODO
-                example: False # TODO
-                explanations: False # TODO
-        Interface-level:
-            High: True # TODO
-            low: True # TODO
-        Interface-language: # TODO
-            - Ruby # TODO
-- git: https://github.com/dark-panda/ruby-cryptopp
   manual:
     generalData:
         Type: Wrapper # TODO
