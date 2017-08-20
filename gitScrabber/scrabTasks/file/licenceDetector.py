@@ -12,7 +12,7 @@ from collections import Counter
 
 
 name = "LicenceDetector"
-version = "1.0.1"
+version = "1.0.2"
 
 
 class MetaLicence():
@@ -208,7 +208,7 @@ class LicenceDetector(FileTask):
                 else:
                     cosine = self.__calc_cosine(file_vec_max, licence.vector)
 
-                if cosine > .98:
+                if cosine > .95:
                     if relative_path not in report['licence']:
                         report['licence'][relative_path] = []
 
@@ -219,7 +219,7 @@ class LicenceDetector(FileTask):
             if relative_path in report['licence']:
                 report['licence'][relative_path] = sorted(
                     report['licence'][relative_path],
-                    key=lambda k: k['confidence'], reverse=True)
+                    key=lambda k: k['confidence'], reverse=True)[:3]
 
         return report
 
