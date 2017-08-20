@@ -109,12 +109,12 @@ class LicenceDetector(FileTask):
         relative_path = filepath[len(project.location)+1:]
 
         if (file_extension in self.__files
-                or filename.lower() == 'copying'
-                or filename.lower() == 'licence'
-                or filename.lower() == 'license'
-                or filename.lower() == 'acknowledgements'
-                or filename.lower() == 'acknowledgement'
-                or filename.lower() == 'readme'):
+                or filename.lower() in 'copying'
+                or filename.lower() in 'licence'
+                or filename.lower() in 'license'
+                or filename.lower() in 'acknowledgements'
+                or filename.lower() in 'acknowledgement'
+                or filename.lower() in 'readme'):
 
             file_vec_med = self.__text_to_vector(
                 file[:int(self.__med_length * 1.3)])
