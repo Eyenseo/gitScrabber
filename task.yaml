@@ -22,15 +22,16 @@ projects:
 - archive: ftp://ftp.franken.de/pub/crypt/cryptlib/cl3431.zip
 # manual data for projects that do not provide a git repo or archive
 # but should be analysed by the reportScrabber
-- manual:
+- meta:
+  # The url is given for identification
+  id: foo://bar
+  manual:
     # these data constructs have to resemble what the scrab tasks expect
     author_contributor_counter:
       author#: 300
       contributor#: 700
     metadata_collector:
       stars: 42
-  # The url is given for identification
-  id: foo://bar
 # Tasks that should be run for the projects in parallel
 # (sequentially for each project - the order matters!)
 project_tasks:
@@ -39,6 +40,7 @@ project_tasks:
   - LanguageDetector
   - ProjectDates
   - ProjectMetrics
+  - LicenceDetector
   - FeatureDetector:
       block ciphers:
         AES:

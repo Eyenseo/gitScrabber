@@ -33,13 +33,15 @@ class MetaProject():
         elif 'archive' in config:
             self.kind = 'archive'
             self.url = config['archive']
-        elif 'manual' in config:
-            self.kind = 'manual'
-            self.manual_data = config['manual']
+        elif 'meta' in config:
+            self.kind = 'meta'
         else:
             raise Exception("The following project is neither an archive "
                             "or git and doesn't provide manual data:\n"
                             "'{}'".format(config))
+
+        if 'manual' in config:
+            self.manual_data = config['manual']
 
         if self.url and self.url.endswith('/'):
             self.url = self.url[:-1]
@@ -309,7 +311,7 @@ class TaskExecutionManager:
         old_tasks = self.__extract_old_project_tasks()
 
         for project in self.__projects:
-            if project.kind is not 'manual':
+            if project.kind is not 'meta':
                 old_data = self.__extract_old_data(project)
                 future = executor.submit(self.__project_task_wrapper, project,
                                          old_tasks, old_data)
