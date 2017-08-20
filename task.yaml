@@ -40,6 +40,7 @@ project_tasks:
   - LanguageDetector
   - ProjectDates
   - ProjectMetrics
+  - LicenceDetector
   - FeatureDetector:
       block ciphers:
         AES:
