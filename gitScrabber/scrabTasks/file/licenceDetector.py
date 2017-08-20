@@ -12,7 +12,7 @@ from collections import Counter
 
 
 name = "LicenceDetector"
-version = "1.0.0"
+version = "1.0.1"
 
 
 class Licence():
@@ -106,6 +106,8 @@ class LicenceDetector(FileTask):
         filename, file_extension = os.path.splitext(filepath)
         filename = os.path.basename(filename)
 
+        relative_path = filepath[len(project.location)+1:]
+
         if (file_extension in self.__files
                 or filename.lower() == 'copying'
                 or filename.lower() == 'licence'
@@ -128,16 +130,16 @@ class LicenceDetector(FileTask):
                     cosine = self.__get_cosine(file_vec_max, licence.vector)
 
                 if cosine > .98:
-                    if filepath not in report['licence']:
-                        report['licence'][filepath] = []
+                    if relative_path not in report['licence']:
+                        report['licence'][relative_path] = []
 
-                    report['licence'][filepath].append({
+                    report['licence'][relative_path].append({
                         'licence': licence.name,
                         'confidence': float("{0:.2f}".format(cosine*100))})
 
-            if filepath in report['licence']:
-                report['licence'][filepath] = sorted(
-                    report['licence'][filepath],
+            if relative_path in report['licence']:
+                report['licence'][relative_path] = sorted(
+                    report['licence'][relative_path],
                     key=lambda k: k['confidence'], reverse=True)
 
         return report
