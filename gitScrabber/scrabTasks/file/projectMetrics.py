@@ -21,7 +21,7 @@ class ProjectMetrics(FileTask):
             source: 397700
             cleaned: 361992
 
-    :param  task_params:  Parameter given explicitly for this task, for all
+    :param  parameter:    Parameter given explicitly for this task, for all
                           projects, defined in the task.yaml
     :param  global_args:  Arguments that will be passed to all tasks. They
                           _might_ contain something that is useful for the task,
@@ -398,8 +398,8 @@ class ProjectMetrics(FileTask):
 
     def scrab(self, project, filepath, file):
         """
-         Counts the LOC with and without comments as well as the number of
-         source files and total files
+        Counts the LOC with and without comments as well as the number of source
+        files and total files
 
         :param    project:   The project that the scrab task shall analyse
         :param    filepath:  The filepath to the file that can be analysed
