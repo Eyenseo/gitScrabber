@@ -1,18 +1,16 @@
 from ..scrabTask import FileTask
-import utils
 
+from collections import Counter
 from pkg_resources import resource_filename
 
-import os
 import json
-
-import regex
 import math
-from collections import Counter
+import os
+import regex
 
 
 name = "LicenceDetector"
-version = "1.0.2"
+version = "1.0.3"
 
 
 class MetaLicence():
@@ -76,6 +74,7 @@ class LicenceDetector(FileTask):
 
         self.__med_length = mean([node.length for node in self.__licences])
         self.__max_length = max(node.length for node in self.__licences)
+        self.__report = {}
 
         self.__files = [
             '.h', '.hpp', '.hxx', '.rs', '.java', '.go', '.js', '.m', '.mm',
@@ -179,63 +178,49 @@ class LicenceDetector(FileTask):
 
         :returns: Report that contains the scrabbed info
         """
-        report = {}
 
         filename, file_extension = os.path.splitext(filepath)
         filename = os.path.basename(filename)
 
         relative_path = filepath[len(project.location)+1:]
 
-        if (file_extension in self.__files
-                or filename.lower() in 'copying'
-                or filename.lower() in 'licence'
-                or filename.lower() in 'license'
-                or filename.lower() in 'acknowledgements'
-                or filename.lower() in 'acknowledgement'
-                or filename.lower() in 'readme'):
+        if (file_extension not in self.__files
+                and 'copying' not in filename.lower()
+                and 'licence' not in filename.lower()
+                and 'license' not in filename.lower()
+                and 'acknowledgements' not in filename.lower()
+                and 'acknowledgement' not in filename.lower()
+                and 'readme' not in filename.lower()):
+            return
 
-            file_vec_med = self.__text_to_vector(
-                file[:int(self.__med_length * 1.3)])
-            file_vec_max = self.__text_to_vector(
-                file[:int(self.__max_length * 1.3)])
+        file_vec_med = self.__text_to_vector(
+            file[:int(self.__med_length * 1.3)])
+        file_vec_max = self.__text_to_vector(
+            file[:int(self.__max_length * 1.3)])
 
-            for licence in self.__licences:
-                cosine = 0
+        for licence in self.__licences:
+            cosine = 0
 
-                if licence.length < self.__med_length:
-                    cosine = self.__calc_cosine(file_vec_med, licence.vector)
-                else:
-                    cosine = self.__calc_cosine(file_vec_max, licence.vector)
+            if licence.length < self.__med_length:
+                cosine = self.__calc_cosine(file_vec_med, licence.vector)
+            else:
+                cosine = self.__calc_cosine(file_vec_max, licence.vector)
 
-                if cosine > .95:
-                    if relative_path not in report:
-                        report[relative_path] = []
+            if cosine > .95:
+                if relative_path not in self.__report:
+                    self.__report[relative_path] = []
 
-                    report[relative_path].append({
-                        'licence': licence.name,
-                        'confidence': float("{0:.2f}".format(cosine*100))})
+                self.__report[relative_path].append({
+                    'licence': licence.name,
+                    'confidence': float("{0:.2f}".format(cosine*100))
+                })
 
-            if relative_path in report:
-                report[relative_path] = sorted(
-                    report[relative_path],
-                    key=lambda k: k['confidence'], reverse=True)[:3]
+        if relative_path in self.__report:
+            self.__report[relative_path] = sorted(
+                self.__report[relative_path],
+                key=lambda k: k['confidence'], reverse=True)[:3]
 
-        return report
-
-    def merge(self, first, second):
-        """
-        Merges two partial reports
-
-        :param    first:   The first report (all reports so far)
-        :param    second:  The second report (the new report that has to be
-                           merged)
-
-        :returns: Merged report that contains the results from the first and
-                  second one
-        """
-        return utils.deep_merge(first, second)
-
-    def finish(self, report):
+    def report(self):
         """
         :returns: Report that contains all scrabbed information
                   Example:
@@ -247,4 +232,4 @@ class LicenceDetector(FileTask):
                         confidence: 98.84
 
         """
-        return report
+        return self.__report

@@ -3,7 +3,7 @@ import regex
 import os
 
 name = "ProjectMetrics"
-version = "1.0.0"
+version = "1.0.1"
 
 
 class ProjectMetrics(FileTask):
@@ -35,6 +35,10 @@ class ProjectMetrics(FileTask):
         super(ProjectMetrics, self).__init__(name, version, parameter,
                                              global_args)
         self.__queries = self.__generate_queries()
+        self.__total_files = 0
+        self.__source_files = 0
+        self.__source_loc = 0
+        self.__cleaned_loc = 0
 
     def __c_style_comment_query(self):
         """
@@ -411,45 +415,13 @@ class ProjectMetrics(FileTask):
         for query in self.__queries:
             if file_extension in self.__queries[query]:
                 cleand = self.__remove_comments(query, file)
-                return {
-                    'files': {
-                        'total': 1,
-                        'source': 1
-                    },
-                    'loc': {
-                        'source': file.rstrip().count('\n'),
-                        'cleaned': cleand.rstrip().count('\n')
-                    }
-                }
-        return {
-            'files': {
-                'total': 1,
-                'source': 0
-            },
-            'loc': {
-                'source': 0,
-                'cleaned': 0
-            }
-        }
 
-    def merge(self, first, second):
-        """
-        Merges two partial reports by adding their counts
+                self.__total_files += 1
+                self.__source_files += 1
+                self.__source_loc += file.rstrip().count('\n')
+                self.__cleaned_loc += cleand.rstrip().count('\n')
 
-        :param    first:   The first report (all reports so far)
-        :param    second:  The second report (the new report that has to be
-                           merged)
-
-        :returns: Merged report that contains the results from the first and
-                  second one
-        """
-        first['files']['total'] += second['files']['total']
-        first['files']['source'] += second['files']['source']
-        first['loc']['source'] += second['loc']['source']
-        first['loc']['cleaned'] += second['loc']['cleaned']
-        return first
-
-    def finish(self, report):
+    def report(self):
         """
         :returns: Report that contains all scrabbed information
                   Example:
@@ -461,4 +433,13 @@ class ProjectMetrics(FileTask):
                           source: 397700
                           cleaned: 361992
         """
-        return report
+        return {
+            'files': {
+                'total': self.__total_files,
+                'source': self.__source_files
+            },
+            'loc': {
+                'source': self.__source_loc,
+                'cleaned': self.__cleaned_loc
+            }
+        }

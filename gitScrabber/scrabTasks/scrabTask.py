@@ -57,13 +57,10 @@ class FileTask(ScrabTask):
 
     """
     Base class of all scrab tasks that want to analyse a the files of a project.
-
-    It is important to note, that this task is the most difficult one to get
-    right. The scrab and merge methods are called by multiple threads leading to
-    race conditions if they write to shared memory. Thus one should only read
-    from the instances attributes and refrain from modifying the state.
-
-    The instance should be thought about as read only data storage
+    This task will be provided with the file to analyse which will happen in
+    parallel to the other file tasks that are analysing the project (single
+    threaded). Thus there are two methods - one to crab the data and one to
+    obtain the final report.
 
     :param    name:         The name of the scrab task
     :param    version:      The version of the scrab task
@@ -80,46 +77,21 @@ class FileTask(ScrabTask):
         """
         Function that will be called to analyse the given project file.
 
-        __This method is called by multiple threads *simultaneously*__
-        __Do NOT modify the instances state or race conditions will arise!__
-
         __Override this method and do not call it!__
 
         :param    project:   The project that the scrab task shall analyse
         :param    filepath:  The filepath to the file that can be analysed
         :param    file:      The file as string that can be analysed
-
-        :returns: Report that contains the scrabbed information of *this* file
         """
         assert False, "You have to implement this function"
 
-    def merge(self, first, second):
-        """
-        Merges two partial reports.
-
-        __This method is called by multiple threads *simultaneously*__
-        __Do NOT modify the instances state or race conditions will arise!__
-
-        __Override this method and do not call it!__
-
-        :param    first:   The first report (all reports so far)
-        :param    second:  The second report (the new report that has to be
-                           merged)
-
-        :returns: Merged report that contains the results from the first and
-                  second one
-        """
-        assert False, "You have to implement this function"
-
-    def finish(self, report):
+    def report(self):
         """
         Last finishing touches may be done here.
 
-        :param    report:  The complete report this task created
-
         :returns: Report that contains all scrabbed information
         """
-        return report
+        assert False, "You have to implement this function"
 
 
 class ReportTask(ScrabTask):

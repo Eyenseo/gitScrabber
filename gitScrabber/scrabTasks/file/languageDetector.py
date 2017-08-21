@@ -3,7 +3,7 @@ from ..scrabTask import FileTask
 import os
 
 name = "LanguageDetector"
-version = "1.1.0"
+version = "1.1.1"
 
 
 class LanguageDetector(FileTask):
@@ -50,6 +50,7 @@ class LanguageDetector(FileTask):
         # dictionary containing the common file extensions
         # for each of the languages
         self.__language_extensions = self.__get_language_extensions()
+        self.__report = self.__get_files_per_language()
 
     def __get_language_extensions(self):
         """
@@ -115,14 +116,13 @@ class LanguageDetector(FileTask):
                 {extension: 0 for extension in self.python_extensions},
         }
 
-    def __decide_h_extension(self, report):
+    def __decide_h_extension(self):
         """
         Decides which language 'owns' how many .h files
 
-        :param    report:  Dict containing the files per extension per language
-
         :returns: The report with divided header files
         """
+        report = self.__report
         h_files = report['C']['.h']
         if h_files > 0:
             c_files = (sum(report['C'].values()) - h_files)
@@ -179,7 +179,7 @@ class LanguageDetector(FileTask):
         """
         languages = {}
 
-        for language, _ in report.items():
+        for language in report:
             total_files = sum(report[language].values())
 
             if total_files > 0:
@@ -198,37 +198,13 @@ class LanguageDetector(FileTask):
         :returns: Report that contains the scrabbed information of *this* file
                   - the extensions have either a count of 0 or 1
         """
-        report = self.__get_files_per_language()
-
         filename, file_extension = os.path.splitext(filepath)
 
         for language in self.__language_extensions:
             if file_extension in self.__language_extensions[language]:
-                report[language][file_extension] += 1
+                self.__report[language][file_extension] += 1
 
-        return report
-
-    def merge(self, first, second):
-        """
-        Merges two partial reports by adding their counts
-
-        :param    first:   The first report (all reports so far)
-        :param    second:  The second report (the new report that has to be
-                           merged)
-
-        :returns: Merged report that contains the results from the first and
-                  second one
-        """
-        for language in second:
-            for extension in second[language]:
-                if language not in first:
-                    first[language] = {}
-                if extension not in first[language]:
-                    first[language][extension] = 0
-                first[language][extension] += second[language][extension]
-        return first
-
-    def finish(self, pre_report):
+    def report(self):
         """
         Decides which headers files are (probable) from which language,
         calculates the main language and  removes redundant / unnecessary
@@ -245,7 +221,7 @@ class LanguageDetector(FileTask):
                       - C++
                       - Python
         """
-        pre_report = self.__decide_h_extension(pre_report)
+        pre_report = self.__decide_h_extension()
         main_language = self.__calculate_main_language(pre_report)
 
         # write the result to the report

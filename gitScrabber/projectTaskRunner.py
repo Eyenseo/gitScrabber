@@ -1,7 +1,6 @@
 from utils import md5
 
 from packaging import version
-from concurrent.futures import ThreadPoolExecutor, as_completed
 
 import os
 import regex
@@ -13,9 +12,8 @@ class FileTaskRunner():
     files in a project. These tasks are meant to gather data, not necessarily
     interpret it. The interpretation is better left to the report scrab task.
 
-    As we are IO-bound the scrab and merge methods of the FileTasks are called
-    by multiple threads -- 5 per project.
-    The Tasks are executed in parallel to prevent unnecessary reads.
+    The Tasks are executed in parallel (but single threaded) to prevent
+    unnecessary reads.
 
     :param  project:           The project the scrab tasks run for
     :param  tasks:             The tasks that will run for the project
@@ -37,10 +35,6 @@ class FileTaskRunner():
         self.__old_tasks = old_tasks
         self.__global_args = global_args
         self.__scrabTaskManager = scrabTaskManager
-        # 5 workers per CPU core
-        # we are IO-bound so five times CPU-cores processes is not too much
-        self.__executor = ThreadPoolExecutor(max_workers=5)
-        self.__futures = {}
         self.__report = {}
         self.__tasks = self.__make_meta_tasks(tasks)
 
@@ -58,7 +52,7 @@ class FileTaskRunner():
         for meta_task in tasks:
             task_wrapper = self.__scrabTaskManager.get_task(meta_task.name)
 
-            if task_wrapper.kind is not 'file':
+            if task_wrapper.kind != 'file':
                 continue
 
             if (self.__project.updated
@@ -72,15 +66,15 @@ class FileTaskRunner():
                 self.__report[meta_task.name] = self.__old_data[meta_task.name]
         return tasks_
 
-    def __is_binary(self, filename):
+    def __is_binary(self, filepath):
         """
-        { function_description }
+        Checks if the given file is probable a binary file
 
-        :param    filename:  The filename
+        :param    filepath:  The file path of the file to check
 
-        :returns: { description_of_the_return_value }
+        :returns: True if the file is probable a binary file, otherwise False
         """
-        header = open(filename, 'rb').read(512)  # read 512 bytes
+        header = open(filepath, 'rb').read(512)  # read 512 bytes
         if not header:
             return True  # Empty is considered a binary file
         # Count 'human' text characters
@@ -113,12 +107,15 @@ class FileTaskRunner():
             with open(filepath, mode='rb') as fd:
                 return fd.read().decode(encoding='ascii', errors='ignore')
         else:
-            raise Exception("Can't open file - tried encoding 'UTF-8' and "
-                            "'iso-8859-15' on file {}".format(filepath))
+            raise Exception(
+                "Can't open file - tried encoding 'UTF-8' and 'iso-8859-15' "
+                "on file {}".format(filepath)
+            )
 
     def __get_feature_result(self, path, future):
         """
         Gets the feature result.
+
         :param    path:    The path of the file that was analysed
         :param    future:  The future to get the result from
 
@@ -127,9 +124,10 @@ class FileTaskRunner():
         try:
             return future.result()
         except Exception as e:
-            raise Exception("While collecting the ScrabTask results for '{}'"
-                            " something happened".format(path)
-                            ) from e
+            raise Exception(
+                "While collecting the ScrabTask results for '{}' something "
+                "happened".format(path)
+            ) from e
 
     def __changed_task(self, task_wrapper, meta_task):
         """
@@ -151,11 +149,11 @@ class FileTaskRunner():
             != md5(str(meta_task.parameter))
         )
 
-    def __task_function_wrapper(self, filepath):
+    def __execute_tasks_on_file(self, filepath):
         """
-        Wrapper function that executes __all__ tasks for the given file
+        Wrapper function that executes all tasks for the given file
 
-        :param    filepath:  The filepath of the file that shall be analysed
+        :param    filepath:  The file path of the file that shall be analysed
         """
         file = self.__read_file(filepath)
         reports = {}
@@ -165,48 +163,30 @@ class FileTaskRunner():
                 self.__project, filepath, file)
         return reports
 
-    def __queue_files(self):
+    def __analyse_files(self):
         """
-        Queues the project files into the ThreadPoolExecutor to be analysed for
-        features
+        Analyses the files with all file scrap tasks
         """
         for dirpath, dirs, filenames in os.walk(self.__project.location,
                                                 topdown=True):
-            for d in dirs:  # ignore hidden / git directories
-                dirs[:] = [d for d in dirs if not d.startswith('.')]
-                continue
+            # ignore hidden / git directories
+            dirs[:] = [d for d in dirs if not d.startswith('.')]
 
             for file in filenames:
-                if file[0] is '.':
-                    # ignore hidden / git files
-                    continue
+                if file[0] == '.':
+                    continue  # ignore hidden / git files
                 path = os.path.join(dirpath, file)
                 if os.path.isfile(path):
-                    feature = self.__executor.submit(
-                        self.__task_function_wrapper, path)
-                    self.__futures[feature] = path
+                    self.__execute_tasks_on_file(path)
 
-    def __collect_feature_results(self):
+    def __collect_tasks_results(self):
         """
         Collects the feature results
         """
-        for future in as_completed(self.__futures):
-            project = self.__futures[future]
-            reports = self.__get_feature_result(project, future)
-
-            for task_name in reports:
-                if len(reports[task_name]) > 0:
-                    if task_name not in self.__report:
-                        self.__report[task_name] = reports[task_name]
-                    else:
-                        task = self.__tasks[task_name]
-                        report = self.__report[task_name]
-                        report = task.merge(report, reports[task_name])
-
         for task_name in self.__tasks:
-            if task_name in self.__report:
-                self.__report[task_name] = self.__tasks[
-                    task_name].finish(self.__report[task_name])
+            report = self.__tasks[task_name].report()
+            if len(report) > 0:
+                self.__report[task_name] = report
 
     def run_tasks(self):
         """
@@ -215,8 +195,8 @@ class FileTaskRunner():
         :returns: The report containing all task sub-reports of the project
                   information that were scrabbed together
         """
-        self.__queue_files()
-        self.__collect_feature_results()
+        self.__analyse_files()
+        self.__collect_tasks_results()
 
         return self.__report
 
@@ -284,9 +264,9 @@ class ProjectTaskRunner:
         for meta_task in self.__tasks:
             task_wrapper = self.__scrabTaskManager.get_task(meta_task.name)
 
-            if ((self.__project.kind is not 'git'
-                 and self.__project.kind is not 'svn')
-                    or task_wrapper.kind is not 'git'):
+            if ((self.__project.kind != 'git'
+                 and self.__project.kind != 'svn')
+                    or task_wrapper.kind != 'git'):
                 continue
 
             if (self.__project.updated

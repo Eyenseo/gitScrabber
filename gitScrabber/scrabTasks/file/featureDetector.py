@@ -2,7 +2,7 @@ from ..scrabTask import FileTask
 import regex
 
 name = "FeatureDetector"
-version = "2.0.0"
+version = "2.0.1"
 
 
 class Feature():
@@ -19,6 +19,7 @@ class Feature():
     def __init__(self, category, name, queries):
         self.category = category
         self.name = name
+        self.count = 0
 
         queries = self.__generate_queries(queries)
         self.simple_queries = queries[0]
@@ -60,9 +61,6 @@ class FeatureDetector(FileTask):
     leading .) as documentation and readme files might also contain hints
     towards features
 
-    To speed up the process a ThreadPoolManager is utilized as this task is
-    mainly IO bound.
-
     Example:
         FeatureDetector:
           block ciphers:
@@ -88,16 +86,19 @@ class FeatureDetector(FileTask):
                                               global_args)
 
         if (len(parameter) < 1):
-            raise Exception("There has to be a map with search queries "
-                            "{category: {feature: [query,query]}}")
+            raise Exception(
+                "There has to be a map with search queries "
+                "{category: {feature: [query, query]}}")
         for category in parameter:
             if (len(parameter[category]) < 1):
-                raise Exception("There has to be a map with search queries "
-                                "{category: {feature: [query,query]}}")
+                raise Exception(
+                    "There has to be a map with search queries "
+                    "{category: {feature: [query, query]}}")
             for feature in parameter[category]:
                 if (len(parameter[category][feature]) < 1):
-                    raise Exception("There has to be a map with search queries "
-                                    "{category: {feature: [query,query]}}")
+                    raise Exception(
+                        "There has to be a map with search queries "
+                        "{category: {feature: [query, query]}}")
 
         self.__features = self.__make_feature_list(parameter)
 
@@ -129,45 +130,13 @@ class FeatureDetector(FileTask):
 
         :returns: Dictionary containing the numbers of queries from the features
         """
-        feature_counts = {}
-
         for feature in self.__features:
-            if feature.category not in feature_counts:
-                feature_counts[feature.category] = {}
-            if feature.name not in feature_counts[feature.category]:
-                feature_counts[feature.category][feature.name] = 0
-
-            feature_count = 0
             for query in feature.simple_queries:
-                feature_count += file.count(query)
+                feature.count += file.count(query)
             for query in feature.regex_queries:
-                feature_count += len(query.findall(file, concurrent=True))
-            feature_counts[feature.category][feature.name] += feature_count
+                feature.count += len(query.findall(file, concurrent=True))
 
-        return feature_counts
-
-    def merge(self, first, second):
-        """
-        Merges the future results together
-
-        :param    first:   The first report (all reports so far)
-        :param    second:  The second report (the new report that has to be
-                           merged)
-
-        :returns: Merged report that contains the results from the first and
-                  second one
-        """
-        for category in second:
-            if category not in first:
-                first[category] = {}
-
-            for feature in second[category]:
-                if feature not in first[category]:
-                    first[category][feature] = 0
-                first[category][feature] += second[category][feature]
-        return first
-
-    def finish(self, report):
+    def report(self):
         """
         Last finishing touches may be done here.
 
@@ -176,12 +145,18 @@ class FeatureDetector(FileTask):
         :returns: Report that contains all scrabbed information
                   eg.:
                   FeatureDetector:
-                      block ciphers:
-                        AES: 3889
-                        AES-128: 678
-                        Blowfish: 18
+                    block ciphers:
+                      AES: 3889
+                      AES-128: 678
+                      Blowfish: 18
                     hashes:
-                        MD5: 462
-                        SHA: 4252
+                      MD5: 462
+                      SHA: 4252
         """
+        report = {}
+        for feature in self.__features:
+            if feature.category not in report:
+                report[feature.category] = {}
+            if feature.name not in report[feature.category]:
+                report[feature.category][feature.name] = feature.count
         return report
