@@ -51,12 +51,11 @@ class LicenceDetector(FileTask):
 
     Example:
       LicenceDetector:
-        licence:
-          LICENSE:
-          - licence: MIT License
-            confidence: 99.58
-          - licence: JSON License
-            confidence: 98.84
+        LICENSE:
+        - licence: MIT License
+          confidence: 99.58
+        - licence: JSON License
+          confidence: 98.84
 
     [1] https://github.com/spdx/license-list-data
 
@@ -180,7 +179,7 @@ class LicenceDetector(FileTask):
 
         :returns: Report that contains the scrabbed info
         """
-        report = {'licence': {}}
+        report = {}
 
         filename, file_extension = os.path.splitext(filepath)
         filename = os.path.basename(filename)
@@ -209,16 +208,16 @@ class LicenceDetector(FileTask):
                     cosine = self.__calc_cosine(file_vec_max, licence.vector)
 
                 if cosine > .95:
-                    if relative_path not in report['licence']:
-                        report['licence'][relative_path] = []
+                    if relative_path not in report:
+                        report[relative_path] = []
 
-                    report['licence'][relative_path].append({
+                    report[relative_path].append({
                         'licence': licence.name,
                         'confidence': float("{0:.2f}".format(cosine*100))})
 
-            if relative_path in report['licence']:
-                report['licence'][relative_path] = sorted(
-                    report['licence'][relative_path],
+            if relative_path in report:
+                report[relative_path] = sorted(
+                    report[relative_path],
                     key=lambda k: k['confidence'], reverse=True)[:3]
 
         return report
@@ -241,12 +240,11 @@ class LicenceDetector(FileTask):
         :returns: Report that contains all scrabbed information
                   Example:
                     LicenceDetector:
-                      licence:
-                        LICENSE:
-                        - licence: MIT License
-                          confidence: 99.58
-                        - licence: JSON License
-                          confidence: 98.84
+                      LICENSE:
+                      - licence: MIT License
+                        confidence: 99.58
+                      - licence: JSON License
+                        confidence: 98.84
 
         """
         return report
