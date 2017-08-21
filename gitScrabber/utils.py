@@ -1,5 +1,3 @@
-from ruamel.yaml.comments import CommentedMap
-
 import hashlib
 import os
 import subprocess

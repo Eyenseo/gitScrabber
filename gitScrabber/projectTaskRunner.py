@@ -1,7 +1,8 @@
+from utils import md5
+
 from packaging import version
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
-import sys
 import os
 import regex
 
@@ -39,9 +40,9 @@ class FileTaskRunner():
         # 5 workers per CPU core
         # we are IO-bound so five times CPU-cores processes is not too much
         self.__executor = ThreadPoolExecutor(max_workers=5)
-        self.__tasks = self.__make_meta_tasks(tasks)
-        self.__report = self.__init_reports()
         self.__futures = {}
+        self.__report = {}
+        self.__tasks = self.__make_meta_tasks(tasks)
 
     def __make_meta_tasks(self, tasks):
         """
@@ -54,28 +55,22 @@ class FileTaskRunner():
                   report that the task created
         """
         tasks_ = {}
-        for task in tasks:
-            meta_taks = self.__scrabTaskManager.get_task(task.name)
+        for meta_task in tasks:
+            task_wrapper = self.__scrabTaskManager.get_task(meta_task.name)
 
-            if meta_taks.kind is not 'file':
+            if task_wrapper.kind is not 'file':
                 continue
 
-            if self.__project.updated or self.__changed_task(meta_taks):
-                scrab_task = meta_taks.construct(
-                    parameter=task.parameter,
+            if (self.__project.updated
+                    or self.__changed_task(task_wrapper, meta_task)):
+                scrab_task = task_wrapper.construct(
+                    parameter=meta_task.parameter,
                     global_args=self.__global_args
                 )
                 tasks_[scrab_task.name] = scrab_task
-            elif self.__old_data and task.name in self.__old_data:
-                self.__report[task.name] = self.__old_data[task.name]
-
+            elif self.__old_data and meta_task.name in self.__old_data:
+                self.__report[meta_task.name] = self.__old_data[meta_task.name]
         return tasks_
-
-    def __init_reports(self):
-        reports = {}
-        for task_name in self.__tasks:
-            reports[task_name] = None
-        return reports
 
     def __is_binary(self, filename):
         """
@@ -136,20 +131,24 @@ class FileTaskRunner():
                             " something happened".format(path)
                             ) from e
 
-    def __changed_task(self, scrab_task):
+    def __changed_task(self, task_wrapper, meta_task):
         """
         Checks weather the scrab task has to be rerun based on an old report
         and the scab task versions
 
-        :param    scrab_task:  The scrab task to check against
+        :param    task_wrapper:  The scrab task to check against
+        :param    meta_task:     The meta task that contains the parameter for
+                                 the scrab task
 
         :returns: True if the scrab task has to rerun False otherwise
         """
         return(
             not self.__old_tasks
-            or scrab_task.name not in self.__old_tasks
-            or version.parse(self.__old_tasks[scrab_task.name])
-            != version.parse(scrab_task.version)
+            or task_wrapper.name not in self.__old_tasks
+            or version.parse(self.__old_tasks[task_wrapper.name]['version'])
+            != version.parse(task_wrapper.version)
+            or self.__old_tasks[task_wrapper.name]['parameter']
+            != md5(str(meta_task.parameter))
         )
 
     def __task_function_wrapper(self, filepath):
@@ -196,7 +195,7 @@ class FileTaskRunner():
             reports = self.__get_feature_result(project, future)
 
             for task_name in reports:
-                if not self.__report[task_name]:
+                if task_name not in self.__report:
                     self.__report[task_name] = reports[task_name]
                 else:
                     self.__report[task_name] = self.__tasks[task_name].merge(
@@ -251,20 +250,24 @@ class ProjectTaskRunner:
         self.__global_args = global_args
         self.__scrabTaskManager = scrabTaskManager
 
-    def __changed_task(self, scrab_task):
+    def __changed_task(self, task_wrapper, meta_task):
         """
         Checks weather the scrab task has to be rerun based on an old report
         and the scab task versions
 
-        :param    scrab_task:  The scrab task to check against
+        :param    task_wrapper:  The scrab task to check against
+        :param    meta_task:     The meta task that contains the parameter for
+                                 the scrab task
 
         :returns: True if the scrab task has to rerun False otherwise
         """
         return(
             not self.__old_tasks
-            or scrab_task.name not in self.__old_tasks
-            or version.parse(self.__old_tasks[scrab_task.name])
-            != version.parse(scrab_task.version)
+            or task_wrapper.name not in self.__old_tasks
+            or version.parse(self.__old_tasks[task_wrapper.name]['version'])
+            != version.parse(task_wrapper.version)
+            or self.__old_tasks[task_wrapper.name]['parameter']
+            != md5(str(meta_task.parameter))
         )
 
     def __run_git_tasks(self):
@@ -276,21 +279,22 @@ class ProjectTaskRunner:
         """
         report = {}
 
-        for task in self.__tasks:
-            meta_task = self.__scrabTaskManager.get_task(task.name)
+        for meta_task in self.__tasks:
+            task_wrapper = self.__scrabTaskManager.get_task(meta_task.name)
 
             if ((self.__project.kind is not 'git'
                  and self.__project.kind is not 'svn')
                     or task_wrapper.kind is not 'git'):
                 continue
 
-            if self.__project.updated or self.__changed_task(meta_task):
-                scrab_task = meta_task.construct(
-                    parameter=task.parameter,
+            if (self.__project.updated
+                    or self.__changed_task(task_wrapper, meta_task)):
+                scrab_task = task_wrapper.construct(
+                    parameter=meta_task.parameter,
                     global_args=self.__global_args)
-                report[task.name] = scrab_task.scrab(self.__project)
-            elif self.__old_data and task.name in self.__old_data:
-                report[task.name] = self.__old_data[task.name]
+                report[meta_task.name] = scrab_task.scrab(self.__project)
+            elif self.__old_data and meta_task.name in self.__old_data:
+                report[meta_task.name] = self.__old_data[meta_task.name]
         return report
 
     def __run_file_tasks(self):
