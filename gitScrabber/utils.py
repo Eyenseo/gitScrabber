@@ -1,7 +1,8 @@
 from ruamel.yaml.comments import CommentedMap
 
-import subprocess
 import hashlib
+import os
+import subprocess
 
 
 def __validate_exec_args(program, args):
@@ -55,13 +56,15 @@ def run(program, args=[], cwd=None):
     """
     __validate_exec_args(program, args)
     process = None
+    new_env = dict(os.environ)  # Copy current environment
+    new_env['LC_ALL'] = 'C'  # force English output for PISIX conform programs
     if(args is not None):
         process = subprocess.Popen(
-            [program, *args], cwd=cwd,
+            [program, *args], cwd=cwd, env=new_env,
             stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     else:
         process = subprocess.Popen(
-            [program], cwd=cwd,
+            [program], cwd=cwd, env=new_env,
             stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 
     return __handle_result(process)
