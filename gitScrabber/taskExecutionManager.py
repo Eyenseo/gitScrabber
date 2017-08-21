@@ -7,7 +7,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from multiprocessing import cpu_count
 from utils import deep_merge, md5, to_dict
 
-import sys
+import traceback
 import os
 
 
@@ -254,10 +254,9 @@ class TaskExecutionManager:
         try:
             return future.result()
         except Exception as e:
-            tb = sys.exc_info()[2]
             raise Exception("While collecting the ScrabTask results for '{}'"
                             " something happened".format(project.name)
-                            ).with_traceback(tb)
+                            ) from e
 
     def __update_project(self, project):
         """
@@ -350,7 +349,7 @@ class TaskExecutionManager:
             except Exception as e:
                 print("~~ [{}/{}] ERROR in '{}' project tasks ~~".format(
                     i, len(futures), project.name))
-                print(e)
+                traceback.print_exc()
 
         return report
 

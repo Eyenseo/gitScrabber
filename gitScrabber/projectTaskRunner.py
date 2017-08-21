@@ -132,10 +132,9 @@ class FileTaskRunner():
         try:
             return future.result()
         except Exception as e:
-            tb = sys.exc_info()[2]
             raise Exception("While collecting the ScrabTask results for '{}'"
                             " something happened".format(path)
-                            ).with_traceback(tb)
+                            ) from e
 
     def __changed_task(self, scrab_task):
         """

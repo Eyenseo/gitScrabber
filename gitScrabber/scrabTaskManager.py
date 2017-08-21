@@ -1,6 +1,5 @@
 import importlib
 import pkgutil
-import sys
 
 import scrabTasks.git
 import scrabTasks.report
@@ -35,9 +34,8 @@ class ScrabTask():
         try:
             name = getattr(module, 'name')
         except Exception as e:
-            tb = sys.exc_info()[2]
             raise Exception("You have to specify the name "
-                            "of your ScrabTask").with_traceback(tb)
+                            "of your ScrabTask") from e
         return name
 
     def __obtain_version(self, module, name):
@@ -54,9 +52,8 @@ class ScrabTask():
         try:
             return getattr(module, 'version')
         except Exception as e:
-            tb = sys.exc_info()[2]
             raise Exception("You have to specify the version of your "
-                            "ScrabTask: '{}'".format(name)).with_traceback(tb)
+                            "ScrabTask: '{}'".format(name)) from e
 
     def __obtain_function(self, module, name,):
         """
@@ -70,10 +67,9 @@ class ScrabTask():
         try:
             return getattr(module, name)
         except Exception as e:
-            tb = sys.exc_info()[2]
             raise Exception("You have to specify a function with the "
                             "very same name as the name attribute of your "
-                            "ScrabTask: '{}'".format(name)).with_traceback(tb)
+                            "ScrabTask: '{}'".format(name)) from e
 
 
 class ScrabTaskManager:
@@ -128,9 +124,8 @@ class ScrabTaskManager:
         try:
             return self.__scrabTasks[name]
         except Exception as e:
-            tb = sys.exc_info()[2]
             raise Exception("There is no ScrabTask with the name "
-                            "'{}' registered".format(name)).with_traceback(tb)
+                            "'{}' registered".format(name)) from e
 
 
 def import_submodules(package, recursive=True):
