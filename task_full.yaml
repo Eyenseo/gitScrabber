@@ -6763,7 +6763,7 @@ projects:
 
 
 ##########################################
-## Javascript
+## JavaScript
 ##########################################
 - git: https://github.com/rudonick/crypto
   manual:
@@ -6784,7 +6784,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/dojo/crypto
   manual:
     generalData:
@@ -6804,7 +6804,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/rzcoder/node-rsa
   manual:
     generalData:
@@ -6824,7 +6824,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/brix/crypto-js
   manual:
     generalData:
@@ -6844,7 +6844,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/crypto-browserify/sha.js
   manual:
     generalData:
@@ -6864,7 +6864,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/bitwiseshiftleft/sjcl
   manual:
     generalData:
@@ -6884,7 +6884,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/square/js-jose
   manual:
     generalData:
@@ -6904,7 +6904,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/ranisalt/node-argon2
   manual:
     generalData:
@@ -6924,7 +6924,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/crypto-browserify/crypto-browserify
   manual:
     generalData:
@@ -6944,7 +6944,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/cyphrd/crypto
   manual:
     generalData:
@@ -6964,7 +6964,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/yaronn/xml-crypto
   manual:
     generalData:
@@ -6984,7 +6984,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/mozilla/browserid-crypto
   manual:
     generalData:
@@ -7004,7 +7004,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/crypto-browserify/browserify-aes
   manual:
     generalData:
@@ -7024,7 +7024,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/pussinboots/angularjs-crypto
   manual:
     generalData:
@@ -7044,7 +7044,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/digitalbazaar/forge
   manual:
     generalData:
@@ -7064,7 +7064,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/calvinmetcalf/crypto-pouch
   manual:
     generalData:
@@ -7084,7 +7084,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/clipperz/javascript-crypto-library
   manual:
     generalData:
@@ -7104,7 +7104,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/dchest/tweetnacl-js
   manual:
     generalData:
@@ -7124,7 +7124,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/dchest/scrypt-async-js
   manual:
     generalData:
@@ -7144,7 +7144,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/zeruniverse/CryptoStego
   manual:
     generalData:
@@ -7164,7 +7164,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/jbt/js-crypto
   manual:
     generalData:
@@ -7184,7 +7184,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/ronomon/crypto-async
   manual:
     generalData:
@@ -7204,7 +7204,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/c-geek/merkle
   manual:
     generalData:
@@ -7224,7 +7224,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/mvayngrib/react-native-crypto
   manual:
     generalData:
@@ -7244,7 +7244,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/hapijs/cryptiles
   manual:
     generalData:
@@ -7264,7 +7264,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/wieldo/crypto
   manual:
     generalData:
@@ -7284,7 +7284,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/middleout/angular-cryptography
   manual:
     generalData:
@@ -7304,7 +7304,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/wxcsdb88/crypto
   manual:
     generalData:
@@ -7324,7 +7324,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/whiteout-io/crypto-lib
   manual:
     generalData:
@@ -7344,7 +7344,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/z-hao-wang/react-native-rsa
   manual:
     generalData:
@@ -7364,7 +7364,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/google/end-to-end
   manual:
     generalData:
@@ -7384,7 +7384,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/calvinmetcalf/native-crypto
   manual:
     generalData:
@@ -7404,7 +7404,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/decred/crypto-browserify
   manual:
     generalData:
@@ -7424,7 +7424,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/libp2p/js-libp2p-crypto
   manual:
     generalData:
@@ -7444,7 +7444,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/vgoma/crypto-pro
   manual:
     generalData:
@@ -7464,7 +7464,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/heap/cryptohat
   manual:
     generalData:
@@ -7484,7 +7484,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/anchorjs/crypto
   manual:
     generalData:
@@ -7504,7 +7504,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/theharveyz/sas-crypto
   manual:
     generalData:
@@ -7524,7 +7524,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/ad-l/djcl
   manual:
     generalData:
@@ -7544,7 +7544,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/web-eid/web-eid.js
   manual:
     generalData:
@@ -7564,7 +7564,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/thenativeweb/crypto2
   manual:
     generalData:
@@ -7584,7 +7584,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/chengxianga2008/node-cryptojs-aes
   manual:
     generalData:
@@ -7604,7 +7604,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/navyxie/n-crypto
   manual:
     generalData:
@@ -7624,7 +7624,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/cryptocoinjs/crypto-hashing
   manual:
     generalData:
@@ -7644,7 +7644,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/richardanaya/cryptoidentity
   manual:
     generalData:
@@ -7664,7 +7664,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/romansopov/crypto
   manual:
     generalData:
@@ -7684,7 +7684,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/VirgilSecurity/virgil-crypto-javascript
   manual:
     generalData:
@@ -7704,7 +7704,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/sindresorhus/crypto-random-string
   manual:
     generalData:
@@ -7724,7 +7724,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/msotoodeh/WhiteBoxCrypto
   manual:
     generalData:
@@ -7744,7 +7744,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/KenanY/get-random-values
   manual:
     generalData:
@@ -7764,7 +7764,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/yarabey/node-hashit
   manual:
     generalData:
@@ -7784,7 +7784,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/boldt/WebCrypto.js
   manual:
     generalData:
@@ -7804,7 +7804,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/Pagebakers/meteor-crypto-sha256
   manual:
     generalData:
@@ -7824,7 +7824,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/yutent/crypto.js
   manual:
     generalData:
@@ -7844,7 +7844,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/crypto-browserify/createECDH
   manual:
     generalData:
@@ -7864,7 +7864,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/tmthrgd/mpw-js
   manual:
     generalData:
@@ -7884,7 +7884,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/pocesar/node-nxt-api
   manual:
     generalData:
@@ -7904,7 +7904,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/saulshanabrook/react-native-webview-crypto
   manual:
     generalData:
@@ -7924,7 +7924,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/zMotivat0r/cryptopeer-crypto
   manual:
     generalData:
@@ -7944,7 +7944,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/giovanniRodighiero/node-password-encrypter
   manual:
     generalData:
@@ -7964,7 +7964,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/queicherius/asymmetric-crypto
   manual:
     generalData:
@@ -7984,7 +7984,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/borschik/borschik-hash
   manual:
     generalData:
@@ -8004,7 +8004,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/artjomb/cryptojs-extension
   manual:
     generalData:
@@ -8024,7 +8024,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/mappum/js-crypto
   manual:
     generalData:
@@ -8044,7 +8044,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/joebandenburg/libaxolotl-crypto-node
   manual:
     generalData:
@@ -8064,7 +8064,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/segmentio/crypto-token
   manual:
     generalData:
@@ -8084,7 +8084,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/safebash/OpenCrypto
   manual:
     generalData:
@@ -8104,7 +8104,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/nf404/crypto-api
   manual:
     generalData:
@@ -8124,7 +8124,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/fabioricali/Cryptor
   manual:
     generalData:
@@ -8144,7 +8144,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/magicwing/cryptojs
   manual:
     generalData:
@@ -8164,7 +8164,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/pose/webcrypto-jwt
   manual:
     generalData:
@@ -8184,7 +8184,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/jsonmaur/node-crypto-extra
   manual:
     generalData:
@@ -8204,7 +8204,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/SkepticalHippo/crypto-random
   manual:
     generalData:
@@ -8224,7 +8224,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/logotype/es-crypto
   manual:
     generalData:
@@ -8244,7 +8244,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/mychaelgo/crypto-js
   manual:
     generalData:
@@ -8264,7 +8264,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/alpertayfun/crypto-aes
   manual:
     generalData:
@@ -8284,7 +8284,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/DeBuNe/nxt-crypto
   manual:
     generalData:
@@ -8304,7 +8304,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/lifesreason/SM2
   manual:
     generalData:
@@ -8324,7 +8324,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/mingchen/node-crypto-gcm
   manual:
     generalData:
@@ -8344,7 +8344,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/alax/forward-secrecy
   manual:
     generalData:
@@ -8364,7 +8364,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/sigwo/node-cryptopia
   manual:
     generalData:
@@ -8384,7 +8384,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/sigwo/node-cryptopia
   manual:
     generalData:
@@ -8404,7 +8404,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/anywhichway/cryptozoa
   manual:
     generalData:
@@ -8424,7 +8424,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/astronomerio/cryptobject
   manual:
     generalData:
@@ -8444,7 +8444,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/lklancir/cryptonic
   manual:
     generalData:
@@ -8464,7 +8464,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/ahvonenj/cryptoanalysis
   manual:
     generalData:
@@ -8484,7 +8484,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/execmd/crypto-rc4
   manual:
     generalData:
@@ -8504,7 +8504,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/VeliovGroup/meteor-aes-crypto
   manual:
     generalData:
@@ -8524,7 +8524,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/neoatlantis/neoatlantis-crypto-js
   manual:
     generalData:
@@ -8544,7 +8544,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/facekapow/runtime-node-crypto
   manual:
     generalData:
@@ -8564,7 +8564,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/indutny/minimalistic-crypto-utils
   manual:
     generalData:
@@ -8584,7 +8584,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/Oaken-Innovations/zymkey
   manual:
     generalData:
@@ -8604,7 +8604,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/roryrjb/crypto-json
   manual:
     generalData:
@@ -8624,7 +8624,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/litejs/crypto-lite
   manual:
     generalData:
@@ -8644,7 +8644,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/fenivana/CryptoCookie
   manual:
     generalData:
@@ -8664,7 +8664,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/calvinmetcalf/crypto-stream
   manual:
     generalData:
@@ -8684,7 +8684,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/PsychicCat/random-crypto
   manual:
     generalData:
@@ -8704,7 +8704,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/valeriangalliat/crypto-promise
   manual:
     generalData:
@@ -8724,7 +8724,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/elastic/node-crypto
   manual:
     generalData:
@@ -8744,7 +8744,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/Storj/storj-crypto
   manual:
     generalData:
@@ -8764,7 +8764,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/thomaschampagne/crypto-xor
   manual:
     generalData:
@@ -8784,7 +8784,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/DoctorMcKay/node-crypto
   manual:
     generalData:
@@ -8804,7 +8804,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/microstar-db/microstar-crypto
   manual:
     generalData:
@@ -8824,7 +8824,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/umut-sahin/gencryption
   manual:
     generalData:
@@ -8844,7 +8844,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/gonzalo123/crypt
   manual:
     generalData:
@@ -8864,7 +8864,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/dday34/angular-sha1
   manual:
     generalData:
@@ -8884,7 +8884,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/streembit/streembitlib
   manual:
     generalData:
@@ -8904,7 +8904,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/diasdavid/webcrypto
   manual:
     generalData:
@@ -8924,7 +8924,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/Scytl/xml-crypto-browser
   manual:
     generalData:
@@ -8944,7 +8944,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/invodkawetrust/crypto-browserify
   manual:
     generalData:
@@ -8964,7 +8964,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/wangsiyuan0215/crypto-js
   manual:
     generalData:
@@ -8984,7 +8984,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/npmdoc/node-npmdoc-angular-crypto
   manual:
     generalData:
@@ -9004,7 +9004,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/nolanlawson/crypto-pouch
   manual:
     generalData:
@@ -9024,7 +9024,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/lostways/crypto-classic-otp
   manual:
     generalData:
@@ -9044,7 +9044,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/Steeljuice/crypto-password-helper
   manual:
     generalData:
@@ -9064,7 +9064,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/cbourgois/cryptoJsPasswordEncoder
   manual:
     generalData:
@@ -9084,7 +9084,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/emartech/node-easy-crypto
   manual:
     generalData:
@@ -9104,7 +9104,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/icellan/meteor-sjcl
   manual:
     generalData:
@@ -9124,7 +9124,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/digitaledgeit/easy-encryption
   manual:
     generalData:
@@ -9144,7 +9144,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/jeescu/meteor-server-encryption
   manual:
     generalData:
@@ -9164,7 +9164,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/broketech/node-cryptopia-api
   manual:
     generalData:
@@ -9184,7 +9184,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/ezeoleaf/Cryptor-Eof
   manual:
     generalData:
@@ -9204,7 +9204,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/gungunfebrianza/awesome-cryptography
   manual:
     generalData:
@@ -9224,7 +9224,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/c2fo-lab/webcrypto-crypt
   manual:
     generalData:
@@ -9244,7 +9244,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/mushtat/des
   manual:
     generalData:
@@ -9264,7 +9264,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/ajsb85/WebCrypto.js
   manual:
     generalData:
@@ -9284,7 +9284,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/agilebits/sjcl
   manual:
     generalData:
@@ -9304,7 +9304,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/Sc00bz/sjcl
   manual:
     generalData:
@@ -9324,7 +9324,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://git.daplie.com/coolaj86/secret-utils
   manual:
     generalData:
@@ -9344,7 +9344,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/tswaters/hashifier
   manual:
     generalData:
@@ -9364,7 +9364,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/michaelrhodes/subtle-digest
   manual:
     generalData:
@@ -9384,7 +9384,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/jeffbski/digest-stream
   manual:
     generalData:
@@ -9404,7 +9404,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/DavidAnson/crc-hash
   manual:
     generalData:
@@ -9424,7 +9424,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/nelfin/libnatrium.js
   manual:
     generalData:
@@ -9444,7 +9444,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/wi2/machinepack-aes256
   manual:
     generalData:
@@ -9464,7 +9464,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/behdadahmadi/jscrypt
   manual:
     generalData:
@@ -9484,7 +9484,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/Brooooooklyn/wechat-dingding-cryptor
   manual:
     generalData:
@@ -9504,7 +9504,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/JamesMGreene/node-aes256
   manual:
     generalData:
@@ -9524,7 +9524,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/aluxian/node-acrypto
   manual:
     generalData:
@@ -9544,7 +9544,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/NumminorihSF/crypt-maker
   manual:
     generalData:
@@ -9564,7 +9564,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/kelvin-martin/crypt
   manual:
     generalData:
@@ -9584,7 +9584,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/nyraxle/hmac-file-stream
   manual:
     generalData:
@@ -9604,7 +9604,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/SSLcom/forge-universal
   manual:
     generalData:
@@ -9624,7 +9624,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/tonyg/js-nacl
   manual:
     generalData:
@@ -9644,7 +9644,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/quartzjer/ursa
   manual:
     generalData:
@@ -9664,7 +9664,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/travist/jsencrypt
   manual:
     generalData:
@@ -9684,7 +9684,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/openpgpjs/openpgpjs
   manual:
     generalData:
@@ -9704,7 +9704,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/mozilla/browserid-crypto
   manual:
     generalData:
@@ -9724,7 +9724,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/wwwtyro/cryptico
   manual:
     generalData:
@@ -9744,7 +9744,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/hookflash/obsolete.cifre
   manual:
     generalData:
@@ -9764,7 +9764,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - git: https://github.com/google/closure-library/  # not only crypto
   manual:
     generalData:
@@ -9784,7 +9784,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 
 - archive: https://storage.googleapis.com/google-code-archive-source/v2/code.google.com/jscryptolib/source-archive.zip
   manual:
@@ -9805,7 +9805,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - archive: https://storage.googleapis.com/google-code-archive-source/v2/code.google.com/crypto-js/source-archive.zip  # often exported to github
   manual:
     generalData:
@@ -9825,7 +9825,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 - archive: https://download.microsoft.com/download/C/A/C/CACB6F6B-4855-4ED2-935F-A3DB277E6B3D/msrCrypto.1.4.zip
   manual:
     generalData:
@@ -9845,7 +9845,7 @@ projects:
         high: true     # TODO
         low: true     # TODO
       interfaceLanguage:   # TODO
-      - Javascript       # TODO
+      - JavaScript       # TODO
 
 
 ##########################################
