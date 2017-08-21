@@ -2,6 +2,7 @@ from pyunpack import Archive
 from urllib.request import urlopen, Request
 
 import os
+import regex
 import shutil
 import tempfile
 import utils
@@ -34,14 +35,10 @@ class ProjectManager:
 
 
 class GitProjectManager(ProjectManager):
+
     """
-    The GitProjectManager is responsible for executing tasks that scrab at the
-    git repos and archives. These tasks are meant to gather data, not
-    necessarily interpret it. The interpretation is better left to the report
-    scrab task.
-    Each GitProjectManager is responsible for a single project and will create
-    the portion of the final report that contains the information of this
-    project
+    The GitProjectManager is a convenience class that provides the means to
+    initialise and update a git project.
 
     :param  project:           The project the scrab tasks run for
     """
@@ -81,10 +78,7 @@ class GitProjectManager(ProjectManager):
 
     def __init_repo(self):
         """
-        Updates the git repo - either cloning it for the first time or pulling
-        changes
-
-        :returns: True if anything changed False if nothing changed
+        Initialises the repository by cloning into it
         """
         utils.run(
             program='git',
@@ -96,8 +90,7 @@ class GitProjectManager(ProjectManager):
 
     def __update_repo(self):
         """
-        Updates the git repo - either cloning it for the first time or pulling
-        changes
+        Updates the git repo
 
         :returns: True if anything changed False if nothing changed
         """
@@ -110,11 +103,103 @@ class GitProjectManager(ProjectManager):
             return False
         return True
 
+    def update(self):
+        """
+        This function is responsible to ensure that the source files are
+        present and up to date
+
+        :returns: True if the sources were updated or initialized,
+                  otherwise False
+        """
+        if self.__check_repo_folder():
+            return self.__update_repo()
+        else:
+            self.__init_repo()
+            return True
+
+    def init(self):
+        """
+        Initializes a project
+
+        :returns: True if the sources were initialized,
+                  otherwise False
+        """
+        if not self.__check_repo_folder():
+            self.__init_repo()
+            return True
+        return False
+
+
+class SvnProjectManager(ProjectManager):
+
+    """
+    The SvnProjectManager is a convenience class that provides the means to
+    initialise and update a svn project. This is done by using git-svn - that
+    means the later scrab tasks will not work on a svn repository but a git one.
+
+    :param  project:           The project the scrab tasks run for
+    """
+
+    def __init__(self, project):
+        super(SvnProjectManager, self).__init__()
+        self.__project = project
+
+    def __check_repo_folder(self):
+        """
+        Checks weather the repo folder of the project is indeed a git repo or a
+        used folder
+
+        :returns: True if it is a git repo folder False if the folder does not
+                  exist
+
+        :exception Exception:  If the folder exists and isn't a git repo
+        """
+        if os.path.isdir(self.__project.location + '/.git'):
+            try:
+                utils.run(
+                    program='git', args=['status'],
+                    cwd=self.__project.location)
+            except Exception as e:
+                raise Exception(
+                    "The git - svn repo '{}' seems to be corrupt "
+                    "- please delete it.".format(self.__project.location))
+            return True
+        else:
+            if os.path.isdir(self.__project.location):
+                raise Exception("The directory '{}' is used and would be "
+                                "overwritten when cloning.".format(
+                                    self.__project.location)
+                                )
+            else:
+                return False
+
+    def __init_repo(self):
+        """
+        Initialises the repository by cloning into it
+        """
+        utils.run(
+            program='git',
+            args=[
+                'svn',
+                'clone',
+                self.__project.url,
+                self.__project.location
+            ])
+
+    def __update_repo(self):
+        """
+        Updates the git svn repo - by rebasing the current history on top of the
+        history from the server
+
+        :returns: True if anything changed False if nothing changed
+        """
         result = utils.run(
             program='git',
-            args=['pull'],
+            args=['svn', 'rebase'],
             cwd=self.__project.location
         )
+        if regex.search(r"Current branch .* is up to date.", result):
+            return False
         return True
 
     def update(self):
@@ -146,13 +231,8 @@ class GitProjectManager(ProjectManager):
 
 class ArchiveProjectManager(ProjectManager):
     """
-    The ArchiveProjectManager is responsible for executing tasks that scrab at the
-    git repos and archives. These tasks are meant to gather data, not
-    necessarily interpret it. The interpretation is better left to the report
-    scrab task.
-    Each ArchiveProjectManager is responsible for a single project and will create
-    the portion of the final report that contains the information of this
-    project
+    The ArchiveProjectManager is a convenience class that provides the means to
+    initialise and update projects that are archives obtained from the web.
 
     :param  project:           The project the scrab tasks run for
     """
@@ -246,6 +326,9 @@ class ArchiveProjectManager(ProjectManager):
             return self.__changed_server_file()
 
     def __download_extract(self):
+        """
+        Downloads and extracts the archive
+        """
         cache_dir = self.__project.location
 
         os.makedirs(cache_dir, exist_ok=True)
@@ -272,6 +355,12 @@ class ArchiveProjectManager(ProjectManager):
         return False
 
     def init(self):
+        """
+        Initializes a project
+
+        :returns: True if the sources were initialized,
+                  otherwise False
+        """
         meta_file = os.path.join(self.__project.location, 'ArchiveSize.Scrab')
 
         if(not self.__project_cache_exists() or not os.path.isfile(meta_file)):

@@ -1,6 +1,7 @@
 from projectTaskRunner import ProjectTaskRunner
 from reportTaskRunner import ReportTaskRunner
-from projectManager import GitProjectManager, ArchiveProjectManager
+from projectManager import (GitProjectManager, SvnProjectManager,
+                            ArchiveProjectManager)
 
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from multiprocessing import cpu_count
@@ -30,6 +31,9 @@ class MetaProject():
         if 'git' in config:
             self.kind = 'git'
             self.url = config['git']
+        elif 'svn' in config:
+            self.kind = 'svn'
+            self.url = config['svn']
         elif 'archive' in config:
             self.kind = 'archive'
             self.url = config['archive']
@@ -69,6 +73,8 @@ class MetaProject():
             return project['id']
         elif('git' in project):
             return project['git'].rstrip('\\').rsplit('/', 1)[-1]
+        elif('svn' in project):
+            return project['svn'].rstrip('\\').rsplit('/', 1)[-1]
         elif('archive' in project):
             return project['archive'].rstrip('\\').rsplit('/', 1)[-1]
         else:
@@ -262,6 +268,8 @@ class TaskExecutionManager:
         manager = None
         if project.kind == 'git':
             manager = GitProjectManager(project)
+        elif project.kind == 'svn':
+            manager = SvnProjectManager(project)
         elif project.kind == 'archive':
             manager = ArchiveProjectManager(project)
         else:

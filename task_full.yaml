@@ -4419,7 +4419,26 @@ projects:
       interfaceLanguage:   # TODO
       - Java       # TODO
 
-# FIXME svn: http://svn.code.sf.net/p/jasypt/code/trunk/  # http://www.jasypt.org/
+- svn: http://svn.code.sf.net/p/jasypt/code/trunk/  # http://www.jasypt.org/
+  manual:
+    generalData:
+      type: Wrapper   # TODO
+      related:
+        # - TODO
+      documentation:
+        exists:
+          readme: false       # TODO
+          website: false       # TODO
+          download: false       # TODO
+        completeness:
+          apis: false       # TODO
+          examples: false       # TODO
+          explanations: false       # TODO
+      interfaceLevel:
+        high: true     # TODO
+        low: true     # TODO
+      interfaceLanguage:   # TODO
+      - Java       # TODO
 
 
 ##########################################
