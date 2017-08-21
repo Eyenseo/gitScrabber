@@ -5256,83 +5256,81 @@ projects:
 - git: https://github.com/Legrandin/pycryptodome
   manual:
     generalData:
-      type: Wrapper   # TODO
+      type: Fork
       related:
-        # - TODO
+        - https://github.com/dlitz/pycrypto
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: true
+          website: true
+          download: true
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: true
+          examples: true
+          explanations: true
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - Python       # TODO
+        high: true
+        low: false
+      interfaceLanguage:   
+      - Python       
 - git: https://github.com/pyca/pynacl
   manual:
     generalData:
-      type: Wrapper   # TODO
+      type: Wrapper   
       related:
-        # - TODO
+        - https://github.com/jedisct1/libsodium
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: true
+          website: true
+          download: true
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: true
+          examples: true
+          explanations: true
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - Python       # TODO
+        high: true    
+        low: true     
+      interfaceLanguage: 
+      - Python       
 - git: https://github.com/ricmoo/pyaes
   manual:
     generalData:
-      type: Wrapper   # TODO
-      related:
-        # - TODO
+      type: Standalone # check to be sure
+      related:        
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: true
+          website: false
+          download: false
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: true
+          examples: true
+          explanations: false
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - Python       # TODO
+        high: true
+        low: false # check to be sure
+      interfaceLanguage:  
+      - Python       
 - git: https://github.com/pyca/cryptography
   manual:
     generalData:
-      type: Wrapper   # TODO
-      related:
-        # - TODO
+      type: Standalone 
+      related:        
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: true
+          website: true
+          download: true
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: true
+          examples: true
+          explanations: true
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - Python       # TODO
+        high: true
+        low: true
+      interfaceLanguage:   
+      - Python       
 - git: https://github.com/chrissimpkins/crypto
   manual:
     generalData:
@@ -5356,23 +5354,24 @@ projects:
 - git: https://github.com/hasherezade/crypto_utils
   manual:
     generalData:
-      type: Wrapper   # TODO
+      type: Reimplementation
       related:
-        # - TODO
+        - https://docs.python.org/2/library/hashlib.html
+        # TODO
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: true
+          website: false
+          download: false
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: false
+          examples: false
+          explanations: false
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - Python       # TODO
+        high: true
+        low: false
+      interfaceLanguage:   
+      - Python       
 - git: https://github.com/doegox/python-cryptoplus
   manual:
     generalData:
@@ -5381,24 +5380,24 @@ projects:
         # - TODO
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: true
+          website: false
+          download: false
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: false
+          examples: true
+          explanations: false
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - Python       # TODO
+        high: true
+        low: false
+      interfaceLanguage:   
+      - Python       
 - git: https://github.com/thomdixon/pysha2
   manual:
     generalData:
-      type: Wrapper   # TODO
+      type: Reimplementation
       related:
-        # - TODO
+        https://docs.python.org/2/library/hashlib.html#module-hashlib
       documentation:
         exists:
           readme: false       # TODO
@@ -5436,23 +5435,23 @@ projects:
 - git: https://github.com/stef/pysodium
   manual:
     generalData:
-      type: Wrapper   # TODO
+      type: Wrapper
       related:
-        # - TODO
+        - https://github.com/jedisct1/libsodium
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: true
+          website: false
+          download: false
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: true
+          examples: false
+          explanations: false
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - Python       # TODO
+        high: true     
+        low: false     # check to be sure
+      interfaceLanguage:   
+      - Python       
 - git: https://github.com/georgemarshall/django-cryptography
   manual:
     generalData:
@@ -5476,43 +5475,43 @@ projects:
 - git: https://github.com/wbond/oscrypto
   manual:
     generalData:
-      type: Wrapper   # TODO
+      type: Wrapper #Uses the operating system's crypto library # check to be sure... might be Reimplementation
       related:
-        # - TODO
+        - cryptography primitives from the host operating system
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: true
+          website: false
+          download: false
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: true
+          examples: false
+          explanations: true
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - Python       # TODO
+        high: false
+        low: true
+      interfaceLanguage:
+      - Python      
 - git: https://github.com/python-tls/tls
   manual:
     generalData:
-      type: Wrapper   # TODO
+      type: Reimplementation
       related:
-        # - TODO
+        - https://github.com/pyca/cryptography
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: true
+          website: false
+          download: false
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: false    
+          examples: true
+          explanations: false
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - Python       # TODO
+        high: true     
+        low: true     
+      interfaceLanguage:  
+      - Python     
 - git: https://github.com/bdcht/crysp
   manual:
     generalData:
@@ -5596,43 +5595,42 @@ projects:
 - git: https://github.com/marcsantiago/CryptographyKit
   manual:
     generalData:
-      type: Wrapper   # TODO
-      related:
-        # - TODO
+      type: Standalone
+      related:        
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: true
+          website: false
+          download: false
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: true
+          examples: false
+          explanations: true
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - Python       # TODO
+        high: true
+        low: false # check to be sure
+      interfaceLanguage:   
+      - Python       
 - git: https://github.com/berlincode/sjcl
   manual:
     generalData:
-      type: Wrapper   # TODO
+      type: Reimplementation
       related:
-        # - TODO
+        - https://github.com/dlitz/pycrypto
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: true
+          website: false
+          download: false
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: false
+          examples: true
+          explanations: false
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - Python       # TODO
+        high: true
+        low: false
+      interfaceLanguage:   
+      - Python       
 - git: https://github.com/edevil/M2Crypto
   manual:
     generalData:
@@ -5896,43 +5894,42 @@ projects:
 - git: https://github.com/dlitz/pycrypto
   manual:
     generalData:
-      type: Wrapper   # TODO
-      related:
-        # - TODO
+      type: Standalone
+      related:        
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: true
+          website: true
+          download: false
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: true
+          examples: true
+          explanations: true
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - Python       # TODO
+        high: true    
+        low: true     
+      interfaceLanguage:   
+      - Python       
 - git: https://github.com/pyca/pyopenssl
   manual:
     generalData:
-      type: Wrapper   # TODO
+      type: Wrapper
       related:
-        # - TODO
+        - https://github.com/openssl/openssl
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: true
+          website: true
+          download: true
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: true
+          examples: false
+          explanations: true
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - Python       # TODO
+        high: true     
+        low: false
+      interfaceLanguage:   
+      - Python       
 
 - archive: https://master.dl.sourceforge.net/project/pyaes/OldFiles/pyAES-1.0-win32.zip
   manual:
@@ -6782,7 +6779,7 @@ projects:
 
 
 ##########################################
-## JavaScript
+## Javascript
 ##########################################
 - git: https://github.com/rudonick/crypto
   manual:
