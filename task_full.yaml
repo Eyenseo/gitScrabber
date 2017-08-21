@@ -15312,3 +15312,4 @@ project_tasks:
 # sequentially after the project tasks
 report_tasks:
   - ImpactCalculator
+  - ProjectSizeCalculator

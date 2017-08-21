@@ -40,9 +40,10 @@ Global arguments:
 - If not already installed:
     - `python3-pip`
     - `python3-setuptools`
+- `dateutil`
+- `numpy`
 - `packaging`
 - `pyunpack`
-- `ruamel.yaml`
 - `regex`
-- `dateutil`
+- `ruamel.yaml`
 

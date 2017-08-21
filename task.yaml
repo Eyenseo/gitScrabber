@@ -3,35 +3,130 @@ projects:
 # git urls that will be cloned / pulled
 # - git: https://github.com/torvalds/linux
 - git: https://github.com/Eyenseo/ABI
-  # manual can be specified for git and archive projects
-  # it will be overwritten by the git and archive tasks
   manual:
-    # these data constructs have to resemble what the scrab tasks expect
-    author_contributor_counter:
-      author#: 20 # will be corrected
-      Foo: Bar # will stay as is
-    metadata_collector:
-      stars: 10
-      languages:
-        - C
-        - Java
+    generalData:
+        type: Wrapper # TODO
+        related:
+        # - TODO
+        documentation:
+            exists:
+                readme: False # TODO
+                website: False # TODO
+                download: False # TODO
+            completeness:
+                APIsListed: False # TODO
+                example: False # TODO
+                explanations: False # TODO
+        interfaceLevel:
+            high: True # TODO
+            low: True # TODO
+        interfaceLanguage: # TODO
+            - C # TODO
 - git: https://github.com/pyca/cryptography
+  manual:
+    generalData:
+        type: Wrapper # TODO
+        related:
+        # - TODO
+        documentation:
+            exists:
+                readme: False # TODO
+                website: False # TODO
+                download: False # TODO
+            completeness:
+                APIsListed: False # TODO
+                example: False # TODO
+                explanations: False # TODO
+        interfaceLevel:
+            high: True # TODO
+            low: True # TODO
+        interfaceLanguage: # TODO
+            - C # TODO
 - git: https://github.com/openssl/openssl
+  manual:
+    generalData:
+        type: Wrapper # TODO
+        related:
+        # - TODO
+        documentation:
+            exists:
+                readme: False # TODO
+                website: False # TODO
+                download: False # TODO
+            completeness:
+                APIsListed: False # TODO
+                example: False # TODO
+                explanations: False # TODO
+        interfaceLevel:
+            high: True # TODO
+            low: True # TODO
+        interfaceLanguage: # TODO
+            - Java # TODO
 - git: https://github.com/ZewoGraveyard/OpenSSL
+  manual:
+    generalData:
+        type: Wrapper # TODO
+        related:
+        # - TODO
+        documentation:
+            exists:
+                readme: False # TODO
+                website: False # TODO
+                download: False # TODO
+            completeness:
+                APIsListed: False # TODO
+                example: False # TODO
+                explanations: False # TODO
+        interfaceLevel:
+            high: True # TODO
+            low: True # TODO
+        interfaceLanguage: # TODO
+            - C # TODO
 # archive urls that will be downloaded and analysed
 - archive: ftp://ftp.franken.de/pub/crypt/cryptlib/cl3431.zip
+  manual:
+    generalData:
+        type: Wrapper # TODO
+        related:
+        # - TODO
+        documentation:
+            exists:
+                readme: False # TODO
+                website: False # TODO
+                download: False # TODO
+            completeness:
+                APIsListed: False # TODO
+                example: False # TODO
+                explanations: False # TODO
+        interfaceLevel:
+            high: True # TODO
+            low: True # TODO
+        interfaceLanguage: # TODO
+            - C++ # TODO
 # manual data for projects that do not provide a git repo or archive
 # but should be analysed by the reportScrabber
 - meta:
   # The url is given for identification
   id: foo://bar
   manual:
-    # these data constructs have to resemble what the scrab tasks expect
-    author_contributor_counter:
-      author#: 300
-      contributor#: 700
-    metadata_collector:
-      stars: 42
+    generalData:
+        type: Wrapper # TODO
+        related:
+        # - TODO
+        documentation:
+            exists:
+                readme: False # TODO
+                website: False # TODO
+                download: False # TODO
+            completeness:
+                APIsListed: False # TODO
+                example: False # TODO
+                explanations: False # TODO
+        interfaceLevel:
+            high: True # TODO
+            low: True # TODO
+        interfaceLanguage: # TODO
+            - C++ # TODO
 # Tasks that should be run for the projects in parallel
 # (sequentially for each project - the order matters!)
 project_tasks:
@@ -411,3 +506,4 @@ project_tasks:
 # sequentially after the project tasks
 report_tasks:
   - ImpactCalculator
+  - ProjectSizeCalculator

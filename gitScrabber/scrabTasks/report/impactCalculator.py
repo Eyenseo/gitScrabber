@@ -1,7 +1,7 @@
 from ..scrabTask import ReportTask
 
 from datetime import datetime, timezone
-from math import log10, log2, pow
+from math import log2, pow
 from dateutil import parser
 
 name = "ImpactCalculator"
@@ -200,20 +200,6 @@ class ImpactCalculator(ReportTask):
         The scrab task calculates for all projects in the report the impact.
 
         :param    report:       The report to analyse _and_ change
-        :param    task_params:  The following weights may be given as a float:
-                                * 'authors_weight'
-                                * 'contributors_weight'
-                                * 'last_change_age_weight'
-                                * 'project_age_weight'
-
-                                The 'language_weights' may be given as a dict
-                                eg.: {'C++': 0.111}
-        :param    global_args:  Arguments that will be passed to all tasks. They
-                                _might_ contain something that is useful for the
-                                task, but the task has to check if it is _there_
-                                as these are user provided. If they are needed
-                                to work that check should happen in the
-                                argHandler.
 
         :returns: Report that contains all scrabbed information
                   Example:

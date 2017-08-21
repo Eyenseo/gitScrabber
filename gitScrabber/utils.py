@@ -107,6 +107,75 @@ def md5(string):
     return hashlib.md5(string.encode('utf-8')).hexdigest()
 
 
+def sameStructure(d1, d2):
+    """
+    Checks weather the two directories have the same structure - only the values
+    may be different but not the key
+
+    To the structure does not count the type of the value
+
+    Taken from https://stackoverflow.com/a/24193949/1935553
+
+    :param    d1:   The first directory that will be compared with the second
+    :param    d2:   The second directory that will be compared with the first
+
+    :returns: True if the two directories have the same structure,
+              False otherwise
+    """
+    if isinstance(d1, dict):
+        if isinstance(d2, dict):
+            # then we have shapes to check
+            return (d1.keys() == d2.keys() and
+                    # so the keys are all the same
+                    all(sameStructure(d1[k], d2[k]) for k in d1.keys()))
+            # thus all values will be tested in the same way.
+        else:
+            return False  # d1 is a dict, but d2 isn't
+    else:
+        return not isinstance(d2, dict)  # if d2 is a dict, False, else True.
+
+
+def containedStructure(containee, container):
+    """
+    Checks weather the structure of the given containee is contained in the
+    given container. This is similar to sameStructure with the difference that
+    only a subset has to be matching.
+
+    To the structure counts the type of the value except None which matches all
+    Types
+
+    :param    containee:  The containee which structure  has to be contained in
+                          the container.
+    :param    container:  The container that has to contain the structure of the
+                          containee
+
+    :returns: True if the structure of the containee is contained in the
+              container,
+              False otherwise
+    """
+
+    if isinstance(containee, dict):
+        if isinstance(container, dict):
+            # then we have shapes to check
+            return (set(containee.keys()).issubset(set(container.keys())) and
+                    # so the keys are all the same
+                    all(containedStructure(containee[k], container[k])
+                        for k in containee.keys()))
+            # thus all values will be tested in the same way.
+        else:
+            return False  # containee is a dict, but container isn't
+    elif isinstance(containee, list):
+        if isinstance(container, list):
+            return set(containee).issubset(set(container))
+        else:
+            return False   # containee is a lit, but container isn't
+    elif containee is None:
+        return True
+    else:
+        # else they have to be the same type
+        return isinstance(container, type(containee))
+
+
 if __name__ == "__main__":
     print(run('ls', ['-al']))
     # print(run('false'))

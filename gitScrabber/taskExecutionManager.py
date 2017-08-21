@@ -354,7 +354,7 @@ class TaskExecutionManager:
                 deep_merge(report, {
                     'projects': {project.id: project.manual_data}})
             deep_merge(report, {
-                'projects': {project.id: {"URL": project.url}}})
+                'projects': {project.id: {"url": project.url}}})
         return report
 
     def __run_project_tasks(self):
