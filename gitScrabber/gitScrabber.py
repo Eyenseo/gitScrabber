@@ -48,8 +48,7 @@ class GitScrabber:
         self.__update = update
         self.__global_args = global_args
         self.__tasks = ruamel.yaml.load(
-            open(task_file, 'r').read(),
-            ruamel.yaml.RoundTripLoader)
+            open(task_file, 'r').read(), Loader=ruamel.yaml.SafeLoader)
 
         if(report_file):
             self.__old_report = ruamel.yaml.load(
