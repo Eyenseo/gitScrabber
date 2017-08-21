@@ -330,14 +330,20 @@ class TaskExecutionManager:
         """
         i = 0
         for future in as_completed(futures):
-            project = futures[future]
-            result = self.__get_task_result(project, future)
-            report = deep_merge(report, {'projects': {project.id: result}})
-            # TODO replace by logger or process indication
             i += 1
-            print("~~ [{}/{}] Done with '{}' project tasks ~~".format(
-                i, len(futures), project.name))
-            # TODO write to report.part.yaml temporarily
+            project = futures[future]
+            try:
+                result = self.__get_task_result(project, future)
+                report = deep_merge(report, {'projects': {project.id: result}})
+                # TODO replace by logger or process indication
+                print("~~ [{}/{}] Done with '{}' project tasks ~~".format(
+                    i, len(futures), project.name))
+                # TODO write to report.part.yaml temporarily
+            except Exception as e:
+                print("~~ [{}/{}] ERROR in '{}' project tasks ~~".format(
+                    i, len(futures), project.name))
+                print(e)
+
         return report
 
     def __run_manual_task(self):
