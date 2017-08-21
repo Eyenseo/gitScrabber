@@ -1,3 +1,5 @@
+from ruamel.yaml.comments import CommentedMap
+
 import subprocess
 import hashlib
 
@@ -174,6 +176,23 @@ def containedStructure(containee, container):
     else:
         # else they have to be the same type
         return isinstance(container, type(containee))
+
+
+def to_dict(dict_like):
+    """
+    Converts an object that inherits from dictionary to a plain dictionary.
+    This is useful for CommentedMap objects.
+
+    :param    dict_like:  The dictionary like object
+
+    :returns: A plain dictionary
+    """
+    d = dict(dict_like)
+
+    for key in d:
+        if isinstance(d[key], dict):
+            d[key] = to_dict(d[key])
+    return d
 
 
 if __name__ == "__main__":

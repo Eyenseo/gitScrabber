@@ -4,7 +4,7 @@ from projectManager import GitProjectManager, ArchiveProjectManager
 
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from multiprocessing import cpu_count
-from utils import deep_merge, md5
+from utils import deep_merge, md5, to_dict
 
 import sys
 import os
@@ -38,7 +38,7 @@ class MetaProject():
         else:
             raise Exception("The following project is neither an archive "
                             "or git and doesn't provide manual data:\n"
-                            "'{}'".format(config))
+                            "'{}'".format(to_dict(config)))
 
         if 'manual' in config:
             self.manual_data = config['manual']
@@ -74,7 +74,7 @@ class MetaProject():
         else:
             raise Exception("The following project is neither an archive or "
                             "git and doesn't provide an id:\n"
-                            "'{}'".format(project))
+                            "'{}'".format(to_dict(project)))
 
 
 class MetaTask():
