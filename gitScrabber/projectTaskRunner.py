@@ -195,16 +195,18 @@ class FileTaskRunner():
             reports = self.__get_feature_result(project, future)
 
             for task_name in reports:
-                if task_name not in self.__report:
-                    self.__report[task_name] = reports[task_name]
-                else:
-                    self.__report[task_name] = self.__tasks[task_name].merge(
-                        self.__report[task_name],
-                        reports[task_name])
+                if len(reports[task_name]) > 0:
+                    if task_name not in self.__report:
+                        self.__report[task_name] = reports[task_name]
+                    else:
+                        task = self.__tasks[task_name]
+                        report = self.__report[task_name]
+                        report = task.merge(report, reports[task_name])
 
         for task_name in self.__tasks:
-            self.__report[task_name] = self.__tasks[
-                task_name].finish(self.__report[task_name])
+            if task_name in self.__report:
+                self.__report[task_name] = self.__tasks[
+                    task_name].finish(self.__report[task_name])
 
     def run_tasks(self):
         """
@@ -292,7 +294,10 @@ class ProjectTaskRunner:
                 scrab_task = task_wrapper.construct(
                     parameter=meta_task.parameter,
                     global_args=self.__global_args)
-                report[meta_task.name] = scrab_task.scrab(self.__project)
+
+                sub_report = scrab_task.scrab(self.__project)
+                if sub_report and len(sub_report) > 0:
+                    report[meta_task.name] = sub_report
             elif self.__old_data and meta_task.name in self.__old_data:
                 report[meta_task.name] = self.__old_data[meta_task.name]
         return report

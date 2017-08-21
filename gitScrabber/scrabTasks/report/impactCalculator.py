@@ -1,4 +1,5 @@
 from ..scrabTask import ReportTask
+from utils import containedStructure
 
 from datetime import datetime, timezone
 from math import log2, pow
@@ -215,7 +216,9 @@ class ImpactCalculator(ReportTask):
                 report['projects'][project]['impact'] = {
                     'impact': float("{0:.2f}".format(impact))
                 }
-            else:
+            elif not containedStructure(
+                    {'projects': {project: {'impact': {'impact': 0}}}},
+                    report):
                 report['projects'][project]['impact'] = {
                     'impact': None
                 }
