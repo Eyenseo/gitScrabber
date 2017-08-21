@@ -103,11 +103,12 @@ class GitProjectManager(ProjectManager):
         """
         result = utils.run(
             program='git',
-            args=['status', '-uno'],
+            args=['pull'],
             cwd=self.__project.location
         )
-        if 'Your branch is up-to-date' in result:
+        if 'Already up-to-date.' in result:
             return False
+        return True
 
         result = utils.run(
             program='git',
