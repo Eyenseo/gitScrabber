@@ -279,7 +279,9 @@ class ProjectTaskRunner:
         for task in self.__tasks:
             meta_task = self.__scrabTaskManager.get_task(task.name)
 
-            if self.__project.kind is not 'git' or meta_task.kind is not 'git':
+            if ((self.__project.kind is not 'git'
+                 and self.__project.kind is not 'svn')
+                    or task_wrapper.kind is not 'git'):
                 continue
 
             if self.__project.updated or self.__changed_task(meta_task):
