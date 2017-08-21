@@ -25,7 +25,7 @@ class GitScrabber:
                           saved
     :param  data_dir:     directory path where the repositories will be cloned
                           to
-    :param  print:        If the report should be printed to stdout
+    :param  printing      If the report should be printed to stdout
     :param  global_args:  Arguments that will be passed to all tasks. They
                           _might_ contain something that is useful for the task,
                           but the task has to check if it is _there_ as these
@@ -38,13 +38,13 @@ class GitScrabber:
                  report_file=None,
                  output_file=None,
                  data_dir=".",
-                 print=False,
+                 printing=False,
                  update=False,
                  global_args={}):
         self.__scrabTaskManager = ScrabTaskManager()
         self.__output_file = output_file
         self.__data_dir = data_dir
-        self.__print = print
+        self.__print = printing
         self.__update = update
         self.__global_args = global_args
         self.__tasks = ruamel.yaml.load(
@@ -107,7 +107,7 @@ def main(args=None):
         report_file=args.report,
         output_file=args.output,
         data_dir=args.data,
-        print=args.print,
+        printing=args.print,
         update=args.update,
         global_args=GlobalArgs(args.github_token)
     ).scrab()
