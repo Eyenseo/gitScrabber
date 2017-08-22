@@ -405,7 +405,7 @@ class TaskExecutionManager:
                     traceback.print_exc()
                 del futures[future]
                 break
-            time.sleep(1)
+            time.sleep(0.05)
         return report
 
     def __run_manual_task(self):
