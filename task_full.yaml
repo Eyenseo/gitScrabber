@@ -10638,103 +10638,101 @@ projects:
 - git: https://github.com/soffes/Crypto
   manual:
     generalData:
-      type: Wrapper   # TODO
+      type: Wrapper
       related:
-        # - TODO
+        - https://github.com/soffes/CommonCrypto
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: true
+          website: false
+          download: false
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: true
+          examples: true
+          explanations: false
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - Swift       # TODO
+        high: true   
+        low: true    
+      interfaceLanguage:
+      - Swift       
 - git: https://github.com/vapor/crypto
   manual:
     generalData:
-      type: Wrapper   # TODO
+      type: Reimplementation # oder wrapper? 
       related:
-        # - TODO
+        - https://github.com/vapor/ctls # check to be sure
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: false
+          website: false
+          download: false
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: false
+          examples: false
+          explanations: false
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - Swift       # TODO
+        high: true
+        low: false
+      interfaceLanguage:   
+      - Swift       
 - git: https://github.com/krzyzanowskim/CryptoSwift
   manual:
     generalData:
-      type: Wrapper   # TODO
-      related:
-        # - TODO
+      type: Standalone
+      related:        
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: true
+          website: false
+          download: false
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: true
+          examples: true
+          explanations: false
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - Swift       # TODO
+        high: true     
+        low: true     
+      interfaceLanguage:   
+      - Swift       
 - git: https://github.com/verbeeckkristof/crypto
   manual:
     generalData:
-      type: Wrapper   # TODO
-      related:
-        # - TODO
+      type: Standalone
+      related:        
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: true
+          website: false
+          download: false
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: false
+          examples: true
+          explanations: false
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - Swift       # TODO
+        high: true
+        low: false
+      interfaceLanguage:
+      - Swift       
 - git: https://github.com/iosdevzone/IDZSwiftCommonCrypto
   manual:
     generalData:
-      type: Wrapper   # TODO
+      type: Wrapper   
       related:
-        # - TODO
+        - https://opensource.apple.com/source/CommonCrypto/
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: true
+          website: false
+          download: false
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: true
+          examples: true
+          explanations: false
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - Swift       # TODO
+        high: true
+        low: true
+      interfaceLanguage:   
+      - Swift       
 - git: https://github.com/DigitalLeaves/AsymmetricCrypto
   manual:
     generalData:
@@ -10758,23 +10756,23 @@ projects:
 - git: https://github.com/IBM-Swift/BlueCryptor
   manual:
     generalData:
-      type: Wrapper   # TODO
+      type: Reimplementation
       related:
-        # - TODO
+        - https://github.com/iosdevzone/IDZSwiftCommonCrypto
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: true
+          website: false
+          download: false
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: false
+          examples: true
+          explanations: false
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - Swift       # TODO
+        high: true     
+        low: false
+      interfaceLanguage:
+      - Swift      
 - git: https://github.com/SwiftP2P/SwiftSSL
   manual:
     generalData:
@@ -10818,23 +10816,23 @@ projects:
 - git: https://github.com/etienne-martin/CryptoJS.swift
   manual:
     generalData:
-      type: Wrapper   # TODO
+      type: Wrapper
       related:
-        # - TODO
+        - https://github.com/brix/crypto-js
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: true
+          website: false
+          download: false
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: true
+          examples: true
+          explanations: false
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - Swift       # TODO
+        high: true     
+        low: true # check to be sure
+      interfaceLanguage:   
+      - Swift       
 - git: https://github.com/CryptoKitten/CryptoEssentials
   manual:
     generalData:
@@ -10938,23 +10936,23 @@ projects:
 - git: https://github.com/PerfectlySoft/Perfect-Crypto
   manual:
     generalData:
-      type: Wrapper   # TODO
+      type: Wrapper
       related:
-        # - TODO
+        - https://github.com/openssl/openssl
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: true
+          website: false
+          download: false
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: true
+          examples: true
+          explanations: false
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - Swift       # TODO
+        high: true
+        low: false
+      interfaceLanguage:
+      - Swift       
 - git: https://github.com/venj/CommonCrypto
   manual:
     generalData:
@@ -10978,23 +10976,22 @@ projects:
 - git: https://github.com/chrisamanse/CryptoKit
   manual:
     generalData:
-      type: Wrapper   # TODO
-      related:
-        # - TODO
+      type: Standalone
+      related:        
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: true
+          website: false
+          download: false
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: false
+          examples: true
+          explanations: false
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - Swift       # TODO
+        high: true   
+        low: false
+      interfaceLanguage:
+      - Swift       
 - git: https://github.com/yinhaofrancis/Crypto
   manual:
     generalData:
@@ -11018,23 +11015,22 @@ projects:
 - git: https://github.com/OpenKitten/CryptoKitten
   manual:
     generalData:
-      type: Wrapper   # TODO
-      related:
-        # - TODO
+      type: Standalone
+      related:        
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: false
+          website: false
+          download: false
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: false
+          examples: false
+          explanations: false
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - Swift       # TODO
+        high: true
+        low: false
+      interfaceLanguage:   
+      - Swift       
 - git: https://github.com/pentateu/SwiftCrypt
   manual:
     generalData:
@@ -11058,23 +11054,24 @@ projects:
 - git: https://github.com/etienne-martin/WebCrypto.swift
   manual:
     generalData:
-      type: Wrapper   # TODO
+      type: Reimplementation # check to be sure
       related:
-        # - TODO
+        - https://www.w3.org/TR/WebCryptoAPI/
+        - https://github.com/brix/crypto-js
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: true
+          website: false
+          download: false
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: true
+          examples: false
+          explanations: false
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - Swift       # TODO
+        high: true
+        low: true
+      interfaceLanguage:   
+      - Swift       
 - git: https://github.com/rhodgkins/RDHCommonCrypto
   manual:
     generalData:
@@ -11118,23 +11115,23 @@ projects:
 - git: https://github.com/alexaubry/CommonCrypto
   manual:
     generalData:
-      type: Wrapper   # TODO
+      type: Wrapper
       related:
-        # - TODO
+        - https://opensource.apple.com/source/CommonCrypto/
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: false
+          website: false
+          download: false
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: false
+          examples: false
+          explanations: false
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - Swift       # TODO
+        high: true
+        low: false
+      interfaceLanguage:
+      - Swift       
 - git: https://github.com/hanamichi07/CryptoSwift
   manual:
     generalData:
@@ -11338,23 +11335,24 @@ projects:
 - git: https://github.com/IBM-Swift/BlueSSLService
   manual:
     generalData:
-      type: Wrapper   # TODO
+      type: Reimplementation # or wrapper of ssl/tls openssl or applebase?
       related:
-        # - TODO
+        - https://github.com/openssl/openssl
+        - https://developer.apple.com/documentation/security/secure_transport
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: true
+          website: false
+          download: false
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: true
+          examples: true
+          explanations: true
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - Swift       # TODO
+        high: true
+        low: true
+      interfaceLanguage:   
+      - Swift       
 
 
 ##########################################
