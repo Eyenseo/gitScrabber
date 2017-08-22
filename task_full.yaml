@@ -4447,63 +4447,66 @@ projects:
 - git: https://github.com/bitbeans/StreamCryptor
   manual:
     generalData:
-      type: Wrapper   # TODO
-      related:
-        # - TODO
+      type: Standalone
+      related:        
+      dependencies:
+        - https://github.com/adamcaudill/libsodium-net
+        - https://github.com/mgravell/protobuf-net
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: true
+          website: false
+          download: false
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: true
+          examples: false
+          explanations: false
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - C#       # TODO
+        high: true
+        low: false
+      interfaceLanguage:   
+      - C#       
 - git: https://github.com/AArnott/PCLCrypto
   manual:
     generalData:
-      type: Wrapper   # TODO
+      type: Wrapper
       related:
-        # - TODO
+        - operation systems crypto
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: true
+          website: true
+          download: false
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: false
+          examples: true
+          explanations: false
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - C#       # TODO
+        high: true
+        low: true
+      interfaceLanguage:
+      - C#       
 - git: https://github.com/sdrapkin/SecurityDriven.Inferno
   manual:
     generalData:
-      type: Wrapper   # TODO
-      related:
-        # - TODO
+      type: Standalone
+      related:        
+      dependencies:
+        - https://msdn.microsoft.com/en-us/library/system.security.cryptography(v=vs.110).aspx
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: false
+          website: true
+          download: false
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: true
+          examples: true
+          explanations: true
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - C#       # TODO
+        high: true
+        low: true
+      interfaceLanguage:   
+      - C#       
 - git: https://github.com/sshnet/Cryptography
   manual:
     generalData:
@@ -4547,43 +4550,44 @@ projects:
 - git: https://github.com/AlexMAS/GostCryptography
   manual:
     generalData:
-      type: Wrapper   # TODO
-      related:
-        # - TODO
+      type: Standalone
+      related: 
+      dependencies:
+        - https://msdn.microsoft.com/de-de/library/system.security.cryptography(v=vs.110).aspx        
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: true
+          website: false
+          download: false
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: false
+          examples: false
+          explanations: false
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - C#       # TODO
+        high: true
+        low: false
+      interfaceLanguage:
+      - C#       
 - git: https://github.com/ektrah/nsec
   manual:
     generalData:
-      type: Wrapper   # TODO
+      type: Wrapper
       related:
-        # - TODO
+        - https://github.com/jedisct1/libsodium 
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: true
+          website: true
+          download: false
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: true
+          examples: true
+          explanations: true
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - C#       # TODO
+        high: true
+        low: false
+      interfaceLanguage:
+      - C#       
 - git: https://github.com/stanac/EasyCrypto
   manual:
     generalData:
@@ -4707,44 +4711,24 @@ projects:
 - git: https://github.com/Chainers/Cryptography.ECDSA
   manual:
     generalData:
-      type: Wrapper   # TODO
+      type: Reimplementation
       related:
-        # - TODO
+        - https://github.com/warner/python-ecdsa
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: true
+          website: false
+          download: false
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: false
+          examples: true
+          explanations: false
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - C#       # TODO
+        high: true
+        low: false
+      interfaceLanguage: 
+      - C#       
 - git: https://github.com/KalixHealth/Kalix.ApiCrypto
-  manual:
-    generalData:
-      type: Wrapper   # TODO
-      related:
-        # - TODO
-      documentation:
-        exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
-        completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
-      interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - C#       # TODO
-- git: https://github.com/WolfeReiter/iTextSharp
   manual:
     generalData:
       type: Wrapper   # TODO
@@ -4867,43 +4851,43 @@ projects:
 - git: https://github.com/libp2p/cs-libp2p-crypto
   manual:
     generalData:
-      type: Wrapper   # TODO
+      type: Reimplementation
       related:
-        # - TODO
+        - https://github.com/libp2p/go-libp2p-crypto
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: true
+          website: false
+          download: false
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: false
+          examples: false
+          explanations: false
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - C#       # TODO
+        high: true
+        low: false
+      interfaceLanguage:
+      - C#       
 - git: https://github.com/Peter-Juhasz/Science.Cryptography.Ciphers
   manual:
     generalData:
-      type: Wrapper   # TODO
+      type: Wrapper
       related:
-        # - TODO
+        - https://github.com/dotnet/standard
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: true
+          website: true
+          download: true
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: false
+          examples: true
+          explanations: false
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - C#       # TODO
+        high: true
+        low: false
+      interfaceLanguage:  
+      - C#       
 - git: https://github.com/smoy/Xamarin.Droid.AesCrypto
   manual:
     generalData:
@@ -5007,43 +4991,45 @@ projects:
 - git: https://github.com/mheyman/Isopoh.Cryptography.Argon2
   manual:
     generalData:
-      type: Wrapper   # TODO
+      type: Reimplementation
       related:
-        # - TODO
+        - https://github.com/P-H-C/phc-winner-argon2
+        - https://github.com/BLAKE2/BLAKE2
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: true
+          website: false
+          download: false
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: false
+          examples: true
+          explanations: false
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - C#       # TODO
+        high: true
+        low: true
+      interfaceLanguage:   
+      - C#       
 - git: https://github.com/henkmollema/CryptoHelper
   manual:
     generalData:
-      type: Wrapper   # TODO
-      related:
-        # - TODO
+      type: Standalone
+      related:     
+        - https://msdn.microsoft.com/de-de/library/system.security.cryptography(v=vs.110).aspx
+        - https://docs.microsoft.com/en-us/aspnet/core/api/microsoft.aspnetcore.cryptography.keyderivation   
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: true
+          website: false
+          download: false
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: true
+          examples: false
+          explanations: false
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - C#       # TODO
+        high: true
+        low: false
+      interfaceLanguage:
+      - C#       
 - git: https://github.com/Thashiznets/PWDTK.NET
   manual:
     generalData:
@@ -5107,23 +5093,23 @@ projects:
 - git: https://github.com/onovotny/bc-csharp
   manual:
     generalData:
-      type: Wrapper   # TODO
+      type: Reimplementation
       related:
-        # - TODO
+        - https://www.bouncycastle.org/java.html
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: true
+          website: true
+          download: false
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: false
+          examples: false
+          explanations: false
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - C#       # TODO
+        high: false # check to be sure
+        low: true 
+      interfaceLanguage:
+      - C#       
 - git: https://github.com/bcgit/bc-csharp
   manual:
     generalData:
@@ -5147,44 +5133,45 @@ projects:
 - git: https://github.com/Capgemini/Cauldron
   manual:
     generalData:
-      type: Wrapper   # TODO
-      related:
-        # - TODO
+      type: Standalone
+      dependencies: 
+        - https://msdn.microsoft.com/de-de/library/system.security.cryptography(v=vs.110).aspx
+        - https://msdn.microsoft.com/de-de/library/system.security.securestring(v=vs.110).aspx
+      related:        
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: true
+          website: true
+          download: false
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: true
+          examples: true
+          explanations: false
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - C#       # TODO
+        high: true
+        low: false
+      interfaceLanguage:
+      - C#       
 - git: https://github.com/BcryptNet/bcrypt.net
   manual:
     generalData:
-      type: Wrapper   # TODO
+      type: Reimplementation
       related:
-        # - TODO
+        - http://www.mindrot.org/projects/jBCrypt/
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: true
+          website: false
+          download: false
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: false
+          examples: true
+          explanations: false
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - C#       # TODO
-
+        high: true
+        low: true # check to be sure: https://github.com/BcryptNet/bcrypt.net/blob/master/src/BCrypt.Net/BCrypt.cs meight not be neough for low level
+      interfaceLanguage:   
+      - C#       
 - meta:
   id: https://msdn.microsoft.com/de-de/library/system.security.cryptography(v=vs.110).aspx
   manual:

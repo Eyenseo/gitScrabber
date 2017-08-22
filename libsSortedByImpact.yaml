@@ -551,7 +551,6 @@ https://github.com/BcryptNet/bcrypt.net : 27.831369316007574
 https://github.com/AArnott/PCLCrypto : 27.5092967061102
 https://github.com/Capgemini/Cauldron : 27.141843946146064
 https://github.com/Peter-Juhasz/Science.Cryptography.Ciphers : 25.215514493691266
-https://github.com/WolfeReiter/iTextSharp : 24.385355377831665
 https://github.com/sdrapkin/SecurityDriven.Inferno : 23.348135489585854
 https://github.com/AlexMAS/GostCryptography : 22.697405320403423
 https://github.com/henkmollema/CryptoHelper : 21.52942654469178
@@ -560,6 +559,8 @@ https://github.com/bitbeans/StreamCryptor : 20.816363489741633
 https://github.com/Chainers/Cryptography.ECDSA : 20.301274155505528
 https://github.com/libp2p/cs-libp2p-crypto : 19.168585382050203
 https://github.com/ektrah/nsec : 18.526567774422524
+# linie verschiebt sich nochmal nachdem Gewichtung für Sprache festgelegt wrid
+------------ manual data colleciton up until here ------------
 https://github.com/KalixHealth/Kalix.ApiCrypto : 18.22568761926596
 https://github.com/kmaragon/Konscious.Security.Cryptography : 16.855636123484583
 https://github.com/odalet/Delta.Cryptography : 16.204993427136223
