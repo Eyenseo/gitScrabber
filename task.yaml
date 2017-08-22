@@ -5,104 +5,104 @@ projects:
 - git: https://github.com/Eyenseo/ABI
   manual:
     generalData:
-        type: Wrapper # TODO
-        related:
+      type: Wrapper   # TODO
+      related:
         # - TODO
-        documentation:
-            exists:
-                readme: False # TODO
-                website: False # TODO
-                download: False # TODO
-            completeness:
-                APIsListed: False # TODO
-                example: False # TODO
-                explanations: False # TODO
-        interfaceLevel:
-            high: True # TODO
-            low: True # TODO
-        interfaceLanguage: # TODO
-            - C # TODO
+      documentation:
+        exists:
+          readme: false       # TODO
+          website: false       # TODO
+          download: false       # TODO
+        completeness:
+          apis: false       # TODO
+          examples: false       # TODO
+          explanations: false       # TODO
+      interfaceLevel:
+        high: true     # TODO
+        low: true     # TODO
+      interfaceLanguage:   # TODO
+      - C       # TODO
 - git: https://github.com/pyca/cryptography
   manual:
     generalData:
-        type: Wrapper # TODO
-        related:
+      type: Wrapper   # TODO
+      related:
         # - TODO
-        documentation:
-            exists:
-                readme: False # TODO
-                website: False # TODO
-                download: False # TODO
-            completeness:
-                APIsListed: False # TODO
-                example: False # TODO
-                explanations: False # TODO
-        interfaceLevel:
-            high: True # TODO
-            low: True # TODO
-        interfaceLanguage: # TODO
-            - C # TODO
+      documentation:
+        exists:
+          readme: false       # TODO
+          website: false       # TODO
+          download: false       # TODO
+        completeness:
+          apis: false       # TODO
+          examples: false       # TODO
+          explanations: false       # TODO
+      interfaceLevel:
+        high: true     # TODO
+        low: true     # TODO
+      interfaceLanguage:   # TODO
+      - C       # TODO
 - git: https://github.com/openssl/openssl
   manual:
     generalData:
-        type: Wrapper # TODO
-        related:
+      type: Wrapper   # TODO
+      related:
         # - TODO
-        documentation:
-            exists:
-                readme: False # TODO
-                website: False # TODO
-                download: False # TODO
-            completeness:
-                APIsListed: False # TODO
-                example: False # TODO
-                explanations: False # TODO
-        interfaceLevel:
-            high: True # TODO
-            low: True # TODO
-        interfaceLanguage: # TODO
-            - Java # TODO
+      documentation:
+        exists:
+          readme: false       # TODO
+          website: false       # TODO
+          download: false       # TODO
+        completeness:
+          apis: false       # TODO
+          examples: false       # TODO
+          explanations: false       # TODO
+      interfaceLevel:
+        high: true     # TODO
+        low: true     # TODO
+      interfaceLanguage:   # TODO
+      - Java       # TODO
 - git: https://github.com/ZewoGraveyard/OpenSSL
   manual:
     generalData:
-        type: Wrapper # TODO
-        related:
+      type: Wrapper   # TODO
+      related:
         # - TODO
-        documentation:
-            exists:
-                readme: False # TODO
-                website: False # TODO
-                download: False # TODO
-            completeness:
-                APIsListed: False # TODO
-                example: False # TODO
-                explanations: False # TODO
-        interfaceLevel:
-            high: True # TODO
-            low: True # TODO
-        interfaceLanguage: # TODO
-            - C # TODO
+      documentation:
+        exists:
+          readme: false       # TODO
+          website: false       # TODO
+          download: false       # TODO
+        completeness:
+          apis: false       # TODO
+          examples: false       # TODO
+          explanations: false       # TODO
+      interfaceLevel:
+        high: true     # TODO
+        low: true     # TODO
+      interfaceLanguage:   # TODO
+      - C       # TODO
 # archive urls that will be downloaded and analysed
 - archive: ftp://ftp.franken.de/pub/crypt/cryptlib/cl3431.zip
   manual:
     generalData:
-        type: Wrapper # TODO
-        related:
+      type: Wrapper   # TODO
+      related:
         # - TODO
-        documentation:
-            exists:
-                readme: False # TODO
-                website: False # TODO
-                download: False # TODO
-            completeness:
-                APIsListed: False # TODO
-                example: False # TODO
-                explanations: False # TODO
-        interfaceLevel:
-            high: True # TODO
-            low: True # TODO
-        interfaceLanguage: # TODO
-            - C++ # TODO
+      documentation:
+        exists:
+          readme: false       # TODO
+          website: false       # TODO
+          download: false       # TODO
+        completeness:
+          apis: false       # TODO
+          examples: false       # TODO
+          explanations: false       # TODO
+      interfaceLevel:
+        high: true     # TODO
+        low: true     # TODO
+      interfaceLanguage:   # TODO
+      - C++       # TODO
 # manual data for projects that do not provide a git repo or archive
 # but should be analysed by the reportScrabber
 - meta:
@@ -110,23 +110,23 @@ projects:
   id: foo://bar
   manual:
     generalData:
-        type: Wrapper # TODO
-        related:
+      type: Wrapper   # TODO
+      related:
         # - TODO
-        documentation:
-            exists:
-                readme: False # TODO
-                website: False # TODO
-                download: False # TODO
-            completeness:
-                APIsListed: False # TODO
-                example: False # TODO
-                explanations: False # TODO
-        interfaceLevel:
-            high: True # TODO
-            low: True # TODO
-        interfaceLanguage: # TODO
-            - C++ # TODO
+      documentation:
+        exists:
+          readme: false       # TODO
+          website: false       # TODO
+          download: false       # TODO
+        completeness:
+          apis: false       # TODO
+          examples: false       # TODO
+          explanations: false       # TODO
+      interfaceLevel:
+        high: true     # TODO
+        low: true     # TODO
+      interfaceLanguage:   # TODO
+      - C++       # TODO
 # Tasks that should be run for the projects in parallel
 # (sequentially for each project - the order matters!)
 project_tasks:
@@ -507,3 +507,4 @@ project_tasks:
 report_tasks:
   - ImpactCalculator
   - ProjectSizeCalculator
+  - EaseOfUseEstimation
