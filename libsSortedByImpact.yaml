@@ -255,6 +255,7 @@ https://github.com/etienne-martin/WebCrypto.swift : 17.128041497547517 # check t
 ------------ manual data colleciton up until here ------------
 https://github.com/DigitalLeaves/AsymmetricCrypto : 16.830400940998828
 https://github.com/saiyuujob/CryptoWithSwift : 16.24137712000046
+https://github.com/desmondmcnamee/SwiftCommonCrypto : 16.24475668415141
 https://github.com/venj/CommonCrypto : 16.083192082502233
 https://github.com/tattn/Crypto : 15.928641587441508
 https://github.com/CryptoKitten/CryptoEssentials : 15.406710074359797
@@ -289,7 +290,8 @@ https://github.com/tectiv3/react-native-aes : 18.67207298130268
 https://github.com/tradle/react-native-ecc : 17.980248575764303
 https://github.com/AlexanderBirks/Encryption-Key : 16.458254968498334
 https://github.com/hohl/MIHCrypto : 16.266429922852062
-https://github.com/desmondmcnamee/SwiftCommonCrypto : 16.24475668415141
+# linie verschiebt sich nochmal nachdem Gewichtung für Sprache festgelegt wrid
+------------ manual data colleciton up until here ------------
 https://github.com/TakahikoKawasaki/nv-ios-digest : 16.108932748853896
 https://github.com/FardadCo/LaraCryptObjC : 16.042947977951616
 https://github.com/edward1985/RSA_crypto : 15.819069223380872

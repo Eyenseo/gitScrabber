@@ -9877,23 +9877,24 @@ projects:
 - git: https://github.com/tectiv3/react-native-aes
   manual:
     generalData:
-      type: Wrapper   # TODO
+      type: Wrapper
       related:
-        # - TODO
+        - https://opensource.apple.com/source/CommonCrypto/
+        - https://docs.oracle.com/javase/7/docs/api/javax/crypto/package-summary.html        
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: true
+          website: false
+          download: false
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: true
+          examples: true
+          explanations: false
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - Objective-C       # TODO
+        high: true     
+        low: false
+      interfaceLanguage:  
+      - Objective-C       
 - git: https://github.com/RenanDiaz/Cryptos
   manual:
     generalData:
@@ -10034,26 +10035,6 @@ projects:
         low: true     # TODO
       interfaceLanguage:   # TODO
       - Objective-C       # TODO
-- git: https://github.com/desmondmcnamee/SwiftCommonCrypto
-  manual:
-    generalData:
-      type: Wrapper   # TODO
-      related:
-        # - TODO
-      documentation:
-        exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
-        completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
-      interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - Objective-C       # TODO
 - git: https://github.com/kompozer/cryptobox-ios
   manual:
     generalData:
@@ -10097,63 +10078,65 @@ projects:
 - git: https://github.com/AlexanderBirks/Encryption-Key
   manual:
     generalData:
-      type: Wrapper   # TODO
+      type: Wrapper   
       related:
-        # - TODO
+        - https://opensource.apple.com/source/CommonCrypto/
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: false
+          website: false
+          download: false
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: false
+          examples: false
+          explanations: false
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - Objective-C       # TODO
+        high: true
+        low: false
+      interfaceLanguage:
+      - Objective-C     
 - git: https://github.com/tradle/react-native-ecc
   manual:
     generalData:
-      type: Wrapper   # TODO
-      related:
-        # - TODO
+      type: Wrapper   
+      related: # check to be sure, migh be new impl not wrapped funct
+        - https://docs.oracle.com/javase/7/docs/api/java/security/package-summary.html
+        - https://opensource.apple.com/source/CommonCrypto/
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: true
+          website: false
+          download: false
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: false
+          examples: true
+          explanations: false
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - Objective-C       # TODO
+        high: true
+        low: false
+      interfaceLanguage:   
+      - Objective-C       
 - git: https://github.com/remobile/react-native-des
   manual:
     generalData:
-      type: Wrapper   # TODO
+      type: Wrapper
       related:
-        # - TODO
+        - https://opensource.apple.com/source/CommonCrypto/
+        - https://docs.oracle.com/javase/7/docs/api/javax/crypto/package-summary.html        
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: true
+          website: false
+          download: false
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: true
+          examples: true
+          explanations: false
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - Objective-C       # TODO
+        high: true
+        low: false
+      interfaceLanguage:
+      - Objective-C     
 - git: https://github.com/willbetter/LFCommonCrypto
   manual:
     generalData:
@@ -10177,23 +10160,24 @@ projects:
 - git: https://github.com/Daniate/INBSecurityCrypto
   manual:
     generalData:
-      type: Wrapper   # TODO
+      type: Wrapper
       related:
-        # - TODO
+        - https://opensource.apple.com/source/CommonCrypto/
+        - https://developer.apple.com/documentation/corefoundation
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: true
+          website: false
+          download: false
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: false
+          examples: false
+          explanations: false
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - Objective-C       # TODO
+        high: true
+        low: false
+      interfaceLanguage: 
+      - Objective-C      
 - git: https://github.com/nicklockwood/CryptoCoding
   manual:
     generalData:
@@ -10237,23 +10221,23 @@ projects:
 - git: https://github.com/aerogear/aerogear-crypto-ios
   manual:
     generalData:
-      type: Wrapper   # TODO
+      type: Wrapper
       related:
-        # - TODO
+        - http://nacl.cr.yp.to/
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: true
+          website: true
+          download: false
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: true
+          examples: true
+          explanations: true
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - Objective-C       # TODO
+        high: true
+        low: true
+      interfaceLanguage:
+      - Objective-C     
 - git: https://github.com/timburks/NuCrypto
   manual:
     generalData:
@@ -10417,23 +10401,23 @@ projects:
 - git: https://github.com/aerogear/aerogear-cordova-crypto
   manual:
     generalData:
-      type: Wrapper   # TODO
+      type: Reimplementation
       related:
-        # - TODO
+        - https://aerogear.org/docs/specs/aerogear-js/AeroGear.Crypto.html
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: true
+          website: true
+          download: false
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: false
+          examples: true
+          explanations: false
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - Objective-C       # TODO
+        high: true
+        low: false
+      interfaceLanguage:
+      - Objective-C     
 - git: https://github.com/nixplay/crypto
   manual:
     generalData:
@@ -10457,23 +10441,24 @@ projects:
 - git: https://github.com/ameingast/cryptokit
   manual:
     generalData:
-      type: Wrapper   # TODO
+      type: Wrapper
       related:
-        # - TODO
+        - https://developer.apple.com/documentation/corefoundation
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: true
+          website: false
+          download: false
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: true
+          examples: false
+          explanations: false
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - Objective-C       # TODO
+        high: true
+        low: false
+      interfaceLanguage:
+      - Objective-C       
+      - Swift
 - git: https://github.com/ndouglas/ReactiveCryptor
   manual:
     generalData:
@@ -10497,43 +10482,44 @@ projects:
 - git: https://github.com/ideawu/Objective-C-RSA
   manual:
     generalData:
-      type: Wrapper   # TODO
+      type: Standalone
       related:
-        # - TODO
+      dependencies:
+        - https://opensource.apple.com/source/Security/Security-54.1/Keychain/Security.h.auto.html
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: true
+          website: true
+          download: false
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: true
+          examples: true
+          explanations: false
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - Objective-C       # TODO
+        high: true
+        low: false
+      interfaceLanguage:   
+      - Objective-C       
 - git: https://github.com/hohl/MIHCrypto
   manual:
     generalData:
-      type: Wrapper   # TODO
+      type: Wrapper
       related:
-        # - TODO
+        - https://github.com/openssl/openssl
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: true
+          website: true
+          download: false
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: true
+          examples: true
+          explanations: false
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - Objective-C       # TODO
+        high: true
+        low: false
+      interfaceLanguage:   
+      - Objective-C       
 
 - archive: https://chilkatdownload.com/9.5.0.68/chilkat-9.5.0-ios.zip
   manual:
@@ -11339,7 +11325,27 @@ projects:
         high: true
         low: true
       interfaceLanguage:   
-      - Swift       
+      - Swift
+- git: https://github.com/desmondmcnamee/SwiftCommonCrypto
+  manual:
+    generalData:
+      type: Wrapper
+      related:
+        - https://opensource.apple.com/source/CommonCrypto/
+      documentation:
+        exists:
+          readme: false
+          website: false
+          download: false
+        completeness:
+          apis: false
+          examples: false
+          explanations: false
+      interfaceLevel:
+        high: true
+        low: false
+      interfaceLanguage:
+      - Swift           
 
 
 ##########################################
