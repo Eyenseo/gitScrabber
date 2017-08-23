@@ -6,25 +6,24 @@ projects:
 - git: https://github.com/openluopworld/aes_128
   manual:
     generalData:
-      type: Wrapper   # TODO
+      type: Standalone
       related:
-        # - TODO
       licences:
       - MIT
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: true
+          website: true
+          download: false
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: true
+          examples: false
+          explanations: true
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - C       # TODO
+        high: true
+        low: false
+      interfaceLanguage:
+      - C
 - git: https://github.com/WickrInc/wickr-crypto-c
   manual:
     generalData:
@@ -134,48 +133,46 @@ projects:
 - git: https://github.com/iadgov/simon-speck-supercop
   manual:
     generalData:
-      type: Wrapper   # TODO
+      type: Standalone
       related:
-        # - TODO
       licences:
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: true
+          website: false
+          download: false
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: false
+          examples: false
+          explanations: false
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - C       # TODO
+        high: true
+        low: false
+      interfaceLanguage:
+      - C
 - git: https://github.com/abderraouf-adjal/ArduinoSpritzCipher
   manual:
     generalData:
-      type: Wrapper   # TODO
+      type: Standalone
       related:
-        # - TODO
       licences:
       - MIT
       - CC-BY-SA-4.0
       - Public Domain
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: true
+          website: false
+          download: false
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: true
+          examples: true
+          explanations: true
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - C       # TODO
+        high: true
+        low: false
+      interfaceLanguage:
+      - C
 - git: https://github.com/AtmelCSO/cryptoauth-openssl-engine
   manual:
     generalData:
@@ -201,25 +198,34 @@ projects:
 - git: https://github.com/cossacklabs/themis
   manual:
     generalData:
-      type: Wrapper   # TODO
+      type: Standalone
       related:
-        # - TODO
       licences:
       - Apache-2.0
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: true
+          website: true
+          download: true
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: true
+          examples: true
+          explanations: true
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - C       # TODO
+        high: true
+        low: false
+      interfaceLanguage:
+      - C
+      - C++
+      - Swift
+      - Objective-C
+      - Java
+      - Ruby
+      - Python
+      - PHP
+      - C++
+      - Javascript
+      - Go
 - git: https://github.com/catwell/lua-chacha
   manual:
     generalData:
@@ -289,25 +295,26 @@ projects:
 - git: https://github.com/miracl/milagro-crypto-c
   manual:
     generalData:
-      type: Wrapper   # TODO
+      type: Standalone
       related:
-        # - TODO
       licences:
       - Apache-2.0
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: true
+          website: false
+          download: true
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: false
+          examples: true
+          explanations: true
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - C       # TODO
+        high: true
+        low: true
+      interfaceLanguage:
+      - C
+      - Python
+      - Go
 - git: https://github.com/noloader/SHA-Intrinsics
   manual:
     generalData:
@@ -332,26 +339,25 @@ projects:
 - git: https://github.com/gost-engine/engine
   manual:
     generalData:
-      type: Wrapper   # TODO
+      type: Standalone
       related:
-        # - TODO
       licences:
       - OpenSSL
       - SSLeay
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: false
+          website: false
+          download: false
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: false
+          examples: false
+          explanations: false
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - C       # TODO
+        high: true
+        low: false
+      interfaceLanguage:
+      - C
 - git: https://github.com/fgsch/libvmod-crypto
   manual:
     generalData:
@@ -399,27 +405,27 @@ projects:
 - git: https://github.com/eduardsui/tlse
   manual:
     generalData:
-      type: Wrapper   # TODO
+      type: Wrapper
       related:
-        # - TODO
+      - https://github.com/libtom/libtomcrypt
       licences:
       - Public Domain
       - MIT
       - BSD
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: true
+          website: false
+          download: false
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: true
+          examples: true
+          explanations: true
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - C       # TODO
+        high: true
+        low: false
+      interfaceLanguage:
+      - C
 - git: https://github.com/Silur/openzkp
   manual:
     generalData:
@@ -530,26 +536,25 @@ projects:
 - git: https://github.com/gpg/libgcrypt
   manual:
     generalData:
-      type: Wrapper   # TODO
+      type: Standalone
       related:
-        # - TODO
       licences:
       - GPL-2.0
       - LGPL-2.1
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: true
+          website: true
+          download: true
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: true
+          examples: true
+          explanations: true
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - C       # TODO
+        high: true
+        low: false
+      interfaceLanguage:
+      - C
 - git: https://github.com/bahusvel/CryptoMalloc
   manual:
     generalData:
@@ -847,47 +852,51 @@ projects:
 - git: https://github.com/PPC64/sha2-le
   manual:
     generalData:
-      type: Wrapper   # TODO
+      type: Standalone
       related:
-        # - TODO
       licences:
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: true
+          website: false
+          download: false
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: false
+          examples: false
+          explanations: false
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - C       # TODO
+        high: true
+        low: false
+      interfaceLanguage:
+      - C
 - git: https://github.com/LoupVaillant/Monocypher
   manual:
     generalData:
-      type: Wrapper   # TODO
+      type: Standalone
       related:
-        # - TODO
+      - http://libsodium.org/
+      - http://tweetnacl.cr.yp.to/
+      - https://github.com/konovod/monocypher.cr
+      - https://github.com/philanc/luanacha
       licences:
       - BSD-2-Clause
       - Own License
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: true
+          website: true
+          download: false
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: true
+          examples: false
+          explanations: true
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - C       # TODO
+        high: true
+        low: false
+      interfaceLanguage:
+      - C
+      - Crystal
+      - Lua
 - git: https://github.com/lgyhitler/node-weixin-crypto
   manual:
     generalData:
@@ -911,25 +920,25 @@ projects:
 - git: https://github.com/Cyberunner23/libsodium-CMake
   manual:
     generalData:
-      type: Wrapper   # TODO
+      type: Fork
       related:
-        # - TODO
+      - https://github.com/jedisct1/libsodium
       licences:
       - ISC
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: true
+          website: true
+          download: true
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: true
+          examples: true
+          explanations: true
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - C       # TODO
+        high: true
+        low: true
+      interfaceLanguage:
+      - C
 - git: https://github.com/cipherboy/crypto-collection
   manual:
     generalData:
@@ -1038,26 +1047,26 @@ projects:
 - git: https://github.com/xyzz/vita-openssl
   manual:
     generalData:
-      type: Wrapper   # TODO
+      type: Fork
       related:
-        # - TODO
+      - https://github.com/openssl/openssl
       licences:
       - OpenSSL
       - SSLeay
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: true
+          website: false
+          download: false
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: false
+          examples: false
+          explanations: false
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - C       # TODO
+        high: true
+        low: true
+      interfaceLanguage:
+      - C
 - git: https://github.com/polysome/vane
   manual:
     generalData:
@@ -1081,25 +1090,25 @@ projects:
 - git: https://github.com/wireapp/libsodium
   manual:
     generalData:
-      type: Wrapper   # TODO
+      type: Fork
       related:
-        # - TODO
+      - https://github.com/jedisct1/libsodium
       licences:
       - ISC
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: true
+          website: false
+          download: false
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: false
+          examples: false
+          explanations: false
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - C       # TODO
+        high: true
+        low: true
+      interfaceLanguage:
+      - C
 - git: https://github.com/noizbuster/itsp-crypto-practice
   manual:
     generalData:
@@ -1125,25 +1134,24 @@ projects:
 - git: https://github.com/hosseinsh/Crypto-Engine-Contiki # special hardware/no lib?
   manual:
     generalData:
-      type: Wrapper   # TODO
+      type: Standalone
       related:
-        # - TODO
       licences:
       - BSD-3-Clause
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: true
+          website: false
+          download: false
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: false
+          examples: true
+          explanations: true
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - C       # TODO
+        high: true
+        low: false
+      interfaceLanguage:
+      - C
 - git: https://github.com/zhulianhai/CryptoWrapperForCCode
   manual:
     generalData:
@@ -1229,24 +1237,24 @@ projects:
 - git: https://github.com/tancred/tweetnacl-objc
   manual:
     generalData:
-      type: Wrapper   # TODO
+      type: Wrapper
       related:
-        # - TODO
+      - http://tweetnacl.cr.yp.to/
       licences:
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: true
+          website: false
+          download: false
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: false
+          examples: true
+          explanations: false
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - C       # TODO
+        high: true
+        low: false
+      interfaceLanguage:
+      - Objective-C
 - git: https://github.com/bukka/php-rsa
   manual:
     generalData:
@@ -1466,26 +1474,25 @@ projects:
 - git: https://github.com/Samsung/ckm
   manual:
     generalData:
-      type: Wrapper   # TODO
+      type: Standalone
       related:
-        # - TODO
       licences:
       - Apache-2.0
       - Boost Software License
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: true
+          website: false
+          download: false
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: false
+          examples: false
+          explanations: false
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - C       # TODO
+        high: true
+        low: false
+      interfaceLanguage:
+      - C
 - git: https://github.com/ryankurte/cryptlib
   manual:
     generalData:
@@ -1509,25 +1516,26 @@ projects:
 - git: https://github.com/alex-chan/swift-sodium
   manual:
     generalData:
-      type: Wrapper   # TODO
+      type: Wrapper
       related:
-        # - TODO
+      - https://download.libsodium.org/doc/
       licences:
       - ISC
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: true
+          website: false
+          download: false
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: true
+          examples: true
+          explanations: false
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - C       # TODO
+        high: true
+        low: false
+      interfaceLanguage:
+      - Swift
+      - Objective-C
 - git: https://github.com/fergul/TinyECC
   manual:
     generalData:
@@ -1575,160 +1583,152 @@ projects:
 - git: https://github.com/jedisct1/libsodium
   manual:
     generalData:
-      type: Wrapper   # TODO
+      type: Fork
       related:
-        # - TODO
+      - http://nacl.cr.yp.to/
       licences:
       - ISC
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: true
+          website: true
+          download: true
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: true
+          examples: true
+          explanations: true
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - C       # TODO
+        high: true
+        low: true
+      interfaceLanguage:
+      - C
 - git: https://github.com/trezor/trezor-crypto
   manual:
     generalData:
-      type: Wrapper   # TODO
+      type: Wrapper
       related:
-        # - TODO
+      - https://github.com/BrianGladman/aes
+      - https://github.com/luke-jr/libbase58
+      - https://github.com/BLAKE2/BLAKE2
+      - https://github.com/ARMmbed/mbedtls
+      - http://www.aarongifford.com/computers/sha.html
+      - https://github.com/rhash/RHash
+      - https://github.com/agl/curve25519-donna
+      - https://github.com/floodyberry/ed25519-donna
+      - https://github.com/wg/c20p1305
+      - https://github.com/floodyberry/poly1305-donna
       licences:
       - MIT
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: true
+          website: false
+          download: false
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: false
+          examples: false
+          explanations: false
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - C       # TODO
-- git: https://github.com/miracl/milagro-crypto-c
-  manual:
-    generalData:
-      type: Wrapper   # TODO
-      related:
-        # - TODO
-      documentation:
-        exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
-        completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
-      interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - C       # TODO
+        high: false
+        low: true
+      interfaceLanguage:
+      - C
 - git: https://boringssl.googlesource.com/boringssl/  # not intended for general use
   manual:
     generalData:
-      type: Wrapper   # TODO
+      type: Fork
       related:
-        # - TODO
+      - https://github.com/openssl/openssl
       licences:
       - OpenSSL
       - SSLeay
       - ISC
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: true
+          website: false
+          download: false
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: true
+          examples: true
+          explanations: true
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - C       # TODO
+        high: true
+        low: true
+      interfaceLanguage:
+      - C
 - git: https://github.com/libtom/libtomcrypt
   manual:
     generalData:
-      type: Wrapper   # TODO
+      type: Standalone
       related:
-        # - TODO
       licences:
       - Public Domain
       - WTFPL
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: true
+          website: true
+          download: true
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: true
+          examples: true
+          explanations: true
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - C       # TODO
+        high: true
+        low: true
+      interfaceLanguage:
+      - C
 - git: https://github.com/wolfssl/wolfssl
   manual:
     generalData:
-      type: Wrapper   # TODO
+      type: Wrapper
       related:
-        # - TODO
+      - https://www.wolfssl.com/wolfSSL/Products-wolfcrypt.html
       licences:
       - GPL-2.0
       - commercial
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: true
+          website: true
+          download: true
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: true
+          examples: true
+          explanations: true
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - C       # TODO
+        high: true
+        low: false     # 'offers a simple API'
+      interfaceLanguage:
+      - C
+      - Java
+      - C#
+      - Python
+      - PHP
+      - Perl
 - git: https://github.com/openssl/openssl
   manual:
     generalData:
-      type: Wrapper   # TODO
+      type: Standalone
       related:
-        # - TODO
       licences:
       - OpenSSL
       - SSLeay
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: true
+          website: true
+          download: false
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: false
+          examples: true
+          explanations: true
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - C       # TODO
+        high: true
+        low: true
+      interfaceLanguage:
+      - C
 - git: http://git.eclipse.org/gitroot/tinydtls/org.eclipse.tinydtls.git
   manual:
     generalData:
