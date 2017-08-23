@@ -11354,63 +11354,63 @@ projects:
 - git: https://github.com/joshwetzel/cryptosystem
   manual:
     generalData:
-      type: Wrapper   # TODO
+      type: Wrapper
       related:
-        # - TODO
+        - https://github.com/openssl/openssl
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: true
+          website: false
+          download: false
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: true
+          examples: true
+          explanations: true
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - Ruby       # TODO
+        high: true
+        low: false
+      interfaceLanguage: 
+      - Ruby       
 - git: https://github.com/mitaku/reversible_cryptography
   manual:
     generalData:
-      type: Wrapper   # TODO
+      type: Wrapper
       related:
-        # - TODO
+        - https://github.com/openssl/openssl
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: true
+          website: false
+          download: false
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: true
+          examples: true
+          explanations: false
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - Ruby       # TODO
+        high: true
+        low: false
+      interfaceLanguage:
+      - Ruby       
 - git: https://github.com/grempe/sirp
   manual:
     generalData:
-      type: Wrapper   # TODO
+      type: Fork
       related:
-        # - TODO
+        - https://github.com/lamikae/srp-rb
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: true
+          website: true
+          download: false
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: true
+          examples: true
+          explanations: true
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - Ruby       # TODO
+        high: true
+        low: false
+      interfaceLanguage:  
+      - Ruby       
 - git: https://github.com/LupineDev/lupine_crypto # not ready for first release?
   manual:
     generalData:
@@ -11434,23 +11434,23 @@ projects:
 - git: https://github.com/VirgilSecurity/virgil-crypto-ruby
   manual:
     generalData:
-      type: Wrapper   # TODO
+      type: Wrapper
       related:
-        # - TODO
+        - https://github.com/VirgilSecurity/virgil-crypto
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: true
+          website: false
+          download: false
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: false
+          examples: false
+          explanations: false
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - Ruby       # TODO
+        high: true
+        low: false
+      interfaceLanguage:   
+      - Ruby       
 - git: https://github.com/Maxwell-Alexius/Ruby-Cryptography
   manual:
     generalData:
@@ -11514,23 +11514,23 @@ projects:
 - git: https://github.com/cryptosphere/rbnacl
   manual:
     generalData:
-      type: Wrapper   # TODO
+      type: Wrapper
       related:
-        # - TODO
+        - http://nacl.cr.yp.to/
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: true
+          website: true
+          download: true
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: true
+          examples: true
+          explanations: true
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - Ruby       # TODO
+        high: true
+        low: true
+      interfaceLanguage:   
+      - Ruby       
 - git: https://github.com/cryptosphere/cryptor
   manual:
     generalData:
@@ -11554,23 +11554,23 @@ projects:
 - git: https://github.com/mdp/gibberish
   manual:
     generalData:
-      type: Wrapper   # TODO
+      type: Wrapper
       related:
-        # - TODO
+        - https://github.com/openssl/openssl
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: true
+          website: true
+          download: false
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: true
+          examples: true
+          explanations: false
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - Ruby       # TODO
+        high: true
+        low: true
+      interfaceLanguage:   
+      - Ruby       
 - git: https://github.com/krypt/krypt
   manual:
     generalData:
@@ -11654,43 +11654,43 @@ projects:
 - git: https://github.com/codahale/bcrypt-ruby
   manual:
     generalData:
-      type: Wrapper   # TODO
+      type: Wrapper
       related:
-        # - TODO
+        - https://man.openbsd.org/bcrypt.3
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: true
+          website: false
+          download: false
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: false
+          examples: true
+          explanations: true
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - Ruby       # TODO
+        high: true     
+        low: false
+      interfaceLanguage:
+      - Ruby       
 - git: https://github.com/pbhogan/scrypt
   manual:
     generalData:
-      type: Wrapper   # TODO
+      type: Wrapper
       related:
-        # - TODO
+        - http://www.tarsnap.com/scrypt.html
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: true
+          website: false
+          download: false
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: true
+          examples: true
+          explanations: true
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - Ruby       # TODO
+        high: true
+        low: true
+      interfaceLanguage:   
+      - Ruby       
 
 
 ##########################################
