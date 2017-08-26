@@ -133,14 +133,16 @@ class MetaProject():
 
         :returns: The name of the given project
         """
-        if('id' in project):
-            return project['id']
+        if('name' in project):
+            return project['name']
         elif('git' in project):
             return project['git'].rstrip('\\').rsplit('/', 1)[-1]
         elif('svn' in project):
             return project['svn'].rstrip('\\').rsplit('/', 1)[-1]
         elif('archive' in project):
             return project['archive'].rstrip('\\').rsplit('/', 1)[-1]
+        elif('id' in project):
+            return project['id']
         else:
             raise Exception("The following project is neither an archive or "
                             "git and doesn't provide an id:\n"
@@ -421,7 +423,13 @@ class TaskExecutionManager:
                 deep_merge(report, {
                     'projects': {project.id: project.manual_data}})
             deep_merge(report, {
-                'projects': {project.id: {"url": project.url}}})
+                'projects': {
+                    project.id: {
+                        "url": project.url,
+                        'name': project.name
+                    }
+                }
+            })
         return report
 
     def __run_project_tasks(self):
