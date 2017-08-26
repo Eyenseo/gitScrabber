@@ -278,8 +278,8 @@ https://github.com/originalix/iOS-and-Java-AES-Cryptor : 11.229332644073274
 
 ##################### Java ##########################
 https://github.com/apache/commons-crypto : 34.95710716977696
-https://github.com/jcryptool/crypto : 34.74331126831818
-https://github.com/i2p/i2p.i2p : 34.707482541741186
+# TODO : Learning platform https://github.com/jcryptool/crypto : 34.74331126831818
+# TODO : no lib https://github.com/i2p/i2p.i2p : 34.707482541741186
 https://github.com/PersoSim/org.globaltester.cryptoprovider : 28.530685066049486
 https://github.com/tozny/java-aes-crypto : 28.44405454241086
 https://github.com/InstantWebP2P/tweetnacl-java : 27.96861351882871
@@ -292,15 +292,17 @@ https://github.com/google/tink : 23.660855122016038
 https://github.com/VirgilSecurity/virgil-sdk-java-android : 22.680899062667027
 https://github.com/davidcarboni/Cryptolite : 22.61176352447102
 https://github.com/SebastianDeiss/Java-PBKDF2 : 22.51188191388536
-https://github.com/MuharremOkutan/tink : 22.091279225610567
-https://github.com/haikuowuya/tink : 22.091279225610567
-https://github.com/cryptomator/cryptofs : 21.7040289787292
+# TODO : useless fork https://github.com/MuharremOkutan/tink : 22.091279225610567
+# TODO : useless fork https://github.com/haikuowuya/tink : 22.091279225610567
+# TODO : We recommend to use it only for testing and evaluation purposes https://github.com/cryptomator/cryptofs : 21.7040289787292
 https://github.com/cryptomator/cryptolib : 21.233467174920605
-https://github.com/INJAE/Cryptonite : 21.05374654159186
+# TODO : no lib https://github.com/INJAE/Cryptonite : 21.05374654159186
 https://github.com/scottyab/java-aes-crypto : 20.96338296545374
 https://github.com/wireapp/cryptobox-jni : 20.948415610430285
 https://github.com/oversecio/oversec_crypto : 20.80085087681789
-https://github.com/mooreds/gwt-crypto : 20.058365457939715
+# TODO : I am not supporting this project anymore https://github.com/mooreds/gwt-crypto : 20.058365457939715
+# linie verschiebt sich nochmal nachdem Gewichtung für Sprache festgelegt wrid
+------------ manual data colleciton up until here ------------
 https://github.com/ph4r05/Whitebox-crypto-AES-java : 19.96129749482902
 https://github.com/jtdowney/chloride : 19.933227637713273
 https://github.com/sbimochan/dna-crypto : 19.820376599604778
