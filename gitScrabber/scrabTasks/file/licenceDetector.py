@@ -18,13 +18,15 @@ class MetaLicence():
     """
     Convenience object that contains the needed data for the licence matching
 
-    :param    name:    The name of the licence
-    :param    length:  The length of the licence text
-    :param    vector:  The vector of word counts of the licence text
+    :param  name:    The name of the licence
+    :param  short:   The short name of the licence
+    :param  length:  The length of the licence text
+    :param  vector:  The vector of word counts of the licence text
     """
 
-    def __init__(self, name, length, vector):
+    def __init__(self, name, short, length, vector):
         self.name = name
+        self.short = short
         self.length = length
         self.vector = vector
 
@@ -52,8 +54,10 @@ class LicenceDetector(FileTask):
         LICENSE:
         - licence: MIT License
           confidence: 99.58
+          short: MIT
         - licence: JSON License
           confidence: 98.84
+          short: JSON
 
     [1] https://github.com/spdx/license-list-data
 
@@ -94,15 +98,18 @@ class LicenceDetector(FileTask):
         with open(filepath, 'r') as fh:
             licence = json.load(fh)
             name = licence['name']
+            short = licence['licenseId']
 
             if 'licenseText' in licence:
                 licences.append(
                     MetaLicence(name,
+                                short,
                                 len(licence['licenseText']),
                                 self.__text_to_vector(licence['licenseText'])))
             elif 'standardLicenseTemplate' in licence:
                 licences.append(
                     MetaLicence(name,
+                                short,
                                 len(licence['standardLicenseTemplate']),
                                 self.__text_to_vector(
                                     licence['standardLicenseTemplate'])))
@@ -110,6 +117,7 @@ class LicenceDetector(FileTask):
             if 'standardLicenseHeader' in licence:
                 licences.append(
                     MetaLicence(name+' Header',
+                                short,
                                 len(licence['standardLicenseHeader']),
                                 self.__text_to_vector(
                                     licence['standardLicenseHeader'])))
@@ -212,7 +220,8 @@ class LicenceDetector(FileTask):
 
                 self.__report[relative_path].append({
                     'licence': licence.name,
-                    'confidence': float("{0:.2f}".format(cosine*100))
+                    'confidence': float("{0:.2f}".format(cosine*100)),
+                    'short': licence.short
                 })
 
         if relative_path in self.__report:
@@ -228,8 +237,10 @@ class LicenceDetector(FileTask):
                       LICENSE:
                       - licence: MIT License
                         confidence: 99.58
+                        short: MIT
                       - licence: JSON License
                         confidence: 98.84
+                        short: JSON
 
         """
         return self.__report
