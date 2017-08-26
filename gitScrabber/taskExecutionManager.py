@@ -7,8 +7,10 @@ from multiprocessing import cpu_count, Pool
 from utils import deep_merge, md5, to_dict
 
 import os
+import re
 import time
 import traceback
+import unicodedata
 
 reportVersion = 2
 
@@ -118,11 +120,23 @@ class MetaProject():
             self.id = "{}_{}".format(self.name, md5(self.name))
         else:
             self.id = "{}_{}".format(self.name, md5(self.url))
+        self.__texify_id()
 
         if 'location' not in config:
             self.location = os.path.join(cache_dir, self.id)
         else:
             self.location = config['location']
+
+    def __texify_id(self):
+        """
+        The function is responsible for the conversion of a UTF-8 string to a
+        ACSII string that is usable in TeX.
+        """
+        uid = unicodedata.normalize('NFKD', self.id)  # replace 'specials'
+        uid = uid.encode('ascii', 'ignore')  # remove non ascii
+        uid = uid.decode()  # convert to str
+        uid = re.sub(r'[^a-zA-Z0-9_-]', '', uid)  # remove 'bad' TeX chars
+        self.id = uid
 
     def __project_name(self, project):
         """
