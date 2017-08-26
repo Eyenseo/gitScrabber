@@ -93,23 +93,26 @@ https://github.com/weidai11/cryptopp : 34.68716822885435
 https://github.com/msoos/cryptominisat : 33.71159945596183
 https://github.com/KDE/libkleo : 31.59622984106242
 https://github.com/tahoe-lafs/pycryptopp : 28.837134591191067
-https://github.com/PeculiarVentures/pkcs11js : 26.585156659852185
+# TODO :  suitable for research and experimentation https://github.com/PeculiarVentures/pkcs11js : 26.585156659852185
 https://github.com/VirgilSecurity/virgil-foundation-x : 26.232007637582555
+# Why so high?:
 https://github.com/musiko/ofxCrypto : 25.704645326672846
 https://github.com/dark-panda/ruby-cryptopp : 24.941906086338243
 https://github.com/VirgilSecurity/virgil-sdk-cpp : 24.798065422556377
 https://github.com/TrustedPlus/crypto : 24.716709457717705
-https://github.com/Ecoblockchain/cryptonite : 23.30848249000313
+# TODO : useless fork https://github.com/Ecoblockchain/cryptonite : 23.30848249000313
 https://github.com/lime-company/cc7 : 22.417859633102093
 https://github.com/intrbiz/arduino-crypto : 22.2754302262756
 https://github.com/azadkuh/mbedcrypto : 22.035429011374404
 https://github.com/ladnir/cryptoTools : 21.963103231609715
 https://github.com/hieifn/CryptoCaesar : 21.916872709114468
 https://github.com/ph4r05/Whitebox-crypto-AES : 21.831697922255586
-https://github.com/budnail/Cryptosuite : 21.794849067665687
+# TODO : This branch is an experiment https://github.com/budnail/Cryptosuite : 21.794849067665687
 https://github.com/spaniakos/Cryptosuite : 21.712653578847302
 https://github.com/romangol/cryptoBoost : 21.06145578552976
 https://github.com/glueckkanja-pki/NSSWrapper : 20.084730363114005
+# linie verschiebt sich nochmal nachdem Gewichtung für Sprache festgelegt wrid
+------------ manual data colleciton up until here ------------
 https://github.com/JonWBedard/CryptoGateway : 18.982795056232163
 https://github.com/kotl/esp8266-cryptosign : 18.91979538200059
 https://github.com/botezatumihaicatalin/ChaoticImageCrypto : 18.614495079663882
