@@ -645,12 +645,13 @@ https://github.com/tomprogrammer/scram : 21.867971848051475
 https://github.com/Tyzzer/hc256 : 20.647247183519383
 https://github.com/Tyzzer/hc128 : 20.63897330696613
 https://github.com/ctz/webpki-roots : 20.57381109981347
-https://github.com/quininer/sarkara : 20.57221359351687
 https://github.com/malept/crypto-hash : 20.495886560062356
 https://github.com/PeterReid/chacha : 20.35470296889413
 https://github.com/quininer/newhope : 20.32152714129691
 https://github.com/rust-fcp/rust-fcp-cryptoauth : 20.182072575109007
 https://github.com/RustCrypto/block-ciphers : 20.01479619842923
+# linie verschiebt sich nochmal nachdem Gewichtung für Sprache festgelegt wrid
+------------ manual data colleciton up until here ------------
 https://github.com/quininer/blissb : 19.904141015181544
 https://github.com/quininer/seckey : 19.884749801393596
 https://github.com/psychonautwiki/heimdal : 19.776771590489023

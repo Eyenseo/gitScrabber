@@ -11757,26 +11757,25 @@ projects:
 ##########################################
 ## Rust
 ##########################################
-- git: https://github.com/DaGenix/rust-crypto # Nr.1
+- git: https://github.com/DaGenix/rust-crypto 
   manual:
     generalData:
-      type: Wrapper   # TODO
-      related:
-        # - TODO
+      type: Standalone
+      related:        
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: true
+          website: false
+          download: false
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: false
+          examples: false
+          explanations: false
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - Rust       # TODO
+        high: true    
+        low: true
+      interfaceLanguage: 
+      - Rust      
 - git: https://github.com/libOctavo/octavo
   manual:
     generalData:
@@ -11800,23 +11799,23 @@ projects:
 - git: https://github.com/johnschug/rust-gcrypt
   manual:
     generalData:
-      type: Wrapper   # TODO
+      type: Wrapper
       related:
-        # - TODO
+        - https://gnupg.org/related_software/libgcrypt/
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: true
+          website: true
+          download: false
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: true
+          examples: false
+          explanations: false
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - Rust       # TODO
+        high: true
+        low: false
+      interfaceLanguage:
+      - Rust      
 - git: https://github.com/CodingAnarchy/crypto
   manual:
     generalData:
@@ -11900,23 +11899,27 @@ projects:
 - git: https://github.com/sopium/noise-rust
   manual:
     generalData:
-      type: Wrapper   # TODO
+      type: Standalone
       related:
-        # - TODO
+        - http://noiseprotocol.org/
+      dependencies:
+        - https://github.com/dnaq/sodiumoxide
+        - https://github.com/briansmith/ring
+        - https://github.com/DaGenix/rust-crypto
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: true
+          website: false
+          download: false
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: false
+          examples: false
+          explanations: false
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - Rust       # TODO
+        high: true     
+        low: false
+      interfaceLanguage:
+      - Rust       
 - git: https://github.com/Yawning/rust-crypto-nacl
   manual:
     generalData:
@@ -11980,23 +11983,25 @@ projects:
 - git: https://github.com/malept/crypto-hash
   manual:
     generalData:
-      type: Wrapper   # TODO
+      type: Wrapper
       related:
-        # - TODO
+        - https://msdn.microsoft.com/en-us/library/ms867086.aspx
+        - https://crates.io/crates/commoncrypto
+        - https://crates.io/crates/openssl
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: true
+          website: true
+          download: false
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: true
+          examples: true
+          explanations: true
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - Rust       # TODO
+        high: true
+        low: false
+      interfaceLanguage:  
+      - Rust       
 - git: https://github.com/hmac/rust-crypto # keine doku
   manual:
     generalData:
@@ -12100,23 +12105,22 @@ projects:
 - git: https://github.com/ruma/ruma-signatures
   manual:
     generalData:
-      type: Wrapper   # TODO
-      related:
-        # - TODO
+      type: Standalone
+      related:        
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: false
+          website: true
+          download: false
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: true
+          examples: true
+          explanations: true
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - Rust       # TODO
+        high: true
+        low: false
+      interfaceLanguage:
+      - Rust       
 - git: https://github.com/zmbush/crypto_vault
   manual:
     generalData:
@@ -12160,23 +12164,22 @@ projects:
 - git: https://github.com/rust-fcp/rust-fcp-cryptoauth
   manual:
     generalData:
-      type: Wrapper   # TODO
-      related:
-        # - TODO
+      type: Standalone
+      related:        
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: false
+          website: false
+          download: false
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: false
+          examples: false
+          explanations: false
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - Rust       # TODO
+        high: true     
+        low: false
+      interfaceLanguage:   
+      - Rust       
 - git: https://github.com/jmquigs/rs-encryptfile
   manual:
     generalData:
@@ -12340,43 +12343,41 @@ projects:
 - git: https://github.com/SpinResearch/RustySecrets
   manual:
     generalData:
-      type: Wrapper   # TODO
-      related:
-        # - TODO
+      type: Standalone
+      related:        
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: true
+          website: true
+          download: false
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: true
+          examples: true
+          explanations: false
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - Rust       # TODO
+        high: true     
+        low: false
+      interfaceLanguage: 
+      - Rust       
 - git: https://github.com/tomprogrammer/scram
   manual:
     generalData:
-      type: Wrapper   # TODO
-      related:
-        # - TODO
+      type: Standalone
+      related:      
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: true
+          website: true
+          download: false
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: true
+          examples: true
+          explanations: true
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - Rust       # TODO
+        high: true
+        low: true
+      interfaceLanguage:
+      - Rust       
 - git: https://github.com/tiffany352/susurrus
   manual:
     generalData:
@@ -12420,23 +12421,22 @@ projects:
 - git: https://github.com/bryant/argon2rs
   manual:
     generalData:
-      type: Wrapper   # TODO
-      related:
-        # - TODO
+      type: Standalone
+      related:        
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: true
+          website: true
+          download: false
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: true
+          examples: true
+          explanations: true
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - Rust       # TODO
+        high: true
+        low: true
+      interfaceLanguage:   
+      - Rust       
 - git: https://github.com/danielreisinger/blake2b
   manual:
     generalData:
@@ -12480,23 +12480,23 @@ projects:
 - git: https://github.com/PeterReid/chacha
   manual:
     generalData:
-      type: Wrapper   # TODO
+      type: Wrapper
       related:
-        # - TODO
+        - https://docs.rs/chacha/0.1.0/chacha/
       documentation:
         exists:
           readme: false       # TODO
           website: false       # TODO
           download: false       # TODO
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: false
+          examples: true
+          explanations: false
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - Rust       # TODO
+        high: true
+        low: false
+      interfaceLanguage:   
+      - Rust       
 - git: https://github.com/cesarb/chacha20-poly1305-aead
   manual:
     generalData:
@@ -12520,23 +12520,22 @@ projects:
 - git: https://github.com/isislovecruft/curve25519-dalek
   manual:
     generalData:
-      type: Wrapper   # TODO
-      related:
-        # - TODO
+      type: Standalone
+      related:        
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: true
+          website: true
+          download: false
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: true
+          examples: true
+          explanations: true
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - Rust       # TODO
+        high: true
+        low: true
+      interfaceLanguage:  
+      - Rust       
 - git: https://github.com/isislovecruft/ed25519-dalek
   manual:
     generalData:
@@ -12600,43 +12599,41 @@ projects:
 - git: https://github.com/Tyzzer/hc128
   manual:
     generalData:
-      type: Wrapper   # TODO
-      related:
-        # - TODO
+      type: Standalone
+      related:        
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: false
+          website: false
+          download: true
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: false
+          examples: false
+          explanations: false
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - Rust       # TODO
+        high: true
+        low: false
+      interfaceLanguage: 
+      - Rust       
 - git: https://github.com/Tyzzer/hc256
   manual:
     generalData:
-      type: Wrapper   # TODO
-      related:
-        # - TODO
+      type: Standalone
+      related:        
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: false
+          website: false
+          download: true
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: false
+          examples: false
+          explanations: false
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - Rust       # TODO
+        high: true
+        low: false
+      interfaceLanguage:
+      - Rust       
 - git: https://github.com/badboy/jhash-rs
   manual:
     generalData:
@@ -12680,23 +12677,22 @@ projects:
 - git: https://github.com/stainless-steel/md5
   manual:
     generalData:
-      type: Wrapper   # TODO
-      related:
-        # - TODO
+      type: Standalone
+      related:        
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: true
+          website: false
+          download: false
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: false
+          examples: true
+          explanations: false
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - Rust       # TODO
+        high: true
+        low: false
+      interfaceLanguage:   
+      - Rust       
 - git: https://github.com/badboy/murmurhash64-rs
   manual:
     generalData:
@@ -12720,23 +12716,24 @@ projects:
 - git: https://github.com/quininer/newhope
   manual:
     generalData:
-      type: Wrapper   # TODO
+      type: Reimplementation
       related:
-        # - TODO
+        - https://github.com/google/boringssl/tree/master/crypto/newhope
+        - https://github.com/fschlieker/newhope
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: false
+          website: false
+          download: false
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: false
+          examples: false
+          explanations: false
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - Rust       # TODO
+        high: true     
+        low: true     
+      interfaceLanguage:   
+      - Rust       
 - git: https://github.com/zcdziura/pumpkin
   manual:
     generalData:
@@ -12780,23 +12777,24 @@ projects:
 - git: https://github.com/cryptosphere/ring-pwhash
   manual:
     generalData:
-      type: Wrapper   # TODO
+      type: Standalone
       related:
-        # - TODO
+      dependencies:
+        - https://github.com/briansmith/ring     
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: true
+          website: true
+          download: false
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: true
+          examples: false
+          explanations: true
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - Rust       # TODO
+        high: true
+        low: true
+      interfaceLanguage: 
+      - Rust       
 - git: https://github.com/Tyzzer/rlwekex
   manual:
     generalData:
@@ -12900,23 +12898,23 @@ projects:
 - git: https://github.com/johnschug/rust-gpgme
   manual:
     generalData:
-      type: Wrapper   # TODO
+      type: Wrapper
       related:
-        # - TODO
+        - https://www.gnupg.org/(it)/related_software/gpgme/index.html
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: true
+          website: true
+          download: false
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: true
+          examples: true
+          explanations: true
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - Rust       # TODO
+        high: true
+        low: false
+      interfaceLanguage: 
+      - Rust       
 - git: https://github.com/vladikoff/rust-hkdf
   manual:
     generalData:
@@ -12960,164 +12958,141 @@ projects:
 - git: https://github.com/mitsuhiko/rust-sha1
   manual:
     generalData:
-      type: Wrapper   # TODO
-      related:
-        # - TODO
+      type: Standalone
+      related:        
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: true
+          website: true
+          download: false
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: true
+          examples: true
+          explanations: false
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - Rust       # TODO
+        high: true
+        low: false
+      interfaceLanguage:
+      - Rust       
 - git: https://github.com/debris/tiny-keccak
   manual:
     generalData:
-      type: Wrapper   # TODO
-      related:
-        # - TODO
+      type: Standalone
+      related:        
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: true
+          website: true
+          download: false
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: true
+          examples: true
+          explanations: false
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - Rust       # TODO
+        high: true
+        low: false
+      interfaceLanguage: 
+      - Rust      
 - git: https://github.com/shepmaster/twox-hash
   manual:
     generalData:
-      type: Wrapper   # TODO
+      type: Reimplementation
       related:
-        # - TODO
+        - https://github.com/Cyan4973/xxHash
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: true
+          website: true
+          download: false
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: true
+          examples: true
+          explanations: false
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - Rust       # TODO
+        high: true
+        low: false
+      interfaceLanguage:
+      - Rust       
 - git: https://github.com/RustCrypto/block-ciphers
   manual:
     generalData:
-      type: Wrapper   # TODO
-      related:
-        # - TODO
+      type: Standalone
+      related:        
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: true
+          website: true
+          download: false
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: true
+          examples: true
+          explanations: true
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - Rust       # TODO
+        high: true
+        low: false
+      interfaceLanguage:  
+      - Rust       
 - git: https://github.com/RustCrypto/hashes
   manual:
     generalData:
-      type: Wrapper   # TODO
-      related:
-        # - TODO
+      type: Standalone
+      related:        
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: true
+          website: true
+          download: false
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: true
+          examples: true
+          explanations: true
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - Rust       # TODO
+        high: true
+        low: false
+      interfaceLanguage:
+      - Rust       
 - git: https://github.com/briansmith/ring #Nr.2
   manual:
     generalData:
-      type: Wrapper   # TODO
+      type: Standalone
       related:
-        # - TODO
+      dependencies:
+        - https://boringssl.googlesource.com/boringssl/        
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: true
+          website: true
+          download: false
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: true
+          examples: true
+          explanations: true
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - Rust       # TODO
+        high: true
+        low: false
+      interfaceLanguage:   
+      - Rust       
 - git: https://github.com/maidsafe/rust_sodium
   manual:
     generalData:
-      type: Wrapper   # TODO
+      type: Wrapper
       related:
-        # - TODO
+        - https://github.com/jedisct1/libsodium
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: true
+          website: true
+          download: false
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: true
+          examples: true
+          explanations: true
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - Rust       # TODO
+        high: true    
+        low: false
+      interfaceLanguage:   
+      - Rust       
 - git: https://github.com/malept/rust-commoncrypto
-  manual:
-    generalData:
-      type: Wrapper   # TODO
-      related:
-        # - TODO
-      documentation:
-        exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
-        completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
-      interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - Rust       # TODO
-- git: https://github.com/quininer/sarkara
   manual:
     generalData:
       type: Wrapper   # TODO
@@ -13160,43 +13135,44 @@ projects:
 - git: https://github.com/dnaq/sodiumoxide
   manual:
     generalData:
-      type: Wrapper   # TODO
+      type: Wrapper
       related:
-        # - TODO
+        - http://nacl.cr.yp.to/
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: true
+          website: true
+          download: false
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: true
+          examples: true
+          explanations: true
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - Rust       # TODO
+        high: true     
+        low: false
+      interfaceLanguage:   
+      - Rust       
 - git: https://github.com/sfackler/rust-openssl
   manual:
     generalData:
-      type: Wrapper   # TODO
+      type: Wrapper
       related:
-        # - TODO
+        - https://github.com/openssl/openssl
+        - https://www.libressl.org/
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: true
+          website: true
+          download: false
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: true
+          examples: false
+          explanations: true
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - Rust       # TODO
+        high: true
+        low: true
+      interfaceLanguage:   
+      - Rust       
 - git: https://github.com/zombiemuffin/edcert
   manual:
     generalData:
@@ -13220,43 +13196,43 @@ projects:
 - git: https://github.com/badboy/nobsign
   manual:
     generalData:
-      type: Wrapper   # TODO
+      type: Reimplementation
       related:
-        # - TODO
+        - https://github.com/cyx/nobi
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: true
+          website: true
+          download: false
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: false
+          examples: true
+          explanations: false
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - Rust       # TODO
+        high: true
+        low: false
+      interfaceLanguage: 
+      - Rust       
 - git: https://github.com/racum/rust-djangohashers
   manual:
     generalData:
-      type: Wrapper   # TODO
+      type: Reimplementation
       related:
-        # - TODO
+        - https://www.djangoproject.com/
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: true
+          website: true
+          download: false
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: true
+          examples: true
+          explanations: true
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - Rust       # TODO
+        high: true
+        low: true
+      interfaceLanguage: 
+      - Rust       
 - git: https://github.com/lemonrock/alt-tls
   manual:
     generalData:
@@ -13300,23 +13276,24 @@ projects:
 - git: https://github.com/ctz/rustls
   manual:
     generalData:
-      type: Wrapper   # TODO
+      type: Wrapper
       related:
-        # - TODO
+        - https://github.com/briansmith/ring
+        - https://github.com/briansmith/webpki
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: true
+          website: true
+          download: false
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: true
+          examples: true
+          explanations: true
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - Rust       # TODO
+        high: false
+        low: true
+      interfaceLanguage:   
+      - Rust       
 - git: https://github.com/jethrogb/rust-mbedtls
   manual:
     generalData:
@@ -13340,83 +13317,87 @@ projects:
 - git: https://github.com/sfackler/rust-native-tls
   manual:
     generalData:
-      type: Wrapper   # TODO
+      type: Wrapper
       related:
-        # - TODO
+        - https://crates.io/crates/schannel
+        - https://crates.io/crates/openssl
+        - https://crates.io/crates/security-framework
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: true
+          website: true
+          download: false
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: true
+          examples: true
+          explanations: true
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - Rust       # TODO
+        high: true     
+        low: false
+      interfaceLanguage:
+      - Rust       
 - git: https://github.com/sfackler/rust-security-framework
   manual:
     generalData:
-      type: Wrapper   # TODO
+      type: Wrapper
       related:
-        # - TODO
+        - https://developer.apple.com/documentation/security
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: true
+          website: true
+          download: false
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: true
+          examples: false
+          explanations: true
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - Rust       # TODO
+        high: true
+        low: false
+      interfaceLanguage: 
+      - Rust       
 - git: https://github.com/steffengy/schannel-rs
   manual:
     generalData:
-      type: Wrapper   # TODO
+      type: Wrapper
       related:
-        # - TODO
+        - https://msdn.microsoft.com/de-de/library/windows/desktop/aa380123(v=vs.85).aspx
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: true
+          website: true
+          download: false
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: true
+          examples: false
+          explanations: true
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - Rust       # TODO
+        high: true
+        low: false
+      interfaceLanguage: 
+      - Rust       
 - git: https://github.com/briansmith/webpki
   manual:
     generalData:
-      type: Wrapper   # TODO
+      type: Reimplementation
       related:
-        # - TODO
+        - https://github.com/briansmith/mozillapkix
+      dependencies:
+        - https://github.com/briansmith/ring
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: true
+          website: true
+          download: false
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: true
+          examples: false
+          explanations: true
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - Rust       # TODO
+        high: true
+        low: true
+      interfaceLanguage: 
+      - Rust      
 - git: https://github.com/cesarb/clear_on_drop
   manual:
     generalData:
@@ -13500,23 +13481,23 @@ projects:
 - git: https://github.com/ctz/webpki-roots
   manual:
     generalData:
-      type: Wrapper   # TODO
+      type: Wrapper
       related:
-        # - TODO
+        - https://mkcert.org/
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: false
+          website: false
+          download: false
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: false
+          examples: false
+          explanations: false
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - Rust       # TODO
+        high: true
+        low: false
+      interfaceLanguage:  
+      - Rust       
 - git: https://github.com/burdges/zerodrop-rs
   manual:
     generalData:
