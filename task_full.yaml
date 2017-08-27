@@ -6007,23 +6007,24 @@ projects:
 - git: https://github.com/IcyApril/CryptoLib
   manual:
     generalData:
-      type: Wrapper   # TODO
+      type: Standalone
       related:
-        # - TODO
+      dependencies:
+        - https://github.com/openssl/openssl
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: true
+          website: true
+          download: false
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: true
+          examples: true
+          explanations: true
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - PHP       # TODO
+        high: true
+        low: true
+      interfaceLanguage:   
+      - PHP       
 - git: https://github.com/YABhq/Crypto
   manual:
     generalData:
@@ -6167,43 +6168,43 @@ projects:
 - git: https://github.com/ventoviro/windwalker-crypt
   manual:
     generalData:
-      type: Wrapper   # TODO
+      type: Wrapper
       related:
-        # - TODO
+        - https://github.com/openssl/openssl
+        - https://github.com/jedisct1/libsodium
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: true
+          website: false
+          download: false
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: true
+          examples: true
+          explanations: true
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - PHP       # TODO
+        high: true
+        low: false
+      interfaceLanguage: 
+      - PHP       
 - git: https://github.com/VirgilSecurity/virgil-sdk-crypto-php
   manual:
     generalData:
-      type: Wrapper   # TODO
+      type: Standalone
       related:
-        # - TODO
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: true
+          website: false
+          download: false
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: false
+          examples: true
+          explanations: false
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - PHP       # TODO
+        high: true
+        low: false
+      interfaceLanguage:   
+      - PHP       
 - git: https://github.com/io-digital/php-crypto
   manual:
     generalData:
@@ -6627,63 +6628,62 @@ projects:
 - git: https://github.com/php/php-src  # PHP itself
   manual:
     generalData:
-      type: Wrapper   # TODO
+      type: standalone
       related:
-        # - TODO
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: true
+          website: true
+          download: true
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: true
+          examples: true
+          explanations: true
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - PHP       # TODO
+        high: true     
+        low: true
+      interfaceLanguage:   
+      - PHP       
 - git: https://github.com/bukka/php-crypto
   manual:
     generalData:
-      type: Wrapper   # TODO
+      type: Wrapper
       related:
-        # - TODO
+        - https://github.com/openssl/openssl
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: true
+          website: false
+          download: false
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: true
+          examples: true
+          explanations: true
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - PHP       # TODO
+        high: true
+        low: true
+      interfaceLanguage:   
+      - PHP       
 - git: https://github.com/defuse/php-encryption
   manual:
     generalData:
-      type: Wrapper   # TODO
+      type: Wrapper
       related:
-        # - TODO
+        - https://github.com/openssl/openssl
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: true
+          website: true
+          download: false
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: true
+          examples: true
+          explanations: true
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - PHP       # TODO
+        high: true
+        low: false
+      interfaceLanguage:
+      - PHP       
 - git: https://github.com/paragonie/halite
   manual:
     generalData:
@@ -6707,43 +6707,42 @@ projects:
 - git: https://github.com/jedisct1/libsodium-php
   manual:
     generalData:
-      type: Wrapper   # TODO
+      type: Wrapper
       related:
-        # - TODO
+        - https://github.com/jedisct1/libsodium
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: true
+          website: true
+          download: false
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: true
+          examples: false
+          explanations: true
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - PHP       # TODO
+        high: true
+        low: true
+      interfaceLanguage:   
+      - PHP       
 - git: https://github.com/phpseclib/phpseclib
   manual:
     generalData:
-      type: Wrapper   # TODO
+      type: Standalone
       related:
-        # - TODO
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: true
+          website: true
+          download: false
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: true
+          examples: false
+          explanations: true
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - PHP       # TODO
+        high: true
+        low: false
+      interfaceLanguage:  
+      - PHP       
 - git: https://github.com/sop/crypto-types
   manual:
     generalData:
