@@ -69,6 +69,7 @@ class GitScrabber:
                     report, outfile, Dumper=ruamel.yaml.RoundTripDumper)
 
         if self.__print:
+            ruamel.yaml.scalarstring.walk_tree(report)
             print(ruamel.yaml.dump(report, Dumper=ruamel.yaml.RoundTripDumper))
 
     def scrab(self):
