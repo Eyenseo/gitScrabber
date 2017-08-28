@@ -360,14 +360,14 @@ https://github.com/bitwiseshiftleft/sjcl : 38.52727059027725
 https://github.com/yaronn/xml-crypto : 35.8046938698939
 https://github.com/mvayngrib/react-native-crypto : 35.2196044947604
 https://github.com/crypto-browserify/crypto-browserify : 35.073859077410674
-https://github.com/decred/crypto-browserify : 35.073859077410674
+# TODO useless fork https://github.com/decred/crypto-browserify : 35.073859077410674
 https://github.com/digitalbazaar/forge : 34.690483428499206
 https://github.com/openpgpjs/openpgpjs : 34.636894648014916
 https://github.com/travist/jsencrypt : 33.981454330251005
 https://github.com/agilebits/sjcl : 32.91249035918221
 https://github.com/google/end-to-end : 32.67772587785397
 https://github.com/crypto-browserify/sha.js : 30.415241962103497
-https://github.com/Sc00bz/sjcl : 29.731309339486938
+# TODO useless fork https://github.com/Sc00bz/sjcl : 29.731309339486938
 https://github.com/brix/crypto-js : 29.513576694042868
 https://github.com/libp2p/js-libp2p-crypto : 28.620360546062347
 https://github.com/crypto-browserify/browserify-aes : 28.604451557361685
@@ -380,8 +380,10 @@ https://github.com/rzcoder/node-rsa : 26.938067807268073
 https://github.com/VirgilSecurity/virgil-crypto-javascript : 26.789285731655497
 https://github.com/dojo/crypto : 26.44146867100541
 https://github.com/square/js-jose : 26.434639930889198
-https://github.com/invodkawetrust/crypto-browserify : 25.286482514937923
+# TODO useless fork https://github.com/invodkawetrust/crypto-browserify : 25.286482514937923
 https://github.com/z-hao-wang/react-native-rsa : 25.055241562401864
+# linie verschiebt sich nochmal nachdem Gewichtung für Sprache festgelegt wrid
+------------ manual data colleciton up until here ------------
 https://github.com/quartzjer/ursa : 24.982193569871093
 https://github.com/SSLcom/forge-universal : 24.935194265753374
 https://github.com/mozilla/browserid-crypto : 24.503721628402467
