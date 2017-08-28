@@ -717,18 +717,22 @@ https://github.com/lemonrock/alt-tls : 11.234932889959168
 https://github.com/golang/crypto : 39.4755633040145
 https://github.com/keybase/go-crypto : 39.446569816387345
 https://github.com/ScriptRock/crypto : 39.16268213653848
-https://github.com/ProtonMail/crypto : 39.16105702114698
+#unrelevant Fork https://github.com/ProtonMail/crypto : 39.16105702114698
+
+#add origianl https://github.com/pkg/sftp
+https://github.com/pkg/sftp: ???
 https://github.com/ScriptRock/sftp : 37.30727766305558
-https://github.com/kardianos/sftp : 37.14133065844554
+#unrelevant Fork https://github.com/kardianos/sftp : 37.14133065844554
+
 https://github.com/dedis/kyber : 36.87206188793695
 https://github.com/letsencrypt/pkcs11key : 30.37168641298824
 https://github.com/GoKillers/libsodium-go : 29.934358991279865
 https://github.com/square/go-jose : 29.63181449835072
-https://github.com/AGWA-forks/golang-crypto : 28.74246356203176
+#unrelevant Fork https://github.com/AGWA-forks/golang-crypto : 28.74246356203176
 https://github.com/libp2p/go-libp2p-crypto : 27.622122243829885
-https://github.com/oscarhealth/sftp : 25.809072242738488
+#unrelevant Fork https://github.com/oscarhealth/sftp : 25.809072242738488
 https://github.com/jzelinskie/whirlpool : 25.44806887157238
-https://github.com/benburkert/openpgp : 24.86228632107682
+#Fork aufnehmen https://github.com/benburkert/openpgp : 24.86228632107682
 https://github.com/tendermint/go-crypto : 24.0328688083705
 https://github.com/andreburgaud/crypt2go : 23.610791985202724
 https://github.com/davidlazar/go-crypto : 23.36309659379674
@@ -738,6 +742,8 @@ https://github.com/pagarme/cryptokit : 22.39049065398443
 https://github.com/Luzifer/go-openssl : 20.38813656858315
 https://github.com/teambition/gear-auth : 20.373810960727727
 https://github.com/NebulousLabs/fastrand : 20.10930051973577
+# linie verschiebt sich nochmal nachdem Gewichtung für Sprache festgelegt wrid
+------------ manual data colleciton up until here ------------
 https://github.com/VirgilSecurity/virgil-crypto-go : 19.589465466632515
 https://github.com/jacobsa/crypto : 19.414574231811557
 https://github.com/stevenroose/cryptoconditions : 18.744107308147896

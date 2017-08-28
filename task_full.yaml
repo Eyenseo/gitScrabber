@@ -13525,23 +13525,23 @@ projects:
 - git: https://github.com/golang/crypto  # Standard
   manual:
     generalData:
-      type: Wrapper   # TODO
+      type: Standalone 
       related:
-        # - TODO
+      dependencies:
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: true
+          website: true
+          download: false
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: true
+          examples: true
+          explanations: true
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - Go       # TODO
+        high: true
+        low: true
+      interfaceLanguage:  
+      - Go       
 - git: https://github.com/jacobsa/crypto
   manual:
     generalData:
@@ -13605,183 +13605,186 @@ projects:
 - git: https://github.com/ScriptRock/crypto
   manual:
     generalData:
-      type: Wrapper   # TODO
+      type: Fork
       related:
-        # - TODO
+        - https://github.com/golang/crypto 
+      dependencies:
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: true
+          website: true
+          download: false
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: true
+          examples: true
+          explanations: true
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - Go       # TODO
+        high: true
+        low: true
+      interfaceLanguage:  
+      - Go  
 - git: https://github.com/square/go-jose
   manual:
     generalData:
-      type: Wrapper   # TODO
+      type: Standalone
       related:
-        # - TODO
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: true
+          website: true
+          download: false
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: true
+          examples: true
+          explanations: true
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - Go       # TODO
+        high: true
+        low: false
+      interfaceLanguage:  
+      - Go      
 - git: https://github.com/xigang/crypto
   manual:
     generalData:
-      type: Wrapper   # TODO
+      type: Wrapper
       related:
-        # - TODO
+        - https://golang.org/pkg/crypto/
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: false
+          website: true
+          download: false
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: true
+          examples: false
+          explanations: false
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - Go       # TODO
+        high: true
+        low: false
+      interfaceLanguage:
+      - Go       
 - git: https://github.com/andreburgaud/crypt2go
   manual:
     generalData:
-      type: Wrapper   # TODO
+      type: Standalone
       related:
-        # - TODO
+      dependencies:
+        - https://golang.org/pkg/crypto/cipher
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: true
+          website: false
+          download: false
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: true
+          examples: true
+          explanations: true
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - Go       # TODO
+        high: true
+        low: false
+      interfaceLanguage:   
+      - Go       
 - git: https://github.com/GoKillers/libsodium-go
   manual:
     generalData:
-      type: Wrapper   # TODO
+      type: Wrapper
       related:
-        # - TODO
+        - https://download.libsodium.org/doc/
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: true
+          website: true
+          download: false
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: false
+          examples: false
+          explanations: false
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - Go       # TODO
+        high: true
+        low: true
+      interfaceLanguage:   
+      - Go       
 - git: https://github.com/dedis/kyber
   manual:
     generalData:
-      type: Wrapper   # TODO
+      type: Wrapper
       related:
-        # - TODO
+        - https://golang.org/pkg/crypto/
+        - https://github.com/openssl/openssl
+        - https://crypto.stanford.edu/pbc/
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: true
+          website: true
+          download: false
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: true
+          examples: false
+          explanations: true
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - Go       # TODO
+        high: true
+        low: false
+      interfaceLanguage:   
+      - Go       
 - git: https://github.com/tendermint/go-crypto
   manual:
     generalData:
-      type: Wrapper   # TODO
+      type: Wrapper
       related:
-        # - TODO
+        - https://golang.org/pkg/crypto/
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: true
+          website: false
+          download: false
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: true
+          examples: false
+          explanations: false
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - Go       # TODO
+        high: true
+        low: false
+      interfaceLanguage:  
+      - Go      
 - git: https://github.com/keybase/go-crypto
   manual:
     generalData:
-      type: Wrapper   # TODO
+      type: Fork
       related:
-        # - TODO
+        - https://github.com/golang/crypto 
+      dependencies:
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: true
+          website: true
+          download: false
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: true
+          examples: true
+          explanations: true
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - Go       # TODO
+        high: true
+        low: true
+      interfaceLanguage:  
+      - Go  
 - git: https://github.com/jzelinskie/whirlpool
   manual:
     generalData:
-      type: Wrapper   # TODO
+      type: Standalone
       related:
-        # - TODO
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: true
+          website: false
+          download: false
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: false
+          examples: true
+          explanations: false
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - Go       # TODO
+        high: true
+        low: false
+      interfaceLanguage:  
+      - Go       
 - git: https://github.com/jlhawn/go-crypto
   manual:
     generalData:
@@ -13825,23 +13828,23 @@ projects:
 - git: https://github.com/pagarme/cryptokit
   manual:
     generalData:
-      type: Wrapper   # TODO
+      type: Wrapper 
       related:
-        # - TODO
+        - https://golang.org/pkg/crypto/
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: false
+          website: true
+          download: false
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: true
+          examples: false
+          explanations: false
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - Go       # TODO
+        high: true
+        low: false
+      interfaceLanguage:
+      - Go      
 - git: https://github.com/andmarios/crypto
   manual:
     generalData:
@@ -14125,43 +14128,44 @@ projects:
 - git: https://github.com/letsencrypt/pkcs11key
   manual:
     generalData:
-      type: Wrapper   # TODO
+      type: Standalone
       related:
-        # - TODO
+      dependencies:
+        - https://golang.org/pkg/crypto/
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: false
+          website: false
+          download: false
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: false
+          examples: false
+          explanations: false
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - Go       # TODO
+        high: true
+        low: false
+      interfaceLanguage:   
+      - Go       
 - git: https://github.com/NebulousLabs/fastrand
   manual:
     generalData:
-      type: Wrapper   # TODO
+      type: Reimplementation
       related:
-        # - TODO
+        - https://golang.org/pkg/crypto/rand/        
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: true
+          website: true
+          download: false
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: true
+          examples: false
+          explanations: true
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - Go       # TODO
+        high: true     
+        low: false
+      interfaceLanguage:  
+      - Go       
 - git: https://github.com/scottkiss/gosshtool
   manual:
     generalData:
@@ -14205,43 +14209,43 @@ projects:
 - git: https://github.com/davidlazar/go-crypto
   manual:
     generalData:
-      type: Wrapper   # TODO
+      type: Wrapper
       related:
-        # - TODO
+        - https://godoc.org/golang.org/x/crypto
+        - https://golang.org/pkg/crypto/
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: true
+          website: false
+          download: false
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: false
+          examples: false
+          explanations: false
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - Go       # TODO
+        high: true
+        low: false
+      interfaceLanguage:  
+      - Go       
 - git: https://github.com/AGWA-forks/golang-crypto
   manual:
     generalData:
-      type: Wrapper   # TODO
+      type: Standalone
       related:
-        # - TODO
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: true
+          website: true
+          download: false
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: true
+          examples: false
+          explanations: false
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - Go       # TODO
+        high: true
+        low: false
+      interfaceLanguage:  
+      - Go       
 - git: https://github.com/cloudflare/cf-tls
   manual:
     generalData:
@@ -14385,23 +14389,22 @@ projects:
 - git: https://github.com/teambition/gear-auth
   manual:
     generalData:
-      type: Wrapper   # TODO
-      related:
-        # - TODO
+      type: Standalone
+      related:        
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: true
+          website: true
+          download: false
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: true
+          examples: true
+          explanations: true
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - Go       # TODO
+        high: true
+        low: false
+      interfaceLanguage: 
+      - Go       
 - git: https://github.com/ArtemKulyabin/cryptostack
   manual:
     generalData:
@@ -14465,23 +14468,23 @@ projects:
 - git: https://github.com/Luzifer/go-openssl
   manual:
     generalData:
-      type: Wrapper   # TODO
+      type: Wrapper
       related:
-        # - TODO
+        - https://golang.org/pkg/crypto/aes/
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: true
+          website: false
+          download: false
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: false
+          examples: true
+          explanations: false
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - Go       # TODO
+        high: true
+        low: false
+      interfaceLanguage:
+      - Go       
 - git: https://github.com/teambition/crypto-go
   manual:
     generalData:
@@ -14505,23 +14508,23 @@ projects:
 - git: https://github.com/benburkert/openpgp  # golang.org/x/crypto/openpgp
   manual:
     generalData:
-      type: Wrapper   # TODO
+      type: Fork
       related:
-        # - TODO
+        - https://godoc.org/golang.org/x/crypto/openpgp
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: true
+          website: false
+          download: false
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: false
+          examples: false
+          explanations: false
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - Go       # TODO
+        high: true
+        low: false
+      interfaceLanguage:   
+      - Go       
 - git: https://github.com/mdp/sodiumbox
   manual:
     generalData:
@@ -14865,23 +14868,24 @@ projects:
 - git: https://github.com/Gibheer/pki
   manual:
     generalData:
-      type: Wrapper   # TODO
+      type: Wrapper
       related:
-        # - TODO
+        - https://golang.org/pkg/crypto/
+        - https://golang.org/pkg/encoding/
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: false
+          website: false
+          download: false
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: false
+          examples: false
+          explanations: false
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - Go       # TODO
+        high: true
+        low: false
+      interfaceLanguage:   
+      - Go       
 - git: https://github.com/nikkolasg/tlsrp
   manual:
     generalData:
@@ -14902,26 +14906,47 @@ projects:
         low: true     # TODO
       interfaceLanguage:   # TODO
       - Go       # TODO
+- git: https://github.com/pkg/sftp
+  manual:
+    generalData:
+      type: Standalone
+      related:
+      dependencies:
+        - https://golang.org/pkg/os/
+      documentation:
+        exists:
+          readme: true
+          website: true
+          download: false
+        completeness:
+          apis: true
+          examples: true
+          explanations: true
+      interfaceLevel:
+        high: true
+        low: false
+      interfaceLanguage:  
+      - Go       
 - git: https://github.com/ScriptRock/sftp
   manual:
     generalData:
-      type: Wrapper   # TODO
+      type: Fork
       related:
-        # - TODO
+        - https://github.com/pkg/sftp      
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: true
+          website: true
+          download: false
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: true
+          examples: true
+          explanations: true
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - Go       # TODO
+        high: true
+        low: false
+      interfaceLanguage:  
+      - Go  
 - git: https://github.com/kardianos/sftp
   manual:
     generalData:
