@@ -191,27 +191,34 @@ class ProjectSizeCalculator(ReportTask):
                       total: normal
         """
         self.__calculate_limits(report['projects'])
+        try:
+            for project in report['projects']:
+                project_report = report['projects'][project]
+                try:
+                    loc = self.__loc(project, project_report)
+                    inter_langs = self.__inter_langs(project,
+                                                     project_report)
 
-        for project in report['projects']:
-            project_report = report['projects'][project]
-            try:
-                loc = self.__loc(project, project_report)
-                inter_langs = self.__inter_langs(project,
-                                                 project_report)
+                    inter_langs.append('total')
+                    project_report['ProjectSizeCalculator'] = {}
+                    size_report = project_report['ProjectSizeCalculator']
 
-                inter_langs.append('total')
-                project_report['ProjectSizeCalculator'] = {}
-                size_report = project_report['ProjectSizeCalculator']
+                    for lang in inter_langs:
+                        limit = self.__limits[lang]
 
-                for lang in inter_langs:
-                    limit = self.__limits[lang]
-
-                    if loc < limit.lower:
-                        size_report[lang] = 'small'
-                    elif loc > limit.upper:
-                        size_report[lang] = 'big'
-                    else:
-                        size_report[lang] = 'normal'
-            except MissingManualData as e:
-                pass  # we can't do nothing about it
+                        if loc < limit.lower:
+                            size_report[lang] = 'small'
+                        elif loc > limit.upper:
+                            size_report[lang] = 'big'
+                        else:
+                            size_report[lang] = 'normal'
+                except MissingManualData as e:
+                    pass  # we can't do nothing about it
+        except Exception as e:
+            raise Exception(
+                "While calculating the project size for the project '{}' with "
+                "the report\n{}".format(
+                    project,
+                    self.__projects[project])
+            ) from e
         return report

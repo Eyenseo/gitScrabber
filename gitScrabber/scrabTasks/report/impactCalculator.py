@@ -205,15 +205,23 @@ class ImpactCalculator(ReportTask):
                   Example:
                       impact: 45.13200916761271
         """
-        for project in report['projects']:
-            impact_data = ImpactData(report['projects'][project],
-                                     self.__language_weights)
+        try:
+            for project in report['projects']:
+                impact_data = ImpactData(report['projects'][project],
+                                         self.__language_weights)
 
-            impact = self.calculate_impact(impact_data)
-            if impact:
-                report['projects'][project]['impact'] = float(
-                    "{0:.2f}".format(impact))
-            elif not containedStructure(
-                    {'projects': {project: {'impact': 0}}}, report):
-                report['projects'][project]['impact'] = None
+                impact = self.calculate_impact(impact_data)
+                if impact:
+                    report['projects'][project]['impact'] = float(
+                        "{0:.2f}".format(impact))
+                elif not containedStructure(
+                        {'projects': {project: {'impact': 0}}}, report):
+                    report['projects'][project]['impact'] = None
+        except Exception as e:
+            raise Exception(
+                "While calculating the impact for the project '{}' with "
+                "the report\n{}".format(
+                    project,
+                    self.__projects[project])
+            ) from e
         return report

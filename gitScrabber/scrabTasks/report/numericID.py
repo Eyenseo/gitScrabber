@@ -93,17 +93,26 @@ class NumericID(ReportTask):
         language. Projects without a main language will be given their number
         last.
         """
-        for language in self.__languages:
-            for project in self.__projects:
-                if not _is_main_language(self.__projects[project], language):
-                    continue
-                self.__generate_id(self.__projects[project])
+        try:
+            for language in self.__languages:
+                for project in self.__projects:
+                    if not _is_main_language(self.__projects[project],
+                                             language):
+                        continue
+                    self.__generate_id(self.__projects[project])
 
-        for language in self.__languages:
-            for project in self.__projects:
-                if 'NumericID' in self.__projects[project]:
-                    continue
-                self.__generate_id(self.__projects[project])
+            for language in self.__languages:
+                for project in self.__projects:
+                    if 'NumericID' in self.__projects[project]:
+                        continue
+                    self.__generate_id(self.__projects[project])
+        except Exception as e:
+            raise Exception(
+                "While generating the numeric id for the project '{}' with "
+                "the report\n{}".format(
+                    project,
+                    self.__projects[project])
+            ) from e
 
     def scrab(self, report):
         """

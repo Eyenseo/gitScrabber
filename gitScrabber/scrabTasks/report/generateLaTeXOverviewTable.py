@@ -445,7 +445,15 @@ class GenerateLaTeXOverviewTable(ReportTask):
         for project in self.__projects:
             report = self.__projects[project]
             if _has_interface_language(report, language):
-                table += self.__row(report, language)
+                try:
+                    table += self.__row(report, language)
+                except Exception as e:
+                    raise Exception(
+                        "While generating the row for the project '{}' with "
+                        "the report\n{}".format(
+                            project,
+                            self.__projects[project])
+                    ) from e
 
         table += self.__tail(language)
         return table
