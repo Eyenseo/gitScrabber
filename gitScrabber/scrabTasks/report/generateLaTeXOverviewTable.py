@@ -425,6 +425,7 @@ class GenerateLaTeXOverviewTable(ReportTask):
         :returns: The tail of the overview table
         """
         TeXtail = r"""
+  \taburowcolors1{white..white}
   \caption{%s-interface library overview}
   \label{tab:%s-interface-overview}\\
   \end{longtabu}
