@@ -63,13 +63,13 @@ class GitScrabber:
 
         :param  report:  report to write
         """
+        ruamel.yaml.scalarstring.walk_tree(report)
         if self.__output_file:
             with open(self.__output_file, 'w') as outfile:
                 ruamel.yaml.dump(
                     report, outfile, Dumper=ruamel.yaml.RoundTripDumper)
 
         if self.__print:
-            ruamel.yaml.scalarstring.walk_tree(report)
             print(ruamel.yaml.dump(report, Dumper=ruamel.yaml.RoundTripDumper))
 
     def scrab(self):
