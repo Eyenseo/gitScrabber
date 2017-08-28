@@ -17,13 +17,11 @@ def _get_main_language(project_report):
     :returns: The main language if MetaDataCollector or LanguageDetector are
               present in the report or an empty string
     """
-    required_1 = {"MetaDataCollector": {"main_language": ""}}
-    required_2 = {"LanguageDetector": {"main_language": ""}}
+    required = {"generalData": {"interfaceLanguage": []}}
 
-    if containedStructure(required_1, project_report):
-        return project_report["MetaDataCollector"]["main_language"]
-    elif containedStructure(required_2, project_report):
-        return project_report["LanguageDetector"]["main_language"]
+    if (containedStructure(required, project_report)
+            and len(project_report["generalData"]["interfaceLanguage"]) > 0):
+        return project_report["generalData"]["interfaceLanguage"][0]
     return ""  # Return empty -> check will fail
 
 
