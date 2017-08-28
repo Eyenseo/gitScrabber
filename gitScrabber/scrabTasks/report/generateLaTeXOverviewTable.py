@@ -486,12 +486,11 @@ class GenerateLaTeXOverviewTable(ReportTask):
   \begin{tabular}[#1]{@{}c@{}}#2\end{tabular}%
 }
 
-\let\oldding\ding% Store old \ding in \oldding
-\renewcommand{\ding}[2][1]{\scalebox{#1}{\oldding{#2}}}
+\newcommand{\myscaleding}[2][1]{\scalebox{#1}{\ding{#2}}}
 
-\newcommand{\myUpDing}{\ding[.6]{115}}
-\newcommand{\myNormalDing}{\ding[.6]{108}}
-\newcommand{\myDownDing}{\ding[.6]{116}}
+\newcommand{\myUpDing}{\myscaleding[.6]{115}}
+\newcommand{\myNormalDing}{\myscaleding[.6]{108}}
+\newcommand{\myDownDing}{\myscaleding[.6]{116}}
 """
         return TeXpreable
 
