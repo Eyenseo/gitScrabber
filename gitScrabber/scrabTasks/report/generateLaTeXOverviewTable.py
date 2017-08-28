@@ -223,7 +223,7 @@ def _project_licences(project_report):
             first = False
         else:
             licences += r'\\'
-        licences += _tex_escape(licence)
+        licences += "\myTextBreaker{" + _tex_escape(licence) + "}"
 
     return licences + '}'
 
@@ -406,7 +406,7 @@ class GenerateLaTeXOverviewTable(ReportTask):
                   & {ease_of_use}
                     & {licences}\\""".format(
             uid=project_id,
-            name=name,
+            name="\myTextBreaker{" + name+"}",
             impact=impact,
             interface_size=interface_size,
             overall_size=overall_size,
@@ -484,6 +484,8 @@ class GenerateLaTeXOverviewTable(ReportTask):
 \usepackage{graphicx}
 \usepackage{array}
 
+\newcommand\myTextBreaker[1]{\tbhelp#1\relax\relax\relax}
+\def\tbhelp#1#2\relax{{#1}\penalty0\ifx\relax#2\else\tbhelp#2\relax\fi}
 
 \newcolumntype{Y}{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}X}
 
