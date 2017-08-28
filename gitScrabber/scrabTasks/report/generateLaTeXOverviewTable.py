@@ -428,7 +428,7 @@ class GenerateLaTeXOverviewTable(ReportTask):
   \caption{%s-interface library overview}
   \label{tab:%s-interface-overview}\\
   \end{longtabu}
-}""" % (language, language.lower())
+}""" % (_tex_escape(language), _tex_escape(language.lower()))
         return TeXtail
 
     def __interface_table(self, language):
