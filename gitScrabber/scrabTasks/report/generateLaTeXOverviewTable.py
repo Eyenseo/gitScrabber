@@ -346,7 +346,7 @@ class GenerateLaTeXOverviewTable(ReportTask):
 
         :returns: The overview table header
         """
-        TeXheader = r"""\begin{table}
+        TeXheader = r"""{
   \centering
   \tabulinesep=4pt
   \setlength{\tabcolsep}{.3em}
@@ -425,10 +425,10 @@ class GenerateLaTeXOverviewTable(ReportTask):
         :returns: The tail of the overview table
         """
         TeXtail = r"""
-  \end{longtabu}
   \caption{%s-interface library overview}
-  \label{tab:%s-interface-overview}
-\end{table}""" % (language, language.lower())
+  \label{tab:%s-interface-overview}\\
+  \end{longtabu}
+}""" % (language, language.lower())
         return TeXtail
 
     def __interface_table(self, language):
