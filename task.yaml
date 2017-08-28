@@ -22,6 +22,10 @@ projects:
         low: true     # TODO
       interfaceLanguage:   # TODO
       - C       # TODO
+      - C++       # TODO
+      licences:
+      - MIT
+      - JSON
 - git: https://github.com/pyca/cryptography
   manual:
     generalData:
@@ -508,3 +512,13 @@ report_tasks:
   - ImpactCalculator
   - ProjectSizeCalculator
   - EaseOfUseEstimation
+  - NumericID
+  - GenerateLaTeXOverviewTable:
+      primitivCategorieses:
+        - block ciphers
+        - stream ciphers
+        - encryption modes
+        - message authentication codes
+      highlevelCategories:
+        - hashes
+        - public key cryptography
