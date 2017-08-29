@@ -17,14 +17,14 @@ https://github.com/tancred/tweetnacl-objc : 24.17059579139618
 https://github.com/Cyberunner23/libsodium-CMake : 23.973490915823287
 https://github.com/Samsung/ckm : 23.610317817552023
 https://github.com/abderraouf-adjal/ArduinoSpritzCipher : 23.460402042373403
-# TODO : sammple-implementation : https://github.com/fcelda/nsec5-crypto : 23.393888634791594
+# TODO : https://github.com/fcelda/nsec5-crypto : 23.393888634791594
 https://github.com/eduardsui/tlse : 23.236326860819922
 https://github.com/PPC64/sha2-le : 23.150601360914624
 https://github.com/openluopworld/aes_128 : 22.714944834557627
 # TODO : 404 not found?! : http://git.eclipse.org/gitroot/tinydtls/org.eclipse.tinydtls.git : 21.75034734054996
 https://github.com/LoupVaillant/Monocypher : 21.13044269185373
 https://github.com/alex-chan/swift-sodium : 20.358839092253994
-# TODO : This project is an early work-in-progress https://github.com/wireapp/cryptobox-c: 20.001025070877972
+# TODO : https://github.com/wireapp/cryptobox-c: 20.001025070877972
 # linie verschiebt sich nochmal nachdem Gewichtung für Sprache festgelegt wrid
 ------------ manual data colleciton up until here ------------
 https://github.com/bukka/php-lcrypto : 19.30130125130717
@@ -93,21 +93,18 @@ https://github.com/weidai11/cryptopp : 34.68716822885435
 https://github.com/msoos/cryptominisat : 33.71159945596183
 https://github.com/KDE/libkleo : 31.59622984106242
 https://github.com/tahoe-lafs/pycryptopp : 28.837134591191067
-# TODO :  suitable for research and experimentation https://github.com/PeculiarVentures/pkcs11js : 26.585156659852185
 https://github.com/VirgilSecurity/virgil-foundation-x : 26.232007637582555
 # Why so high?:
 https://github.com/musiko/ofxCrypto : 25.704645326672846
 https://github.com/dark-panda/ruby-cryptopp : 24.941906086338243
 https://github.com/VirgilSecurity/virgil-sdk-cpp : 24.798065422556377
 https://github.com/TrustedPlus/crypto : 24.716709457717705
-# TODO : useless fork https://github.com/Ecoblockchain/cryptonite : 23.30848249000313
 https://github.com/lime-company/cc7 : 22.417859633102093
 https://github.com/intrbiz/arduino-crypto : 22.2754302262756
 https://github.com/azadkuh/mbedcrypto : 22.035429011374404
 https://github.com/ladnir/cryptoTools : 21.963103231609715
 https://github.com/hieifn/CryptoCaesar : 21.916872709114468
 https://github.com/ph4r05/Whitebox-crypto-AES : 21.831697922255586
-# TODO : This branch is an experiment https://github.com/budnail/Cryptosuite : 21.794849067665687
 https://github.com/spaniakos/Cryptosuite : 21.712653578847302
 https://github.com/romangol/cryptoBoost : 21.06145578552976
 https://github.com/glueckkanja-pki/NSSWrapper : 20.084730363114005
@@ -278,7 +275,6 @@ https://github.com/originalix/iOS-and-Java-AES-Cryptor : 11.229332644073274
 
 ##################### Java ##########################
 https://github.com/apache/commons-crypto : 34.95710716977696
-# TODO : Learning platform https://github.com/jcryptool/crypto : 34.74331126831818
 # TODO : no lib https://github.com/i2p/i2p.i2p : 34.707482541741186
 https://github.com/PersoSim/org.globaltester.cryptoprovider : 28.530685066049486
 https://github.com/tozny/java-aes-crypto : 28.44405454241086
@@ -292,15 +288,10 @@ https://github.com/google/tink : 23.660855122016038
 https://github.com/VirgilSecurity/virgil-sdk-java-android : 22.680899062667027
 https://github.com/davidcarboni/Cryptolite : 22.61176352447102
 https://github.com/SebastianDeiss/Java-PBKDF2 : 22.51188191388536
-# TODO : useless fork https://github.com/MuharremOkutan/tink : 22.091279225610567
-# TODO : useless fork https://github.com/haikuowuya/tink : 22.091279225610567
-# TODO : We recommend to use it only for testing and evaluation purposes https://github.com/cryptomator/cryptofs : 21.7040289787292
 https://github.com/cryptomator/cryptolib : 21.233467174920605
-# TODO : no lib https://github.com/INJAE/Cryptonite : 21.05374654159186
 https://github.com/scottyab/java-aes-crypto : 20.96338296545374
 https://github.com/wireapp/cryptobox-jni : 20.948415610430285
 https://github.com/oversecio/oversec_crypto : 20.80085087681789
-# TODO : I am not supporting this project anymore https://github.com/mooreds/gwt-crypto : 20.058365457939715
 # linie verschiebt sich nochmal nachdem Gewichtung für Sprache festgelegt wrid
 ------------ manual data colleciton up until here ------------
 https://github.com/ph4r05/Whitebox-crypto-AES-java : 19.96129749482902
@@ -360,14 +351,12 @@ https://github.com/bitwiseshiftleft/sjcl : 38.52727059027725
 https://github.com/yaronn/xml-crypto : 35.8046938698939
 https://github.com/mvayngrib/react-native-crypto : 35.2196044947604
 https://github.com/crypto-browserify/crypto-browserify : 35.073859077410674
-# TODO useless fork https://github.com/decred/crypto-browserify : 35.073859077410674
 https://github.com/digitalbazaar/forge : 34.690483428499206
 https://github.com/openpgpjs/openpgpjs : 34.636894648014916
 https://github.com/travist/jsencrypt : 33.981454330251005
 https://github.com/agilebits/sjcl : 32.91249035918221
 https://github.com/google/end-to-end : 32.67772587785397
 https://github.com/crypto-browserify/sha.js : 30.415241962103497
-# TODO useless fork https://github.com/Sc00bz/sjcl : 29.731309339486938
 https://github.com/brix/crypto-js : 29.513576694042868
 https://github.com/libp2p/js-libp2p-crypto : 28.620360546062347
 https://github.com/crypto-browserify/browserify-aes : 28.604451557361685
@@ -380,7 +369,6 @@ https://github.com/rzcoder/node-rsa : 26.938067807268073
 https://github.com/VirgilSecurity/virgil-crypto-javascript : 26.789285731655497
 https://github.com/dojo/crypto : 26.44146867100541
 https://github.com/square/js-jose : 26.434639930889198
-# TODO useless fork https://github.com/invodkawetrust/crypto-browserify : 25.286482514937923
 https://github.com/z-hao-wang/react-native-rsa : 25.055241562401864
 # linie verschiebt sich nochmal nachdem Gewichtung für Sprache festgelegt wrid
 ------------ manual data colleciton up until here ------------
