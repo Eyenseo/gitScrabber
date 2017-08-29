@@ -2622,26 +2622,6 @@ projects:
         low: true     # TODO
       interfaceLanguage:   # TODO
       - C++       # TODO
-- git: https://github.com/PeculiarVentures/pkcs11js
-  manual:
-    generalData:
-      type: Wrapper   # TODO
-      related:
-        # - TODO
-      documentation:
-        exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
-        completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
-      interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - C++       # TODO
 - git: https://github.com/hvge/cc7
   manual:
     generalData:
@@ -2863,46 +2843,6 @@ projects:
       interfaceLanguage:   # TODO
       - C++       # TODO
 - git: https://github.com/kotl/esp8266-cryptosign
-  manual:
-    generalData:
-      type: Wrapper   # TODO
-      related:
-        # - TODO
-      documentation:
-        exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
-        completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
-      interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - C++       # TODO
-- git: https://github.com/budnail/Cryptosuite
-  manual:
-    generalData:
-      type: Wrapper   # TODO
-      related:
-        # - TODO
-      documentation:
-        exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
-        completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
-      interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - C++       # TODO
-- git: https://github.com/Ecoblockchain/cryptonite
   manual:
     generalData:
       type: Wrapper   # TODO
@@ -3257,27 +3197,7 @@ projects:
         high: true
         low: true
       interfaceLanguage: 
-      - Java     
-- git: https://github.com/jcryptool/crypto
-  manual:
-    generalData:
-      type: Wrapper   # TODO
-      related:
-        # - TODO
-      documentation:
-        exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
-        completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
-      interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - Java       # TODO
+      - Java
 - git: https://github.com/Cathedrow/Cryptosuite
   manual:
     generalData:
@@ -3598,26 +3518,6 @@ projects:
         low: false
       interfaceLanguage:
       - Java
-- git: https://github.com/cryptomator/cryptofs  # provides cryptography itself?
-  manual:
-    generalData:
-      type: Wrapper   # TODO
-      related:
-        # - TODO
-      documentation:
-        exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
-        completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
-      interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - Java       # TODO
 - git: https://github.com/oversecio/oversec_crypto
   manual:
     generalData:
@@ -3681,26 +3581,6 @@ projects:
         low: false
       interfaceLanguage:
       - Java
-- git: https://github.com/INJAE/Cryptonite
-  manual:
-    generalData:
-      type: Wrapper   # TODO
-      related:
-        # - TODO
-      documentation:
-        exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
-        completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
-      interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - Java       # TODO
 - git: https://github.com/universum-studios/android_crypto
   manual:
     generalData:
@@ -3858,25 +3738,6 @@ projects:
           readme: false       # TODO
           website: false       # TODO
           download: false       # TODO
-        completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
-      interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - Java       # TODO
-- git: https://github.com/mooreds/gwt-crypto
-  manual:
-    generalData:
-      type: Standalone
-      related:
-      documentation:
-        exists:
-          readme: true
-          website: true
-          download: false
         completeness:
           apis: false       # TODO
           examples: false       # TODO
@@ -4651,46 +4512,6 @@ projects:
       interfaceLanguage:   # TODO
       - Java       # TODO
 - git: https://github.com/Eyremba/jnacl
-  manual:
-    generalData:
-      type: Wrapper   # TODO
-      related:
-        # - TODO
-      documentation:
-        exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
-        completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
-      interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - Java       # TODO
-- git: https://github.com/MuharremOkutan/tink
-  manual:
-    generalData:
-      type: Wrapper   # TODO
-      related:
-        # - TODO
-      documentation:
-        exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
-        completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
-      interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - Java       # TODO
-- git: https://github.com/haikuowuya/tink
   manual:
     generalData:
       type: Wrapper   # TODO
@@ -7961,26 +7782,6 @@ projects:
         low: true     # TODO
       interfaceLanguage:   # TODO
       - JavaScript       # TODO
-- git: https://github.com/decred/crypto-browserify
-  manual:
-    generalData:
-      type: Wrapper   # TODO
-      related:
-        # - TODO
-      documentation:
-        exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
-        completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
-      interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - JavaScript       # TODO
 - git: https://github.com/libp2p/js-libp2p-crypto
   manual:
     generalData:
@@ -9504,26 +9305,6 @@ projects:
         low: true     # TODO
       interfaceLanguage:   # TODO
       - JavaScript       # TODO
-- git: https://github.com/invodkawetrust/crypto-browserify
-  manual:
-    generalData:
-      type: Wrapper   # TODO
-      related:
-        # - TODO
-      documentation:
-        exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
-        completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
-      interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - JavaScript       # TODO
 - git: https://github.com/wangsiyuan0215/crypto-js
   manual:
     generalData:
@@ -9867,26 +9648,6 @@ projects:
         low: false
       interfaceLanguage:
       - JavaScript
-- git: https://github.com/Sc00bz/sjcl
-  manual:
-    generalData:
-      type: Wrapper   # TODO
-      related:
-        # - TODO
-      documentation:
-        exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
-        completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
-      interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - JavaScript       # TODO
 - git: https://git.daplie.com/coolaj86/secret-utils
   manual:
     generalData:
