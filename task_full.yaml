@@ -3058,26 +3058,6 @@ projects:
         low: true     # TODO
       interfaceLanguage:   # TODO
       - Java       # TODO
-- git: https://github.com/i2p/i2p.i2p  #lib?
-  manual:
-    generalData:
-      type: Wrapper   # TODO
-      related:
-        # - TODO
-      documentation:
-        exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
-        completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
-      interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - Java       # TODO
 - git: https://github.com/tozny/java-aes-crypto
   manual:
     generalData:
