@@ -56,6 +56,7 @@ class FileTaskRunner():
                 continue
 
             if (self.__project.updated
+                or not self.__old_data
                     or self.__changed_task(task_wrapper, meta_task)):
                 scrab_task = task_wrapper.construct(
                     parameter=meta_task.parameter,
@@ -270,6 +271,7 @@ class ProjectTaskRunner:
                 continue
 
             if (self.__project.updated
+                or not self.__old_data
                     or self.__changed_task(task_wrapper, meta_task)):
                 scrab_task = task_wrapper.construct(
                     parameter=meta_task.parameter,
