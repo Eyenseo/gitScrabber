@@ -5324,7 +5324,7 @@ projects:
 - git: https://github.com/ricmoo/pyaes
   manual:
     generalData:
-      type: Standalone # check to be sure
+      type: Standalone
       related:        
       documentation:
         exists:
@@ -5337,7 +5337,7 @@ projects:
           explanations: false
       interfaceLevel:
         high: true
-        low: false # check to be sure
+        low: false 
       interfaceLanguage:  
       - Python       
 - git: https://github.com/pyca/cryptography
@@ -5382,10 +5382,9 @@ projects:
 - git: https://github.com/hasherezade/crypto_utils
   manual:
     generalData:
-      type: Reimplementation
+      type: Wrapper
       related:
-        - https://docs.python.org/2/library/hashlib.html
-        # TODO
+        - https://docs.python.org/2/library/hashlib.html        
       documentation:
         exists:
           readme: true
@@ -5423,23 +5422,22 @@ projects:
 - git: https://github.com/thomdixon/pysha2
   manual:
     generalData:
-      type: Reimplementation
-      related:
-        https://docs.python.org/2/library/hashlib.html#module-hashlib
+      type: Standalone
+      related:        
       documentation:
         exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
+          readme: true
+          website: false
+          download: false
         completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
+          apis: false
+          examples: true
+          explanations: false
       interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - Python       # TODO
+        high: true
+        low: false
+      interfaceLanguage: 
+      - Python      
 - git: https://github.com/eventbrite/m2crypto
   manual:
     generalData:
@@ -5477,7 +5475,7 @@ projects:
           explanations: false
       interfaceLevel:
         high: true     
-        low: false     # check to be sure
+        low: true
       interfaceLanguage:   
       - Python       
 - git: https://github.com/georgemarshall/django-cryptography
@@ -5503,7 +5501,7 @@ projects:
 - git: https://github.com/wbond/oscrypto
   manual:
     generalData:
-      type: Wrapper #Uses the operating system's crypto library # check to be sure... might be Reimplementation
+      type: Standalone
       related:
         - cryptography primitives from the host operating system
       documentation:
@@ -5523,8 +5521,9 @@ projects:
 - git: https://github.com/python-tls/tls
   manual:
     generalData:
-      type: Reimplementation
+      type: Standalone
       related:
+      dependencies:
         - https://github.com/pyca/cryptography
       documentation:
         exists:
@@ -5532,12 +5531,12 @@ projects:
           website: false
           download: false
         completeness:
-          apis: false    
+          apis: true
           examples: true
-          explanations: false
+          explanations: true
       interfaceLevel:
         high: true     
-        low: true     
+        low: false
       interfaceLanguage:  
       - Python     
 - git: https://github.com/bdcht/crysp
@@ -5642,7 +5641,7 @@ projects:
 - git: https://github.com/berlincode/sjcl
   manual:
     generalData:
-      type: Reimplementation
+      type: Wrapper
       related:
         - https://github.com/dlitz/pycrypto
       documentation:
@@ -10665,15 +10664,16 @@ projects:
           explanations: false
       interfaceLevel:
         high: true   
-        low: true    
+        low: false
       interfaceLanguage:
       - Swift       
 - git: https://github.com/vapor/crypto
   manual:
     generalData:
-      type: Reimplementation # oder wrapper? 
+      type: Standalone
       related:
-        - https://github.com/vapor/ctls # check to be sure
+      dependencies:
+        - https://github.com/vapor/ctls 
       documentation:
         exists:
           readme: false
@@ -10843,7 +10843,7 @@ projects:
           explanations: false
       interfaceLevel:
         high: true     
-        low: true # check to be sure
+        low: true 
       interfaceLanguage:   
       - Swift       
 - git: https://github.com/CryptoKitten/CryptoEssentials
@@ -11069,8 +11069,7 @@ projects:
     generalData:
       type: Reimplementation # check to be sure
       related:
-        - https://www.w3.org/TR/WebCryptoAPI/
-        - https://github.com/brix/crypto-js
+        - https://github.com/etienne-martin/CryptoJS.swift
       documentation:
         exists:
           readme: true
@@ -11348,8 +11347,9 @@ projects:
 - git: https://github.com/IBM-Swift/BlueSSLService
   manual:
     generalData:
-      type: Reimplementation # or wrapper of ssl/tls openssl or applebase?
+      type: Standalone
       related:
+      dependencies:
         - https://github.com/openssl/openssl
         - https://developer.apple.com/documentation/security/secure_transport
       documentation:
