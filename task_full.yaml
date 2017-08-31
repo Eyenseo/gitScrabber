@@ -591,6 +591,12 @@ projects:
       type: Wrapper   # TODO
       related:
         # - TODO
+      licences:
+      - GPL-3.0
+      - MIT
+      - BSD-3-Clause
+      - Apache-2.0
+      - ISC
       documentation:
         exists:
           readme: false       # TODO
