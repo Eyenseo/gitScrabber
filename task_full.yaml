@@ -132,7 +132,6 @@ projects:
       related:
         # - TODO
       licenses:
-      - Multiple Licenses
       documentation:
         exists:
           readme: false       # TODO
@@ -6876,6 +6875,8 @@ projects:
       type: Wrapper   # TODO
       related:
         # - TODO
+      licences:
+      - BSD-3-Clause
       documentation:
         exists:
           readme: false       # TODO
@@ -6896,6 +6897,8 @@ projects:
       type: Wrapper   # TODO
       related:
         # - TODO
+      licences:
+      - Own Licenses
       documentation:
         exists:
           readme: false       # TODO
@@ -6916,6 +6919,8 @@ projects:
       type: Wrapper   # TODO
       related:
         # - TODO
+      licences:
+      - MIT
       documentation:
         exists:
           readme: false       # TODO
@@ -6936,6 +6941,8 @@ projects:
       type: Wrapper   # TODO
       related:
         # - TODO
+      licences:
+      - MIT
       documentation:
         exists:
           readme: false       # TODO
@@ -6956,6 +6963,9 @@ projects:
       type: Wrapper   # TODO
       related:
         # - TODO
+      licences:
+      - BSD-2-Clause
+      - GPL-2.0
       documentation:
         exists:
           readme: false       # TODO
@@ -6976,6 +6986,8 @@ projects:
       type: Wrapper   # TODO
       related:
         # - TODO
+      licences:
+      - Apache-2.0
       documentation:
         exists:
           readme: false       # TODO
@@ -6996,6 +7008,10 @@ projects:
       type: Wrapper   # TODO
       related:
         # - TODO
+      licences:
+      - MIT
+      - CC0-1.0
+      - Apache-2.0
       documentation:
         exists:
           readme: false       # TODO
@@ -7016,6 +7032,8 @@ projects:
       type: Wrapper   # TODO
       related:
         # - TODO
+      licences:
+      - MIT
       documentation:
         exists:
           readme: false       # TODO
@@ -7056,6 +7074,8 @@ projects:
       type: Wrapper   # TODO
       related:
         # - TODO
+      licences:
+      - MIT
       documentation:
         exists:
           readme: false       # TODO
@@ -7096,6 +7116,8 @@ projects:
       type: Wrapper   # TODO
       related:
         # - TODO
+      licences:
+      - MIT
       documentation:
         exists:
           readme: false       # TODO
@@ -7136,6 +7158,8 @@ projects:
       type: Wrapper   # TODO
       related:
         # - TODO
+      licences:
+      - GPL-2.0
       documentation:
         exists:
           readme: false       # TODO
@@ -7156,6 +7180,8 @@ projects:
       type: Wrapper   # TODO
       related:
         # - TODO
+      licences:
+      - MIT
       documentation:
         exists:
           readme: false       # TODO
@@ -7196,6 +7222,8 @@ projects:
       type: Wrapper   # TODO
       related:
         # - TODO
+      licences:
+      - Public Domain
       documentation:
         exists:
           readme: false       # TODO
@@ -7216,6 +7244,9 @@ projects:
       type: Wrapper   # TODO
       related:
         # - TODO
+      licences:
+      - MIT
+      - BSD-2-Clause
       documentation:
         exists:
           readme: false       # TODO
@@ -7316,6 +7347,8 @@ projects:
       type: Wrapper   # TODO
       related:
         # - TODO
+      licences:
+      - MIT
       documentation:
         exists:
           readme: false       # TODO
@@ -7336,6 +7369,8 @@ projects:
       type: Wrapper   # TODO
       related:
         # - TODO
+      licences:
+      - BSD-3-Clause
       documentation:
         exists:
           readme: false       # TODO
@@ -7436,6 +7471,8 @@ projects:
       type: Wrapper   # TODO
       related:
         # - TODO
+      licences:
+      - MIT
       documentation:
         exists:
           readme: false       # TODO
@@ -7456,6 +7493,8 @@ projects:
       type: Wrapper   # TODO
       related:
         # - TODO
+      licences:
+      - Apache-2.0
       documentation:
         exists:
           readme: false       # TODO
@@ -7516,6 +7555,8 @@ projects:
       type: Wrapper   # TODO
       related:
         # - TODO
+      licences:
+      - MIT
       documentation:
         exists:
           readme: false       # TODO
@@ -7776,6 +7817,8 @@ projects:
       type: Wrapper   # TODO
       related:
         # - TODO
+      licences:
+      - BSD-3-Clause
       documentation:
         exists:
           readme: false       # TODO
@@ -9376,6 +9419,9 @@ projects:
       type: Wrapper   # TODO
       related:
         # - TODO
+      licences:
+      - BSD-2-Clause
+      - GPL-2.0
       documentation:
         exists:
           readme: false       # TODO
@@ -9756,6 +9802,9 @@ projects:
       type: Wrapper   # TODO
       related:
         # - TODO
+      licences:
+      - ISC
+      - MIT
       documentation:
         exists:
           readme: false       # TODO
@@ -9776,6 +9825,8 @@ projects:
       type: Wrapper   # TODO
       related:
         # - TODO
+      licences:
+      - GPL-3.0+
       documentation:
         exists:
           readme: false       # TODO
@@ -9856,6 +9907,8 @@ projects:
       type: Wrapper   # TODO
       related:
         # - TODO
+      licences:
+      - Apache-2.0
       documentation:
         exists:
           readme: false       # TODO
