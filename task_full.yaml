@@ -4571,6 +4571,31 @@ projects:
 ##########################################
 ## C#
 ##########################################
+- archive: https://referencesource.microsoft.com/DotNet47RS2.zip #DotNet47RS2\Source\ndp\clr\src\BCL\system\security\cryptography
+  manual:
+    generalData:
+      standard: true
+      type: Standalone
+      related:        
+      dependencies:
+      documentation: #https://msdn.microsoft.com/de-de/library/system.security.cryptography(v=vs.110).aspx
+        exists:
+          readme: false
+          website: true
+          download: true
+        completeness:
+          apis: true
+          examples: true
+          explanations: true
+      interfaceLevel:
+        high: true
+        low: false
+      interfaceLanguage:   
+      - C#     
+      - C++
+      - VB 
+      licences:
+      - MS-RSL      
 - git: https://github.com/bitbeans/StreamCryptor
   manual:
     generalData:
@@ -5393,7 +5418,45 @@ projects:
 
 ##########################################
 ## Python
-##########################################
+########################################## 
+- manual:
+  id: https://github.com/python/cpython 
+    generalData:
+      standard: true
+      type: Standalone
+      related:
+      dependencies:
+        - OpenSSL 
+      documentation:
+        exists:
+          readme: true
+          website: true
+          download: false
+        completeness:
+          apis: true
+          examples: true
+          explanations: true
+      interfaceLevel:
+        high: true
+        low: false
+      interfaceLanguage:   
+      - Python
+    LanguageDetector:
+        main_language: Python
+        languages:
+        - C
+        - C++
+    FeatureDetector:
+      hashes:
+        MD5: 1
+        SHA-1: 1
+        SHA-224: 1        
+        SHA-256: 1
+        SHA-384: 1
+        SHA-512: 1
+        PBKDF2: 1
+      message authentication codes:
+        HMAC: 1
 - git: https://github.com/Legrandin/pycryptodome
   manual:
     generalData:
