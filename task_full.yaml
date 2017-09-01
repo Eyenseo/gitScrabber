@@ -13866,6 +13866,8 @@ projects:
       type: Standalone 
       related:
       dependencies:
+      licences:
+      - BSD-3-Clause
       documentation:
         exists:
           readme: true
@@ -13947,6 +13949,8 @@ projects:
       related:
         - https://github.com/golang/crypto 
       dependencies:
+      licences:
+      - BSD-3-Clause
       documentation:
         exists:
           readme: true
@@ -13966,6 +13970,8 @@ projects:
     generalData:
       type: Standalone
       related:
+      licences:
+      - Apache-2.0
       documentation:
         exists:
           readme: true
@@ -13986,6 +13992,8 @@ projects:
       type: Wrapper
       related:
         - https://golang.org/pkg/crypto/
+      licences:
+      - MIT
       documentation:
         exists:
           readme: false
@@ -14007,6 +14015,8 @@ projects:
       related:
       dependencies:
         - https://golang.org/pkg/crypto/cipher
+      licences:
+      - BSD-3-Clause
       documentation:
         exists:
           readme: true
@@ -14027,6 +14037,8 @@ projects:
       type: Wrapper
       related:
         - https://download.libsodium.org/doc/
+      licences:
+      - ISC
       documentation:
         exists:
           readme: true
@@ -14049,6 +14061,8 @@ projects:
         - https://golang.org/pkg/crypto/
         - https://github.com/openssl/openssl
         - https://crypto.stanford.edu/pbc/
+      licences:
+      - MPL-2.0
       documentation:
         exists:
           readme: true
@@ -14069,6 +14083,8 @@ projects:
       type: Wrapper
       related:
         - https://golang.org/pkg/crypto/
+      licences:
+      - Apache-2.0
       documentation:
         exists:
           readme: true
@@ -14090,6 +14106,8 @@ projects:
       related:
         - https://github.com/golang/crypto 
       dependencies:
+      licences:
+      - BSD-3-Clause
       documentation:
         exists:
           readme: true
@@ -14109,6 +14127,8 @@ projects:
     generalData:
       type: Standalone
       related:
+      licences:
+      - BSD-3-Clause
       documentation:
         exists:
           readme: true
@@ -14169,6 +14189,8 @@ projects:
       type: Wrapper 
       related:
         - https://golang.org/pkg/crypto/
+      licences:
+      - MIT
       documentation:
         exists:
           readme: false
@@ -14349,6 +14371,8 @@ projects:
       type: Wrapper   # TODO
       related:
         # - TODO
+      licences:
+      - MIT
       documentation:
         exists:
           readme: false       # TODO
@@ -14470,6 +14494,8 @@ projects:
       related:
       dependencies:
         - https://golang.org/pkg/crypto/
+      licences:
+      - BSD-2-Clause
       documentation:
         exists:
           readme: false
@@ -14490,6 +14516,8 @@ projects:
       type: Reimplementation
       related:
         - https://golang.org/pkg/crypto/rand/        
+      licences:
+      - MIT
       documentation:
         exists:
           readme: true
@@ -14551,6 +14579,8 @@ projects:
       related:
         - https://godoc.org/golang.org/x/crypto
         - https://golang.org/pkg/crypto/
+      licences:
+      - MIT
       documentation:
         exists:
           readme: true
@@ -14729,6 +14759,8 @@ projects:
     generalData:
       type: Standalone
       related:        
+      licences:
+      - MIT
       documentation:
         exists:
           readme: true
@@ -14809,6 +14841,7 @@ projects:
       type: Wrapper
       related:
         - https://golang.org/pkg/crypto/aes/
+      licences:
       documentation:
         exists:
           readme: true
@@ -15210,6 +15243,8 @@ projects:
       related:
         - https://golang.org/pkg/crypto/
         - https://golang.org/pkg/encoding/
+      licences:
+      - ISC
       documentation:
         exists:
           readme: false
@@ -15251,6 +15286,8 @@ projects:
       related:
       dependencies:
         - https://golang.org/pkg/os/
+      licences:
+      - BSD-2-Clause
       documentation:
         exists:
           readme: true
@@ -15271,6 +15308,8 @@ projects:
       type: Fork
       related:
         - https://github.com/pkg/sftp      
+      licences:
+      - BSD-2-Clause
       documentation:
         exists:
           readme: true
