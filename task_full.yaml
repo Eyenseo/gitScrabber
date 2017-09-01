@@ -3064,6 +3064,28 @@ projects:
 ##########################################
 ## Java
 ##########################################
+- meta:
+  id: https://docs.oracle.com/javase/8/docs/api/ #https://github.com/dmlloyd/openjdk
+  name: JDK (S)
+  manual:
+    generalData:
+      standard: true
+      type: standalone
+      related:        
+      documentation:
+        exists:
+          readme: false
+          website: true
+          download: false
+        completeness:
+          apis: true
+          examples: false
+          explanations: true
+      interfaceLevel:
+        high: true
+        low: true
+      interfaceLanguage: 
+      - Java     
 - git: https://github.com/jcryptool/crypto
   manual:
     generalData:
@@ -4571,7 +4593,9 @@ projects:
 ##########################################
 ## C#
 ##########################################
-- archive: https://referencesource.microsoft.com/DotNet47RS2.zip #DotNet47RS2\Source\ndp\clr\src\BCL\system\security\cryptography
+- meta: 
+  id: https://referencesource.microsoft.com/DotNet47RS2.zip #DotNet47RS2\Source\ndp\clr\src\BCL\system\security\cryptography
+  name: DotNet (S)
   manual:
     generalData:
       standard: true
@@ -5488,6 +5512,7 @@ projects:
 ########################################## 
 - meta:
   id: https://github.com/python/cpython 
+  name: Cryptographic Services (S)
   manual:
     generalData:
       standard: true
@@ -10988,34 +11013,13 @@ projects:
       interfaceLanguage:   # TODO
       - Objective-C       # TODO
 
-- meta:
-  id: https://developer.apple.com/security/ # Common Crypto based on corecrypto
-  manual:
-    generalData:
-      type: Wrapper   # TODO
-      related:
-        # - TODO
-      documentation:
-        exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
-        completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
-      interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - Objective-C       # TODO
-
 
 ##########################################
 ## Swift
 ##########################################
 - meta:
   id: https://developer.apple.com/security/
+  name: Security (S)
   manual:
     generalData:
       standard: true
@@ -11810,6 +11814,7 @@ projects:
 ##########################################
 - meta:
   id: https://docs.ruby-lang.org/en/2.0.0/OpenSSL.html
+  name: OpenSSL (S)
   manual:
     generalData:
       standard: true
@@ -14045,6 +14050,7 @@ projects:
 ##########################################
 - meta:
   id: https://golang.org/pkg/crypto/ # https://storage.googleapis.com/golang/go1.9.windows-amd64.zip
+  name: Crypto (S)
   manual:
    generalData:      
     standard: true
