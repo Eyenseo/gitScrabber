@@ -11655,6 +11655,8 @@ projects:
       type: Wrapper
       related:
         - https://github.com/openssl/openssl
+      licences:
+      - MIT
       documentation:
         exists:
           readme: true
@@ -11675,6 +11677,7 @@ projects:
       type: Wrapper
       related:
         - https://github.com/openssl/openssl
+      licences:
       documentation:
         exists:
           readme: true
@@ -11695,6 +11698,8 @@ projects:
       type: Fork
       related:
         - https://github.com/lamikae/srp-rb
+      licences:
+      - BSD-3-Clause
       documentation:
         exists:
           readme: true
@@ -11735,6 +11740,7 @@ projects:
       type: Wrapper
       related:
         - https://github.com/VirgilSecurity/virgil-crypto
+      licences:
       documentation:
         exists:
           readme: true
@@ -11815,6 +11821,8 @@ projects:
       type: Wrapper
       related:
         - http://nacl.cr.yp.to/
+      licences:
+      - MIT
       documentation:
         exists:
           readme: true
@@ -11855,6 +11863,8 @@ projects:
       type: Wrapper
       related:
         - https://github.com/openssl/openssl
+      licences:
+      - MIT
       documentation:
         exists:
           readme: true
@@ -11955,6 +11965,8 @@ projects:
       type: Wrapper
       related:
         - https://man.openbsd.org/bcrypt.3
+      licences:
+      - MIT
       documentation:
         exists:
           readme: true
@@ -11975,6 +11987,8 @@ projects:
       type: Wrapper
       related:
         - http://www.tarsnap.com/scrypt.html
+      licences:
+      - MIT
       documentation:
         exists:
           readme: true
