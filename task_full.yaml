@@ -10090,6 +10090,8 @@ projects:
       related:
         - https://opensource.apple.com/source/CommonCrypto/
         - https://docs.oracle.com/javase/7/docs/api/javax/crypto/package-summary.html        
+      licences:
+      - GPL-3.0
       documentation:
         exists:
           readme: true
@@ -10290,6 +10292,8 @@ projects:
       type: Wrapper   
       related:
         - https://opensource.apple.com/source/CommonCrypto/
+      licences:
+      - MIT
       documentation:
         exists:
           readme: false
@@ -10311,6 +10315,8 @@ projects:
       related: # check to be sure, migh be new impl not wrapped funct
         - https://docs.oracle.com/javase/7/docs/api/java/security/package-summary.html
         - https://opensource.apple.com/source/CommonCrypto/
+      licences:
+      - MIT
       documentation:
         exists:
           readme: true
@@ -10332,6 +10338,8 @@ projects:
       related:
         - https://opensource.apple.com/source/CommonCrypto/
         - https://docs.oracle.com/javase/7/docs/api/javax/crypto/package-summary.html        
+      licences:
+      - MIT
       documentation:
         exists:
           readme: true
@@ -10373,6 +10381,8 @@ projects:
       related:
         - https://opensource.apple.com/source/CommonCrypto/
         - https://developer.apple.com/documentation/corefoundation
+      licences:
+      - MIT
       documentation:
         exists:
           readme: true
@@ -10433,6 +10443,8 @@ projects:
       type: Wrapper
       related:
         - http://nacl.cr.yp.to/
+      licences:
+      - Apache-2.0
       documentation:
         exists:
           readme: true
@@ -10613,6 +10625,8 @@ projects:
       type: Reimplementation
       related:
         - https://aerogear.org/docs/specs/aerogear-js/AeroGear.Crypto.html
+      licences:
+      - Apache-2.0
       documentation:
         exists:
           readme: true
@@ -10653,6 +10667,8 @@ projects:
       type: Wrapper
       related:
         - https://developer.apple.com/documentation/corefoundation
+      licences:
+      - BSD-3-Clause
       documentation:
         exists:
           readme: true
@@ -10695,6 +10711,8 @@ projects:
       related:
       dependencies:
         - https://opensource.apple.com/source/Security/Security-54.1/Keychain/Security.h.auto.html
+      licences:
+      - BSD-3-Clause
       documentation:
         exists:
           readme: true
@@ -10715,6 +10733,8 @@ projects:
       type: Wrapper
       related:
         - https://github.com/openssl/openssl
+      licences:
+      - MIT
       documentation:
         exists:
           readme: true
@@ -10888,6 +10908,7 @@ projects:
     generalData:
       type: Standalone
       related:        
+      licences:
       documentation:
         exists:
           readme: true
@@ -11257,6 +11278,8 @@ projects:
       type: Reimplementation # check to be sure
       related:
         - https://github.com/etienne-martin/CryptoJS.swift
+      licences:
+      - MIT
       documentation:
         exists:
           readme: true
@@ -11317,6 +11340,8 @@ projects:
       type: Wrapper
       related:
         - https://opensource.apple.com/source/CommonCrypto/
+      licences:
+      - MIT
       documentation:
         exists:
           readme: false
