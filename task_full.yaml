@@ -5373,6 +5373,9 @@ projects:
       type: Fork
       related:
         - https://github.com/dlitz/pycrypto
+      licences:
+      - BSD-2-Clause
+      - Public Domain
       documentation:
         exists:
           readme: true
@@ -5393,6 +5396,8 @@ projects:
       type: Wrapper   
       related:
         - https://github.com/jedisct1/libsodium
+      licences:
+      - Apache-2.0
       documentation:
         exists:
           readme: true
@@ -5412,6 +5417,8 @@ projects:
     generalData:
       type: Standalone
       related:        
+      licences:
+      - MIT
       documentation:
         exists:
           readme: true
@@ -5431,6 +5438,10 @@ projects:
     generalData:
       type: Standalone 
       related:        
+      licences:
+      - Apache-2.0
+      - BSD-3-Clause
+      - PSF License
       documentation:
         exists:
           readme: true
@@ -5471,6 +5482,8 @@ projects:
       type: Wrapper
       related:
         - https://docs.python.org/2/library/hashlib.html        
+      licences:
+      - GPL
       documentation:
         exists:
           readme: true
@@ -5510,6 +5523,8 @@ projects:
     generalData:
       type: Standalone
       related:        
+      licences:
+      - MIT
       documentation:
         exists:
           readme: true
@@ -5550,6 +5565,8 @@ projects:
       type: Wrapper
       related:
         - https://github.com/jedisct1/libsodium
+      licences:
+      - BSD
       documentation:
         exists:
           readme: true
@@ -5590,6 +5607,8 @@ projects:
       type: Standalone
       related:
         - cryptography primitives from the host operating system
+      licences:
+      - MIT
       documentation:
         exists:
           readme: true
@@ -5611,6 +5630,9 @@ projects:
       related:
       dependencies:
         - https://github.com/pyca/cryptography
+      licences:
+      - Apache-2.0
+      - BSD-3-Clause
       documentation:
         exists:
           readme: true
@@ -5710,6 +5732,7 @@ projects:
     generalData:
       type: Standalone
       related:        
+      licences:
       documentation:
         exists:
           readme: true
@@ -5730,6 +5753,8 @@ projects:
       type: Wrapper
       related:
         - https://github.com/dlitz/pycrypto
+      licences:
+      - BSD-3-Clause
       documentation:
         exists:
           readme: true
@@ -6009,6 +6034,9 @@ projects:
     generalData:
       type: Standalone
       related:        
+      licences:
+      - Public Domain
+      - Python 2.2 License
       documentation:
         exists:
           readme: true
@@ -6029,6 +6057,8 @@ projects:
       type: Wrapper
       related:
         - https://github.com/openssl/openssl
+      licences:
+      - Apache-2.0
       documentation:
         exists:
           readme: true
