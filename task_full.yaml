@@ -6133,6 +6133,8 @@ projects:
       related:
       dependencies:
         - https://github.com/openssl/openssl
+      licences:
+      - AGPL-3.0+
       documentation:
         exists:
           readme: true
@@ -6294,6 +6296,9 @@ projects:
       related:
         - https://github.com/openssl/openssl
         - https://github.com/jedisct1/libsodium
+      licences:
+      - LGPL-2.0+
+      - LGPL-3.0+
       documentation:
         exists:
           readme: true
@@ -6313,6 +6318,8 @@ projects:
     generalData:
       type: Standalone
       related:
+      licences:
+      - BSD-3-Clause
       documentation:
         exists:
           readme: true
@@ -6752,6 +6759,8 @@ projects:
     generalData:
       type: standalone
       related:
+      licences:
+      - PHP-3.01
       documentation:
         exists:
           readme: true
@@ -6772,6 +6781,8 @@ projects:
       type: Wrapper
       related:
         - https://github.com/openssl/openssl
+      licences:
+      - PHP-3.01
       documentation:
         exists:
           readme: true
@@ -6792,6 +6803,8 @@ projects:
       type: Wrapper
       related:
         - https://github.com/openssl/openssl
+      licences:
+      - MIT
       documentation:
         exists:
           readme: true
@@ -6832,6 +6845,8 @@ projects:
       type: Wrapper
       related:
         - https://github.com/jedisct1/libsodium
+      licences:
+      - BSD-2-Clause
       documentation:
         exists:
           readme: true
@@ -6851,6 +6866,8 @@ projects:
     generalData:
       type: Standalone
       related:
+      licences:
+      - MIT
       documentation:
         exists:
           readme: true
