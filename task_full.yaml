@@ -12013,6 +12013,9 @@ projects:
     generalData:
       type: Standalone
       related:        
+      licences:
+      - MIT
+      - Apache-2.0
       documentation:
         exists:
           readme: true
@@ -12053,6 +12056,8 @@ projects:
       type: Wrapper
       related:
         - https://gnupg.org/related_software/libgcrypt/
+      licences:
+      - LGPL-2.1
       documentation:
         exists:
           readme: true
@@ -12157,6 +12162,8 @@ projects:
         - https://github.com/dnaq/sodiumoxide
         - https://github.com/briansmith/ring
         - https://github.com/DaGenix/rust-crypto
+      licences:
+      - Unlicense
       documentation:
         exists:
           readme: true
@@ -12239,6 +12246,8 @@ projects:
         - https://msdn.microsoft.com/en-us/library/ms867086.aspx
         - https://crates.io/crates/commoncrypto
         - https://crates.io/crates/openssl
+      licences:
+      - MIT
       documentation:
         exists:
           readme: true
@@ -12358,6 +12367,8 @@ projects:
     generalData:
       type: Standalone
       related:        
+      licences:
+      - MIT
       documentation:
         exists:
           readme: false
@@ -12417,6 +12428,8 @@ projects:
     generalData:
       type: Standalone
       related:        
+      licences:
+      - MIT
       documentation:
         exists:
           readme: false
@@ -12596,6 +12609,8 @@ projects:
     generalData:
       type: Standalone
       related:        
+      licences:
+      - BSD-3-Clause
       documentation:
         exists:
           readme: true
@@ -12615,6 +12630,8 @@ projects:
     generalData:
       type: Standalone
       related:      
+      licences:
+      - MIT
       documentation:
         exists:
           readme: true
@@ -12674,6 +12691,8 @@ projects:
     generalData:
       type: Standalone
       related:        
+      licences:
+      - MIT
       documentation:
         exists:
           readme: true
@@ -12734,6 +12753,9 @@ projects:
       type: Wrapper
       related:
         - https://docs.rs/chacha/0.1.0/chacha/
+      licences:
+      - MIT
+      - Apache-2.0
       documentation:
         exists:
           readme: false       # TODO
@@ -12773,6 +12795,8 @@ projects:
     generalData:
       type: Standalone
       related:        
+      licences:
+      - BSD-3-Clause
       documentation:
         exists:
           readme: true
@@ -12852,6 +12876,8 @@ projects:
     generalData:
       type: Standalone
       related:        
+      licences:
+      - MIT
       documentation:
         exists:
           readme: false
@@ -12871,6 +12897,8 @@ projects:
     generalData:
       type: Standalone
       related:        
+      licences:
+      - MIT
       documentation:
         exists:
           readme: false
@@ -12930,6 +12958,9 @@ projects:
     generalData:
       type: Standalone
       related:        
+      licences:
+      - Apache-2.0
+      - MIT
       documentation:
         exists:
           readme: true
@@ -12971,6 +13002,8 @@ projects:
       related:
         - https://github.com/google/boringssl/tree/master/crypto/newhope
         - https://github.com/fschlieker/newhope
+      licences:
+      - MIT
       documentation:
         exists:
           readme: false
@@ -13032,6 +13065,9 @@ projects:
       related:
       dependencies:
         - https://github.com/briansmith/ring     
+      licences:
+      - MIT
+      - Apache-2.0
       documentation:
         exists:
           readme: true
@@ -13152,6 +13188,8 @@ projects:
       type: Wrapper
       related:
         - https://www.gnupg.org/(it)/related_software/gpgme/index.html
+      licences:
+      - LGPL-2.1
       documentation:
         exists:
           readme: true
@@ -13211,6 +13249,8 @@ projects:
     generalData:
       type: Standalone
       related:        
+      licences:
+      - BSD-3-Clause
       documentation:
         exists:
           readme: true
@@ -13230,6 +13270,8 @@ projects:
     generalData:
       type: Standalone
       related:        
+      licences:
+      - CC0-1.0
       documentation:
         exists:
           readme: true
@@ -13250,6 +13292,8 @@ projects:
       type: Reimplementation
       related:
         - https://github.com/Cyan4973/xxHash
+      licences:
+      - MIT
       documentation:
         exists:
           readme: true
@@ -13269,6 +13313,9 @@ projects:
     generalData:
       type: Standalone
       related:        
+      licences:
+      - Apache-2.0
+      - MIT
       documentation:
         exists:
           readme: true
@@ -13288,6 +13335,9 @@ projects:
     generalData:
       type: Standalone
       related:        
+      licences:
+      - Apache-2.0
+      - MIT
       documentation:
         exists:
           readme: true
@@ -13309,6 +13359,13 @@ projects:
       related:
       dependencies:
         - https://boringssl.googlesource.com/boringssl/        
+      licences:
+      - ISC
+      - OpenSSL
+      - SSLeay
+      - Intel License
+      - Apache-2.0
+      - Eric Young Open Source License
       documentation:
         exists:
           readme: true
@@ -13389,6 +13446,9 @@ projects:
       type: Wrapper
       related:
         - http://nacl.cr.yp.to/
+      licences:
+      - Apache-2.0
+      - MIT
       documentation:
         exists:
           readme: true
@@ -13410,6 +13470,11 @@ projects:
       related:
         - https://github.com/openssl/openssl
         - https://www.libressl.org/
+      licences:
+      - Apache-2.0
+      - MIT
+      - OpenSSL
+      - SSLeay
       documentation:
         exists:
           readme: true
@@ -13450,6 +13515,8 @@ projects:
       type: Reimplementation
       related:
         - https://github.com/cyx/nobi
+      licences:
+      - BSD-3-Clause
       documentation:
         exists:
           readme: true
@@ -13470,6 +13537,8 @@ projects:
       type: Reimplementation
       related:
         - https://www.djangoproject.com/
+      licences:
+      - BSD-3-Clause
       documentation:
         exists:
           readme: true
@@ -13531,6 +13600,10 @@ projects:
       related:
         - https://github.com/briansmith/ring
         - https://github.com/briansmith/webpki
+      licences:
+      - Apache-2.0
+      - MIT
+      - ISC
       documentation:
         exists:
           readme: true
@@ -13573,6 +13646,10 @@ projects:
         - https://crates.io/crates/schannel
         - https://crates.io/crates/openssl
         - https://crates.io/crates/security-framework
+      licences:
+      - MIT
+      - Apache-2.0
+      - BSD-like
       documentation:
         exists:
           readme: true
@@ -13593,6 +13670,9 @@ projects:
       type: Wrapper
       related:
         - https://developer.apple.com/documentation/security
+      licences:
+      - Apache-2.0
+      - MIT
       documentation:
         exists:
           readme: true
@@ -13613,6 +13693,8 @@ projects:
       type: Wrapper
       related:
         - https://msdn.microsoft.com/de-de/library/windows/desktop/aa380123(v=vs.85).aspx
+      licences:
+      - MIT
       documentation:
         exists:
           readme: true
@@ -13635,6 +13717,8 @@ projects:
         - https://github.com/briansmith/mozillapkix
       dependencies:
         - https://github.com/briansmith/ring
+      licences:
+      - ISC
       documentation:
         exists:
           readme: true
@@ -13735,6 +13819,8 @@ projects:
       type: Wrapper
       related:
         - https://mkcert.org/
+      licences:
+      - MPL-2.0
       documentation:
         exists:
           readme: false
