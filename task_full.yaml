@@ -4595,7 +4595,74 @@ projects:
       - C++
       - VB 
       licences:
-      - MS-RSL      
+      - MS-RSL
+      FeatureDetector:
+        hashes:
+          SHA-512: 19
+          SHA: 366
+          RIPEMD: 16
+          SHA-2: 130
+          scrypt: 6
+          BLAKE2: 0
+          Whirlpool: 0
+          brcypt: 0
+          MD5: 94
+          SHA-256: 88
+          SHA-1: 236
+          PBKDF2: 0
+          SHAKE: 0
+          SHA-3: 124
+        public key cryptography:
+          ElGamal: 0
+          ECDH: 22
+          ECDSA: 27
+          RSA: 855
+          DSA: 148
+          DH: 55
+        block ciphers:
+          Skipjack: 0
+          TEA: 0
+          Camellia: 0
+          XTEA: 0
+          CAST: 2932
+          ARIA-128: 0
+          ARIA-256: 0
+          AES-128: 8
+          Triple DES: 0
+          AES-256: 8
+          DES: 82
+          AES-192: 8
+          Serpent: 0
+          Blowfish: 0
+          Twofish: 0
+          ARIA-192: 0
+          ARIA: 54
+          RC: 91
+          AES: 102
+          CAST-128: 0
+          IDEA: 351
+          SEED: 295
+          CAST-256: 0
+        stream ciphers:
+          ChaCha: 0
+          Salsa: 0
+          RC: 2
+        message authentication codes:
+          HMAC: 87
+          Poly1305: 0
+          CBC-MAC: 0
+        encryption modes:
+          GCM: 0
+          EAX: 47
+          OFB: 1
+          CFB: 1
+          IAPM: 0
+          CWC: 8
+          ECB: 148
+          CBC: 23
+          CCM: 20
+          OCB: 0
+          CTR: 359      
 - git: https://github.com/bitbeans/StreamCryptor
   manual:
     generalData:
@@ -5419,8 +5486,9 @@ projects:
 ##########################################
 ## Python
 ########################################## 
-- manual:
+- meta:
   id: https://github.com/python/cpython 
+  manual:
     generalData:
       standard: true
       type: Standalone
@@ -5440,7 +5508,9 @@ projects:
         high: true
         low: false
       interfaceLanguage:   
-      - Python
+        - Python
+      licences:
+        - 
     LanguageDetector:
         main_language: Python
         languages:
@@ -10944,6 +11014,32 @@ projects:
 ##########################################
 ## Swift
 ##########################################
+- meta:
+  id: https://developer.apple.com/security/
+  manual:
+    generalData:
+      standard: true
+      type: Standalone
+      related:
+      dependencies:
+        - corecrypto
+      documentation:
+        exists:
+          readme: false
+          website: true
+          download: false
+        completeness:
+          apis: true
+          examples: true
+          explanations: true
+      interfaceLevel:
+        high: true
+        low: true
+      interfaceLanguage:   
+        - Swift
+        - Objective-C
+      licences:
+        - 
 - git: https://github.com/soffes/Crypto
   manual:
     generalData:
@@ -11712,6 +11808,30 @@ projects:
 ##########################################
 ## Ruby
 ##########################################
+- meta:
+  id: https://docs.ruby-lang.org/en/2.0.0/OpenSSL.html
+  manual:
+    generalData:
+      standard: true
+      type: Wrapper
+      related:
+        - https://github.com/openssl/openssl
+      documentation:
+        exists:
+          readme: true
+          website: true
+          download: false
+        completeness:
+          apis: true
+          examples: true
+          explanations: true
+      interfaceLevel:
+        high: true
+        low: true
+      interfaceLanguage: 
+      - Ruby 
+      licences:
+        - GPL
 - git: https://github.com/joshwetzel/cryptosystem
   manual:
     generalData:
@@ -13923,9 +14043,98 @@ projects:
 ##########################################
 ## Go
 ##########################################
+- meta:
+  id: https://golang.org/pkg/crypto/ # https://storage.googleapis.com/golang/go1.9.windows-amd64.zip
+  manual:
+   generalData:      
+    standard: true
+    type: Standalone 
+    related:
+    dependencies:
+    documentation:
+      exists:
+        readme: false
+        website: true
+        download: false
+      completeness:
+        apis: true
+        examples: true
+        explanations: true
+    interfaceLevel:
+      high: true
+      low: true
+    interfaceLanguage:  
+    - Go
+    FeatureDetector:
+      hashes:
+        SHA-512: 641
+        SHA: 2208
+        RIPEMD: 12
+        SHA-2: 1313
+        scrypt: 25
+        BLAKE2: 8
+        Whirlpool: 0
+        brcypt: 0
+        MD5: 728
+        SHA-256: 663
+        SHA-1: 890
+        PBKDF2: 0
+        SHAKE: 0
+        SHA-3: 1313
+      public key cryptography:
+        ElGamal: 4
+        ECDH: 1
+        ECDSA: 1122
+        RSA: 2263
+        DSA: 369
+        DH: 383
+      block ciphers:
+        Skipjack: 0
+        TEA: 7
+        Camellia: 0
+        XTEA: 4
+        CAST: 128
+        ARIA-128: 0
+        ARIA-256: 0
+        AES-128: 3
+        Triple DES: 0
+        AES-256: 2
+        DES: 820
+        AES-192: 2
+        Serpent: 0
+        Blowfish: 7
+        Twofish: 6
+        ARIA-192: 0
+        ARIA: 112
+        RC: 3
+        AES: 2218
+        CAST-128: 0
+        IDEA: 116
+        SEED: 553
+        CAST-256: 0
+      stream ciphers:
+        ChaCha: 3162
+        Salsa: 0
+        RC: 367
+      message authentication codes:
+        HMAC: 451
+        Poly1305: 1461
+        CBC-MAC: 0
+      encryption modes:
+        GCM: 1306
+        EAX: 406
+        OFB: 66
+        CFB: 49
+        IAPM: 0
+        CWC: 2
+        ECB: 1
+        CBC: 566
+        CCM: 2
+        OCB: 1
+        CTR: 2775       
 - git: https://github.com/golang/crypto  # Standard
   manual:
-    generalData:
+    generalData:      
       type: Standalone 
       related:
       dependencies:
