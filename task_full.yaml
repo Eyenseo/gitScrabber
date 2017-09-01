@@ -4579,6 +4579,8 @@ projects:
       dependencies:
         - https://github.com/adamcaudill/libsodium-net
         - https://github.com/mgravell/protobuf-net
+      licences:
+      - MIT
       documentation:
         exists:
           readme: true
@@ -4599,6 +4601,8 @@ projects:
       type: Wrapper
       related:
         - operation systems crypto
+      licences:
+      - MS-PL
       documentation:
         exists:
           readme: true
@@ -4620,6 +4624,8 @@ projects:
       related:        
       dependencies:
         - https://msdn.microsoft.com/en-us/library/system.security.cryptography(v=vs.110).aspx
+      licences:
+      - MIT
       documentation:
         exists:
           readme: false
@@ -4681,6 +4687,8 @@ projects:
       related: 
       dependencies:
         - https://msdn.microsoft.com/de-de/library/system.security.cryptography(v=vs.110).aspx        
+      licences:
+      - mit
       documentation:
         exists:
           readme: true
@@ -4701,6 +4709,8 @@ projects:
       type: Wrapper
       related:
         - https://github.com/jedisct1/libsodium 
+      licences:
+      - MIT
       documentation:
         exists:
           readme: true
@@ -4841,6 +4851,8 @@ projects:
       type: Reimplementation
       related:
         - https://github.com/warner/python-ecdsa
+      licences:
+      - MIT
       documentation:
         exists:
           readme: true
@@ -4981,6 +4993,8 @@ projects:
       type: Reimplementation
       related:
         - https://github.com/libp2p/go-libp2p-crypto
+      licences:
+      - MIT
       documentation:
         exists:
           readme: true
@@ -5001,6 +5015,8 @@ projects:
       type: Wrapper
       related:
         - https://github.com/dotnet/standard
+      licences:
+      - MIT
       documentation:
         exists:
           readme: true
@@ -5122,6 +5138,8 @@ projects:
       related:
         - https://github.com/P-H-C/phc-winner-argon2
         - https://github.com/BLAKE2/BLAKE2
+      licences:
+      - Public Domain
       documentation:
         exists:
           readme: true
@@ -5143,6 +5161,8 @@ projects:
       related:     
         - https://msdn.microsoft.com/de-de/library/system.security.cryptography(v=vs.110).aspx
         - https://docs.microsoft.com/en-us/aspnet/core/api/microsoft.aspnetcore.cryptography.keyderivation   
+      licences:
+      - MIT
       documentation:
         exists:
           readme: true
@@ -5223,6 +5243,9 @@ projects:
       type: Reimplementation
       related:
         - https://www.bouncycastle.org/java.html
+      licences:
+      - MIT
+      - Apache-2.0
       documentation:
         exists:
           readme: true
@@ -5265,6 +5288,8 @@ projects:
         - https://msdn.microsoft.com/de-de/library/system.security.cryptography(v=vs.110).aspx
         - https://msdn.microsoft.com/de-de/library/system.security.securestring(v=vs.110).aspx
       related:        
+      licences:
+      - MIT
       documentation:
         exists:
           readme: true
@@ -5285,6 +5310,8 @@ projects:
       type: Reimplementation
       related:
         - http://www.mindrot.org/projects/jBCrypt/
+      licences:
+      - MIT
       documentation:
         exists:
           readme: true
