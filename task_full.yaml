@@ -10823,6 +10823,8 @@ projects:
       type: Wrapper
       related:
         - https://github.com/soffes/CommonCrypto
+      licences:
+      - MIT
       documentation:
         exists:
           readme: true
@@ -10844,6 +10846,8 @@ projects:
       related:
       dependencies:
         - https://github.com/vapor/ctls 
+      licences:
+      - MIT
       documentation:
         exists:
           readme: false
@@ -10863,6 +10867,8 @@ projects:
     generalData:
       type: Standalone
       related:        
+      licences:
+      - Zlib
       documentation:
         exists:
           readme: true
@@ -10902,6 +10908,8 @@ projects:
       type: Wrapper   
       related:
         - https://opensource.apple.com/source/CommonCrypto/
+      licences:
+      - MIT
       documentation:
         exists:
           readme: true
@@ -10942,6 +10950,8 @@ projects:
       type: Reimplementation
       related:
         - https://github.com/iosdevzone/IDZSwiftCommonCrypto
+      licences:
+      - Apache-2.0
       documentation:
         exists:
           readme: true
@@ -11002,6 +11012,8 @@ projects:
       type: Wrapper
       related:
         - https://github.com/brix/crypto-js
+      licences:
+      - MIT
       documentation:
         exists:
           readme: true
@@ -11122,6 +11134,8 @@ projects:
       type: Wrapper
       related:
         - https://github.com/openssl/openssl
+      licences:
+      - Apache-2.0
       documentation:
         exists:
           readme: true
@@ -11161,6 +11175,8 @@ projects:
     generalData:
       type: Standalone
       related:        
+      licences:
+      - MIT
       documentation:
         exists:
           readme: true
@@ -11200,6 +11216,7 @@ projects:
     generalData:
       type: Standalone
       related:        
+      licences:
       documentation:
         exists:
           readme: false
@@ -11522,6 +11539,8 @@ projects:
       dependencies:
         - https://github.com/openssl/openssl
         - https://developer.apple.com/documentation/security/secure_transport
+      licences:
+      - Apache-2.0
       documentation:
         exists:
           readme: true
