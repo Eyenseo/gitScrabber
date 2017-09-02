@@ -9,7 +9,7 @@ projects:
       type: Wrapper   # TODO
       related:
         # - TODO
-      licenses:
+      licences:
       - MIT
       documentation:
         exists:
@@ -131,7 +131,7 @@ projects:
       type: Wrapper   # TODO
       related:
         # - TODO
-      licenses:
+      licences:
       documentation:
         exists:
           readme: false       # TODO
@@ -152,7 +152,7 @@ projects:
       type: Wrapper   # TODO
       related:
         # - TODO
-      licenses:
+      licences:
       - MIT
       - CC-BY-SA-4.0
       - Public Domain
@@ -196,7 +196,7 @@ projects:
       type: Wrapper   # TODO
       related:
         # - TODO
-      licenses:
+      licences:
       - Apache-2.0
       documentation:
         exists:
@@ -278,7 +278,7 @@ projects:
       type: Wrapper   # TODO
       related:
         # - TODO
-      licenses:
+      licences:
       - Apache-2.0
       documentation:
         exists:
@@ -320,7 +320,7 @@ projects:
       type: Wrapper   # TODO
       related:
         # - TODO
-      licenses:
+      licences:
       - OpenSSL
       - SSLeay
       documentation:
@@ -383,7 +383,7 @@ projects:
       type: Wrapper   # TODO
       related:
         # - TODO
-      licenses:
+      licences:
       - Public Domain
       - MIT
       - BSD
@@ -507,7 +507,7 @@ projects:
       type: Wrapper   # TODO
       related:
         # - TODO
-      licenses:
+      licences:
       - GPL-2.0
       - LGPL-2.1
       documentation:
@@ -816,7 +816,7 @@ projects:
       type: Wrapper   # TODO
       related:
         # - TODO
-      licenses:
+      licences:
       documentation:
         exists:
           readme: false       # TODO
@@ -837,7 +837,7 @@ projects:
       type: Wrapper   # TODO
       related:
         # - TODO
-      licenses:
+      licences:
       - BSD-2-Clause
       - Own License
       documentation:
@@ -880,7 +880,7 @@ projects:
       type: Wrapper   # TODO
       related:
         # - TODO
-      licesnes:
+      licences:
       - ISC
       documentation:
         exists:
@@ -1002,7 +1002,7 @@ projects:
       type: Wrapper   # TODO
       related:
         # - TODO
-      licenses:
+      licences:
       - OpenSSL
       - SSLeay
       documentation:
@@ -1045,7 +1045,7 @@ projects:
       type: Wrapper   # TODO
       related:
         # - TODO
-      licenses:
+      licences:
       - ISC
       documentation:
         exists:
@@ -1087,7 +1087,7 @@ projects:
       type: Wrapper   # TODO
       related:
         # - TODO
-      licenses:
+      licences:
       - BSD-3-Clause
       documentation:
         exists:
@@ -1189,7 +1189,7 @@ projects:
       type: Wrapper   # TODO
       related:
         # - TODO
-      licenses:
+      licences:
       documentation:
         exists:
           readme: false       # TODO
@@ -1410,7 +1410,7 @@ projects:
       type: Wrapper   # TODO
       related:
         # - TODO
-      licenses:
+      licences:
       - Apache-2.0
       - Boost Software License
       documentation:
@@ -1453,7 +1453,7 @@ projects:
       type: Wrapper   # TODO
       related:
         # - TODO
-      Licenses:
+      licences:
       - ISC
       documentation:
         exists:
@@ -1515,7 +1515,7 @@ projects:
       type: Wrapper   # TODO
       related:
         # - TODO
-      licenses:
+      licences:
       - ISC
       documentation:
         exists:
@@ -1537,7 +1537,7 @@ projects:
       type: Wrapper   # TODO
       related:
         # - TODO
-      licenses:
+      licences:
       - MIT
       documentation:
         exists:
@@ -1579,7 +1579,7 @@ projects:
       type: Wrapper   # TODO
       related:
         # - TODO
-      licenses:
+      licences:
       - OpenSSL
       - SSLeay
       - ISC
@@ -1603,7 +1603,7 @@ projects:
       type: Wrapper   # TODO
       related:
         # - TODO
-      licenses:
+      licences:
       - Public Domain
       - WTFPL
       documentation:
@@ -1626,7 +1626,7 @@ projects:
       type: Wrapper   # TODO
       related:
         # - TODO
-      licenses:
+      licences:
       - GPL-2.0
       - commercial
       documentation:
@@ -1672,7 +1672,7 @@ projects:
       type: Wrapper   # TODO
       related:
         # - TODO
-      licenses:
+      licences:
       - EPL-1.0
       - Eclipse Distribution License 1.0 (BSD)
       documentation:
@@ -3132,7 +3132,7 @@ projects:
       type: Wrapper   # TODO
       related:
         # - TODO
-      licenses:
+      licences:
       - MIT
       documentation:
         exists:
@@ -3767,7 +3767,7 @@ projects:
       type: Wrapper   # TODO
       related:
         # - TODO
-      License:
+      licences:
       - BSD-3-Clause
       documentation:
         exists:
