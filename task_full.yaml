@@ -1753,6 +1753,127 @@ projects:
       interfaceLanguage:   # TODO
       - C       # TODO
 
+- git: https://github.com/ARMmbed/mbedtls
+  manual:
+      generalData:
+        type: Wrapper   # TODO
+        related:
+          # - TODO
+        documentation:
+          exists:
+            readme: false       # TODO
+            website: false       # TODO
+            download: false       # TODO
+          completeness:
+            apis: false       # TODO
+            examples: false       # TODO
+            explanations: false       # TODO
+        interfaceLevel:
+          high: true     # TODO
+          low: true     # TODO
+        interfaceLanguage:   # TODO
+        - C       # TODO
+- git: https://github.com/awslabs/s2n
+  manual:
+      generalData:
+        type: Wrapper   # TODO
+        related:
+          # - TODO
+        documentation:
+          exists:
+            readme: false       # TODO
+            website: false       # TODO
+            download: false       # TODO
+          completeness:
+            apis: false       # TODO
+            examples: false       # TODO
+            explanations: false       # TODO
+        interfaceLevel:
+          high: true     # TODO
+          low: true     # TODO
+        interfaceLanguage:   # TODO
+        - C       # TODO
+- git: https://github.com/h2o/picotls
+  manual:
+      generalData:
+        type: Wrapper   # TODO
+        related:
+          # - TODO
+        documentation:
+          exists:
+            readme: false       # TODO
+            website: false       # TODO
+            download: false       # TODO
+          completeness:
+            apis: false       # TODO
+            examples: false       # TODO
+            explanations: false       # TODO
+        interfaceLevel:
+          high: true     # TODO
+          low: true     # TODO
+        interfaceLanguage:   # TODO
+        - C       # TODO
+- git: https://github.com/ctz/cifra/
+  manual:
+      generalData:
+        type: Wrapper   # TODO
+        related:
+          # - TODO
+        documentation:
+          exists:
+            readme: false       # TODO
+            website: false       # TODO
+            download: false       # TODO
+          completeness:
+            apis: false       # TODO
+            examples: false       # TODO
+            explanations: false       # TODO
+        interfaceLevel:
+          high: true     # TODO
+          low: true     # TODO
+        interfaceLanguage:   # TODO
+        - C       # TODO
+- git: https://github.com/matrixssl/matrixssl
+  manual:
+      generalData:
+        type: Wrapper   # TODO
+        related:
+          # - TODO
+        documentation:
+          exists:
+            readme: false       # TODO
+            website: false       # TODO
+            download: false       # TODO
+          completeness:
+            apis: false       # TODO
+            examples: false       # TODO
+            explanations: false       # TODO
+        interfaceLevel:
+          high: true     # TODO
+          low: true     # TODO
+        interfaceLanguage:   # TODO
+        - C       # TODO
+- git: https://github.com/eduardsui/tlse
+  manual:
+      generalData:
+        type: Wrapper   # TODO
+        related:
+          # - TODO
+        documentation:
+          exists:
+            readme: false       # TODO
+            website: false       # TODO
+            download: false       # TODO
+          completeness:
+            apis: false       # TODO
+            examples: false       # TODO
+            explanations: false       # TODO
+        interfaceLevel:
+          high: true     # TODO
+          low: true     # TODO
+        interfaceLanguage:   # TODO
+        - C       # TODO
+
 - meta:
   id: https://sourceforge.net/projects/lightcrypto/?source=directory
   manual:
