@@ -200,7 +200,7 @@ class EaseOfUseEstimation(ReportTask):
 
         if data.high and data.low:
             score += self.__weight.high_low
-        elif data.heigh:
+        elif data.high:
             score += self.__weight.high
         elif data.low:
             score += self.__weight.low
@@ -243,7 +243,7 @@ class EaseOfUseEstimation(ReportTask):
                 "While estimating ease of use for the project '{}' with "
                 "the report\n{}".format(
                     project,
-                    self.__projects[project])
+                    projects[project])
             ) from e
 
         return report
