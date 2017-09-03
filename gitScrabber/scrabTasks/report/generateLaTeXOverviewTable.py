@@ -178,7 +178,7 @@ def get_project_licences(project_report):
     if len(lics) > 0:
         licences += tex_escape(lics[0])
         for licence in lics[1:]:
-            licences += r"\myTextBreaker{" + tex_escape(licence) + "}"
+            licences += r",  \myTextBreaker{" + tex_escape(licence) + "}"
     return licences
 
 
