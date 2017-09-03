@@ -67,7 +67,7 @@ class FeatureDetector(FileTask):
             AES: 3889
             AES-128: 678
             Blowfish: 18
-          hashes:
+          hash:
             MD5: 462
             SHA: 4252
 
@@ -149,7 +149,7 @@ class FeatureDetector(FileTask):
                       AES: 3889
                       AES-128: 678
                       Blowfish: 18
-                    hashes:
+                    hash:
                       MD5: 462
                       SHA: 4252
         """

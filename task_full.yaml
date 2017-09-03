@@ -15099,7 +15099,7 @@ project_tasks:
       - Salsa-20
       - Salsa_20
       - Salsa20
-    hashes:
+    hash:
       MD5:
       - MD5
       - MD-5
@@ -15256,9 +15256,9 @@ project_tasks:
       - Counter with CBC-MAC
       - CCM
       CWC:
-      - "Carter\u2013Wegman + CTR"
-      - "Carter\u2013Wegman and CTR"
-      - "Carter\u2013Wegman CTR"
+      - Carter-Wegman + CTR
+      - Carter-Wegman and CTR
+      - Carter-Wegman CTR
       - Carter Wegman + CTR
       - Carter Wegman and CTR
       - Carter Wegman CTR
@@ -15306,14 +15306,14 @@ project_tasks:
       - HMAC
       Poly1305:
       - Poly1305
-    public key cryptography:
+    public key cryptography: # FIXME
       RSA:
       - Ron Rivest, Adi Shamir and Leonard Adleman
       - Ron Rivest, Adi Shamir, and Leonard Adleman
       - Ron Rivest, Adi Shamir, Leonard Adleman
       - RSA
       DH:
-      - "Diffie\u2013Hellman"
+      - Diffie-Hellman
       - Diffie Hellman
       - D-H
       - DH
@@ -15321,7 +15321,7 @@ project_tasks:
       - Digital Signature Algorithm
       - DSA
       ECDH:
-      - "Elliptic curve Diffie\u2013Hellman"
+      - Elliptic curve Diffie-Hellman
       - Elliptic curve Diffie Hellman
       - ECDH
       ECDSA:
@@ -15329,6 +15329,49 @@ project_tasks:
       - ECDSA
       ElGamal:
       - ElGamal
+    public key infrastructure: # FIXME
+      X.509(v1-3):
+      - X.509(v1-3)
+      PKIX:
+      - PKIX
+      SET:
+      - SET
+      MicroSoft AuthentiCode:
+      - MicroSoft AuthentiCode
+      Identrus:
+      - Identrus
+      RPKI:
+      - RPKI
+      SigG:
+      - SigG
+      PKCS:
+      - PKCS
+      CMP:
+      - CMP
+      SCEP:
+      - SCEP
+      RTCS:
+      - RTCS
+      OCSP:
+      - OCSP
+      LDAP:
+      - LDAP
+      RDBMS:
+      - RDBMS
+      PKCS#7:
+      - PKCS#7
+    protocol: # FIXME
+      TLS:
+      - TLS
+      SSL:
+      - SSL
+      S/MIME:
+      - S/MIME
+      PGP:
+      - PGP
+      - OpenPGP
+      SSH:
+      - SSH
 # Tasks that should run over the previously generated report,
 # sequentially after the project tasks
 report_tasks:
@@ -15338,10 +15381,13 @@ report_tasks:
 - NumericID
 - GenerateLaTeXOverviewTable:
     primitivCategorieses:
-      - block ciphers
-      - stream ciphers
-      - encryption modes
-      - message authentication codes
+    - block ciphers
+    - stream ciphers
+    - encryption modes
+    - message authentication codes
+    - hashes
     highlevelCategories:
-      - hashes
-      - public key cryptography
+    - public key infrastructure
+    - public key cryptography
+    - protocol
+- GenerateLaTeXDetailTable
