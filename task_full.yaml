@@ -5520,7 +5520,6 @@ projects:
       interfaceLanguage:
       - Python
       licences:
-      - 
     LanguageDetector:
       main_language: Python
       languages:
@@ -10026,6 +10025,7 @@ projects:
         completeness:
           apis: true
           examples: true
+          explanations: false
       interfaceLevel:
         high: true
         low: true
@@ -10956,7 +10956,6 @@ projects:
       - Swift
       - Objective-C
       licences:
-      - 
 - git: https://github.com/soffes/Crypto
   manual:
     generalData:
