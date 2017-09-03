@@ -399,17 +399,14 @@ class GenerateLaTeXOverviewTable(ReportTask):
         """
         table = self.__header()
 
-        for project in self.__projects:
-            report = self.__projects[project]
+        for report in self.__projects:
             if has_interface_language(report, language):
                 try:
                     table += self.__row(report, language)
                 except Exception as e:
                     raise Exception(
                         "While generating the row for the project '{}' with "
-                        "the report\n{}".format(
-                            project,
-                            self.__projects[project])
+                        "the report\n{}".format(report['url'], report)
                     ) from e
 
         table += self.__tail(language)
@@ -512,7 +509,17 @@ class GenerateLaTeXOverviewTable(ReportTask):
                           \label{tab:c++-interface-overview}
                         \end{table}
         """
-        self.__projects = report['projects']
+        self.__projects = []
+
+        self.__projects = sorted(
+            report['projects'].values(),
+            key=lambda p:
+            get_project_impact(p)
+            if isinstance(get_project_impact(p), (int, float))
+            else 0,
+            reverse=True
+        )
+
         report['GenerateLaTeXOverviewTable'] = self.__overview_tables()
         report['GenerateLaTeXOverviewTable']['preamble'] = self.__preamble()
         return report

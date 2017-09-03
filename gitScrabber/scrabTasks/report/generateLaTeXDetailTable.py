@@ -824,7 +824,6 @@ class GenerateLaTeXDetailTable(ReportTask):
                 if has_interface_language(report, lang):
                     meta_projects[lang].append(TeXProject(report))
 
-        self.__projects = meta_projects
         for lang in meta_projects:
             meta_projects[lang] = sorted(
                 meta_projects[lang],
