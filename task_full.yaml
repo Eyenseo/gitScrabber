@@ -181,7 +181,7 @@ projects:
         # - TODO
       licences:
       - Own License
-       documentation:
+      documentation:
         exists:
           readme: false       # TODO
           website: false       # TODO
@@ -1751,128 +1751,128 @@ projects:
         high: true
         low: false
       interfaceLanguage:
-      - C     
+      - C
 
 - git: https://github.com/ARMmbed/mbedtls
   manual:
-      generalData:
-        type: Wrapper   # TODO
-        related:
+    generalData:
+      type: Wrapper     # TODO
+      related:
           # - TODO
-        documentation:
-          exists:
-            readme: false       # TODO
-            website: false       # TODO
-            download: false       # TODO
-          completeness:
-            apis: false       # TODO
-            examples: false       # TODO
-            explanations: false       # TODO
-        interfaceLevel:
-          high: true     # TODO
-          low: true     # TODO
-        interfaceLanguage:   # TODO
-        - C       # TODO
+      documentation:
+        exists:
+          readme: false         # TODO
+          website: false         # TODO
+          download: false         # TODO
+        completeness:
+          apis: false         # TODO
+          examples: false         # TODO
+          explanations: false         # TODO
+      interfaceLevel:
+        high: true       # TODO
+        low: true       # TODO
+      interfaceLanguage:     # TODO
+      - C         # TODO
 - git: https://github.com/awslabs/s2n
   manual:
-      generalData:
-        type: Wrapper   # TODO
-        related:
+    generalData:
+      type: Wrapper     # TODO
+      related:
           # - TODO
-        documentation:
-          exists:
-            readme: false       # TODO
-            website: false       # TODO
-            download: false       # TODO
-          completeness:
-            apis: false       # TODO
-            examples: false       # TODO
-            explanations: false       # TODO
-        interfaceLevel:
-          high: true     # TODO
-          low: true     # TODO
-        interfaceLanguage:   # TODO
-        - C       # TODO
+      documentation:
+        exists:
+          readme: false         # TODO
+          website: false         # TODO
+          download: false         # TODO
+        completeness:
+          apis: false         # TODO
+          examples: false         # TODO
+          explanations: false         # TODO
+      interfaceLevel:
+        high: true       # TODO
+        low: true       # TODO
+      interfaceLanguage:     # TODO
+      - C         # TODO
 - git: https://github.com/h2o/picotls
   manual:
-      generalData:
-        type: Wrapper   # TODO
-        related:
+    generalData:
+      type: Wrapper     # TODO
+      related:
           # - TODO
-        documentation:
-          exists:
-            readme: false       # TODO
-            website: false       # TODO
-            download: false       # TODO
-          completeness:
-            apis: false       # TODO
-            examples: false       # TODO
-            explanations: false       # TODO
-        interfaceLevel:
-          high: true     # TODO
-          low: true     # TODO
-        interfaceLanguage:   # TODO
-        - C       # TODO
+      documentation:
+        exists:
+          readme: false         # TODO
+          website: false         # TODO
+          download: false         # TODO
+        completeness:
+          apis: false         # TODO
+          examples: false         # TODO
+          explanations: false         # TODO
+      interfaceLevel:
+        high: true       # TODO
+        low: true       # TODO
+      interfaceLanguage:     # TODO
+      - C         # TODO
 - git: https://github.com/ctz/cifra/
   manual:
-      generalData:
-        type: Wrapper   # TODO
-        related:
+    generalData:
+      type: Wrapper     # TODO
+      related:
           # - TODO
-        documentation:
-          exists:
-            readme: false       # TODO
-            website: false       # TODO
-            download: false       # TODO
-          completeness:
-            apis: false       # TODO
-            examples: false       # TODO
-            explanations: false       # TODO
-        interfaceLevel:
-          high: true     # TODO
-          low: true     # TODO
-        interfaceLanguage:   # TODO
-        - C       # TODO
+      documentation:
+        exists:
+          readme: false         # TODO
+          website: false         # TODO
+          download: false         # TODO
+        completeness:
+          apis: false         # TODO
+          examples: false         # TODO
+          explanations: false         # TODO
+      interfaceLevel:
+        high: true       # TODO
+        low: true       # TODO
+      interfaceLanguage:     # TODO
+      - C         # TODO
 - git: https://github.com/matrixssl/matrixssl
   manual:
-      generalData:
-        type: Wrapper   # TODO
-        related:
+    generalData:
+      type: Wrapper     # TODO
+      related:
           # - TODO
-        documentation:
-          exists:
-            readme: false       # TODO
-            website: false       # TODO
-            download: false       # TODO
-          completeness:
-            apis: false       # TODO
-            examples: false       # TODO
-            explanations: false       # TODO
-        interfaceLevel:
-          high: true     # TODO
-          low: true     # TODO
-        interfaceLanguage:   # TODO
-        - C       # TODO
+      documentation:
+        exists:
+          readme: false         # TODO
+          website: false         # TODO
+          download: false         # TODO
+        completeness:
+          apis: false         # TODO
+          examples: false         # TODO
+          explanations: false         # TODO
+      interfaceLevel:
+        high: true       # TODO
+        low: true       # TODO
+      interfaceLanguage:     # TODO
+      - C         # TODO
 - git: https://github.com/eduardsui/tlse
   manual:
-      generalData:
-        type: Wrapper   # TODO
-        related:
+    generalData:
+      type: Wrapper     # TODO
+      related:
           # - TODO
-        documentation:
-          exists:
-            readme: false       # TODO
-            website: false       # TODO
-            download: false       # TODO
-          completeness:
-            apis: false       # TODO
-            examples: false       # TODO
-            explanations: false       # TODO
-        interfaceLevel:
-          high: true     # TODO
-          low: true     # TODO
-        interfaceLanguage:   # TODO
-        - C       # TODO
+      documentation:
+        exists:
+          readme: false         # TODO
+          website: false         # TODO
+          download: false         # TODO
+        completeness:
+          apis: false         # TODO
+          examples: false         # TODO
+          explanations: false         # TODO
+      interfaceLevel:
+        high: true       # TODO
+        low: true       # TODO
+      interfaceLanguage:     # TODO
+      - C         # TODO
 
 - meta:
   id: https://sourceforge.net/projects/lightcrypto/?source=directory
@@ -3183,7 +3183,7 @@ projects:
     generalData:
       standard: true
       type: standalone
-      related:        
+      related:
       documentation:
         exists:
           readme: false
@@ -3196,7 +3196,7 @@ projects:
       interfaceLevel:
         high: true
         low: true
-      interfaceLanguage: 
+      interfaceLanguage:
       - Java
 - git: https://github.com/Cathedrow/Cryptosuite
   manual:
@@ -4578,14 +4578,14 @@ projects:
 ##########################################
 ## C#
 ##########################################
-- meta: 
+- meta:
   id: https://referencesource.microsoft.com/DotNet47RS2.zip #DotNet47RS2\Source\ndp\clr\src\BCL\system\security\cryptography
   name: DotNet (S)
   manual:
     generalData:
       standard: true
       type: Standalone
-      related:        
+      related:
       dependencies:
       documentation: #https://msdn.microsoft.com/de-de/library/system.security.cryptography(v=vs.110).aspx
         exists:
@@ -4599,10 +4599,10 @@ projects:
       interfaceLevel:
         high: true
         low: false
-      interfaceLanguage:   
-      - C#     
+      interfaceLanguage:
+      - C#
       - C++
-      - VB 
+      - VB
       licences:
       - MS-RSL
       FeatureDetector:
@@ -4671,15 +4671,15 @@ projects:
           CBC: 23
           CCM: 20
           OCB: 0
-          CTR: 359      
+          CTR: 359
 - git: https://github.com/bitbeans/StreamCryptor
   manual:
     generalData:
       type: Standalone
-      related:        
+      related:
       dependencies:
-        - https://github.com/adamcaudill/libsodium-net
-        - https://github.com/mgravell/protobuf-net
+      - https://github.com/adamcaudill/libsodium-net
+      - https://github.com/mgravell/protobuf-net
       licences:
       - MIT
       documentation:
@@ -4694,14 +4694,14 @@ projects:
       interfaceLevel:
         high: true
         low: false
-      interfaceLanguage:   
-      - C#       
+      interfaceLanguage:
+      - C#
 - git: https://github.com/AArnott/PCLCrypto
   manual:
     generalData:
       type: Wrapper
       related:
-        - operation systems crypto
+      - operation systems crypto
       licences:
       - MS-PL
       documentation:
@@ -4717,14 +4717,14 @@ projects:
         high: true
         low: true
       interfaceLanguage:
-      - C#       
+      - C#
 - git: https://github.com/sdrapkin/SecurityDriven.Inferno
   manual:
     generalData:
       type: Standalone
-      related:        
+      related:
       dependencies:
-        - https://msdn.microsoft.com/en-us/library/system.security.cryptography(v=vs.110).aspx
+      - https://msdn.microsoft.com/en-us/library/system.security.cryptography(v=vs.110).aspx
       licences:
       - MIT
       documentation:
@@ -4739,8 +4739,8 @@ projects:
       interfaceLevel:
         high: true
         low: true
-      interfaceLanguage:   
-      - C#       
+      interfaceLanguage:
+      - C#
 - git: https://github.com/sshnet/Cryptography
   manual:
     generalData:
@@ -4785,9 +4785,9 @@ projects:
   manual:
     generalData:
       type: Standalone
-      related: 
+      related:
       dependencies:
-        - https://msdn.microsoft.com/de-de/library/system.security.cryptography(v=vs.110).aspx        
+      - https://msdn.microsoft.com/de-de/library/system.security.cryptography(v=vs.110).aspx
       licences:
       - mit
       documentation:
@@ -4803,13 +4803,13 @@ projects:
         high: true
         low: false
       interfaceLanguage:
-      - C#       
+      - C#
 - git: https://github.com/ektrah/nsec
   manual:
     generalData:
       type: Wrapper
       related:
-        - https://github.com/jedisct1/libsodium 
+      - https://github.com/jedisct1/libsodium
       licences:
       - MIT
       documentation:
@@ -4825,7 +4825,7 @@ projects:
         high: true
         low: false
       interfaceLanguage:
-      - C#       
+      - C#
 - git: https://github.com/stanac/EasyCrypto
   manual:
     generalData:
@@ -4951,7 +4951,7 @@ projects:
     generalData:
       type: Reimplementation
       related:
-        - https://github.com/warner/python-ecdsa
+      - https://github.com/warner/python-ecdsa
       licences:
       - MIT
       documentation:
@@ -4966,8 +4966,8 @@ projects:
       interfaceLevel:
         high: true
         low: false
-      interfaceLanguage: 
-      - C#       
+      interfaceLanguage:
+      - C#
 - git: https://github.com/KalixHealth/Kalix.ApiCrypto
   manual:
     generalData:
@@ -5093,7 +5093,7 @@ projects:
     generalData:
       type: Reimplementation
       related:
-        - https://github.com/libp2p/go-libp2p-crypto
+      - https://github.com/libp2p/go-libp2p-crypto
       licences:
       - MIT
       documentation:
@@ -5109,13 +5109,13 @@ projects:
         high: true
         low: false
       interfaceLanguage:
-      - C#       
+      - C#
 - git: https://github.com/Peter-Juhasz/Science.Cryptography.Ciphers
   manual:
     generalData:
       type: Wrapper
       related:
-        - https://github.com/dotnet/standard
+      - https://github.com/dotnet/standard
       licences:
       - MIT
       documentation:
@@ -5130,8 +5130,8 @@ projects:
       interfaceLevel:
         high: true
         low: false
-      interfaceLanguage:  
-      - C#       
+      interfaceLanguage:
+      - C#
 - git: https://github.com/smoy/Xamarin.Droid.AesCrypto
   manual:
     generalData:
@@ -5237,8 +5237,8 @@ projects:
     generalData:
       type: Reimplementation
       related:
-        - https://github.com/P-H-C/phc-winner-argon2
-        - https://github.com/BLAKE2/BLAKE2
+      - https://github.com/P-H-C/phc-winner-argon2
+      - https://github.com/BLAKE2/BLAKE2
       licences:
       - Public Domain
       documentation:
@@ -5253,15 +5253,15 @@ projects:
       interfaceLevel:
         high: true
         low: true
-      interfaceLanguage:   
-      - C#       
+      interfaceLanguage:
+      - C#
 - git: https://github.com/henkmollema/CryptoHelper
   manual:
     generalData:
       type: Standalone
-      related:     
-        - https://msdn.microsoft.com/de-de/library/system.security.cryptography(v=vs.110).aspx
-        - https://docs.microsoft.com/en-us/aspnet/core/api/microsoft.aspnetcore.cryptography.keyderivation   
+      related:
+      - https://msdn.microsoft.com/de-de/library/system.security.cryptography(v=vs.110).aspx
+      - https://docs.microsoft.com/en-us/aspnet/core/api/microsoft.aspnetcore.cryptography.keyderivation
       licences:
       - MIT
       documentation:
@@ -5277,7 +5277,7 @@ projects:
         high: true
         low: false
       interfaceLanguage:
-      - C#       
+      - C#
 - git: https://github.com/Thashiznets/PWDTK.NET
   manual:
     generalData:
@@ -5343,7 +5343,7 @@ projects:
     generalData:
       type: Reimplementation
       related:
-        - https://www.bouncycastle.org/java.html
+      - https://www.bouncycastle.org/java.html
       licences:
       - MIT
       - Apache-2.0
@@ -5358,9 +5358,9 @@ projects:
           explanations: false
       interfaceLevel:
         high: false # check to be sure
-        low: true 
+        low: true
       interfaceLanguage:
-      - C#       
+      - C#
 - git: https://github.com/bcgit/bc-csharp
   manual:
     generalData:
@@ -5385,10 +5385,10 @@ projects:
   manual:
     generalData:
       type: Standalone
-      dependencies: 
-        - https://msdn.microsoft.com/de-de/library/system.security.cryptography(v=vs.110).aspx
-        - https://msdn.microsoft.com/de-de/library/system.security.securestring(v=vs.110).aspx
-      related:        
+      dependencies:
+      - https://msdn.microsoft.com/de-de/library/system.security.cryptography(v=vs.110).aspx
+      - https://msdn.microsoft.com/de-de/library/system.security.securestring(v=vs.110).aspx
+      related:
       licences:
       - MIT
       documentation:
@@ -5404,13 +5404,13 @@ projects:
         high: true
         low: false
       interfaceLanguage:
-      - C#       
+      - C#
 - git: https://github.com/BcryptNet/bcrypt.net
   manual:
     generalData:
       type: Reimplementation
       related:
-        - http://www.mindrot.org/projects/jBCrypt/
+      - http://www.mindrot.org/projects/jBCrypt/
       licences:
       - MIT
       documentation:
@@ -5425,8 +5425,8 @@ projects:
       interfaceLevel:
         high: true
         low: true # check to be sure: https://github.com/BcryptNet/bcrypt.net/blob/master/src/BCrypt.Net/BCrypt.cs meight not be neough for low level
-      interfaceLanguage:   
-      - C#       
+      interfaceLanguage:
+      - C#
 - meta:
   id: https://msdn.microsoft.com/de-de/library/system.security.cryptography(v=vs.110).aspx
   manual:
@@ -5496,7 +5496,7 @@ projects:
 ## Python
 ########################################## 
 - meta:
-  id: https://github.com/python/cpython 
+  id: https://github.com/python/cpython
   name: Cryptographic Services (S)
   manual:
     generalData:
@@ -5504,7 +5504,7 @@ projects:
       type: Standalone
       related:
       dependencies:
-        - OpenSSL 
+      - OpenSSL
       documentation:
         exists:
           readme: true
@@ -5517,20 +5517,20 @@ projects:
       interfaceLevel:
         high: true
         low: false
-      interfaceLanguage:   
-        - Python
+      interfaceLanguage:
+      - Python
       licences:
-        - 
+      - 
     LanguageDetector:
-        main_language: Python
-        languages:
-        - C
-        - C++
+      main_language: Python
+      languages:
+      - C
+      - C++
     FeatureDetector:
       hashes:
         MD5: 1
         SHA-1: 1
-        SHA-224: 1        
+        SHA-224: 1
         SHA-256: 1
         SHA-384: 1
         SHA-512: 1
@@ -5542,7 +5542,7 @@ projects:
     generalData:
       type: Fork
       related:
-        - https://github.com/dlitz/pycrypto
+      - https://github.com/dlitz/pycrypto
       licences:
       - BSD-2-Clause
       - Public Domain
@@ -5558,14 +5558,14 @@ projects:
       interfaceLevel:
         high: true
         low: false
-      interfaceLanguage:   
-      - Python       
+      interfaceLanguage:
+      - Python
 - git: https://github.com/pyca/pynacl
   manual:
     generalData:
-      type: Wrapper   
+      type: Wrapper
       related:
-        - https://github.com/jedisct1/libsodium
+      - https://github.com/jedisct1/libsodium
       licences:
       - Apache-2.0
       documentation:
@@ -5578,15 +5578,15 @@ projects:
           examples: true
           explanations: true
       interfaceLevel:
-        high: true    
-        low: true     
-      interfaceLanguage: 
-      - Python       
+        high: true
+        low: true
+      interfaceLanguage:
+      - Python
 - git: https://github.com/ricmoo/pyaes
   manual:
     generalData:
       type: Standalone
-      related:        
+      related:
       licences:
       - MIT
       documentation:
@@ -5600,14 +5600,14 @@ projects:
           explanations: false
       interfaceLevel:
         high: true
-        low: false 
-      interfaceLanguage:  
-      - Python       
+        low: false
+      interfaceLanguage:
+      - Python
 - git: https://github.com/pyca/cryptography
   manual:
     generalData:
-      type: Standalone 
-      related:        
+      type: Standalone
+      related:
       licences:
       - Apache-2.0
       - BSD-3-Clause
@@ -5624,8 +5624,8 @@ projects:
       interfaceLevel:
         high: true
         low: true
-      interfaceLanguage:   
-      - Python       
+      interfaceLanguage:
+      - Python
 - git: https://github.com/chrissimpkins/crypto
   manual:
     generalData:
@@ -5651,7 +5651,7 @@ projects:
     generalData:
       type: Wrapper
       related:
-        - https://docs.python.org/2/library/hashlib.html        
+      - https://docs.python.org/2/library/hashlib.html
       licences:
       - GPL
       documentation:
@@ -5666,8 +5666,8 @@ projects:
       interfaceLevel:
         high: true
         low: false
-      interfaceLanguage:   
-      - Python       
+      interfaceLanguage:
+      - Python
 - git: https://github.com/doegox/python-cryptoplus
   manual:
     generalData:
@@ -5686,13 +5686,13 @@ projects:
       interfaceLevel:
         high: true
         low: false
-      interfaceLanguage:   
-      - Python       
+      interfaceLanguage:
+      - Python
 - git: https://github.com/thomdixon/pysha2
   manual:
     generalData:
       type: Standalone
-      related:        
+      related:
       licences:
       - MIT
       documentation:
@@ -5707,8 +5707,8 @@ projects:
       interfaceLevel:
         high: true
         low: false
-      interfaceLanguage: 
-      - Python      
+      interfaceLanguage:
+      - Python
 - git: https://github.com/eventbrite/m2crypto
   manual:
     generalData:
@@ -5734,7 +5734,7 @@ projects:
     generalData:
       type: Wrapper
       related:
-        - https://github.com/jedisct1/libsodium
+      - https://github.com/jedisct1/libsodium
       licences:
       - BSD
       documentation:
@@ -5747,10 +5747,10 @@ projects:
           examples: false
           explanations: false
       interfaceLevel:
-        high: true     
+        high: true
         low: true
-      interfaceLanguage:   
-      - Python       
+      interfaceLanguage:
+      - Python
 - git: https://github.com/georgemarshall/django-cryptography
   manual:
     generalData:
@@ -5776,7 +5776,7 @@ projects:
     generalData:
       type: Standalone
       related:
-        - cryptography primitives from the host operating system
+      - cryptography primitives from the host operating system
       licences:
       - MIT
       documentation:
@@ -5792,14 +5792,14 @@ projects:
         high: false
         low: true
       interfaceLanguage:
-      - Python      
+      - Python
 - git: https://github.com/python-tls/tls
   manual:
     generalData:
       type: Standalone
       related:
       dependencies:
-        - https://github.com/pyca/cryptography
+      - https://github.com/pyca/cryptography
       licences:
       - Apache-2.0
       - BSD-3-Clause
@@ -5813,10 +5813,10 @@ projects:
           examples: true
           explanations: true
       interfaceLevel:
-        high: true     
+        high: true
         low: false
-      interfaceLanguage:  
-      - Python     
+      interfaceLanguage:
+      - Python
 - git: https://github.com/bdcht/crysp
   manual:
     generalData:
@@ -5901,7 +5901,7 @@ projects:
   manual:
     generalData:
       type: Standalone
-      related:        
+      related:
       licences:
       documentation:
         exists:
@@ -5915,14 +5915,14 @@ projects:
       interfaceLevel:
         high: true
         low: false # check to be sure
-      interfaceLanguage:   
-      - Python       
+      interfaceLanguage:
+      - Python
 - git: https://github.com/berlincode/sjcl
   manual:
     generalData:
       type: Wrapper
       related:
-        - https://github.com/dlitz/pycrypto
+      - https://github.com/dlitz/pycrypto
       licences:
       - BSD-3-Clause
       documentation:
@@ -5937,8 +5937,8 @@ projects:
       interfaceLevel:
         high: true
         low: false
-      interfaceLanguage:   
-      - Python       
+      interfaceLanguage:
+      - Python
 - git: https://github.com/edevil/M2Crypto
   manual:
     generalData:
@@ -6203,7 +6203,7 @@ projects:
   manual:
     generalData:
       type: Standalone
-      related:        
+      related:
       licences:
       - Public Domain
       - Python 2.2 License
@@ -6217,16 +6217,16 @@ projects:
           examples: true
           explanations: true
       interfaceLevel:
-        high: true    
-        low: true     
-      interfaceLanguage:   
-      - Python       
+        high: true
+        low: true
+      interfaceLanguage:
+      - Python
 - git: https://github.com/pyca/pyopenssl
   manual:
     generalData:
       type: Wrapper
       related:
-        - https://github.com/openssl/openssl
+      - https://github.com/openssl/openssl
       licences:
       - Apache-2.0
       documentation:
@@ -6239,10 +6239,10 @@ projects:
           examples: false
           explanations: true
       interfaceLevel:
-        high: true     
+        high: true
         low: false
-      interfaceLanguage:   
-      - Python       
+      interfaceLanguage:
+      - Python
 
 - archive: https://master.dl.sourceforge.net/project/pyaes/OldFiles/pyAES-1.0-win32.zip
   manual:
@@ -6275,7 +6275,7 @@ projects:
       type: Standalone
       related:
       dependencies:
-        - https://github.com/openssl/openssl
+      - https://github.com/openssl/openssl
       licences:
       - AGPL-3.0+
       documentation:
@@ -6290,8 +6290,8 @@ projects:
       interfaceLevel:
         high: true
         low: true
-      interfaceLanguage:   
-      - PHP       
+      interfaceLanguage:
+      - PHP
 - git: https://github.com/YABhq/Crypto
   manual:
     generalData:
@@ -6437,8 +6437,8 @@ projects:
     generalData:
       type: Wrapper
       related:
-        - https://github.com/openssl/openssl
-        - https://github.com/jedisct1/libsodium
+      - https://github.com/openssl/openssl
+      - https://github.com/jedisct1/libsodium
       licences:
       - LGPL-2.0+
       - LGPL-3.0+
@@ -6454,8 +6454,8 @@ projects:
       interfaceLevel:
         high: true
         low: false
-      interfaceLanguage: 
-      - PHP       
+      interfaceLanguage:
+      - PHP
 - git: https://github.com/VirgilSecurity/virgil-sdk-crypto-php
   manual:
     generalData:
@@ -6475,8 +6475,8 @@ projects:
       interfaceLevel:
         high: true
         low: false
-      interfaceLanguage:   
-      - PHP       
+      interfaceLanguage:
+      - PHP
 - git: https://github.com/io-digital/php-crypto
   manual:
     generalData:
@@ -6914,16 +6914,16 @@ projects:
           examples: true
           explanations: true
       interfaceLevel:
-        high: true     
+        high: true
         low: true
-      interfaceLanguage:   
-      - PHP       
+      interfaceLanguage:
+      - PHP
 - git: https://github.com/bukka/php-crypto
   manual:
     generalData:
       type: Wrapper
       related:
-        - https://github.com/openssl/openssl
+      - https://github.com/openssl/openssl
       licences:
       - PHP-3.01
       documentation:
@@ -6938,14 +6938,14 @@ projects:
       interfaceLevel:
         high: true
         low: true
-      interfaceLanguage:   
-      - PHP       
+      interfaceLanguage:
+      - PHP
 - git: https://github.com/defuse/php-encryption
   manual:
     generalData:
       type: Wrapper
       related:
-        - https://github.com/openssl/openssl
+      - https://github.com/openssl/openssl
       licences:
       - MIT
       documentation:
@@ -6961,7 +6961,7 @@ projects:
         high: true
         low: false
       interfaceLanguage:
-      - PHP       
+      - PHP
 - git: https://github.com/paragonie/halite
   manual:
     generalData:
@@ -6987,7 +6987,7 @@ projects:
     generalData:
       type: Wrapper
       related:
-        - https://github.com/jedisct1/libsodium
+      - https://github.com/jedisct1/libsodium
       licences:
       - BSD-2-Clause
       documentation:
@@ -7002,8 +7002,8 @@ projects:
       interfaceLevel:
         high: true
         low: true
-      interfaceLanguage:   
-      - PHP       
+      interfaceLanguage:
+      - PHP
 - git: https://github.com/phpseclib/phpseclib
   manual:
     generalData:
@@ -7023,8 +7023,8 @@ projects:
       interfaceLevel:
         high: true
         low: false
-      interfaceLanguage:  
-      - PHP       
+      interfaceLanguage:
+      - PHP
 - git: https://github.com/sop/crypto-types
   manual:
     generalData:
@@ -10203,8 +10203,8 @@ projects:
     generalData:
       type: Wrapper
       related:
-        - https://opensource.apple.com/source/CommonCrypto/
-        - https://docs.oracle.com/javase/7/docs/api/javax/crypto/package-summary.html        
+      - https://opensource.apple.com/source/CommonCrypto/
+      - https://docs.oracle.com/javase/7/docs/api/javax/crypto/package-summary.html
       licences:
       - GPL-3.0
       documentation:
@@ -10217,10 +10217,10 @@ projects:
           examples: true
           explanations: false
       interfaceLevel:
-        high: true     
+        high: true
         low: false
-      interfaceLanguage:  
-      - Objective-C       
+      interfaceLanguage:
+      - Objective-C
 - git: https://github.com/RenanDiaz/Cryptos
   manual:
     generalData:
@@ -10404,9 +10404,9 @@ projects:
 - git: https://github.com/AlexanderBirks/Encryption-Key
   manual:
     generalData:
-      type: Wrapper   
+      type: Wrapper
       related:
-        - https://opensource.apple.com/source/CommonCrypto/
+      - https://opensource.apple.com/source/CommonCrypto/
       licences:
       - MIT
       documentation:
@@ -10422,14 +10422,14 @@ projects:
         high: true
         low: false
       interfaceLanguage:
-      - Objective-C     
+      - Objective-C
 - git: https://github.com/tradle/react-native-ecc
   manual:
     generalData:
-      type: Wrapper   
+      type: Wrapper
       related: # check to be sure, migh be new impl not wrapped funct
-        - https://docs.oracle.com/javase/7/docs/api/java/security/package-summary.html
-        - https://opensource.apple.com/source/CommonCrypto/
+      - https://docs.oracle.com/javase/7/docs/api/java/security/package-summary.html
+      - https://opensource.apple.com/source/CommonCrypto/
       licences:
       - MIT
       documentation:
@@ -10444,15 +10444,15 @@ projects:
       interfaceLevel:
         high: true
         low: false
-      interfaceLanguage:   
-      - Objective-C       
+      interfaceLanguage:
+      - Objective-C
 - git: https://github.com/remobile/react-native-des
   manual:
     generalData:
       type: Wrapper
       related:
-        - https://opensource.apple.com/source/CommonCrypto/
-        - https://docs.oracle.com/javase/7/docs/api/javax/crypto/package-summary.html        
+      - https://opensource.apple.com/source/CommonCrypto/
+      - https://docs.oracle.com/javase/7/docs/api/javax/crypto/package-summary.html
       licences:
       - MIT
       documentation:
@@ -10468,7 +10468,7 @@ projects:
         high: true
         low: false
       interfaceLanguage:
-      - Objective-C     
+      - Objective-C
 - git: https://github.com/willbetter/LFCommonCrypto
   manual:
     generalData:
@@ -10494,8 +10494,8 @@ projects:
     generalData:
       type: Wrapper
       related:
-        - https://opensource.apple.com/source/CommonCrypto/
-        - https://developer.apple.com/documentation/corefoundation
+      - https://opensource.apple.com/source/CommonCrypto/
+      - https://developer.apple.com/documentation/corefoundation
       licences:
       - MIT
       documentation:
@@ -10510,8 +10510,8 @@ projects:
       interfaceLevel:
         high: true
         low: false
-      interfaceLanguage: 
-      - Objective-C      
+      interfaceLanguage:
+      - Objective-C
 - git: https://github.com/nicklockwood/CryptoCoding
   manual:
     generalData:
@@ -10557,7 +10557,7 @@ projects:
     generalData:
       type: Wrapper
       related:
-        - http://nacl.cr.yp.to/
+      - http://nacl.cr.yp.to/
       licences:
       - Apache-2.0
       documentation:
@@ -10573,7 +10573,7 @@ projects:
         high: true
         low: true
       interfaceLanguage:
-      - Objective-C     
+      - Objective-C
 - git: https://github.com/timburks/NuCrypto
   manual:
     generalData:
@@ -10739,7 +10739,7 @@ projects:
     generalData:
       type: Reimplementation
       related:
-        - https://aerogear.org/docs/specs/aerogear-js/AeroGear.Crypto.html
+      - https://aerogear.org/docs/specs/aerogear-js/AeroGear.Crypto.html
       licences:
       - Apache-2.0
       documentation:
@@ -10755,7 +10755,7 @@ projects:
         high: true
         low: false
       interfaceLanguage:
-      - Objective-C     
+      - Objective-C
 - git: https://github.com/nixplay/crypto
   manual:
     generalData:
@@ -10781,7 +10781,7 @@ projects:
     generalData:
       type: Wrapper
       related:
-        - https://developer.apple.com/documentation/corefoundation
+      - https://developer.apple.com/documentation/corefoundation
       licences:
       - BSD-3-Clause
       documentation:
@@ -10797,7 +10797,7 @@ projects:
         high: true
         low: false
       interfaceLanguage:
-      - Objective-C       
+      - Objective-C
       - Swift
 - git: https://github.com/ndouglas/ReactiveCryptor
   manual:
@@ -10825,7 +10825,7 @@ projects:
       type: Standalone
       related:
       dependencies:
-        - https://opensource.apple.com/source/Security/Security-54.1/Keychain/Security.h.auto.html
+      - https://opensource.apple.com/source/Security/Security-54.1/Keychain/Security.h.auto.html
       licences:
       - BSD-3-Clause
       documentation:
@@ -10840,14 +10840,14 @@ projects:
       interfaceLevel:
         high: true
         low: false
-      interfaceLanguage:   
-      - Objective-C       
+      interfaceLanguage:
+      - Objective-C
 - git: https://github.com/hohl/MIHCrypto
   manual:
     generalData:
       type: Wrapper
       related:
-        - https://github.com/openssl/openssl
+      - https://github.com/openssl/openssl
       licences:
       - MIT
       documentation:
@@ -10862,8 +10862,8 @@ projects:
       interfaceLevel:
         high: true
         low: false
-      interfaceLanguage:   
-      - Objective-C       
+      interfaceLanguage:
+      - Objective-C
 
 - archive: https://chilkatdownload.com/9.5.0.68/chilkat-9.5.0-ios.zip
   manual:
@@ -10939,7 +10939,7 @@ projects:
       type: Standalone
       related:
       dependencies:
-        - corecrypto
+      - corecrypto
       documentation:
         exists:
           readme: false
@@ -10952,17 +10952,17 @@ projects:
       interfaceLevel:
         high: true
         low: true
-      interfaceLanguage:   
-        - Swift
-        - Objective-C
+      interfaceLanguage:
+      - Swift
+      - Objective-C
       licences:
-        - 
+      - 
 - git: https://github.com/soffes/Crypto
   manual:
     generalData:
       type: Wrapper
       related:
-        - https://github.com/soffes/CommonCrypto
+      - https://github.com/soffes/CommonCrypto
       licences:
       - MIT
       documentation:
@@ -10975,17 +10975,17 @@ projects:
           examples: true
           explanations: false
       interfaceLevel:
-        high: true   
+        high: true
         low: false
       interfaceLanguage:
-      - Swift       
+      - Swift
 - git: https://github.com/vapor/crypto
   manual:
     generalData:
       type: Standalone
       related:
       dependencies:
-        - https://github.com/vapor/ctls 
+      - https://github.com/vapor/ctls
       licences:
       - MIT
       documentation:
@@ -11000,13 +11000,13 @@ projects:
       interfaceLevel:
         high: true
         low: false
-      interfaceLanguage:   
-      - Swift       
+      interfaceLanguage:
+      - Swift
 - git: https://github.com/krzyzanowskim/CryptoSwift
   manual:
     generalData:
       type: Standalone
-      related:        
+      related:
       licences:
       - Zlib
       documentation:
@@ -11019,15 +11019,15 @@ projects:
           examples: true
           explanations: false
       interfaceLevel:
-        high: true     
-        low: true     
-      interfaceLanguage:   
-      - Swift       
+        high: true
+        low: true
+      interfaceLanguage:
+      - Swift
 - git: https://github.com/verbeeckkristof/crypto
   manual:
     generalData:
       type: Standalone
-      related:        
+      related:
       licences:
       documentation:
         exists:
@@ -11042,13 +11042,13 @@ projects:
         high: true
         low: false
       interfaceLanguage:
-      - Swift       
+      - Swift
 - git: https://github.com/iosdevzone/IDZSwiftCommonCrypto
   manual:
     generalData:
-      type: Wrapper   
+      type: Wrapper
       related:
-        - https://opensource.apple.com/source/CommonCrypto/
+      - https://opensource.apple.com/source/CommonCrypto/
       licences:
       - MIT
       documentation:
@@ -11063,8 +11063,8 @@ projects:
       interfaceLevel:
         high: true
         low: true
-      interfaceLanguage:   
-      - Swift       
+      interfaceLanguage:
+      - Swift
 - git: https://github.com/DigitalLeaves/AsymmetricCrypto
   manual:
     generalData:
@@ -11090,7 +11090,7 @@ projects:
     generalData:
       type: Reimplementation
       related:
-        - https://github.com/iosdevzone/IDZSwiftCommonCrypto
+      - https://github.com/iosdevzone/IDZSwiftCommonCrypto
       licences:
       - Apache-2.0
       documentation:
@@ -11103,10 +11103,10 @@ projects:
           examples: true
           explanations: false
       interfaceLevel:
-        high: true     
+        high: true
         low: false
       interfaceLanguage:
-      - Swift      
+      - Swift
 - git: https://github.com/SwiftP2P/SwiftSSL
   manual:
     generalData:
@@ -11152,7 +11152,7 @@ projects:
     generalData:
       type: Wrapper
       related:
-        - https://github.com/brix/crypto-js
+      - https://github.com/brix/crypto-js
       licences:
       - MIT
       documentation:
@@ -11165,10 +11165,10 @@ projects:
           examples: true
           explanations: false
       interfaceLevel:
-        high: true     
-        low: true 
-      interfaceLanguage:   
-      - Swift       
+        high: true
+        low: true
+      interfaceLanguage:
+      - Swift
 - git: https://github.com/CryptoKitten/CryptoEssentials
   manual:
     generalData:
@@ -11274,7 +11274,7 @@ projects:
     generalData:
       type: Wrapper
       related:
-        - https://github.com/openssl/openssl
+      - https://github.com/openssl/openssl
       licences:
       - Apache-2.0
       documentation:
@@ -11290,7 +11290,7 @@ projects:
         high: true
         low: false
       interfaceLanguage:
-      - Swift       
+      - Swift
 - git: https://github.com/venj/CommonCrypto
   manual:
     generalData:
@@ -11315,7 +11315,7 @@ projects:
   manual:
     generalData:
       type: Standalone
-      related:        
+      related:
       licences:
       - MIT
       documentation:
@@ -11328,10 +11328,10 @@ projects:
           examples: true
           explanations: false
       interfaceLevel:
-        high: true   
+        high: true
         low: false
       interfaceLanguage:
-      - Swift       
+      - Swift
 - git: https://github.com/yinhaofrancis/Crypto
   manual:
     generalData:
@@ -11356,7 +11356,7 @@ projects:
   manual:
     generalData:
       type: Standalone
-      related:        
+      related:
       licences:
       documentation:
         exists:
@@ -11370,8 +11370,8 @@ projects:
       interfaceLevel:
         high: true
         low: false
-      interfaceLanguage:   
-      - Swift       
+      interfaceLanguage:
+      - Swift
 - git: https://github.com/pentateu/SwiftCrypt
   manual:
     generalData:
@@ -11397,7 +11397,7 @@ projects:
     generalData:
       type: Reimplementation # check to be sure
       related:
-        - https://github.com/etienne-martin/CryptoJS.swift
+      - https://github.com/etienne-martin/CryptoJS.swift
       licences:
       - MIT
       documentation:
@@ -11412,8 +11412,8 @@ projects:
       interfaceLevel:
         high: true
         low: true
-      interfaceLanguage:   
-      - Swift       
+      interfaceLanguage:
+      - Swift
 - git: https://github.com/rhodgkins/RDHCommonCrypto
   manual:
     generalData:
@@ -11459,7 +11459,7 @@ projects:
     generalData:
       type: Wrapper
       related:
-        - https://opensource.apple.com/source/CommonCrypto/
+      - https://opensource.apple.com/source/CommonCrypto/
       licences:
       - MIT
       documentation:
@@ -11475,7 +11475,7 @@ projects:
         high: true
         low: false
       interfaceLanguage:
-      - Swift       
+      - Swift
 - git: https://github.com/hanamichi07/CryptoSwift
   manual:
     generalData:
@@ -11682,8 +11682,8 @@ projects:
       type: Standalone
       related:
       dependencies:
-        - https://github.com/openssl/openssl
-        - https://developer.apple.com/documentation/security/secure_transport
+      - https://github.com/openssl/openssl
+      - https://developer.apple.com/documentation/security/secure_transport
       licences:
       - Apache-2.0
       documentation:
@@ -11698,14 +11698,14 @@ projects:
       interfaceLevel:
         high: true
         low: true
-      interfaceLanguage:   
+      interfaceLanguage:
       - Swift
 - git: https://github.com/desmondmcnamee/SwiftCommonCrypto
   manual:
     generalData:
       type: Wrapper
       related:
-        - https://opensource.apple.com/source/CommonCrypto/
+      - https://opensource.apple.com/source/CommonCrypto/
       documentation:
         exists:
           readme: false
@@ -11719,7 +11719,7 @@ projects:
         high: true
         low: false
       interfaceLanguage:
-      - Swift           
+      - Swift
 
 
 ##########################################
@@ -11733,7 +11733,7 @@ projects:
       standard: true
       type: Wrapper
       related:
-        - https://github.com/openssl/openssl
+      - https://github.com/openssl/openssl
       documentation:
         exists:
           readme: true
@@ -11746,16 +11746,16 @@ projects:
       interfaceLevel:
         high: true
         low: true
-      interfaceLanguage: 
-      - Ruby 
+      interfaceLanguage:
+      - Ruby
       licences:
-        - GPL
+      - GPL
 - git: https://github.com/joshwetzel/cryptosystem
   manual:
     generalData:
       type: Wrapper
       related:
-        - https://github.com/openssl/openssl
+      - https://github.com/openssl/openssl
       licences:
       - MIT
       documentation:
@@ -11770,14 +11770,14 @@ projects:
       interfaceLevel:
         high: true
         low: false
-      interfaceLanguage: 
-      - Ruby       
+      interfaceLanguage:
+      - Ruby
 - git: https://github.com/mitaku/reversible_cryptography
   manual:
     generalData:
       type: Wrapper
       related:
-        - https://github.com/openssl/openssl
+      - https://github.com/openssl/openssl
       licences:
       documentation:
         exists:
@@ -11792,13 +11792,13 @@ projects:
         high: true
         low: false
       interfaceLanguage:
-      - Ruby       
+      - Ruby
 - git: https://github.com/grempe/sirp
   manual:
     generalData:
       type: Fork
       related:
-        - https://github.com/lamikae/srp-rb
+      - https://github.com/lamikae/srp-rb
       licences:
       - BSD-3-Clause
       documentation:
@@ -11813,8 +11813,8 @@ projects:
       interfaceLevel:
         high: true
         low: false
-      interfaceLanguage:  
-      - Ruby       
+      interfaceLanguage:
+      - Ruby
 - git: https://github.com/LupineDev/lupine_crypto # not ready for first release?
   manual:
     generalData:
@@ -11840,7 +11840,7 @@ projects:
     generalData:
       type: Wrapper
       related:
-        - https://github.com/VirgilSecurity/virgil-crypto
+      - https://github.com/VirgilSecurity/virgil-crypto
       licences:
       documentation:
         exists:
@@ -11854,8 +11854,8 @@ projects:
       interfaceLevel:
         high: true
         low: false
-      interfaceLanguage:   
-      - Ruby       
+      interfaceLanguage:
+      - Ruby
 - git: https://github.com/Maxwell-Alexius/Ruby-Cryptography
   manual:
     generalData:
@@ -11921,7 +11921,7 @@ projects:
     generalData:
       type: Wrapper
       related:
-        - http://nacl.cr.yp.to/
+      - http://nacl.cr.yp.to/
       licences:
       - MIT
       documentation:
@@ -11936,8 +11936,8 @@ projects:
       interfaceLevel:
         high: true
         low: true
-      interfaceLanguage:   
-      - Ruby       
+      interfaceLanguage:
+      - Ruby
 - git: https://github.com/cryptosphere/cryptor
   manual:
     generalData:
@@ -11963,7 +11963,7 @@ projects:
     generalData:
       type: Wrapper
       related:
-        - https://github.com/openssl/openssl
+      - https://github.com/openssl/openssl
       licences:
       - MIT
       documentation:
@@ -11978,8 +11978,8 @@ projects:
       interfaceLevel:
         high: true
         low: true
-      interfaceLanguage:   
-      - Ruby       
+      interfaceLanguage:
+      - Ruby
 - git: https://github.com/krypt/krypt
   manual:
     generalData:
@@ -12065,7 +12065,7 @@ projects:
     generalData:
       type: Wrapper
       related:
-        - https://man.openbsd.org/bcrypt.3
+      - https://man.openbsd.org/bcrypt.3
       licences:
       - MIT
       documentation:
@@ -12078,16 +12078,16 @@ projects:
           examples: true
           explanations: true
       interfaceLevel:
-        high: true     
+        high: true
         low: false
       interfaceLanguage:
-      - Ruby       
+      - Ruby
 - git: https://github.com/pbhogan/scrypt
   manual:
     generalData:
       type: Wrapper
       related:
-        - http://www.tarsnap.com/scrypt.html
+      - http://www.tarsnap.com/scrypt.html
       licences:
       - MIT
       documentation:
@@ -12102,18 +12102,18 @@ projects:
       interfaceLevel:
         high: true
         low: true
-      interfaceLanguage:   
-      - Ruby       
+      interfaceLanguage:
+      - Ruby
 
 
 ##########################################
 ## Rust
 ##########################################
-- git: https://github.com/DaGenix/rust-crypto 
+- git: https://github.com/DaGenix/rust-crypto
   manual:
     generalData:
       type: Standalone
-      related:        
+      related:
       licences:
       - MIT
       - Apache-2.0
@@ -12127,10 +12127,10 @@ projects:
           examples: false
           explanations: false
       interfaceLevel:
-        high: true    
+        high: true
         low: true
-      interfaceLanguage: 
-      - Rust      
+      interfaceLanguage:
+      - Rust
 - git: https://github.com/libOctavo/octavo
   manual:
     generalData:
@@ -12156,7 +12156,7 @@ projects:
     generalData:
       type: Wrapper
       related:
-        - https://gnupg.org/related_software/libgcrypt/
+      - https://gnupg.org/related_software/libgcrypt/
       licences:
       - LGPL-2.1
       documentation:
@@ -12172,7 +12172,7 @@ projects:
         high: true
         low: false
       interfaceLanguage:
-      - Rust      
+      - Rust
 - git: https://github.com/CodingAnarchy/crypto
   manual:
     generalData:
@@ -12258,11 +12258,11 @@ projects:
     generalData:
       type: Standalone
       related:
-        - http://noiseprotocol.org/
+      - http://noiseprotocol.org/
       dependencies:
-        - https://github.com/dnaq/sodiumoxide
-        - https://github.com/briansmith/ring
-        - https://github.com/DaGenix/rust-crypto
+      - https://github.com/dnaq/sodiumoxide
+      - https://github.com/briansmith/ring
+      - https://github.com/DaGenix/rust-crypto
       licences:
       - Unlicense
       documentation:
@@ -12275,10 +12275,10 @@ projects:
           examples: false
           explanations: false
       interfaceLevel:
-        high: true     
+        high: true
         low: false
       interfaceLanguage:
-      - Rust       
+      - Rust
 - git: https://github.com/Yawning/rust-crypto-nacl
   manual:
     generalData:
@@ -12344,9 +12344,9 @@ projects:
     generalData:
       type: Wrapper
       related:
-        - https://msdn.microsoft.com/en-us/library/ms867086.aspx
-        - https://crates.io/crates/commoncrypto
-        - https://crates.io/crates/openssl
+      - https://msdn.microsoft.com/en-us/library/ms867086.aspx
+      - https://crates.io/crates/commoncrypto
+      - https://crates.io/crates/openssl
       licences:
       - MIT
       documentation:
@@ -12361,8 +12361,8 @@ projects:
       interfaceLevel:
         high: true
         low: false
-      interfaceLanguage:  
-      - Rust       
+      interfaceLanguage:
+      - Rust
 - git: https://github.com/hmac/rust-crypto # keine doku
   manual:
     generalData:
@@ -12467,7 +12467,7 @@ projects:
   manual:
     generalData:
       type: Standalone
-      related:        
+      related:
       licences:
       - MIT
       documentation:
@@ -12483,7 +12483,7 @@ projects:
         high: true
         low: false
       interfaceLanguage:
-      - Rust       
+      - Rust
 - git: https://github.com/zmbush/crypto_vault
   manual:
     generalData:
@@ -12528,7 +12528,7 @@ projects:
   manual:
     generalData:
       type: Standalone
-      related:        
+      related:
       licences:
       - MIT
       documentation:
@@ -12541,10 +12541,10 @@ projects:
           examples: false
           explanations: false
       interfaceLevel:
-        high: true     
+        high: true
         low: false
-      interfaceLanguage:   
-      - Rust       
+      interfaceLanguage:
+      - Rust
 - git: https://github.com/jmquigs/rs-encryptfile
   manual:
     generalData:
@@ -12709,7 +12709,7 @@ projects:
   manual:
     generalData:
       type: Standalone
-      related:        
+      related:
       licences:
       - BSD-3-Clause
       documentation:
@@ -12722,15 +12722,15 @@ projects:
           examples: true
           explanations: false
       interfaceLevel:
-        high: true     
+        high: true
         low: false
-      interfaceLanguage: 
-      - Rust       
+      interfaceLanguage:
+      - Rust
 - git: https://github.com/tomprogrammer/scram
   manual:
     generalData:
       type: Standalone
-      related:      
+      related:
       licences:
       - MIT
       documentation:
@@ -12746,7 +12746,7 @@ projects:
         high: true
         low: true
       interfaceLanguage:
-      - Rust       
+      - Rust
 - git: https://github.com/tiffany352/susurrus
   manual:
     generalData:
@@ -12791,7 +12791,7 @@ projects:
   manual:
     generalData:
       type: Standalone
-      related:        
+      related:
       licences:
       - MIT
       documentation:
@@ -12806,8 +12806,8 @@ projects:
       interfaceLevel:
         high: true
         low: true
-      interfaceLanguage:   
-      - Rust       
+      interfaceLanguage:
+      - Rust
 - git: https://github.com/danielreisinger/blake2b
   manual:
     generalData:
@@ -12853,7 +12853,7 @@ projects:
     generalData:
       type: Wrapper
       related:
-        - https://docs.rs/chacha/0.1.0/chacha/
+      - https://docs.rs/chacha/0.1.0/chacha/
       licences:
       - MIT
       - Apache-2.0
@@ -12869,8 +12869,8 @@ projects:
       interfaceLevel:
         high: true
         low: false
-      interfaceLanguage:   
-      - Rust       
+      interfaceLanguage:
+      - Rust
 - git: https://github.com/cesarb/chacha20-poly1305-aead
   manual:
     generalData:
@@ -12895,7 +12895,7 @@ projects:
   manual:
     generalData:
       type: Standalone
-      related:        
+      related:
       licences:
       - BSD-3-Clause
       documentation:
@@ -12910,8 +12910,8 @@ projects:
       interfaceLevel:
         high: true
         low: true
-      interfaceLanguage:  
-      - Rust       
+      interfaceLanguage:
+      - Rust
 - git: https://github.com/isislovecruft/ed25519-dalek
   manual:
     generalData:
@@ -12976,28 +12976,7 @@ projects:
   manual:
     generalData:
       type: Standalone
-      related:        
-      licences:
-      - MIT
-      documentation:
-        exists:
-          readme: false
-          website: false
-          download: true
-        completeness:
-          apis: false
-          examples: false
-          explanations: false
-      interfaceLevel:
-        high: true
-        low: false
-      interfaceLanguage: 
-      - Rust       
-- git: https://github.com/Tyzzer/hc256
-  manual:
-    generalData:
-      type: Standalone
-      related:        
+      related:
       licences:
       - MIT
       documentation:
@@ -13013,7 +12992,28 @@ projects:
         high: true
         low: false
       interfaceLanguage:
-      - Rust       
+      - Rust
+- git: https://github.com/Tyzzer/hc256
+  manual:
+    generalData:
+      type: Standalone
+      related:
+      licences:
+      - MIT
+      documentation:
+        exists:
+          readme: false
+          website: false
+          download: true
+        completeness:
+          apis: false
+          examples: false
+          explanations: false
+      interfaceLevel:
+        high: true
+        low: false
+      interfaceLanguage:
+      - Rust
 - git: https://github.com/badboy/jhash-rs
   manual:
     generalData:
@@ -13058,7 +13058,7 @@ projects:
   manual:
     generalData:
       type: Standalone
-      related:        
+      related:
       licences:
       - Apache-2.0
       - MIT
@@ -13074,8 +13074,8 @@ projects:
       interfaceLevel:
         high: true
         low: false
-      interfaceLanguage:   
-      - Rust       
+      interfaceLanguage:
+      - Rust
 - git: https://github.com/badboy/murmurhash64-rs
   manual:
     generalData:
@@ -13101,8 +13101,8 @@ projects:
     generalData:
       type: Reimplementation
       related:
-        - https://github.com/google/boringssl/tree/master/crypto/newhope
-        - https://github.com/fschlieker/newhope
+      - https://github.com/google/boringssl/tree/master/crypto/newhope
+      - https://github.com/fschlieker/newhope
       licences:
       - MIT
       documentation:
@@ -13115,10 +13115,10 @@ projects:
           examples: false
           explanations: false
       interfaceLevel:
-        high: true     
-        low: true     
-      interfaceLanguage:   
-      - Rust       
+        high: true
+        low: true
+      interfaceLanguage:
+      - Rust
 - git: https://github.com/zcdziura/pumpkin
   manual:
     generalData:
@@ -13165,7 +13165,7 @@ projects:
       type: Standalone
       related:
       dependencies:
-        - https://github.com/briansmith/ring     
+      - https://github.com/briansmith/ring
       licences:
       - MIT
       - Apache-2.0
@@ -13181,8 +13181,8 @@ projects:
       interfaceLevel:
         high: true
         low: true
-      interfaceLanguage: 
-      - Rust       
+      interfaceLanguage:
+      - Rust
 - git: https://github.com/Tyzzer/rlwekex
   manual:
     generalData:
@@ -13288,7 +13288,7 @@ projects:
     generalData:
       type: Wrapper
       related:
-        - https://www.gnupg.org/(it)/related_software/gpgme/index.html
+      - https://www.gnupg.org/(it)/related_software/gpgme/index.html
       licences:
       - LGPL-2.1
       documentation:
@@ -13303,8 +13303,8 @@ projects:
       interfaceLevel:
         high: true
         low: false
-      interfaceLanguage: 
-      - Rust       
+      interfaceLanguage:
+      - Rust
 - git: https://github.com/vladikoff/rust-hkdf
   manual:
     generalData:
@@ -13349,7 +13349,7 @@ projects:
   manual:
     generalData:
       type: Standalone
-      related:        
+      related:
       licences:
       - BSD-3-Clause
       documentation:
@@ -13365,12 +13365,12 @@ projects:
         high: true
         low: false
       interfaceLanguage:
-      - Rust       
+      - Rust
 - git: https://github.com/debris/tiny-keccak
   manual:
     generalData:
       type: Standalone
-      related:        
+      related:
       licences:
       - CC0-1.0
       documentation:
@@ -13385,14 +13385,14 @@ projects:
       interfaceLevel:
         high: true
         low: false
-      interfaceLanguage: 
-      - Rust      
+      interfaceLanguage:
+      - Rust
 - git: https://github.com/shepmaster/twox-hash
   manual:
     generalData:
       type: Reimplementation
       related:
-        - https://github.com/Cyan4973/xxHash
+      - https://github.com/Cyan4973/xxHash
       licences:
       - MIT
       documentation:
@@ -13408,34 +13408,12 @@ projects:
         high: true
         low: false
       interfaceLanguage:
-      - Rust       
+      - Rust
 - git: https://github.com/RustCrypto/block-ciphers
   manual:
     generalData:
       type: Standalone
-      related:        
-      licences:
-      - Apache-2.0
-      - MIT
-      documentation:
-        exists:
-          readme: true
-          website: true
-          download: false
-        completeness:
-          apis: true
-          examples: true
-          explanations: true
-      interfaceLevel:
-        high: true
-        low: false
-      interfaceLanguage:  
-      - Rust       
-- git: https://github.com/RustCrypto/hashes
-  manual:
-    generalData:
-      type: Standalone
-      related:        
+      related:
       licences:
       - Apache-2.0
       - MIT
@@ -13452,14 +13430,36 @@ projects:
         high: true
         low: false
       interfaceLanguage:
-      - Rust       
+      - Rust
+- git: https://github.com/RustCrypto/hashes
+  manual:
+    generalData:
+      type: Standalone
+      related:
+      licences:
+      - Apache-2.0
+      - MIT
+      documentation:
+        exists:
+          readme: true
+          website: true
+          download: false
+        completeness:
+          apis: true
+          examples: true
+          explanations: true
+      interfaceLevel:
+        high: true
+        low: false
+      interfaceLanguage:
+      - Rust
 - git: https://github.com/briansmith/ring #Nr.2
   manual:
     generalData:
       type: Standalone
       related:
       dependencies:
-        - https://boringssl.googlesource.com/boringssl/        
+      - https://boringssl.googlesource.com/boringssl/
       licences:
       - ISC
       - OpenSSL
@@ -13479,14 +13479,14 @@ projects:
       interfaceLevel:
         high: true
         low: false
-      interfaceLanguage:   
-      - Rust       
+      interfaceLanguage:
+      - Rust
 - git: https://github.com/maidsafe/rust_sodium
   manual:
     generalData:
       type: Wrapper
       related:
-        - https://github.com/jedisct1/libsodium
+      - https://github.com/jedisct1/libsodium
       documentation:
         exists:
           readme: true
@@ -13497,10 +13497,10 @@ projects:
           examples: true
           explanations: true
       interfaceLevel:
-        high: true    
+        high: true
         low: false
-      interfaceLanguage:   
-      - Rust       
+      interfaceLanguage:
+      - Rust
 - git: https://github.com/malept/rust-commoncrypto
   manual:
     generalData:
@@ -13546,7 +13546,7 @@ projects:
     generalData:
       type: Wrapper
       related:
-        - http://nacl.cr.yp.to/
+      - http://nacl.cr.yp.to/
       licences:
       - Apache-2.0
       - MIT
@@ -13560,17 +13560,17 @@ projects:
           examples: true
           explanations: true
       interfaceLevel:
-        high: true     
+        high: true
         low: false
-      interfaceLanguage:   
-      - Rust       
+      interfaceLanguage:
+      - Rust
 - git: https://github.com/sfackler/rust-openssl
   manual:
     generalData:
       type: Wrapper
       related:
-        - https://github.com/openssl/openssl
-        - https://www.libressl.org/
+      - https://github.com/openssl/openssl
+      - https://www.libressl.org/
       licences:
       - Apache-2.0
       - MIT
@@ -13588,8 +13588,8 @@ projects:
       interfaceLevel:
         high: true
         low: true
-      interfaceLanguage:   
-      - Rust       
+      interfaceLanguage:
+      - Rust
 - git: https://github.com/zombiemuffin/edcert
   manual:
     generalData:
@@ -13615,7 +13615,7 @@ projects:
     generalData:
       type: Reimplementation
       related:
-        - https://github.com/cyx/nobi
+      - https://github.com/cyx/nobi
       licences:
       - BSD-3-Clause
       documentation:
@@ -13630,14 +13630,14 @@ projects:
       interfaceLevel:
         high: true
         low: false
-      interfaceLanguage: 
-      - Rust       
+      interfaceLanguage:
+      - Rust
 - git: https://github.com/racum/rust-djangohashers
   manual:
     generalData:
       type: Reimplementation
       related:
-        - https://www.djangoproject.com/
+      - https://www.djangoproject.com/
       licences:
       - BSD-3-Clause
       documentation:
@@ -13652,8 +13652,8 @@ projects:
       interfaceLevel:
         high: true
         low: true
-      interfaceLanguage: 
-      - Rust       
+      interfaceLanguage:
+      - Rust
 - git: https://github.com/lemonrock/alt-tls
   manual:
     generalData:
@@ -13699,8 +13699,8 @@ projects:
     generalData:
       type: Wrapper
       related:
-        - https://github.com/briansmith/ring
-        - https://github.com/briansmith/webpki
+      - https://github.com/briansmith/ring
+      - https://github.com/briansmith/webpki
       licences:
       - Apache-2.0
       - MIT
@@ -13717,8 +13717,8 @@ projects:
       interfaceLevel:
         high: false
         low: true
-      interfaceLanguage:   
-      - Rust       
+      interfaceLanguage:
+      - Rust
 - git: https://github.com/jethrogb/rust-mbedtls
   manual:
     generalData:
@@ -13744,9 +13744,9 @@ projects:
     generalData:
       type: Wrapper
       related:
-        - https://crates.io/crates/schannel
-        - https://crates.io/crates/openssl
-        - https://crates.io/crates/security-framework
+      - https://crates.io/crates/schannel
+      - https://crates.io/crates/openssl
+      - https://crates.io/crates/security-framework
       licences:
       - MIT
       - Apache-2.0
@@ -13761,16 +13761,16 @@ projects:
           examples: true
           explanations: true
       interfaceLevel:
-        high: true     
+        high: true
         low: false
       interfaceLanguage:
-      - Rust       
+      - Rust
 - git: https://github.com/sfackler/rust-security-framework
   manual:
     generalData:
       type: Wrapper
       related:
-        - https://developer.apple.com/documentation/security
+      - https://developer.apple.com/documentation/security
       licences:
       - Apache-2.0
       - MIT
@@ -13786,14 +13786,14 @@ projects:
       interfaceLevel:
         high: true
         low: false
-      interfaceLanguage: 
-      - Rust       
+      interfaceLanguage:
+      - Rust
 - git: https://github.com/steffengy/schannel-rs
   manual:
     generalData:
       type: Wrapper
       related:
-        - https://msdn.microsoft.com/de-de/library/windows/desktop/aa380123(v=vs.85).aspx
+      - https://msdn.microsoft.com/de-de/library/windows/desktop/aa380123(v=vs.85).aspx
       licences:
       - MIT
       documentation:
@@ -13808,16 +13808,16 @@ projects:
       interfaceLevel:
         high: true
         low: false
-      interfaceLanguage: 
-      - Rust       
+      interfaceLanguage:
+      - Rust
 - git: https://github.com/briansmith/webpki
   manual:
     generalData:
       type: Reimplementation
       related:
-        - https://github.com/briansmith/mozillapkix
+      - https://github.com/briansmith/mozillapkix
       dependencies:
-        - https://github.com/briansmith/ring
+      - https://github.com/briansmith/ring
       licences:
       - ISC
       documentation:
@@ -13832,8 +13832,8 @@ projects:
       interfaceLevel:
         high: true
         low: true
-      interfaceLanguage: 
-      - Rust      
+      interfaceLanguage:
+      - Rust
 - git: https://github.com/cesarb/clear_on_drop
   manual:
     generalData:
@@ -13919,7 +13919,7 @@ projects:
     generalData:
       type: Wrapper
       related:
-        - https://mkcert.org/
+      - https://mkcert.org/
       licences:
       - MPL-2.0
       documentation:
@@ -13934,8 +13934,8 @@ projects:
       interfaceLevel:
         high: true
         low: false
-      interfaceLanguage:  
-      - Rust       
+      interfaceLanguage:
+      - Rust
 - git: https://github.com/burdges/zerodrop-rs
   manual:
     generalData:
@@ -13965,96 +13965,96 @@ projects:
   id: https://golang.org/pkg/crypto/ # https://storage.googleapis.com/golang/go1.9.windows-amd64.zip
   name: Crypto (S)
   manual:
-   generalData:      
-    standard: true
-    type: Standalone 
-    related:
-    dependencies:
-    documentation:
-      exists:
-        readme: false
-        website: true
-        download: false
-      completeness:
-        apis: true
-        examples: true
-        explanations: true
-    interfaceLevel:
-      high: true
-      low: true
-    interfaceLanguage:  
-    - Go
-    FeatureDetector:
-      hashes:
-        SHA-512: 641
-        SHA: 2208
-        RIPEMD: 12
-        SHA-2: 1313
-        scrypt: 25
-        BLAKE2: 8
-        Whirlpool: 0
-        brcypt: 0
-        MD5: 728
-        SHA-256: 663
-        SHA-1: 890
-        PBKDF2: 0
-        SHAKE: 0
-        SHA-3: 1313
-      public key cryptography:
-        ElGamal: 4
-        ECDH: 1
-        ECDSA: 1122
-        RSA: 2263
-        DSA: 369
-        DH: 383
-      block ciphers:
-        Skipjack: 0
-        TEA: 7
-        Camellia: 0
-        XTEA: 4
-        CAST: 128
-        ARIA-128: 0
-        ARIA-256: 0
-        AES-128: 3
-        Triple DES: 0
-        AES-256: 2
-        DES: 820
-        AES-192: 2
-        Serpent: 0
-        Blowfish: 7
-        Twofish: 6
-        ARIA-192: 0
-        ARIA: 112
-        RC: 3
-        AES: 2218
-        CAST-128: 0
-        IDEA: 116
-        SEED: 553
-        CAST-256: 0
-      stream ciphers:
-        ChaCha: 3162
-        Salsa: 0
-        RC: 367
-      message authentication codes:
-        HMAC: 451
-        Poly1305: 1461
-        CBC-MAC: 0
-      encryption modes:
-        GCM: 1306
-        EAX: 406
-        OFB: 66
-        CFB: 49
-        IAPM: 0
-        CWC: 2
-        ECB: 1
-        CBC: 566
-        CCM: 2
-        OCB: 1
-        CTR: 2775       
+    generalData:
+      standard: true
+      type: Standalone
+      related:
+      dependencies:
+      documentation:
+        exists:
+          readme: false
+          website: true
+          download: false
+        completeness:
+          apis: true
+          examples: true
+          explanations: true
+      interfaceLevel:
+        high: true
+        low: true
+      interfaceLanguage:
+      - Go
+      FeatureDetector:
+        hashes:
+          SHA-512: 641
+          SHA: 2208
+          RIPEMD: 12
+          SHA-2: 1313
+          scrypt: 25
+          BLAKE2: 8
+          Whirlpool: 0
+          brcypt: 0
+          MD5: 728
+          SHA-256: 663
+          SHA-1: 890
+          PBKDF2: 0
+          SHAKE: 0
+          SHA-3: 1313
+        public key cryptography:
+          ElGamal: 4
+          ECDH: 1
+          ECDSA: 1122
+          RSA: 2263
+          DSA: 369
+          DH: 383
+        block ciphers:
+          Skipjack: 0
+          TEA: 7
+          Camellia: 0
+          XTEA: 4
+          CAST: 128
+          ARIA-128: 0
+          ARIA-256: 0
+          AES-128: 3
+          Triple DES: 0
+          AES-256: 2
+          DES: 820
+          AES-192: 2
+          Serpent: 0
+          Blowfish: 7
+          Twofish: 6
+          ARIA-192: 0
+          ARIA: 112
+          RC: 3
+          AES: 2218
+          CAST-128: 0
+          IDEA: 116
+          SEED: 553
+          CAST-256: 0
+        stream ciphers:
+          ChaCha: 3162
+          Salsa: 0
+          RC: 367
+        message authentication codes:
+          HMAC: 451
+          Poly1305: 1461
+          CBC-MAC: 0
+        encryption modes:
+          GCM: 1306
+          EAX: 406
+          OFB: 66
+          CFB: 49
+          IAPM: 0
+          CWC: 2
+          ECB: 1
+          CBC: 566
+          CCM: 2
+          OCB: 1
+          CTR: 2775
 - git: https://github.com/golang/crypto  # Standard
   manual:
-    generalData:      
-      type: Standalone 
+    generalData:
+      type: Standalone
       related:
       dependencies:
       licences:
@@ -14071,8 +14071,8 @@ projects:
       interfaceLevel:
         high: true
         low: true
-      interfaceLanguage:  
-      - Go       
+      interfaceLanguage:
+      - Go
 - git: https://github.com/jacobsa/crypto
   manual:
     generalData:
@@ -14138,7 +14138,7 @@ projects:
     generalData:
       type: Fork
       related:
-        - https://github.com/golang/crypto 
+      - https://github.com/golang/crypto
       dependencies:
       licences:
       - BSD-3-Clause
@@ -14154,8 +14154,8 @@ projects:
       interfaceLevel:
         high: true
         low: true
-      interfaceLanguage:  
-      - Go  
+      interfaceLanguage:
+      - Go
 - git: https://github.com/square/go-jose
   manual:
     generalData:
@@ -14175,14 +14175,14 @@ projects:
       interfaceLevel:
         high: true
         low: false
-      interfaceLanguage:  
-      - Go      
+      interfaceLanguage:
+      - Go
 - git: https://github.com/xigang/crypto
   manual:
     generalData:
       type: Wrapper
       related:
-        - https://golang.org/pkg/crypto/
+      - https://golang.org/pkg/crypto/
       licences:
       - MIT
       documentation:
@@ -14198,14 +14198,14 @@ projects:
         high: true
         low: false
       interfaceLanguage:
-      - Go       
+      - Go
 - git: https://github.com/andreburgaud/crypt2go
   manual:
     generalData:
       type: Standalone
       related:
       dependencies:
-        - https://golang.org/pkg/crypto/cipher
+      - https://golang.org/pkg/crypto/cipher
       licences:
       - BSD-3-Clause
       documentation:
@@ -14220,14 +14220,14 @@ projects:
       interfaceLevel:
         high: true
         low: false
-      interfaceLanguage:   
-      - Go       
+      interfaceLanguage:
+      - Go
 - git: https://github.com/GoKillers/libsodium-go
   manual:
     generalData:
       type: Wrapper
       related:
-        - https://download.libsodium.org/doc/
+      - https://download.libsodium.org/doc/
       licences:
       - ISC
       documentation:
@@ -14242,16 +14242,16 @@ projects:
       interfaceLevel:
         high: true
         low: true
-      interfaceLanguage:   
-      - Go       
+      interfaceLanguage:
+      - Go
 - git: https://github.com/dedis/kyber
   manual:
     generalData:
       type: Wrapper
       related:
-        - https://golang.org/pkg/crypto/
-        - https://github.com/openssl/openssl
-        - https://crypto.stanford.edu/pbc/
+      - https://golang.org/pkg/crypto/
+      - https://github.com/openssl/openssl
+      - https://crypto.stanford.edu/pbc/
       licences:
       - MPL-2.0
       documentation:
@@ -14266,14 +14266,14 @@ projects:
       interfaceLevel:
         high: true
         low: false
-      interfaceLanguage:   
-      - Go       
+      interfaceLanguage:
+      - Go
 - git: https://github.com/tendermint/go-crypto
   manual:
     generalData:
       type: Wrapper
       related:
-        - https://golang.org/pkg/crypto/
+      - https://golang.org/pkg/crypto/
       licences:
       - Apache-2.0
       documentation:
@@ -14288,14 +14288,14 @@ projects:
       interfaceLevel:
         high: true
         low: false
-      interfaceLanguage:  
-      - Go      
+      interfaceLanguage:
+      - Go
 - git: https://github.com/keybase/go-crypto
   manual:
     generalData:
       type: Fork
       related:
-        - https://github.com/golang/crypto 
+      - https://github.com/golang/crypto
       dependencies:
       licences:
       - BSD-3-Clause
@@ -14311,8 +14311,8 @@ projects:
       interfaceLevel:
         high: true
         low: true
-      interfaceLanguage:  
-      - Go  
+      interfaceLanguage:
+      - Go
 - git: https://github.com/jzelinskie/whirlpool
   manual:
     generalData:
@@ -14332,8 +14332,8 @@ projects:
       interfaceLevel:
         high: true
         low: false
-      interfaceLanguage:  
-      - Go       
+      interfaceLanguage:
+      - Go
 - git: https://github.com/jlhawn/go-crypto
   manual:
     generalData:
@@ -14377,9 +14377,9 @@ projects:
 - git: https://github.com/pagarme/cryptokit
   manual:
     generalData:
-      type: Wrapper 
+      type: Wrapper
       related:
-        - https://golang.org/pkg/crypto/
+      - https://golang.org/pkg/crypto/
       licences:
       - MIT
       documentation:
@@ -14395,7 +14395,7 @@ projects:
         high: true
         low: false
       interfaceLanguage:
-      - Go      
+      - Go
 - git: https://github.com/andmarios/crypto
   manual:
     generalData:
@@ -14684,7 +14684,7 @@ projects:
       type: Standalone
       related:
       dependencies:
-        - https://golang.org/pkg/crypto/
+      - https://golang.org/pkg/crypto/
       licences:
       - BSD-2-Clause
       documentation:
@@ -14699,14 +14699,14 @@ projects:
       interfaceLevel:
         high: true
         low: false
-      interfaceLanguage:   
-      - Go       
+      interfaceLanguage:
+      - Go
 - git: https://github.com/NebulousLabs/fastrand
   manual:
     generalData:
       type: Reimplementation
       related:
-        - https://golang.org/pkg/crypto/rand/        
+      - https://golang.org/pkg/crypto/rand/
       licences:
       - MIT
       documentation:
@@ -14719,10 +14719,10 @@ projects:
           examples: false
           explanations: true
       interfaceLevel:
-        high: true     
+        high: true
         low: false
-      interfaceLanguage:  
-      - Go       
+      interfaceLanguage:
+      - Go
 - git: https://github.com/scottkiss/gosshtool
   manual:
     generalData:
@@ -14768,8 +14768,8 @@ projects:
     generalData:
       type: Wrapper
       related:
-        - https://godoc.org/golang.org/x/crypto
-        - https://golang.org/pkg/crypto/
+      - https://godoc.org/golang.org/x/crypto
+      - https://golang.org/pkg/crypto/
       licences:
       - MIT
       documentation:
@@ -14784,8 +14784,8 @@ projects:
       interfaceLevel:
         high: true
         low: false
-      interfaceLanguage:  
-      - Go       
+      interfaceLanguage:
+      - Go
 - git: https://github.com/AGWA-forks/golang-crypto
   manual:
     generalData:
@@ -14803,8 +14803,8 @@ projects:
       interfaceLevel:
         high: true
         low: false
-      interfaceLanguage:  
-      - Go       
+      interfaceLanguage:
+      - Go
 - git: https://github.com/cloudflare/cf-tls
   manual:
     generalData:
@@ -14949,7 +14949,7 @@ projects:
   manual:
     generalData:
       type: Standalone
-      related:        
+      related:
       licences:
       - MIT
       documentation:
@@ -14964,8 +14964,8 @@ projects:
       interfaceLevel:
         high: true
         low: false
-      interfaceLanguage: 
-      - Go       
+      interfaceLanguage:
+      - Go
 - git: https://github.com/ArtemKulyabin/cryptostack
   manual:
     generalData:
@@ -15031,7 +15031,7 @@ projects:
     generalData:
       type: Wrapper
       related:
-        - https://golang.org/pkg/crypto/aes/
+      - https://golang.org/pkg/crypto/aes/
       licences:
       documentation:
         exists:
@@ -15046,7 +15046,7 @@ projects:
         high: true
         low: false
       interfaceLanguage:
-      - Go       
+      - Go
 - git: https://github.com/teambition/crypto-go
   manual:
     generalData:
@@ -15072,7 +15072,7 @@ projects:
     generalData:
       type: Fork
       related:
-        - https://godoc.org/golang.org/x/crypto/openpgp
+      - https://godoc.org/golang.org/x/crypto/openpgp
       documentation:
         exists:
           readme: true
@@ -15085,8 +15085,8 @@ projects:
       interfaceLevel:
         high: true
         low: false
-      interfaceLanguage:   
-      - Go       
+      interfaceLanguage:
+      - Go
 - git: https://github.com/mdp/sodiumbox
   manual:
     generalData:
@@ -15432,8 +15432,8 @@ projects:
     generalData:
       type: Wrapper
       related:
-        - https://golang.org/pkg/crypto/
-        - https://golang.org/pkg/encoding/
+      - https://golang.org/pkg/crypto/
+      - https://golang.org/pkg/encoding/
       licences:
       - ISC
       documentation:
@@ -15448,8 +15448,8 @@ projects:
       interfaceLevel:
         high: true
         low: false
-      interfaceLanguage:   
-      - Go       
+      interfaceLanguage:
+      - Go
 - git: https://github.com/nikkolasg/tlsrp
   manual:
     generalData:
@@ -15476,7 +15476,7 @@ projects:
       type: Standalone
       related:
       dependencies:
-        - https://golang.org/pkg/os/
+      - https://golang.org/pkg/os/
       licences:
       - BSD-2-Clause
       documentation:
@@ -15491,14 +15491,14 @@ projects:
       interfaceLevel:
         high: true
         low: false
-      interfaceLanguage:  
-      - Go       
+      interfaceLanguage:
+      - Go
 - git: https://github.com/ScriptRock/sftp
   manual:
     generalData:
       type: Fork
       related:
-        - https://github.com/pkg/sftp      
+      - https://github.com/pkg/sftp
       licences:
       - BSD-2-Clause
       documentation:
@@ -15513,8 +15513,8 @@ projects:
       interfaceLevel:
         high: true
         low: false
-      interfaceLanguage:  
-      - Go  
+      interfaceLanguage:
+      - Go
 - git: https://github.com/kardianos/sftp
   manual:
     generalData:
@@ -15588,1299 +15588,1297 @@ project_tasks:
 - FeatureDetector:
     block ciphers:
       3-Way:
-        - 3-Way
+      - 3-Way
       AES:
-        - AES
-        - Rijndael
-        - Advanced Encryption Standard
-        - AES-128
-        - AES-192
-        - AES-256
-        - AES_128
-        - AES_192
-        - AES_256
-        - AES128
-        - AES192
-        - AES256
+      - AES
+      - Rijndael
+      - Advanced Encryption Standard
+      - AES-128
+      - AES-192
+      - AES-256
+      - AES_128
+      - AES_192
+      - AES_256
+      - AES128
+      - AES192
+      - AES256
       AES-128:
-        - AES-128
-        - AES_128
-        - AES128
+      - AES-128
+      - AES_128
+      - AES128
       AES-192:
-        - AES-192
-        - AES_192
-        - AES192
+      - AES-192
+      - AES_192
+      - AES192
       AES-256:
-        - AES-256
-        - AES_256
-        - AES256
+      - AES-256
+      - AES_256
+      - AES256
       Akelarre:
-        - Akelarre
-        - Ake98
+      - Akelarre
+      - Ake98
       Anubis:
-        - Anubis
+      - Anubis
       ARIA:
-        - ARIA
-        - ARIA-128
-        - ARIA-192
-        - ARIA-256
-        - ARIA_128
-        - ARIA_192
-        - ARIA_256
-        - ARIA128
-        - ARIA192
-        - ARIA256
+      - ARIA
+      - ARIA-128
+      - ARIA-192
+      - ARIA-256
+      - ARIA_128
+      - ARIA_192
+      - ARIA_256
+      - ARIA128
+      - ARIA192
+      - ARIA256
       ARIA-128:
-        - ARIA-128
-        - ARIA_128
-        - ARIA128
+      - ARIA-128
+      - ARIA_128
+      - ARIA128
       ARIA-192:
-        - ARIA-192
-        - ARIA_192
-        - ARIA192
+      - ARIA-192
+      - ARIA_192
+      - ARIA192
       ARIA-256:
-        - ARIA-256
-        - ARIA_256
-        - ARIA256
+      - ARIA-256
+      - ARIA_256
+      - ARIA256
       BaseKing:
-        - BaseKing
+      - BaseKing
       BassOmatic:
-        - BassOmatic
+      - BassOmatic
       BATON:
-        - BATON
+      - BATON
       Blowfish:
-        - Blowfish
+      - Blowfish
       Camellia:
-        - Camellia
+      - Camellia
       CAST:
-        - CAST
-        - Carlisle Adams and Stafford Tavares
-        - CAST-128
-        - CAST-256
-        - CAST_128
-        - CAST_256
-        - CAST128
-        - CAST256
+      - CAST
+      - Carlisle Adams and Stafford Tavares
+      - CAST-128
+      - CAST-256
+      - CAST_128
+      - CAST_256
+      - CAST128
+      - CAST256
       CAST-128:
-        - CAST-128
-        - CAST_128
-        - CAST128
+      - CAST-128
+      - CAST_128
+      - CAST128
       CAST-256:
-        - CAST-256
-        - CAST_256
-        - CAST256
+      - CAST-256
+      - CAST_256
+      - CAST256
       CDMF:
-        - CDMF
-        - Commercial Data Masking Facility
+      - CDMF
+      - Commercial Data Masking Facility
       CMEA:
-        - CMEA
-        - Cellular Message Encryption Algorithm
+      - CMEA
+      - Cellular Message Encryption Algorithm
       Chiasmus:
-        - Chiasmus
+      - Chiasmus
       CIKS-1:
-        - CIKS-1
+      - CIKS-1
       Cinavia: # ?
-        - Verance Copy Management System for Audiovisual Content
-        - VCMS
-        - VCMS/A
-        - VCMS/AV
+      - Verance Copy Management System for Audiovisual Content
+      - VCMS
+      - VCMS/A
+      - VCMS/AV
       CIPHERUNICORN-A:
-        - CIPHERUNICORN-A
+      - CIPHERUNICORN-A
       CIPHERUNICORN-E:
-        - CIPHERUNICORN-E
+      - CIPHERUNICORN-E
       CLEFIA:
-        - CLEFIA
+      - CLEFIA
       COBRA:
-        - Cobra-H64
-        - Cobra-F64a
-        - Cobra-F64b
-        - Cobra-H128
-        - Cobra-S128
-        - Cobra_H64
-        - Cobra_F64a
-        - Cobra_F64b
-        - Cobra_H128
-        - Cobra_S128
-        - CobraH64
-        - CobraF64a
-        - CobraF64b
-        - CobraH128
-        - CobraS128
+      - Cobra-H64
+      - Cobra-F64a
+      - Cobra-F64b
+      - Cobra-H128
+      - Cobra-S128
+      - Cobra_H64
+      - Cobra_F64a
+      - Cobra_F64b
+      - Cobra_H128
+      - Cobra_S128
+      - CobraH64
+      - CobraF64a
+      - CobraF64b
+      - CobraH128
+      - CobraS128
       COBRA-64:
-        - Cobra-H64
-        - Cobra-F64a
-        - Cobra-F64b
-        - Cobra_H64
-        - Cobra_F64a
-        - Cobra_F64b
-        - CobraH64
-        - CobraF64a
-        - CobraF64b
+      - Cobra-H64
+      - Cobra-F64a
+      - Cobra-F64b
+      - Cobra_H64
+      - Cobra_F64a
+      - Cobra_F64b
+      - CobraH64
+      - CobraF64a
+      - CobraF64b
       COBRA-128:
-        - Cobra-H128
-        - Cobra-S128
-        - Cobra_H128
-        - Cobra_S128
-        - CobraH128
-        - CobraS128
+      - Cobra-H128
+      - Cobra-S128
+      - Cobra_H128
+      - Cobra_S128
+      - CobraH128
+      - CobraS128
       COCONUT98:
-        - COCONUT98
-        - Cipher Organized with Cute Operations and N-Universal Transformation
+      - COCONUT98
+      - Cipher Organized with Cute Operations and N-Universal Transformation
       Crab: # ?
-        - Crab
+      - Crab
       Cryptomeria cipher:
-        - Cryptomeria cipher
+      - Cryptomeria cipher
       CRYPTON:
-        - CRYPTON
+      - CRYPTON
       CS-Cipher:
-        - CS-Cipher
-        - Chiffrement Symétrique
-        - Chiffrement Symetrique
+      - CS-Cipher
+      - "Chiffrement Sym\xE9trique"
+      - Chiffrement Symetrique
       DES:
-        - DES
-        - Data Encryption Standard
+      - DES
+      - Data Encryption Standard
       DEAL:
-        - DEAL
-        - Data Encryption Algorithm with Larger blocks
+      - DEAL
+      - Data Encryption Algorithm with Larger blocks
       DFC:
-        - DFC
-        - Decorrelated Fast Cipher
+      - DFC
+      - Decorrelated Fast Cipher
       EnRUPT:
-        - EnRUPT
+      - EnRUPT
       FEA-M:
-        - FEA-M
-        - Fast Encryption Algorithm for Multimedia
+      - FEA-M
+      - Fast Encryption Algorithm for Multimedia
       FEAL:
-        - FEAL
-        - Fast data Encipherment ALgorithm
+      - FEAL
+      - Fast data Encipherment ALgorithm
       FPE:
-        - FPE
-        - format-preserving encryption
+      - FPE
+      - format-preserving encryption
       FROG:
-        - FROG
+      - FROG
       GDES:
-        - GDES
-        - G-DES
-        - G_DES
-        - Generalized DES Scheme
+      - GDES
+      - G-DES
+      - G_DES
+      - Generalized DES Scheme
       GOST:
-        - 28147-89
-        - 34.12-2015
+      - 28147-89
+      - 34.12-2015
       Grand Cru:
-        - Grand Cru
-        - Grand_Cru
-        - Grand-Cru
+      - Grand Cru
+      - Grand_Cru
+      - Grand-Cru
       HPC:
-        - Hasty Pudding Cipher
+      - Hasty Pudding Cipher
       Hierocrypt:
-        - Hierocrypt
-        - Hierocrypt-L1
-        - Hierocrypt-3
+      - Hierocrypt
+      - Hierocrypt-L1
+      - Hierocrypt-3
       ICE:
-        - Information Concealment Engine
+      - Information Concealment Engine
       IDEA NXT:
-        - IDEA NXT
-        - IDEA_NXT
-        - IDEA-NXT
-        - FOX
+      - IDEA NXT
+      - IDEA_NXT
+      - IDEA-NXT
+      - FOX
       Intel Cascaded Cipher:
-        - Intel Cascaded Cipher
+      - Intel Cascaded Cipher
       IDEA:
-        - International Data Encryption Algorithm
-        - IDEA
-        - Improved Proposed Encryption Standard
-        - IPES
+      - International Data Encryption Algorithm
+      - IDEA
+      - Improved Proposed Encryption Standard
+      - IPES
       Kalyna:
-        - Kalyna
+      - Kalyna
       KASUMI:
-        - KASUMI
+      - KASUMI
       KeeLoq:
-        - KeeLoq
+      - KeeLoq
       KHAZAD:
-        - KHAZAD
+      - KHAZAD
       Khufu:
-        - Khufu
+      - Khufu
       Khafre:
-        - Khafre
+      - Khafre
       KN-Cipher:
-        - KN-Cipher
+      - KN-Cipher
       Kuznyechik:
-        - Kuznyechik
+      - Kuznyechik
       Ladder-DES:
-        - Ladder-DES
+      - Ladder-DES
       Libelle:
-        - Libelle
+      - Libelle
       LOKI89:
-        - LOKI89
+      - LOKI89
       LOKI91:
-        - LOKI91
+      - LOKI91
       LOKI97:
-        - LOKI97
+      - LOKI97
       Lucifer:
-        - Lucifer
+      - Lucifer
       M6: # ?
-        - M6
+      - M6
       M8: # ?
-        - M8
+      - M8
       MacGuffin:
-        - MacGuffin
+      - MacGuffin
       MAGENTA:
-        - MAGENTA
-        - Multifunctional Algorithm for General-purpose Encryption
-        - Multifunctional Algorithm for General-purpose Encryption and Network Telecommunication Applications
+      - MAGENTA
+      - Multifunctional Algorithm for General-purpose Encryption
+      - Multifunctional Algorithm for General-purpose Encryption and Network Telecommunication
+        Applications
       MARS:
-        - MARS
+      - MARS
       Mercy:
-        - Mercy
+      - Mercy
       MESH:
-        - MESH
+      - MESH
       MISTY1:
-        - MISTY1
-        - MISTY-1
-        - MISTY_1
-        - MISTY 1
+      - MISTY1
+      - MISTY-1
+      - MISTY_1
+      - MISTY 1
       MISTY2:
-        - MISTY2
-        - MISTY-2
-        - MISTY_2
-        - MISTY 2
+      - MISTY2
+      - MISTY-2
+      - MISTY_2
+      - MISTY 2
       MMB:
-        - MMB
-        - Modular Multiplication-based Block cipher
+      - MMB
+      - Modular Multiplication-based Block cipher
       MULTI2:
-        - MULTI2
-        - MULTI-2
-        - MULTI_2
-        - MULTI 2
+      - MULTI2
+      - MULTI-2
+      - MULTI_2
+      - MULTI 2
       MultiSwap:
-        - MultiSwap
+      - MultiSwap
       NDS:
-        - NDS
-        - New Data Seal
+      - NDS
+      - New Data Seal
       NewDES:
-        - NewDES
-        - NewDES-96
+      - NewDES
+      - NewDES-96
       Nimbus:
-        - Nimbus
+      - Nimbus
       NOEKEON:
-        - NOEKEON
+      - NOEKEON
       NUSH:
-        - NUSH
+      - NUSH
       PC1:
-        - PC1 cipher
-        - Kindle cipher
-        - Pukall cipher
-        - Pukall cipher 1
+      - PC1 cipher
+      - Kindle cipher
+      - Pukall cipher
+      - Pukall cipher 1
       PRESENT:
-        - PRESENT
+      - PRESENT
       Prince:
-        - Prince
+      - Prince
       Q:
-        - Q cipher
-        - Q-cipher
-        - Q_cipher
+      - Q cipher
+      - Q-cipher
+      - Q_cipher
       RC: # RC is too small and ambiguous
-        - Ron's Code
-        - Rons Code
-        - Rivest Cipher
-        - Rivest
-        - RC-2
-        - RC-5
-        - RC-6
-        - RC_2
-        - RC_5
-        - RC_6
-        - RC2
-        - RC5
-        - RC6
+      - Ron's Code
+      - Rons Code
+      - Rivest Cipher
+      - Rivest
+      - RC-2
+      - RC-5
+      - RC-6
+      - RC_2
+      - RC_5
+      - RC_6
+      - RC2
+      - RC5
+      - RC6
       RC2:
-        - RC-2
-        - RC_2
-        - RC2
+      - RC-2
+      - RC_2
+      - RC2
       RC5:
-        - RC-5
-        - RC_5
-        - RC5
+      - RC-5
+      - RC_5
+      - RC5
       RC6:
-        - RC-6
-        - RC_6
-        - RC6
+      - RC-6
+      - RC_6
+      - RC6
       Red Pike:
-        - Red Pike
+      - Red Pike
       REDOC:
-        - REDOC
+      - REDOC
       SAFER:
-        - SAFER
-        - Secure And Fast Encryption Routine
+      - SAFER
+      - Secure And Fast Encryption Routine
       SAVILLE:
-        - SAVILLE
+      - SAVILLE
       SC2000:
-        - SC2000
+      - SC2000
       Serpent:
-        - Serpent
+      - Serpent
       SEED:
-        - SEED
+      - SEED
       SHACAL:
-        - SHACAL
-        - SHACAL-1
-        - SHACAL-2
-        - SHACAL_1
-        - SHACAL_2
-        - SHACAL1
-        - SHACAL2
+      - SHACAL
+      - SHACAL-1
+      - SHACAL-2
+      - SHACAL_1
+      - SHACAL_2
+      - SHACAL1
+      - SHACAL2
       SHARK:
-        - SHARK
+      - SHARK
       Simon:
-        - Simon
+      - Simon
       Skipjack:
-        - Skipjack
+      - Skipjack
       SM4:
-        - SM4
-        - MSM4
+      - SM4
+      - MSM4
       Speck:
-        - Speck
+      - Speck
       Spectr-H64:
-        - Spectr-H64
-        - Spectr_H64
-        - SpectrH64
-        - Spectr H64
+      - Spectr-H64
+      - Spectr_H64
+      - SpectrH64
+      - Spectr H64
       Square: # not a good name
-        - Square chipher
+      - Square chipher
       SXAL:
-        - SXAL
-        - SXAL8
-        - Substitution Xor ALgorithm
+      - SXAL
+      - SXAL8
+      - Substitution Xor ALgorithm
       Threefish:
-        - Threefish
+      - Threefish
       TEA:
-        - TEA
-        - Tiny Encryption Algorithm
+      - TEA
+      - Tiny Encryption Algorithm
       Treyfer:
-        - Treyfer
+      - Treyfer
       3DES:
-        - 3DES
-        - Triple DES
-        - Triple Data Encryption Algorithm
-        - TDEA
-        - Triple DEA
-        - DESede
+      - 3DES
+      - Triple DES
+      - Triple Data Encryption Algorithm
+      - TDEA
+      - Triple DEA
+      - DESede
       Twofish:
-        - Twofish
+      - Twofish
       UES:
-        - UES
-        - Universal Encryption Standard
+      - UES
+      - Universal Encryption Standard
       Xenon:
-        - Xenon
+      - Xenon
       XTEA:
-        - XTEA
-        - eXtended TEA
-        - eXtended Tiny Encryption Algorithm
+      - XTEA
+      - eXtended TEA
+      - eXtended Tiny Encryption Algorithm
       XXTEA:
-        - XXTEA
-        - Corrected Block TEA
+      - XXTEA
+      - Corrected Block TEA
       Zodiac:
-        - Zodiac
+      - Zodiac
     stream ciphers:
       Grain:
-        - Grain 128a
-        - Grain-128a
-        - Grain_128a
-        - Grain128a
+      - Grain 128a
+      - Grain-128a
+      - Grain_128a
+      - Grain128a
       A5/1:
-        - A5/1
+      - A5/1
       A5/2:
-        - A5/2
+      - A5/2
       Achterbahn:
-        - Achterbahn
+      - Achterbahn
       ChaCha:
-        - ChaCha
-        - ChaCha-20
-        - ChaCha_20
-        - ChaCha20
+      - ChaCha
+      - ChaCha-20
+      - ChaCha_20
+      - ChaCha20
       CJCSG:
-        - CJCSG
+      - CJCSG
       CryptMT:
-        - CryptMT
+      - CryptMT
       Crypto1:
-        - Crypto1
-        - Crypto-1
-        - Crypto_1
-        - Crypto 1
+      - Crypto1
+      - Crypto-1
+      - Crypto_1
+      - Crypto 1
       DECIM:
-        - DECIM
+      - DECIM
       DICING:
-        - DICING
+      - DICING
       Dragon:
-        - Dragon
+      - Dragon
       Edon80:
-        - Edon80
+      - Edon80
       eSTREAM:
-        - eSTREAM
+      - eSTREAM
       FISH:
-        - FISH
-        - FIbonacci SHrinking
+      - FISH
+      - FIbonacci SHrinking
       Frogbit:
-        - Frogbit
+      - Frogbit
       HC-256:
-        - HC-256
+      - HC-256
       HC-128:
-        - HC-128
+      - HC-128
       Hermes8:
-        - Hermes8
+      - Hermes8
       ISAAC:
-        - ISAAC
-        - indirection, shift, accumulate, add, and count
+      - ISAAC
+      - indirection, shift, accumulate, add, and count
       LEVIATHAN:
-        - LEVIATHAN
+      - LEVIATHAN
       LEX:
-        - LEX
+      - LEX
       LILI-128:
-        - LILI-128
+      - LILI-128
       MAG:
-        - MAG
+      - MAG
       MICKEY:
-        - MICKEY
-        - Mutual Irregular Clocking KEYstream generator
+      - MICKEY
+      - Mutual Irregular Clocking KEYstream generator
       Mir-1:
-        - Mir_1
-        - Mir-1
-        - Mir1
+      - Mir_1
+      - Mir-1
+      - Mir1
       MULTI-S01:
-        - MULTI-S01
+      - MULTI-S01
       NLS:
-        - NLS
+      - NLS
       ORYX:
-        - ORYX
+      - ORYX
       Panama:
-        - Panama
+      - Panama
       Phelix:
-        - Phelix
+      - Phelix
       Pike:
-        - Pike
+      - Pike
       Polar Bear:
-        - Polar Bear
+      - Polar Bear
       Py:
-        - Py cipher
-        - Py stream cipher
+      - Py cipher
+      - Py stream cipher
       QUAD:
-        - QUAD cipher
-        - QUAD stream cipher
+      - QUAD cipher
+      - QUAD stream cipher
       Rabbit:
-        - Rabbit
+      - Rabbit
       Rambutan:
-        - Rambutan
+      - Rambutan
       RC: # RC is too small and ambiguous
-        - Ron's Code
-        - Rons Code
-        - Rivest Cipher
-        - Rivest
-        - RC-4
-        - RC_4
-        - RC4
+      - Ron's Code
+      - Rons Code
+      - Rivest Cipher
+      - Rivest
+      - RC-4
+      - RC_4
+      - RC4
       Salsa:
-        - Salsa
-        - Salsa-20
-        - Salsa_20
-        - Salsa20
+      - Salsa
+      - Salsa-20
+      - Salsa_20
+      - Salsa20
       Scream:
-        - Scream
+      - Scream
       SEAL:
-        - SEAL
-        - Software-Optimized Encryption Algorithm
+      - SEAL
+      - Software-Optimized Encryption Algorithm
       SFINKS:
-        - SFINKS
+      - SFINKS
       SNOW:
-        - SNOW
-        - SNOW1
-        - SNOW2
-        - SNOW3G
-        - SNOW-1
-        - SNOW-2
-        - SNOW-3G
-        - SNOW_1
-        - SNOW_2
-        - SNOW_3G
+      - SNOW
+      - SNOW1
+      - SNOW2
+      - SNOW3G
+      - SNOW-1
+      - SNOW-2
+      - SNOW-3G
+      - SNOW_1
+      - SNOW_2
+      - SNOW_3G
       SOBER:
-        - SOBER
+      - SOBER
       Solitaire:
-        - Solitaire
+      - Solitaire
       Sosemanuk:
-        - Sosemanuk
+      - Sosemanuk
       SSS:
-        - SSS cipher
-        - SSS stream cipher
+      - SSS cipher
+      - SSS stream cipher
       TRBDK3 YAEA:
-        - TRBDK3 YAEA
+      - TRBDK3 YAEA
       Trivium:
-        - Trivium
+      - Trivium
       TSC-3:
-        - TSC-3
+      - TSC-3
       Turing:
-        - Turing
+      - Turing
       VMPC:
-        - VMPC
-        - Variably Modified Permutation Composition
+      - VMPC
+      - Variably Modified Permutation Composition
       Vernam:
-        - Vernam
+      - Vernam
       VEST:
-        - VEST
-        - Very Efficient Substitution Transposition
-      Vigenère cipher:
-        - Vigenère cipher
-        - Vigenere cipher
-        - Vigenère
-        - Vigenere
-        - le chiffre indéchiffrable
-        - le chiffre indechiffrable
+      - VEST
+      - Very Efficient Substitution Transposition
+      "Vigen\xE8re cipher":
+      - "Vigen\xE8re cipher"
+      - Vigenere cipher
+      - "Vigen\xE8re"
+      - Vigenere
+      - "le chiffre ind\xE9chiffrable"
+      - le chiffre indechiffrable
       WAKE:
-        - WAKE
-        - Word Auto Key Encryption
+      - WAKE
+      - Word Auto Key Encryption
       WG:
-        - WG cipher
-        - WG stream cipher
+      - WG cipher
+      - WG stream cipher
       Yamb:
-        - Yamb
+      - Yamb
       ZK-Crypt:
-        - ZK-Crypt
+      - ZK-Crypt
       ZUC:
-        - ZUC
+      - ZUC
     hash:
       BLAKE2:
-        - BLAKE2
-        - BLAKE2b
-        - BLAKE2s
-        - BLAKE2bp
-        - BLAKE2sp
+      - BLAKE2
+      - BLAKE2b
+      - BLAKE2s
+      - BLAKE2bp
+      - BLAKE2sp
       brcypt:
-        - brcypt
+      - brcypt
       ECOH:
-        - ECOH
-        - elliptic curve only hash
+      - ECOH
+      - elliptic curve only hash
       FSB:
-        - FSB
-        - Fast Syndrome-based
+      - FSB
+      - Fast Syndrome-based
       GOST:
-        - 34.11-94
-        - 34.311-95
-        - 34.11-2012
-      Grøstl:
-        - Grøstl
-        - Grostl
+      - 34.11-94
+      - 34.311-95
+      - 34.11-2012
+      "Gr\xF8stl":
+      - "Gr\xF8stl"
+      - Grostl
       HAS-160:
-        - HAS-160
+      - HAS-160
       HAVAL:
-        - HAVAL
+      - HAVAL
       JH:
-        - JH hash
+      - JH hash
       MD2:
-        - MD2
-        - MD-2
-        - MD_2
+      - MD2
+      - MD-2
+      - MD_2
       MD5:
-        - MD5
-        - MD-5
-        - MD_5
+      - MD5
+      - MD-5
+      - MD_5
       MD6:
-        - MD6
-        - MD-6
-        - MD_6
+      - MD6
+      - MD-6
+      - MD_6
       PBKDF2:
-        - PBKDF2
-        - PBKDF1
-        - Password-Based Key Derivation Function
-      RadioGatún:
-        - RadioGatún
-        - RadioGatun
+      - PBKDF2
+      - PBKDF1
+      - Password-Based Key Derivation Function
+      "RadioGat\xFAn":
+      - "RadioGat\xFAn"
+      - RadioGatun
       RIPEMD:
-        - RIPEMD
-        - RIPEMD-160
-        - RIPEMD-128
-        - RIPEMD-256
-        - RIPEMD-320
-        - RIPEMD_160
-        - RIPEMD_128
-        - RIPEMD_256
-        - RIPEMD_320
-        - RIPEMD160
-        - RIPEMD128
-        - RIPEMD256
-        - RIPEMD320
-        - RACE Integrity Primitives Evaluation Message Digest
-        - Integrity Primitives Evaluation Message Digest
+      - RIPEMD
+      - RIPEMD-160
+      - RIPEMD-128
+      - RIPEMD-256
+      - RIPEMD-320
+      - RIPEMD_160
+      - RIPEMD_128
+      - RIPEMD_256
+      - RIPEMD_320
+      - RIPEMD160
+      - RIPEMD128
+      - RIPEMD256
+      - RIPEMD320
+      - RACE Integrity Primitives Evaluation Message Digest
+      - Integrity Primitives Evaluation Message Digest
       scrypt:
-        - scrypt
-        - Colin Percival
+      - scrypt
+      - Colin Percival
       SHA:
-        - Keccak
-        - SHA-0
-        - SHA-1
-        - SHA-2
-        - SHA-224
-        - SHA-256
-        - SHA-3
-        - SHA-384
-        - SHA-512
-        - SHA0
-        - SHA1
-        - SHA2
-        - SHA224
-        - SHA256
-        - SHA3
-        - SHA3-224
-        - SHA3-256
-        - SHA3-384
-        - SHA3-512
-        - SHA3224
-        - SHA3256
-        - SHA3384
-        - SHA3512
-        - SHA384
-        - SHA3_224
-        - SHA3_256
-        - SHA3_384
-        - SHA3_512
-        - SHA512
-        - SHA_0
-        - SHA_1
-        - SHA_2
-        - SHA_224
-        - SHA_256
-        - SHA_3
-        - SHA_384
-        - SHA_512
-        - SHAKE128
-        - SHAKE256
+      - Keccak
+      - SHA-0
+      - SHA-1
+      - SHA-2
+      - SHA-224
+      - SHA-256
+      - SHA-3
+      - SHA-384
+      - SHA-512
+      - SHA0
+      - SHA1
+      - SHA2
+      - SHA224
+      - SHA256
+      - SHA3
+      - SHA3-224
+      - SHA3-256
+      - SHA3-384
+      - SHA3-512
+      - SHA3224
+      - SHA3256
+      - SHA3384
+      - SHA3512
+      - SHA384
+      - SHA3_224
+      - SHA3_256
+      - SHA3_384
+      - SHA3_512
+      - SHA512
+      - SHA_0
+      - SHA_1
+      - SHA_2
+      - SHA_224
+      - SHA_256
+      - SHA_3
+      - SHA_384
+      - SHA_512
+      - SHAKE128
+      - SHAKE256
       SHA-1:
-        - SHA-0
-        - SHA-1
-        - SHA-160
-        - SHA0
-        - SHA1
-        - SHA160
-        - SHA_0
-        - SHA_1
-        - SHA_160
+      - SHA-0
+      - SHA-1
+      - SHA-160
+      - SHA0
+      - SHA1
+      - SHA160
+      - SHA_0
+      - SHA_1
+      - SHA_160
       SHA-2:
-        - SHA-2
-        - SHA-224
-        - SHA-256
-        - SHA-384
-        - SHA-512
-        - SHA2
-        - SHA224
-        - SHA256
-        - SHA384
-        - SHA512
-        - SHA_2
-        - SHA_224
-        - SHA_256
-        - SHA_384
-        - SHA_512
+      - SHA-2
+      - SHA-224
+      - SHA-256
+      - SHA-384
+      - SHA-512
+      - SHA2
+      - SHA224
+      - SHA256
+      - SHA384
+      - SHA512
+      - SHA_2
+      - SHA_224
+      - SHA_256
+      - SHA_384
+      - SHA_512
       SHA-3:
-        - Keccak
-        - SHA-224
-        - SHA-256
-        - SHA-3
-        - SHA-384
-        - SHA-512
-        - SHA224
-        - SHA256
-        - SHA3
-        - SHA3-224
-        - SHA3-256
-        - SHA3-384
-        - SHA3-512
-        - SHA3224
-        - SHA3256
-        - SHA3384
-        - SHA3512
-        - SHA384
-        - SHA3_224
-        - SHA3_256
-        - SHA3_384
-        - SHA3_512
-        - SHA512
-        - SHA_224
-        - SHA_256
-        - SHA_3
-        - SHA_384
-        - SHA_512
-        - SHAKE128
-        - SHAKE256
+      - Keccak
+      - SHA-224
+      - SHA-256
+      - SHA-3
+      - SHA-384
+      - SHA-512
+      - SHA224
+      - SHA256
+      - SHA3
+      - SHA3-224
+      - SHA3-256
+      - SHA3-384
+      - SHA3-512
+      - SHA3224
+      - SHA3256
+      - SHA3384
+      - SHA3512
+      - SHA384
+      - SHA3_224
+      - SHA3_256
+      - SHA3_384
+      - SHA3_512
+      - SHA512
+      - SHA_224
+      - SHA_256
+      - SHA_3
+      - SHA_384
+      - SHA_512
+      - SHAKE128
+      - SHAKE256
       SHA-256:
-        - SHA-256
-        - SHA256
-        - SHA3-256
-        - SHA3256
-        - SHA3_256
-        - SHA_256
+      - SHA-256
+      - SHA256
+      - SHA3-256
+      - SHA3256
+      - SHA3_256
+      - SHA_256
       SHA-512:
-        - SHA-512
-        - SHA3-512
-        - SHA3512
-        - SHA3_512
-        - SHA512
-        - SHA_512
+      - SHA-512
+      - SHA3-512
+      - SHA3512
+      - SHA3_512
+      - SHA512
+      - SHA_512
       SHAKE:
-        - SHAKE128
-        - SHAKE256
+      - SHAKE128
+      - SHAKE256
       SipHash:
-        - SipHash
+      - SipHash
       Skein:
-        - Skein
+      - Skein
       Snefru:
-        - Snefru
+      - Snefru
       Spectral Hash:
-        - Spectral Hash
+      - Spectral Hash
       Streebog:
-        - Streebog
+      - Streebog
       SWIFFT:
-        - SWIFFT
+      - SWIFFT
       Tiger:
-        - Tiger
+      - Tiger
       WHIRLPOOL:
-        - WHIRLPOOL
+      - WHIRLPOOL
     encryption modes:
       2DEM:
-        - 2DEM
-        - 2D-Encryption Mode
+      - 2DEM
+      - 2D-Encryption Mode
       ABC:
-        - ABC
-        - Accumulated Block Chaining
+      - ABC
+      - Accumulated Block Chaining
       BPS:
-        - BPS
-        - Format Preserving Encryption Proposal
+      - BPS
+      - Format Preserving Encryption Proposal
       CBC:
-        - Cipher Block Chaining
-        - CBC
+      - Cipher Block Chaining
+      - CBC
       CCM:
-        - Counter with CBC-MAC
-        - CCM
+      - Counter with CBC-MAC
+      - CCM
       CFB:
-        - Cipher Feedback
-        - CFB
+      - Cipher Feedback
+      - CFB
       CTR: # Counter is too ambiguous
-        - Counter Mode
-        - CTR
-        - CM
-        - ICM
-        - integer counter mode
+      - Counter Mode
+      - CTR
+      - CM
+      - ICM
+      - integer counter mode
       CSPEM:
-        - CSPEM
-        - Character Set Preserving Encryption Mode
+      - CSPEM
+      - Character Set Preserving Encryption Mode
       CWC:
-        - Carter-Wegman + CTR
-        - Carter-Wegman and CTR
-        - Carter-Wegman CTR
-        - Carter Wegman + CTR
-        - Carter Wegman and CTR
-        - Carter Wegman CTR
-        - CWC
+      - Carter-Wegman + CTR
+      - Carter-Wegman and CTR
+      - Carter-Wegman CTR
+      - Carter Wegman + CTR
+      - Carter Wegman and CTR
+      - Carter Wegman CTR
+      - CWC
       DFF:
-        - DFF
-        - Delegatable Feistel-based Format-preserving Encryption Mode
+      - DFF
+      - Delegatable Feistel-based Format-preserving Encryption Mode
       EAX:
-        - encrypt then authenticiate then translate
-        - EAX
+      - encrypt then authenticiate then translate
+      - EAX
       ECB:
-        - Electronic Codebook
-        - ECB
+      - Electronic Codebook
+      - ECB
       FCEM:
-        - FCEM
-        - Format Controlling Encryption Mode
-      FFX: Format-preserving Feistel-based Encryption Mode
-        - FFX
-        - Format-preserving Feistel-based Encryption Mode
+      - FCEM
+      - Format Controlling Encryption Mode
+      FFX: Format-preserving Feistel-based Encryption Mode - FFX - Format-preserving
+        Feistel-based Encryption Mode
       GCM:
-        - Galois/Counter Mode
-        - Galois and Counter Mode
-        - Galois, Counter Mode
-        - Galois Counter Mode
-        - GCM
+      - Galois/Counter Mode
+      - Galois and Counter Mode
+      - Galois, Counter Mode
+      - Galois Counter Mode
+      - GCM
       IACBC:
-        - IACBC
-        - Integrity Aware Cipher Block Chaining
+      - IACBC
+      - Integrity Aware Cipher Block Chaining
       IAPM:
-        - Integrity Aware Parallelizable Mode
-        - IAPM
+      - Integrity Aware Parallelizable Mode
+      - IAPM
       IGE:
-        - IGE
-        - Infinite Garble Extension
-      IOC: Input and Output Chaining
-        - IOC
-        - Input and Output Chaining
+      - IGE
+      - Infinite Garble Extension
+      IOC: Input and Output Chaining - IOC - Input and Output Chaining
       KFB:
-        - KFB
-        - Key feedback mode
+      - KFB
+      - Key feedback mode
       OCB:
-        - Offset Codebook Mode
-        - OCB
+      - Offset Codebook Mode
+      - OCB
       OFB:
-        - Output Feedback
-        - OFB
+      - Output Feedback
+      - OFB
       PCBC:
-        - PCBC
-        - Propagating Cipher Block Chaining
+      - PCBC
+      - Propagating Cipher Block Chaining
       PCFB:
-        - PCFB
-        - Propagating Cipher Feedback
+      - PCFB
+      - Propagating Cipher Feedback
       RAC:
-        - RAC
-        - Random Access Counter
+      - RAC
+      - Random Access Counter
       RKC:
-        - RKC
-        - Random Key Chaining
+      - RKC
+      - Random Key Chaining
       SIV:
-        - SIV
-        - Synthetic IV
+      - SIV
+      - Synthetic IV
       VFPE:
-        - VFPE
-        - VISA Format Preserving Encryption
+      - VFPE
+      - VISA Format Preserving Encryption
       XBC:
-        - XBC
-        - Cross Block Chaining
+      - XBC
+      - Cross Block Chaining
       XCBC:
-        - XCBC
-        - eXtended Cipher Block Chaining encryption
+      - XCBC
+      - eXtended Cipher Block Chaining encryption
     message authentication codes:
       CBC-MAC:
-        - cipher block chaining message authentication code
-        - CBC-MAC
+      - cipher block chaining message authentication code
+      - CBC-MAC
       HMAC:
-        - keyed-hash message authentication code
-        - hash message authentication code
-        - HMAC
+      - keyed-hash message authentication code
+      - hash message authentication code
+      - HMAC
       OMAC:
-        - OMAC
-        - One-Key CBC
-        - One-Key Cipher Block Chaining
+      - OMAC
+      - One-Key CBC
+      - One-Key Cipher Block Chaining
       MMH-Badger:
-        - MMH-Badger MAC
-        - Badger
+      - MMH-Badger MAC
+      - Badger
       PMAC:
-        - PMAM
-        - Parallelizable Message Authentication Code
+      - PMAM
+      - Parallelizable Message Authentication Code
       Poly1305:
-        - Poly1305
+      - Poly1305
       RMAC:
-        - RMAC
-        - Randomized MAC
+      - RMAC
+      - Randomized MAC
       TMAC:
-        - TMAC
-        - Two-Key CBC MAC
-        - Two-Key Cipher Block Chaining
+      - TMAC
+      - Two-Key CBC MAC
+      - Two-Key Cipher Block Chaining
       UMAC:
-        - UMAC
-        - message authentication code based on universal hashing
+      - UMAC
+      - message authentication code based on universal hashing
       VMAC:
-        - VMAC
-        - Message Authentication Code using Universal Hashing
+      - VMAC
+      - Message Authentication Code using Universal Hashing
       XCBC:
-        - XCBC
-        - eXtended Cipher Block Chaining encryption
+      - XCBC
+      - eXtended Cipher Block Chaining encryption
       XECB:
-        - XECB
-        - eXtended Electronic Code Book MAC
+      - XECB
+      - eXtended Electronic Code Book MAC
     public key cryptography:
-      Cramer–Shoup:
-        - Cramer–Shoup
-        - Cramer_Shoup
-        - Cramer Shoup
-        - CramerShoup
+      "Cramer\u2013Shoup":
+      - "Cramer\u2013Shoup"
+      - Cramer_Shoup
+      - Cramer Shoup
+      - CramerShoup
       DH:
-        - Diffie-Hellman
-        - Diffie_Hellman
-        - Diffie Hellman
-        - DiffieHellman
-        - D-H
-        - DH
+      - Diffie-Hellman
+      - Diffie_Hellman
+      - Diffie Hellman
+      - DiffieHellman
+      - D-H
+      - DH
       DSA:
-        - Digital Signature Algorithm
-        - DSA
+      - Digital Signature Algorithm
+      - DSA
       DSS:
-        - DES
-        - Digital Signature Standard
+      - DES
+      - Digital Signature Standard
       ECDH:
-        - Elliptic curve Diffie-Hellman
-        - Elliptic curve Diffie Hellman
-        - ECDH
+      - Elliptic curve Diffie-Hellman
+      - Elliptic curve Diffie Hellman
+      - ECDH
       ECDSA:
-        - Elliptic Curve Digital Signature Algorithm
-        - ECDSA
+      - Elliptic Curve Digital Signature Algorithm
+      - ECDSA
       ElGamal:
-        - ElGamal
+      - ElGamal
       LUC:
-        - LUC
+      - LUC
       McEliece:
-        - McEliece
-      Merkle–Hellman:
-        - Merkle–Hellman
-        - Merkle_Hellman
-        - Merkle Hellman
-        - MerkleHellman
+      - McEliece
+      "Merkle\u2013Hellman":
+      - "Merkle\u2013Hellman"
+      - Merkle_Hellman
+      - Merkle Hellman
+      - MerkleHellman
       NTRUEncrypt:
-        - NTRUEncrypt
-        - NTRU encryption algorithm
+      - NTRUEncrypt
+      - NTRU encryption algorithm
       Paillier:
-        - Paillier
+      - Paillier
       RSA:
-        - Ron Rivest, Adi Shamir and Leonard Adleman
-        - Ron Rivest, Adi Shamir, and Leonard Adleman
-        - Ron Rivest, Adi Shamir, Leonard Adleman
-        - RSA
-        - PKCS 1
+      - Ron Rivest, Adi Shamir and Leonard Adleman
+      - Ron Rivest, Adi Shamir, and Leonard Adleman
+      - Ron Rivest, Adi Shamir, Leonard Adleman
+      - RSA
+      - PKCS 1
       YAK:
-        - YAK
+      - YAK
     public key infrastructure:
       CMP:
-        - CMP
+      - CMP
       DVCS:
-        - DVCS
-        - Data Validation and Certification Server
+      - DVCS
+      - Data Validation and Certification Server
       EJBCA:
-        - EJBCA
-        - Enterprise Java Beans Certificate Authority
+      - EJBCA
+      - Enterprise Java Beans Certificate Authority
       Identrus:
-        - Identrus
+      - Identrus
       MicroSoft AuthentiCode:
-        - MicroSoft AuthentiCode
+      - MicroSoft AuthentiCode
       LDAP:
-        - LDAP
+      - LDAP
       OCSP:
-        - OCSP
+      - OCSP
       OpenCA:
-        - OpenCA
-        - OpenCA PKI Research Labs
-        - OpenCA Project
+      - OpenCA
+      - OpenCA PKI Research Labs
+      - OpenCA Project
       RDBMS:
-        - RDBMS
+      - RDBMS
       PKCS:
-        - PKCS
+      - PKCS
       PKIX:
-        - PKIX
+      - PKIX
       PKCS#7:
-        - PKCS#7
+      - PKCS#7
       RPKI:
-        - RPKI
+      - RPKI
       RTCS:
-        - RTCS
+      - RTCS
       SCEP:
-        - SCEP
+      - SCEP
       SET:
-        - SET
+      - SET
       SigG:
-        - SigG
+      - SigG
       TinyCA:
-        - TinyCA
+      - TinyCA
       X.509:
-        - X.509
-        - X509
+      - X.509
+      - X509
       XiPKI:
-        - XiPKI
+      - XiPKI
     protocol:
       3-D Secure:
-        - 3-D Secure
+      - 3-D Secure
       AAG:
-        - Anshel–Anshel–Goldfeld
-        - Anshel_Anshel_Goldfeld
-        - Anshel Anshel Goldfeld
-        - AnshelAnshelGoldfeld
+      - "Anshel\u2013Anshel\u2013Goldfeld"
+      - Anshel_Anshel_Goldfeld
+      - Anshel Anshel Goldfeld
+      - AnshelAnshelGoldfeld
       AS1:
-        - AS1
-        - Applicability Statement 1
+      - AS1
+      - Applicability Statement 1
       AS2:
-        - AS2
-        - Applicability Statement 2
+      - AS2
+      - Applicability Statement 2
       AKA:
-        - AKA
-        - Authentication and Key Agreement
+      - AKA
+      - Authentication and Key Agreement
       AuthIP:
-        - AuthIP
+      - AuthIP
       ACME:
-        - ACME
-        - Automatic Certificate Management Environment
+      - ACME
+      - Automatic Certificate Management Environment
       Autoroll:
-        - Autoroll
+      - Autoroll
       BKE:
-        - Bilateral Key Exchange
+      - Bilateral Key Exchange
       CAVE:
-        - CAVE
-        - HLR Authentication
-        - 2G Authentication
-        - Access Authentication
+      - CAVE
+      - HLR Authentication
+      - 2G Authentication
+      - Access Authentication
       CCMP:
-        - CCMP
-        - Counter Mode Cipher Block Chaining Message Authentication Code Protocol
-        - Counter Mode CBC-MAC Protocol
-        - CCM mode Protocol
+      - CCMP
+      - Counter Mode Cipher Block Chaining Message Authentication Code Protocol
+      - Counter Mode CBC-MAC Protocol
+      - CCM mode Protocol
       CMC:
-        - CMC
-        - Certificate Management over CMS
+      - CMC
+      - Certificate Management over CMS
       CMP:
-        - CMP
-        - Certificate Management Protocol
+      - CMP
+      - Certificate Management Protocol
       CSR:
-        - CSR
-        - certificate signing request
-        - certification request
+      - CSR
+      - certificate signing request
+      - certification request
       CMS:
-        - CMS
-        - Cryptographic Message Syntax
+      - CMS
+      - Cryptographic Message Syntax
       CGA:
-        - CGA
-        - Cryptographically Generated Address
+      - CGA
+      - Cryptographically Generated Address
       DTLS:
-        - DTLS
-        - Datagram Transport Layer Security
+      - DTLS
+      - Datagram Transport Layer Security
       DPD:
-        - DPD
-        - Delegated Path Discovery
+      - DPD
+      - Delegated Path Discovery
       DPV:
-        - DPV
-        - Delegated Path Validation
+      - DPV
+      - Delegated Path Validation
       DCII:
-        - DCII
-        - DC2
-        - DigiCipher
+      - DCII
+      - DC2
+      - DigiCipher
       DK:
-        - DomainKeys
-        - DKIM
+      - DomainKeys
+      - DKIM
       ecash:
-        - ecash
+      - ecash
       EKE:
-        - EKE
-        - Encrypted Key Exchange
+      - EKE
+      - Encrypted Key Exchange
       EST:
-        - EST
-        - Enrollment over Secure Transport
+      - EST
+      - Enrollment over Secure Transport
       Firefly:
-        - Firefly
+      - Firefly
       GSS-TSIG:
-        - GSS-TSIG
-        - Generic Security Service Algorithm for Secret Key Transaction
+      - GSS-TSIG
+      - Generic Security Service Algorithm for Secret Key Transaction
       GSI:
-        - GSI
-        - Grid Security Infrastructure
-        - Globus Security Infrastructure
+      - GSI
+      - Grid Security Infrastructure
+      - Globus Security Infrastructure
       GDOI:
-        - GDOI
-        - Group Domain of Interpretation
+      - GDOI
+      - Group Domain of Interpretation
       GPG:
-        - GPG
-        - OpenPGP
+      - GPG
+      - OpenPGP
       H.235:
-        - H.235
+      - H.235
       Hashcash:
-        - Hashcash
+      - Hashcash
       HAIPE:
-        - HAIPE
-        - High Assurance Internet Protocol Encryptor
+      - HAIPE
+      - High Assurance Internet Protocol Encryptor
       HTTPS:
-        - HTTPS
-        - HTTP over Transport Layer Security
-        - HTTP over TLS
-        - HTTP over Secure Sockets Layer
-        - HTTP over SSL
-        - HTTP Secure
+      - HTTPS
+      - HTTP over Transport Layer Security
+      - HTTP over TLS
+      - HTTP over Secure Sockets Layer
+      - HTTP over SSL
+      - HTTP Secure
       HTTPsec:
-        - HTTPsec
-        - HTTP security
+      - HTTPsec
+      - HTTP security
       I2P:
-        - I2P
-        - Invisible Internet Project
+      - I2P
+      - Invisible Internet Project
       IES:
-        - IES
-        - Integrated Encryption Scheme
+      - IES
+      - Integrated Encryption Scheme
       IKE:
-        - IKE
-        - IKEv1
-        - IKEv2
-        - Internet Key Exchange
+      - IKE
+      - IKEv1
+      - IKEv2
+      - Internet Key Exchange
       ISAKMP:
-        - ISAKMP
-        - Internet Security Association and Key Management Protocol
+      - ISAKMP
+      - Internet Security Association and Key Management Protocol
       IPsec:
-        - IPsec
-        - Internet Protocol Security
+      - IPsec
+      - Internet Protocol Security
       J-PAKE:
-        - J-PAKE
-        - Password Authenticated Key Exchange by Juggling
+      - J-PAKE
+      - Password Authenticated Key Exchange by Juggling
       Kak's protocol:
-        - Kak's three stage protocol
-        - Kak's  protocol
+      - Kak's three stage protocol
+      - Kak's  protocol
       KINK:
-        - KINK
-        - Kerberized Internet Negotiation of Keys
+      - KINK
+      - Kerberized Internet Negotiation of Keys
       KMIP:
-        - KMIP
-        - Key Management Interoperability Protocol
+      - KMIP
+      - Key Management Interoperability Protocol
       mcTLS:
-        - mcTLS
-        - multi-context TLS
+      - mcTLS
+      - multi-context TLS
       MPPE:
-        - MPPE
-        - Microsoft Point-to-Point Encryption
+      - MPPE
+      - Microsoft Point-to-Point Encryption
       MIKEY:
-        - MIKEY
-        - Multimedia Internet KEYing
+      - MIKEY
+      - Multimedia Internet KEYing
       MSE:
-        - MSE
-        - message stream encryption
-      Neuman–Stubblebine:
-        - Neuman–Stubblebine protocol
+      - MSE
+      - message stream encryption
+      "Neuman\u2013Stubblebine":
+      - "Neuman\u2013Stubblebine protocol"
       Oakley:
-        - Oakley
-        - Oakley Key Determination
+      - Oakley
+      - Oakley Key Determination
       OTR:
-        - OTR
-        - Off-the-Record Messaging
+      - OTR
+      - Off-the-Record Messaging
       OPKP:
-        - OPKP
-        - offline private key protocol
+      - OPKP
+      - offline private key protocol
       OMEMO:
-        - OMEMO
-        - Multi-End Message and Object Encryption
+      - OMEMO
+      - Multi-End Message and Object Encryption
       OCSP:
-        - OCSP
-        - Online Certificate Status Protocol
+      - OCSP
+      - Online Certificate Status Protocol
       PANA:
-        - PANA
-        - Protocol for Carrying Authentication for Network Access
+      - PANA
+      - Protocol for Carrying Authentication for Network Access
       PCT:
-        - PCT
-        - Private Communications Technology
+      - PCT
+      - Private Communications Technology
       PE:
-        - PE
-        - Protocol encryption
+      - PE
+      - Protocol encryption
       PEM:
-        - PEM
-        - Privacy-enhanced Electronic Mail
-        - Privacy Electronic Mail
+      - PEM
+      - Privacy-enhanced Electronic Mail
+      - Privacy Electronic Mail
       PHE:
-        - PHE
-        - protocol header encrypt
+      - PHE
+      - protocol header encrypt
       PGP:
-        - PGP
-        - Pretty Good Privacy
-        - OpenPGP
+      - PGP
+      - Pretty Good Privacy
+      - OpenPGP
       PoSE:
-        - PoSE
-        - proof of secure erasure
-        - proof of erasure
+      - PoSE
+      - proof of secure erasure
+      - proof of erasure
       RMA:
-        - RMA
-        - Relationship Management Application
+      - RMA
+      - Relationship Management Application
       RTD:
-        - RTD
-        - Signature Record Type Definition
+      - RTD
+      - Signature Record Type Definition
       Publius:
-        - Publius
+      - Publius
       SASL:
-        - SASL
-        - Simple Authentication and Security Layer
+      - SASL
+      - Simple Authentication and Security Layer
       SCEP:
-        - SCEP
-        - Simple Certificate Enrollment Protocol
+      - SCEP
+      - Simple Certificate Enrollment Protocol
       SCIMP:
-        - SCIMP
-        - Silent Circle Instant Message Protocol
+      - SCIMP
+      - Silent Circle Instant Message Protocol
       SCRAM:
-        - SCRAM
-        - Salted Challenge Response Authentication Mechanism
+      - SCRAM
+      - Salted Challenge Response Authentication Mechanism
       SCIP:
-        - SCIP
-        - Secure Communications Interoperability Protocol
+      - SCIP
+      - Secure Communications Interoperability Protocol
       SCP:
-        - SCP
-        - Secure copy
+      - SCP
+      - Secure copy
       SCVP:
-        - SCVP
-        - Server-based Certificate Validation Protocol
+      - SCVP
+      - Server-based Certificate Validation Protocol
       S-HTTP:
-        - S-HTTP
-        - Secure Hypertext Transfer Protocol
+      - S-HTTP
+      - Secure Hypertext Transfer Protocol
       SEND:
-        - SEND
-        - Secure Neighbor Discovery
+      - SEND
+      - Secure Neighbor Discovery
       SFTP:
-        - SFTP
-        - Secure File Transfer Protocol
-        - SSH File Transfer Protocol
+      - SFTP
+      - Secure File Transfer Protocol
+      - SSH File Transfer Protocol
       Signal Protocol:
-        - Signal Protocol
-        - TextSecure Protocol
+      - Signal Protocol
+      - TextSecure Protocol
       SILC:
-        - SILC
-        - Secure Internet Live Conferencing
+      - SILC
+      - Secure Internet Live Conferencing
       SPNEGO:
-        - SPNEGO
-        - Simple and Protected GSSAPI Negotiation Mechanism
+      - SPNEGO
+      - Simple and Protected GSSAPI Negotiation Mechanism
       SPORE:
-        - SPORE
-        - Security Protocols Open Repository
+      - SPORE
+      - Security Protocols Open Repository
       SRTP:
-        - SRTP
-        - Secure Real-time Transport Protocol
+      - SRTP
+      - Secure Real-time Transport Protocol
       SSH:
-        - SSH
-        - Secure Shell
+      - SSH
+      - Secure Shell
       SSL:
-        - SSL
-        - Secure Socket Layer
+      - SSL
+      - Secure Socket Layer
       S/MIME:
-        - S/MIME
+      - S/MIME
       TACLANE:
-        - TACLANE
-        - Tactical FASTLANE
-        - Tactical Local Area Network Encryption
+      - TACLANE
+      - Tactical FASTLANE
+      - Tactical Local Area Network Encryption
       tcpcrypt:
-        - tcpcrypt
+      - tcpcrypt
       TKIP:
-        - TKIP
-        - Temporal Key Integrity Protocol
+      - TKIP
+      - Temporal Key Integrity Protocol
       TSP:
-        - TSP
-        - Time-Stamp Protocol
+      - TSP
+      - Time-Stamp Protocol
       TLS:
-        - TLS
-        - Transport Layer Security
+      - TLS
+      - Transport Layer Security
       VBR:
-        - VBR
-        - Vouch by Reference
+      - VBR
+      - Vouch by Reference
       WPA:
-        - WPA
-        - Wi-Fi Protected Access
+      - WPA
+      - Wi-Fi Protected Access
       WPA2:
-        - WPA2
-        - Wi-Fi Protected Access II
-        - Wi-Fi Protected Access 2
+      - WPA2
+      - Wi-Fi Protected Access II
+      - Wi-Fi Protected Access 2
       WPS:
-        - WPS
-        - Wi-Fi Protected Setup
-        - Wi-Fi Simple Config
+      - WPS
+      - Wi-Fi Protected Setup
+      - Wi-Fi Simple Config
       WTLS:
-        - WTLS
-        - Wireless Transport Layer Security
+      - WTLS
+      - Wireless Transport Layer Security
       X.509:
-        - X.509
-        - X509
+      - X.509
+      - X509
       X.1035:
-        - X.1035
-        - X1035
+      - X.1035
+      - X1035
       X9.95:
-        - X9.95
-        - X 9.95
+      - X9.95
+      - X 9.95
       XKMS:
-        - XKMS
-        - XML Key Management Specification
+      - XKMS
+      - XML Key Management Specification
       Yahalom:
-        - Yahalom
-      Zimmermann–Sassaman:
-        - Zimmermann–Sassaman
+      - Yahalom
+      "Zimmermann\u2013Sassaman":
+      - "Zimmermann\u2013Sassaman"
       ZRTP:
-        - ZRTP
-        - Real-time Transport Protocol
-        - Real time Transport Protocol
+      - ZRTP
+      - Real-time Transport Protocol
+      - Real time Transport Protocol
 
 # Tasks that should run over the previously generated report,
 # sequentially after the project tasks
