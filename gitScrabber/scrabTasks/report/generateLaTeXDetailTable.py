@@ -847,13 +847,12 @@ class GenerateLaTeXDetailTable(ReportTask):
 \usepackage{tabu} % Good table environment - best?
 \usepackage{array}
 \usepackage{pdflscape}
+\usepackage{calc}
 
 \newcommand\myTextBreaker[1]{\tbhelp#1\relax\relax\relax}
 \def\tbhelp#1#2\relax{%
   {#1}\penalty0\ifx\relax#2\else\tbhelp#2\relax\fi}
 
-
-%%%% THIS IS FUCKING MAGIC!
 \newcommand\myURLBreaker[1]{\href{#1}{\ubhelp#1\relax\relax\relax}}
 \def\ubhelp#1#2\relax{%
   {\path{#1}}\penalty0\ifx\relax#2\else\ubhelp#2\relax\fi}
