@@ -379,12 +379,13 @@ class GenerateLaTeXOverviewTable(ReportTask):
 
         :returns: The tail of the overview table
         """
+        label = language.lower().replace("#", "s").replace("+", "p")
         TeXtail = r"""
   \taburowcolors1{white..white}
   \caption{%s-interface library overview}
   \label{tab:%s-interface-overview}\\
   \end{longtabu}
-}""" % (tex_escape(language), tex_escape(language.lower()))
+}""" % (tex_escape(language), tex_escape(label))
         return TeXtail
 
     def __interface_table(self, language):
