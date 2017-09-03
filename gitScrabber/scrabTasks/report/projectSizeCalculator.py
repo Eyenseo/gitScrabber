@@ -154,7 +154,8 @@ class ProjectSizeCalculator(ReportTask):
                 loc = self.__loc(project, projects[project])
 
                 for lang in inter_langs:
-                    total_loc[lang].append(loc)
+                    if lang in total_loc:
+                        total_loc[lang].append(loc)
                 total_loc['total'].append(loc)
             except MissingManualData as e:
                 pass  # we can't do nothing about it
@@ -204,14 +205,15 @@ class ProjectSizeCalculator(ReportTask):
                     size_report = project_report['ProjectSizeCalculator']
 
                     for lang in inter_langs:
-                        limit = self.__limits[lang]
+                        if lang in self.__limits:
+                            limit = self.__limits[lang]
 
-                        if loc < limit.lower:
-                            size_report[lang] = 'small'
-                        elif loc > limit.upper:
-                            size_report[lang] = 'big'
-                        else:
-                            size_report[lang] = 'normal'
+                            if loc < limit.lower:
+                                size_report[lang] = 'small'
+                            elif loc > limit.upper:
+                                size_report[lang] = 'big'
+                            else:
+                                size_report[lang] = 'normal'
                 except MissingManualData as e:
                     pass  # we can't do nothing about it
         except Exception as e:
