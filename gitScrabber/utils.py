@@ -1,6 +1,7 @@
 import hashlib
 import os
 import subprocess
+import regex
 
 
 def __validate_exec_args(program, args):
@@ -196,6 +197,43 @@ def to_dict(dict_like):
     return d
 
 
-if __name__ == "__main__":
-    print(run('ls', ['-al']))
-    # print(run('false'))
+__TeX_Specials = {
+    '&': r'\&',
+    '%': r'\%',
+    '$': r'\$',
+    '#': r'\#',
+    '_': r'\_',
+    '{': r'\{',
+    '}': r'\}',
+    '~': r'\textasciitilde{}',
+    '^': r'\^{}',
+    '\\': r'\textbackslash{}',
+    '<': r'\textless ',
+    '>': r'\textgreater ',
+}
+
+__TeX_regex = regex.compile(
+    '|'.join(
+        regex.escape(key) for key in sorted(
+            __TeX_Specials.keys(),
+            key=lambda item: - len(item)
+        )
+    )
+)
+
+
+def tex_escape(text):
+    """
+    Escapes special characters in LaTeX
+
+    Taken from https://stackoverflow.com/a/25875504/1935553
+
+    :param    text:  a plain text message
+
+    :returns: the message escaped to appear correctly in LaTeX
+    """
+    return __TeX_regex.sub(
+        lambda match: __TeX_Specials[match.group()],
+        text,
+        concurrent=True
+    )

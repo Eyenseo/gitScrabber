@@ -160,10 +160,13 @@ def __check_overwrite(parser, args):
     :param    parser:  The parser used to raise an error message
     :param    args:    The arguments that were passed to the program
     """
-    if (args.force and (not args.output
-                        or args.output != args.report)):
+    if (args.force
+        and (not args.output
+             or args.output != args.report)):
         parser.error('Force is only needed to overwrite an existing report')
-    elif args.output and args.output == args.report:
+    elif (not args.force
+          and args.output
+          and args.output == args.report):
         parser.error('{} exists already! '
                      'Specify a new location for the new report or '
                      '--force override'.format(args.output))

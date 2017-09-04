@@ -7,8 +7,10 @@ from multiprocessing import cpu_count, Pool
 from utils import deep_merge, md5, to_dict
 
 import os
+import re
 import time
 import traceback
+import unicodedata
 
 reportVersion = 2
 
@@ -118,11 +120,23 @@ class MetaProject():
             self.id = "{}_{}".format(self.name, md5(self.name))
         else:
             self.id = "{}_{}".format(self.name, md5(self.url))
+        self.__texify_id()
 
         if 'location' not in config:
             self.location = os.path.join(cache_dir, self.id)
         else:
             self.location = config['location']
+
+    def __texify_id(self):
+        """
+        The function is responsible for the conversion of a UTF-8 string to a
+        ACSII string that is usable in TeX.
+        """
+        uid = unicodedata.normalize('NFKD', self.id)  # replace 'specials'
+        uid = uid.encode('ascii', 'ignore')  # remove non ascii
+        uid = uid.decode()  # convert to str
+        uid = re.sub(r'[^a-zA-Z0-9_-]', '', uid)  # remove 'bad' TeX chars
+        self.id = uid
 
     def __project_name(self, project):
         """
@@ -133,14 +147,16 @@ class MetaProject():
 
         :returns: The name of the given project
         """
-        if('id' in project):
-            return project['id']
+        if('name' in project):
+            return project['name']
         elif('git' in project):
             return project['git'].rstrip('\\').rsplit('/', 1)[-1]
         elif('svn' in project):
             return project['svn'].rstrip('\\').rsplit('/', 1)[-1]
         elif('archive' in project):
             return project['archive'].rstrip('\\').rsplit('/', 1)[-1]
+        elif('id' in project):
+            return project['id']
         else:
             raise Exception("The following project is neither an archive or "
                             "git and doesn't provide an id:\n"
@@ -421,7 +437,13 @@ class TaskExecutionManager:
                 deep_merge(report, {
                     'projects': {project.id: project.manual_data}})
             deep_merge(report, {
-                'projects': {project.id: {"url": project.url}}})
+                'projects': {
+                    project.id: {
+                        "url": project.url,
+                        'name': project.name
+                    }
+                }
+            })
         return report
 
     def __run_project_tasks(self):

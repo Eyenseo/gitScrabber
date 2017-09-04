@@ -63,6 +63,7 @@ class GitScrabber:
 
         :param  report:  report to write
         """
+        ruamel.yaml.scalarstring.walk_tree(report)
         if self.__output_file:
             with open(self.__output_file, 'w') as outfile:
                 ruamel.yaml.dump(

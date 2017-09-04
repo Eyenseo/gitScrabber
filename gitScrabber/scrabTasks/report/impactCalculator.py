@@ -6,7 +6,7 @@ from math import log2, pow
 from dateutil import parser
 
 name = "ImpactCalculator"
-version = "1.1.0"
+version = "1.1.1"
 
 
 class ImpactData():
@@ -113,8 +113,7 @@ class ImpactCalculator(ReportTask):
     Class to calculate the impact for a single project
 
     Example:
-        impact:
-          impact: 45.13200916761271
+        impact: 45.13200916761271
 
     :param  parameter:    Parameter given explicitly for this task, for all
                           projects, defined in the task.yaml
@@ -204,22 +203,25 @@ class ImpactCalculator(ReportTask):
 
         :returns: Report that contains all scrabbed information
                   Example:
-                      impact:
-                        impact: 45.13200916761271
+                      impact: 45.13200916761271
         """
-        for project in report['projects']:
-            impact_data = ImpactData(report['projects'][project],
-                                     self.__language_weights)
+        try:
+            for project in report['projects']:
+                impact_data = ImpactData(report['projects'][project],
+                                         self.__language_weights)
 
-            impact = self.calculate_impact(impact_data)
-            if impact:
-                report['projects'][project]['impact'] = {
-                    'impact': float("{0:.2f}".format(impact))
-                }
-            elif not containedStructure(
-                    {'projects': {project: {'impact': {'impact': 0}}}},
-                    report):
-                report['projects'][project]['impact'] = {
-                    'impact': None
-                }
+                impact = self.calculate_impact(impact_data)
+                if impact:
+                    report['projects'][project]['impact'] = float(
+                        "{0:.2f}".format(impact))
+                elif not containedStructure(
+                        {'projects': {project: {'impact': 0}}}, report):
+                    report['projects'][project]['impact'] = None
+        except Exception as e:
+            raise Exception(
+                "While calculating the impact for the project '{}' with "
+                "the report\n{}".format(
+                    project,
+                    self.__projects[project])
+            ) from e
         return report

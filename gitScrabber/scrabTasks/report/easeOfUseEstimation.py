@@ -200,7 +200,7 @@ class EaseOfUseEstimation(ReportTask):
 
         if data.high and data.low:
             score += self.__weight.high_low
-        elif data.heigh:
+        elif data.high:
             score += self.__weight.high
         elif data.low:
             score += self.__weight.low
@@ -226,16 +226,24 @@ class EaseOfUseEstimation(ReportTask):
         """
         projects = report['projects']
 
-        for project in projects:
-            project_report = projects[project]
-            eou_score = self.__estimate_ease_of_use(project_report)
+        try:
+            for project in projects:
+                project_report = projects[project]
+                eou_score = self.__estimate_ease_of_use(project_report)
 
-            if eou_score is None:
-                continue
+                if eou_score is None:
+                    continue
 
-            for limit in self.__limits:
-                if(eou_score <= limit.upper
-                   and eou_score >= limit.lower):
-                    projects[project]['EaseOfUseEstimation'] = limit.name
+                for limit in self.__limits:
+                    if(eou_score <= limit.upper
+                       and eou_score >= limit.lower):
+                        projects[project]['EaseOfUseEstimation'] = limit.name
+        except Exception as e:
+            raise Exception(
+                "While estimating ease of use for the project '{}' with "
+                "the report\n{}".format(
+                    project,
+                    projects[project])
+            ) from e
 
         return report
