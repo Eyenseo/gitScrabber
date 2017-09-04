@@ -132,7 +132,14 @@ def get_type(project_report):
     return project_report["generalData"]["type"][:4]
 
 
-def get_related(project_report):
+def get_project_report(project_reports, url):
+    for project in project_reports:
+        if url == project_reports[project]['url']:
+            return project_reports[project]
+    return None
+
+
+def get_related(project_reports, project_report):
     """
     Gets the related projects from the project report
 
@@ -150,9 +157,15 @@ def get_related(project_report):
     out = "-"
     if len(rel) > 0:
         out = r"\specialcell{"
-        out += r"\myTextBreaker{" + tex_escape(rel[0]) + "}"
+        project = get_project_report(project_reports, rel[0])
+        if project:
+            out += str(get_project_id(project))
         for related in rel[1:]:
-            out += r",\\\myTextBreaker{" + tex_escape(related) + "}"
+            project = get_project_report(project_reports, related)
+            if project:
+                out += ", " + str(get_project_id(project))
+            else:
+                out += r", \myURLBreaker{" + related + "}"
         out += '}'
     return out
 
@@ -445,7 +458,7 @@ class TeXProject(object):
     :param    project_report:  The project report to get the information from
     """
 
-    def __init__(self, project_report):
+    def __init__(self, project_reports, project_report):
         self.report = project_report
         self.id = get_project_id(project_report)
         self.name = get_project_name(project_report)
@@ -453,7 +466,7 @@ class TeXProject(object):
         self.main_language = get_main_language(project_report)
         self.interface_level = get_interface_level(project_report)
         self.type = get_type(project_report)
-        self.related = get_related(project_report)
+        self.related = get_related(project_reports, project_report)
         self.dependency = get_dependency(project_report)
         self.impact = get_project_impact(project_report)
         self.kloc = get_kloc(project_report)
@@ -822,7 +835,8 @@ class GenerateLaTeXDetailTable(ReportTask):
             for project in project_reports:
                 report = project_reports[project]
                 if has_interface_language(report, lang):
-                    meta_projects[lang].append(TeXProject(report))
+                    meta_projects[lang].append(
+                        TeXProject(project_reports, report))
 
         for lang in meta_projects:
             meta_projects[lang] = sorted(
