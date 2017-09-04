@@ -174,9 +174,9 @@ def get_dependency(project_report):
     out = "-"
     if len(dep) > 0:
         out = r"\specialcell{"
-        out += r"\myTextBreaker{" + tex_escape(dep[0]) + "}"
+        out += r"\myURLBreaker{" + dep[0] + "}"
         for dependency in dep[1:]:
-            out += r",\\\myTextBreaker{" + tex_escape(dependency) + "}"
+            out += r",\\\myURLBreaker{" + dependency + "}"
         out += '}'
     return out
 
