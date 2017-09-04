@@ -854,21 +854,19 @@ class GenerateLaTeXDetailTable(ReportTask):
 
         :returns: The preamble needed to compile the tables
         """
-        return r"""\usepackage[hypertexnames=false]{hyperref} % hyper ref "addon"
-\usepackage[svgnames,table]{xcolor} % svg colors
-\usepackage{longtable} % base for tabu (longtabu)
-\usepackage{tabu} % Good table environment - best?
+        return r"""\usepackage[hypertexnames=false]{hyperref}
+\usepackage[svgnames,table]{xcolor}
+\usepackage{longtable}
+\usepackage{tabu}
 \usepackage{array}
 \usepackage{pdflscape}
 \usepackage{calc}
 
 \newcommand\myTextBreaker[1]{\tbhelp#1\relax\relax\relax}
-\def\tbhelp#1#2\relax{%
-  {#1}\penalty0\ifx\relax#2\else\tbhelp#2\relax\fi}
+\def\tbhelp#1#2\relax{{#1}\penalty0\ifx\relax#2\else\tbhelp#2\relax\fi}
 
 \newcommand\myURLBreaker[1]{\href{#1}{\ubhelp#1\relax\relax\relax}}
-\def\ubhelp#1#2\relax{%
-  {\path{#1}}\penalty0\ifx\relax#2\else\ubhelp#2\relax\fi}
+\def\ubhelp#1#2\relax{{\path{#1}}\penalty0\ifx\relax#2\else\ubhelp#2\relax\fi}
 
 \newcolumntype{Y}{>{\let\newline\\\arraybackslash\hspace{0pt}}X}
 

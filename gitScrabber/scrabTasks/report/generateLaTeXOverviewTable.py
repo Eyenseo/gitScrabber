@@ -430,11 +430,11 @@ class GenerateLaTeXOverviewTable(ReportTask):
 
         :returns: The preamble needed to compile the tables
         """
-        TeXpreable = r"""\usepackage{hyperref} % hyper ref "addon"
-\usepackage[svgnames,table]{xcolor} % svg colors
-\usepackage{pifont} % Symbols and co
-\usepackage{longtable} % base for tabu (longtabu)
-\usepackage{tabu} % Good table environment - best?
+        TeXpreable = r"""\usepackage{hyperref}
+\usepackage[svgnames,table]{xcolor}
+\usepackage{pifont}
+\usepackage{longtable}
+\usepackage{tabu}
 \usepackage{graphicx}
 \usepackage{array}
 
