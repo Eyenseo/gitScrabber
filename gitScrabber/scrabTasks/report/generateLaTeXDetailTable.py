@@ -133,7 +133,10 @@ def get_type(project_report):
 
     if not containedStructure(required, project_report):
         return '-'
-    return project_report["generalData"]["type"][:4]
+    kind = project_report["generalData"]["type"]
+    if len(kind) > 4:
+        return kind[:4] + "."
+    return kind
 
 
 def get_project_report(project_reports, url):
