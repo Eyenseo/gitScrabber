@@ -279,12 +279,11 @@ def get_people(project_report):
     )
 
 
-def get_documentation(project_report, data, keys):
+def get_documentation(data, keys):
     """
     Formats the given keys to a TeX string if their value is True in the given
     dict
 
-    :param    project_report:  The project report to get the values from
     :param    data:            The dict to get the values from
     :param    keys:            The keys to get the values for and format to TeX
                                if the value is true
@@ -294,12 +293,12 @@ def get_documentation(project_report, data, keys):
     """
     first = True
     one = True
-    out = "-"
+    out = ""
 
     for k in keys:
         if data[k]:
             if not first:
-                out += ",\\"
+                out += r",\\"
                 one = False
             else:
                 first = False
@@ -320,19 +319,19 @@ def get_documentation_kind(project_report):
     :returns: A special TeX table cell with the kind of documentation that the
               project provides
     """
-    required = {"documentation": {
+    required = {"generalData": {"documentation": {
         "exists": {
-            "readme": False,
-            "website": False,
-            "download": False
-        }}}
+                "readme": False,
+                "website": False,
+                "download": False
+                }}}}
 
     if not containedStructure(required, project_report):
         return '-'
 
     return get_documentation(
         project_report["generalData"]["documentation"]["exists"],
-        ["readme", "website", "dependency"]
+        ["readme", "website", "download"]
     )
 
 
@@ -347,12 +346,12 @@ def get_documentation_complete(project_report):
     :returns: A special TeX table cell with the completeness of documentation
               that the project provides
     """
-    required = {"documentation": {
+    required = {"generalData": {"documentation": {
         "completeness": {
-            "apis": False,
-            "examples": False,
-            "explanations": False
-        }}}
+                "apis": False,
+                "examples": False,
+                "explanations": False
+                }}}}
 
     if not containedStructure(required, project_report):
         return '-'
@@ -472,7 +471,7 @@ class TeXProject(object):
         self.kloc = get_kloc(project_report)
         self.people = get_people(project_report)
         self.documentation_kind = get_documentation_kind(project_report)
-        self.documentation_complete = get_documentation_kind(project_report)
+        self.documentation_complete = get_documentation_complete(project_report)
         self.dates = get_dates(project_report)
         self.licence = get_project_licences(project_report)
         self.url = get_url(project_report)
