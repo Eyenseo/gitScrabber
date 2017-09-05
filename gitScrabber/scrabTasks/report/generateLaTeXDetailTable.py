@@ -16,6 +16,10 @@ name = "GenerateLaTeXDetailTable"
 version = "1.0.0"
 
 
+def tex_url_escaple(url):
+    return url.replace("%", r"\pcnt ").replace("_", r"\unsc ")
+
+
 def shorten_language(language):
     """
     Shortens the language name to roughly 4 characters
@@ -156,17 +160,18 @@ def get_related(project_reports, project_report):
     rel = project_report["generalData"]["related"]
     out = "-"
     if len(rel) > 0:
-        out = r"\specialcell{"
+        out = ""
         project = get_project_report(project_reports, rel[0])
         if project:
             out += str(get_project_id(project))
+        else:
+            out += r"\myURLBreaker{" + tex_url_escaple(rel[0]) + "}"
         for related in rel[1:]:
             project = get_project_report(project_reports, related)
             if project:
                 out += ", " + str(get_project_id(project))
             else:
-                out += r", \myURLBreaker{" + related + "}"
-        out += '}'
+                out += r", \myURLBreaker{" + tex_url_escaple(related) + "}"
     return out
 
 
@@ -186,11 +191,9 @@ def get_dependency(project_report):
     dep = project_report["generalData"]["dependency"]
     out = "-"
     if len(dep) > 0:
-        out = r"\specialcell{"
-        out += r"\myURLBreaker{" + dep[0] + "}"
+        out = r"\myURLBreaker{" + tex_url_escaple(dep[0]) + "}"
         for dependency in dep[1:]:
-            out += r",\\\myURLBreaker{" + dependency + "}"
-        out += '}'
+            out += r", \myURLBreaker{" + tex_url_escaple(dependency) + "}"
     return out
 
 
@@ -427,7 +430,7 @@ def get_url(project_report):
     if not containedStructure(required, project_report):
         return '-'
 
-    return r"\myURLBreaker{" + project_report["url"] + r"}"
+    return r"\myURLBreaker{" + tex_url_escaple(project_report['url']) + r"}"
 
 
 def list_to_TeX(list_):
@@ -864,8 +867,20 @@ class GenerateLaTeXDetailTable(ReportTask):
 \newcommand\myTextBreaker[1]{\tbhelp#1\relax\relax\relax}
 \def\tbhelp#1#2\relax{{#1}\penalty0\ifx\relax#2\else\tbhelp#2\relax\fi}
 
-\newcommand\myURLBreaker[1]{\href{#1}{\ubhelp#1\relax\relax\relax}}
-\def\ubhelp#1#2\relax{{\path{#1}}\penalty0\ifx\relax#2\else\ubhelp#2\relax\fi}
+\makeatletter
+\catcode`\%=12
+\newcommand\pcnt{\%}
+\catcode`\%=14
+
+\catcode`\_=12
+\newcommand\unsc{\_}
+\catcode`\_=8
+
+\newcommand*\myURLBreaker{\myURLBreaker@iii\myURLBreaker@i}
+\newcommand*\myURLBreaker@iii[1]{\begingroup\catcode`\_12\catcode`\%12 #1}
+\newcommand*\myURLBreaker@i[1]{\href{#1}{\ubhelp#1\relax\relax\relax}\endgroup}
+\def\ubhelp#1#2\relax{{#1}\penalty0\ifx\relax#2\else\ubhelp#2\relax\fi}
+\makeatother
 
 \newcolumntype{Y}{>{\let\newline\\\arraybackslash\hspace{0pt}}X}
 
