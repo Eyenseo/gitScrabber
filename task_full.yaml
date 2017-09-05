@@ -3184,6 +3184,8 @@ projects:
       standard: true
       type: standalone
       related:
+      licences:
+      - GPL-2.0 + linking exception
       documentation:
         exists:
           readme: false
@@ -5503,6 +5505,8 @@ projects:
       standard: true
       type: Standalone
       related:
+      licences:
+      - PSFL
       dependencies:
       - OpenSSL
       documentation:
@@ -10940,6 +10944,8 @@ projects:
       related:
       dependencies:
       - corecrypto
+      licences:
+      - Own License
       documentation:
         exists:
           readme: false
@@ -11733,6 +11739,10 @@ projects:
       type: Wrapper
       related:
       - https://github.com/openssl/openssl
+      licences:
+      - Ruby
+      - GPL-2.0
+      - BSD-2-Clause
       documentation:
         exists:
           readme: true
@@ -13969,6 +13979,8 @@ projects:
       type: Standalone
       related:
       dependencies:
+      licences:
+      - BSD-like + patent grant
       documentation:
         exists:
           readme: false
