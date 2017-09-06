@@ -1876,6 +1876,7 @@ projects:
 
 - meta:
   id: https://sourceforge.net/projects/lightcrypto/?source=directory
+  name: lightcrypto
   manual:
     generalData:
       type: Wrapper   # TODO
@@ -1897,6 +1898,7 @@ projects:
       - C       # TODO
 - meta:
   id: https://sourceforge.net/projects/pyaes  # is python but was listed as C
+  name: pyaes
   manual:
     generalData:
       type: Wrapper   # TODO
@@ -3152,6 +3154,7 @@ projects:
       - C++       # TODO
 
 - archive: https://pocoproject.org/releases/poco-1.7.8/poco-1.7.8p3-all.zip
+  name: poco
   manual:
     generalData:
       type: Wrapper   # TODO
@@ -4535,6 +4538,7 @@ projects:
       - Java       # TODO
 
 - archive: https://bouncycastle.org/download/crypto-157.zip
+  name: bouncycastle crypto 157
   manual:
     generalData:
       type: Wrapper   # TODO
@@ -4556,6 +4560,7 @@ projects:
       - Java       # TODO
 
 - svn: http://svn.code.sf.net/p/jasypt/code/trunk  # http://www.jasypt.org
+  name: jasypt
   manual:
     generalData:
       type: Wrapper   # TODO
@@ -6206,6 +6211,7 @@ projects:
       - Python
 
 - archive: https://master.dl.sourceforge.net/project/pyaes/OldFiles/pyAES-1.0-win32.zip
+  name: pyAES
   manual:
     generalData:
       type: Wrapper   # TODO
@@ -10076,6 +10082,7 @@ projects:
       - JavaScript
 
 - archive: https://storage.googleapis.com/google-code-archive-source/v2/code.google.com/jscryptolib/source-archive.zip
+  name: jscryptolib
   manual:
     generalData:
       type: Wrapper   # TODO
@@ -10096,6 +10103,7 @@ projects:
       interfaceLanguage:   # TODO
       - JavaScript       # TODO
 - archive: https://storage.googleapis.com/google-code-archive-source/v2/code.google.com/crypto-js/source-archive.zip  # often exported to github
+  name: crypto-js
   manual:
     generalData:
       type: Wrapper   # TODO
@@ -10116,6 +10124,7 @@ projects:
       interfaceLanguage:   # TODO
       - JavaScript       # TODO
 - archive: https://download.microsoft.com/download/C/A/C/CACB6F6B-4855-4ED2-935F-A3DB277E6B3D/msrCrypto.1.4.zip
+  name: msrCrypto 1.4
   manual:
     generalData:
       type: Wrapper   # TODO
@@ -10828,6 +10837,7 @@ projects:
       - Objective-C
 
 - archive: https://chilkatdownload.com/9.5.0.68/chilkat-9.5.0-ios.zip
+  name: chilkat
   manual:
     generalData:
       type: Wrapper   # TODO
@@ -10848,6 +10858,7 @@ projects:
       interfaceLanguage:   # TODO
       - Objective-C       # TODO
 - archive: https://netcologne.dl.sourceforge.net/project/objc-crypto-lib/objc-crypto-lib/0.5Alpha/objc-crypto-lib.tgz
+  name: objc-crypto-lib
   manual:
     generalData:
       type: Wrapper   # TODO
@@ -10868,6 +10879,7 @@ projects:
       interfaceLanguage:   # TODO
       - Objective-C       # TODO
 - archive: https://ayera.dl.sourceforge.net/project/bdangerous/bdangerous-crypto/bdangerous-crypto-0.1a/crypto-0.1a.tar.gz
+  name: bdangerous-crypto
   manual:
     generalData:
       type: Wrapper   # TODO
