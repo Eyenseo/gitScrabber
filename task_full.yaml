@@ -5482,7 +5482,6 @@ projects:
         low: false
       interfaceLanguage:
       - Python
-      licences:
     LanguageDetector:
       main_language: Python
       languages:
@@ -10920,7 +10919,6 @@ projects:
       interfaceLanguage:
       - Swift
       - Objective-C
-      licences:
 - git: https://github.com/soffes/Crypto
   manual:
     generalData:
@@ -11716,8 +11714,6 @@ projects:
         low: true
       interfaceLanguage:
       - Ruby
-      licences:
-      - GPL
 - git: https://github.com/joshwetzel/cryptosystem
   manual:
     generalData:
@@ -16096,7 +16092,7 @@ project_tasks:
       VEST:
       - VEST
       - Very Efficient Substitution Transposition
-      "Vigen\xE8re cipher":
+      Vigenere cipher:
       - "Vigen\xE8re cipher"
       - Vigenere cipher
       - "Vigen\xE8re"
@@ -16134,7 +16130,7 @@ project_tasks:
       - 34.11-94
       - 34.311-95
       - 34.11-2012
-      "Gr\xF8stl":
+      Grostl:
       - "Gr\xF8stl"
       - Grostl
       HAS-160:
@@ -16159,7 +16155,7 @@ project_tasks:
       - PBKDF2
       - PBKDF1
       - Password-Based Key Derivation Function
-      "RadioGat\xFAn":
+      RadioGatun:
       - "RadioGat\xFAn"
       - RadioGatun
       RIPEMD:
@@ -16450,8 +16446,8 @@ project_tasks:
       - XECB
       - eXtended Electronic Code Book MAC
     public key cryptography:
-      "Cramer\u2013Shoup":
-      - "Cramer\u2013Shoup"
+      Cramer-Shoup:
+      - Cramer-Shoup
       - Cramer_Shoup
       - Cramer Shoup
       - CramerShoup
@@ -16481,8 +16477,8 @@ project_tasks:
       - LUC
       McEliece:
       - McEliece
-      "Merkle\u2013Hellman":
-      - "Merkle\u2013Hellman"
+      Merkle-Hellman:
+      - Merkle-Hellman
       - Merkle_Hellman
       - Merkle Hellman
       - MerkleHellman
@@ -16549,7 +16545,7 @@ project_tasks:
       3-D Secure:
       - 3-D Secure
       AAG:
-      - "Anshel\u2013Anshel\u2013Goldfeld"
+      - Anshel-Anshel-Goldfeld
       - Anshel_Anshel_Goldfeld
       - Anshel Anshel Goldfeld
       - AnshelAnshelGoldfeld
@@ -16694,8 +16690,8 @@ project_tasks:
       MSE:
       - MSE
       - message stream encryption
-      "Neuman\u2013Stubblebine":
-      - "Neuman\u2013Stubblebine protocol"
+      Neuman-Stubblebine:
+      - Neuman-Stubblebine protocol
       Oakley:
       - Oakley
       - Oakley Key Determination
@@ -16843,8 +16839,8 @@ project_tasks:
       - XML Key Management Specification
       Yahalom:
       - Yahalom
-      "Zimmermann\u2013Sassaman":
-      - "Zimmermann\u2013Sassaman"
+      Zimmermann-Sassaman:
+      - Zimmermann-Sassaman
       ZRTP:
       - ZRTP
       - Real-time Transport Protocol
