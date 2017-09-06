@@ -5430,48 +5430,7 @@ projects:
       interfaceLanguage:
       - C#
 - meta:
-  id: https://msdn.microsoft.com/de-de/library/system.security.cryptography(v=vs.110).aspx
-  manual:
-    generalData:
-      type: Wrapper   # TODO
-      related:
-        # - TODO
-      documentation:
-        exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
-        completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
-      interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - C#       # TODO
-- meta:
-  id: https://msdn.microsoft.com/en-us/library/system.web.helpers(v=vs.111).aspx
-  manual:
-    generalData:
-      type: Wrapper   # TODO
-      related:
-        # - TODO
-      documentation:
-        exists:
-          readme: false       # TODO
-          website: false       # TODO
-          download: false       # TODO
-        completeness:
-          apis: false       # TODO
-          examples: false       # TODO
-          explanations: false       # TODO
-      interfaceLevel:
-        high: true     # TODO
-        low: true     # TODO
-      interfaceLanguage:   # TODO
-      - C#       # TODO
-- meta:
+  name: netcologne
   id: https://netcologne.dl.sourceforge.net/project/pkif/PKIF%202.1.13/PKIF%20OCSP%20Plugin/PkifOcspPlugin2_1_13.msi
   manual:
     generalData:
