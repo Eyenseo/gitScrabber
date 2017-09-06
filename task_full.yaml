@@ -16865,3 +16865,4 @@ report_tasks:
     - public key cryptography
     - protocol
 - GenerateLaTeXDetailTable
+- GenerateLaTeXStatisticsTable
