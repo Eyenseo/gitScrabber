@@ -873,8 +873,8 @@ projects:
     generalData:
       type: Standalone
       related:
-      - http://libsodium.org/
-      - http://tweetnacl.cr.yp.to/
+      - http://libsodium.org
+      - http://tweetnacl.cr.yp.to
       - https://github.com/konovod/monocypher.cr
       - https://github.com/philanc/luanacha
       licences:
@@ -1196,9 +1196,9 @@ projects:
     generalData:
       type: Standalone
       related:
-      - http://openssl.org/
-      - http://www.lysator.liu.se/%7Enisse/nettle/
-      - http://gnutls.org/
+      - http://openssl.org
+      - http://www.lysator.liu.se/%7Enisse/nettle
+      - http://gnutls.org
       documentation:
         exists:
           readme: true
@@ -1240,7 +1240,7 @@ projects:
     generalData:
       type: Wrapper
       related:
-      - http://tweetnacl.cr.yp.to/
+      - http://tweetnacl.cr.yp.to
       licences:
       documentation:
         exists:
@@ -1519,7 +1519,7 @@ projects:
     generalData:
       type: Wrapper
       related:
-      - https://download.libsodium.org/doc/
+      - https://download.libsodium.org/doc
       licences:
       - ISC
       documentation:
@@ -1586,7 +1586,7 @@ projects:
     generalData:
       type: Fork
       related:
-      - http://nacl.cr.yp.to/
+      - http://nacl.cr.yp.to
       licences:
       - ISC
       documentation:
@@ -1634,7 +1634,7 @@ projects:
         low: true
       interfaceLanguage:
       - C
-- git: https://boringssl.googlesource.com/boringssl/  # not intended for general use
+- git: https://boringssl.googlesource.com/boringssl  # not intended for general use
   manual:
     generalData:
       type: Fork
@@ -1813,7 +1813,7 @@ projects:
         low: true       # TODO
       interfaceLanguage:     # TODO
       - C         # TODO
-- git: https://github.com/ctz/cifra/
+- git: https://github.com/ctz/cifra
   manual:
     generalData:
       type: Wrapper     # TODO
@@ -1896,7 +1896,7 @@ projects:
       interfaceLanguage:   # TODO
       - C       # TODO
 - meta:
-  id: https://sourceforge.net/projects/pyaes/  # is python but was listed as C
+  id: https://sourceforge.net/projects/pyaes  # is python but was listed as C
   manual:
     generalData:
       type: Wrapper   # TODO
@@ -3177,7 +3177,7 @@ projects:
 ## Java
 ##########################################
 - meta:
-  id: https://docs.oracle.com/javase/8/docs/api/ #https://github.com/dmlloyd/openjdk
+  id: https://docs.oracle.com/javase/8/docs/api #https://github.com/dmlloyd/openjdk
   name: JDK (S)
   manual:
     generalData:
@@ -3291,7 +3291,7 @@ projects:
     generalData:
       type: Reimplementation
       related:
-      - http://nacl.cr.yp.to/
+      - http://nacl.cr.yp.to
       licences:
       - BSD-2-Clause
       documentation:
@@ -4555,7 +4555,7 @@ projects:
       interfaceLanguage:   # TODO
       - Java       # TODO
 
-- svn: http://svn.code.sf.net/p/jasypt/code/trunk/  # http://www.jasypt.org/
+- svn: http://svn.code.sf.net/p/jasypt/code/trunk  # http://www.jasypt.org
   manual:
     generalData:
       type: Wrapper   # TODO
@@ -5412,7 +5412,7 @@ projects:
     generalData:
       type: Reimplementation
       related:
-      - http://www.mindrot.org/projects/jBCrypt/
+      - http://www.mindrot.org/projects/jBCrypt
       licences:
       - MIT
       documentation:
@@ -7439,7 +7439,7 @@ projects:
     generalData:
       type: Reimplementation
       related:
-      - https://tweetnacl.js.org/
+      - https://tweetnacl.js.org
       licences:
       - Public Domain
       documentation:
@@ -9954,7 +9954,7 @@ projects:
     generalData:
       type: Wrapper
       related:
-      - http://www-cs-students.stanford.edu/~Etjw/jsbn/
+      - http://www-cs-students.stanford.edu/~Etjw/jsbn
       licences:
       - ISC
       - MIT
@@ -10053,7 +10053,7 @@ projects:
         low: true     # TODO
       interfaceLanguage:   # TODO
       - JavaScript       # TODO
-- git: https://github.com/google/closure-library/  # not only crypto
+- git: https://github.com/google/closure-library  # not only crypto
   manual:
     generalData:
       type: Standalone
@@ -10165,7 +10165,7 @@ projects:
     generalData:
       type: Wrapper
       related:
-      - https://opensource.apple.com/source/CommonCrypto/
+      - https://opensource.apple.com/source/CommonCrypto
       - https://docs.oracle.com/javase/7/docs/api/javax/crypto/package-summary.html
       licences:
       - GPL-3.0
@@ -10368,7 +10368,7 @@ projects:
     generalData:
       type: Wrapper
       related:
-      - https://opensource.apple.com/source/CommonCrypto/
+      - https://opensource.apple.com/source/CommonCrypto
       licences:
       - MIT
       documentation:
@@ -10391,7 +10391,7 @@ projects:
       type: Wrapper
       related: # check to be sure, migh be new impl not wrapped funct
       - https://docs.oracle.com/javase/7/docs/api/java/security/package-summary.html
-      - https://opensource.apple.com/source/CommonCrypto/
+      - https://opensource.apple.com/source/CommonCrypto
       licences:
       - MIT
       documentation:
@@ -10413,7 +10413,7 @@ projects:
     generalData:
       type: Wrapper
       related:
-      - https://opensource.apple.com/source/CommonCrypto/
+      - https://opensource.apple.com/source/CommonCrypto
       - https://docs.oracle.com/javase/7/docs/api/javax/crypto/package-summary.html
       licences:
       - MIT
@@ -10456,7 +10456,7 @@ projects:
     generalData:
       type: Wrapper
       related:
-      - https://opensource.apple.com/source/CommonCrypto/
+      - https://opensource.apple.com/source/CommonCrypto
       - https://developer.apple.com/documentation/corefoundation
       licences:
       - MIT
@@ -10519,7 +10519,7 @@ projects:
     generalData:
       type: Wrapper
       related:
-      - http://nacl.cr.yp.to/
+      - http://nacl.cr.yp.to
       licences:
       - Apache-2.0
       documentation:
@@ -10893,7 +10893,7 @@ projects:
 ## Swift
 ##########################################
 - meta:
-  id: https://developer.apple.com/security/
+  id: https://developer.apple.com/security
   name: Security (S)
   manual:
     generalData:
@@ -11010,7 +11010,7 @@ projects:
     generalData:
       type: Wrapper
       related:
-      - https://opensource.apple.com/source/CommonCrypto/
+      - https://opensource.apple.com/source/CommonCrypto
       licences:
       - MIT
       documentation:
@@ -11421,7 +11421,7 @@ projects:
     generalData:
       type: Wrapper
       related:
-      - https://opensource.apple.com/source/CommonCrypto/
+      - https://opensource.apple.com/source/CommonCrypto
       licences:
       - MIT
       documentation:
@@ -11667,7 +11667,7 @@ projects:
     generalData:
       type: Wrapper
       related:
-      - https://opensource.apple.com/source/CommonCrypto/
+      - https://opensource.apple.com/source/CommonCrypto
       documentation:
         exists:
           readme: false
@@ -11885,7 +11885,7 @@ projects:
     generalData:
       type: Wrapper
       related:
-      - http://nacl.cr.yp.to/
+      - http://nacl.cr.yp.to
       licences:
       - MIT
       documentation:
@@ -12120,7 +12120,7 @@ projects:
     generalData:
       type: Wrapper
       related:
-      - https://gnupg.org/related_software/libgcrypt/
+      - https://gnupg.org/related_software/libgcrypt
       licences:
       - LGPL-2.1
       documentation:
@@ -12222,7 +12222,7 @@ projects:
     generalData:
       type: Standalone
       related:
-      - http://noiseprotocol.org/
+      - http://noiseprotocol.org
       dependencies:
       - https://github.com/dnaq/sodiumoxide
       - https://github.com/briansmith/ring
@@ -12817,7 +12817,7 @@ projects:
     generalData:
       type: Wrapper
       related:
-      - https://docs.rs/chacha/0.1.0/chacha/
+      - https://docs.rs/chacha/0.1.0/chacha
       licences:
       - MIT
       - Apache-2.0
@@ -13423,7 +13423,7 @@ projects:
       type: Standalone
       related:
       dependencies:
-      - https://boringssl.googlesource.com/boringssl/
+      - https://boringssl.googlesource.com/boringssl
       licences:
       - ISC
       - OpenSSL
@@ -13510,7 +13510,7 @@ projects:
     generalData:
       type: Wrapper
       related:
-      - http://nacl.cr.yp.to/
+      - http://nacl.cr.yp.to
       licences:
       - Apache-2.0
       - MIT
@@ -13534,7 +13534,7 @@ projects:
       type: Wrapper
       related:
       - https://github.com/openssl/openssl
-      - https://www.libressl.org/
+      - https://www.libressl.org
       licences:
       - Apache-2.0
       - MIT
@@ -13601,7 +13601,7 @@ projects:
     generalData:
       type: Reimplementation
       related:
-      - https://www.djangoproject.com/
+      - https://www.djangoproject.com
       licences:
       - BSD-3-Clause
       documentation:
@@ -13883,7 +13883,7 @@ projects:
     generalData:
       type: Wrapper
       related:
-      - https://mkcert.org/
+      - https://mkcert.org
       licences:
       - MPL-2.0
       documentation:
@@ -13926,7 +13926,7 @@ projects:
 ## Go
 ##########################################
 - meta:
-  id: https://golang.org/pkg/crypto/ # https://storage.googleapis.com/golang/go1.9.windows-amd64.zip
+  id: https://golang.org/pkg/crypto # https://storage.googleapis.com/golang/go1.9.windows-amd64.zip
   name: Crypto (S)
   manual:
     generalData:
@@ -14148,7 +14148,7 @@ projects:
     generalData:
       type: Wrapper
       related:
-      - https://golang.org/pkg/crypto/
+      - https://golang.org/pkg/crypto
       licences:
       - MIT
       documentation:
@@ -14193,7 +14193,7 @@ projects:
     generalData:
       type: Wrapper
       related:
-      - https://download.libsodium.org/doc/
+      - https://download.libsodium.org/doc
       licences:
       - ISC
       documentation:
@@ -14215,9 +14215,9 @@ projects:
     generalData:
       type: Wrapper
       related:
-      - https://golang.org/pkg/crypto/
+      - https://golang.org/pkg/crypto
       - https://github.com/openssl/openssl
-      - https://crypto.stanford.edu/pbc/
+      - https://crypto.stanford.edu/pbc
       licences:
       - MPL-2.0
       documentation:
@@ -14239,7 +14239,7 @@ projects:
     generalData:
       type: Wrapper
       related:
-      - https://golang.org/pkg/crypto/
+      - https://golang.org/pkg/crypto
       licences:
       - Apache-2.0
       documentation:
@@ -14345,7 +14345,7 @@ projects:
     generalData:
       type: Wrapper
       related:
-      - https://golang.org/pkg/crypto/
+      - https://golang.org/pkg/crypto
       licences:
       - MIT
       documentation:
@@ -14650,7 +14650,7 @@ projects:
       type: Standalone
       related:
       dependencies:
-      - https://golang.org/pkg/crypto/
+      - https://golang.org/pkg/crypto
       licences:
       - BSD-2-Clause
       documentation:
@@ -14672,7 +14672,7 @@ projects:
     generalData:
       type: Reimplementation
       related:
-      - https://golang.org/pkg/crypto/rand/
+      - https://golang.org/pkg/crypto/rand
       licences:
       - MIT
       documentation:
@@ -14735,7 +14735,7 @@ projects:
       type: Wrapper
       related:
       - https://godoc.org/golang.org/x/crypto
-      - https://golang.org/pkg/crypto/
+      - https://golang.org/pkg/crypto
       licences:
       - MIT
       documentation:
@@ -14997,7 +14997,7 @@ projects:
     generalData:
       type: Wrapper
       related:
-      - https://golang.org/pkg/crypto/aes/
+      - https://golang.org/pkg/crypto/aes
       licences:
       documentation:
         exists:
@@ -15398,8 +15398,8 @@ projects:
     generalData:
       type: Wrapper
       related:
-      - https://golang.org/pkg/crypto/
-      - https://golang.org/pkg/encoding/
+      - https://golang.org/pkg/crypto
+      - https://golang.org/pkg/encoding
       licences:
       - ISC
       documentation:
@@ -15442,7 +15442,7 @@ projects:
       type: Standalone
       related:
       dependencies:
-      - https://golang.org/pkg/os/
+      - https://golang.org/pkg/os
       licences:
       - BSD-2-Clause
       documentation:
