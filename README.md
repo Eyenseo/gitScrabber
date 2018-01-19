@@ -1,3 +1,27 @@
+# About
+
+This is a framework to gather information from various sources (git, svn and archives).
+The name _gitScrabber_ is a phun on datamining and huge frameworks like hadoop for 'big data' as this tool will only scratch the surface (which 'might' be enough).
+
+It's written with speed/parallelism in mind and was able to analyse ~19GB in about two hours.
+Repeated executions are sped up by using cached data and may take only a few seconds.
+A threadpool is used to analyse the _projects_ specified via the task file in parallel.
+Before the tasks are executed the projects are cloned, updated or downloaded from their sources.
+
+Since it is created as a 'framework' it's rather easy to extend; under `gitScrabber/gitScrabber/scrabTasks` three types of tasks may be defined:
+* _file_-tasks can operate on the files and their contents them selfs and are executed sequentially by file (projects are analysed in parallel).<br>
+  Example: We used a file-task to search for cryptographic keywords.
+* _git_-tasks are tasks that want to interact with a repository and are executed sequentially by task (projects are analysed in parallel).
+  SVN repositories are converted to git repositories for less redundancy.
+  These tasks will not be executed for archive projects.<br>
+  Example: We used a git-task to gather the amount of authors and contributors.
+* _report_-tasks are tasks that only interact with the data that was gathered by the former two task types.
+  They are executed truely sequentially after all other tasks from all projects have finished.<br>
+  Example: We used a report-task to generate LaTeX tables of the gathered data.
+
+As this was written without much time there are no tests and some documentation.
+It did the job it was written for very well so there are things to be taken away from this project - but probably not everything.
+
 # Usage
 
 ```
@@ -46,4 +70,5 @@ Global arguments:
 - `pyunpack`
 - `regex`
 - `ruamel.yaml`
+- Maybe more
 
